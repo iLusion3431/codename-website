@@ -53,18 +53,18 @@
 <h2>Pause Scripts</h2>
 <p>Pause Scripts can change the pause menu, either entirely or tiny bits of it.<br>
 To use one, you have to load it from a Script <em>(any script can do, even Song Scripts)</em>.</p>
-<pre><code class="language-hx">PauseSubState.script = 'data/scripts/pause';
+<pre class="hljs"><code class="language-hx">PauseSubState.script = <span class="hljs-string">'data/scripts/pause'</span>;
 </code></pre>
 <p>This code points to the script that can be found in <code>./data/scripts/</code> and is called <code>pause.hx</code>.</p>
 <p>You can do many things in this script. For example, this is how you can override it and have your own entirely custom pause menu here:</p>
-<pre><code class="language-hx">function create(event){
+<pre class="hljs"><code class="language-hx"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span></span>(event){
     event.cancel();
 
-    camera = pauseCam = new FlxCamera();
+    camera = pauseCam = <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxCamera();
     pauseCam.bgColor = FlxColor.TRANSPARENT;
-    FlxG.cameras.add(pauseCam, false);
+    FlxG.cameras.add(pauseCam, <span class="hljs-literal">false</span>);
 
-    // your code here
+    <span class="hljs-comment">// your code here</span>
 }
 </code></pre>
 <p><em>(<code>create</code>'s event has more parameters than that. Check for <a href="./All of the script calls.html">All of the script calls</a>, and for calls other than <code>create</code>)</em><br>
@@ -77,16 +77,16 @@ This script will prevent the base pause menu from loading and allows you to add 
 <h2>Game Over Scripts</h2>
 <p>Game over scripts work the same as Pause Scripts, though presents some differences.
 This is how you load one:</p>
-<pre><code class="language-hx">GameOverSubstate.script = "data/scripts/gameover"
+<pre class="hljs"><code class="language-hx">GameOverSubstate.script = <span class="hljs-string">"data/scripts/gameover"</span>
 </code></pre>
 <p>This code points to the script that can be found in <code>./data/scripts/</code> and is called <code>gameover.hx</code>.</p>
 <p>Here's an example of playing a video when the player dies:</p>
-<pre><code class="language-hx">function create(event) {
-    event.cancel(); // cancels out initializing characters and stuff
+<pre class="hljs"><code class="language-hx"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span></span>(event) {
+    event.cancel(); <span class="hljs-comment">// cancels out initializing characters and stuff</span>
 
-    deathVideo = new FlxVideo();
+    deathVideo = <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxVideo();
     deathVideo.onEndReached.add(deathVideo.dispose);
-    var path = Paths.file("videos/death.mp4");
+    <span class="hljs-keyword">var</span> path = Paths.file(<span class="hljs-string">"videos/death.mp4"</span>);
     deathVideo.load(Assets.getPath(path));
     deathVideo.play();
 }

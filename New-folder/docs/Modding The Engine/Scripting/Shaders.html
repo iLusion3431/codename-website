@@ -52,31 +52,31 @@
             <h1>Shaders</h1>
 <p>Shaders are pretty easy to do due to our shader backend that does the hard work for us. All you have to do is make a file in <code>./shaders/</code>. Our system supports both fragment and vertex shaders to change both pixels and vertices. <em>(for example <code>./shaders/example.frag</code> and <code>./shaders/example.vert</code>)</em></p>
 <p>To use them, you have to script them in <em>(obviously)</em>. To do so, look at these pieces of code.</p>
-<pre><code class="language-hx">camHUD.addShader(new CustomShader("example")); //adds a shader onto the camera.
+<pre class="hljs"><code class="language-hx">camHUD.addShader(<span class="hljs-keyword">new</span><span class="hljs-type"></span> CustomShader(<span class="hljs-string">"example"</span>)); <span class="hljs-comment">//adds a shader onto the camera.</span>
 
-FlxG.camera.addShader(new CustomShader("example")); //ditto but on FlxG.camera.
+FlxG.camera.addShader(<span class="hljs-keyword">new</span><span class="hljs-type"></span> CustomShader(<span class="hljs-string">"example"</span>)); <span class="hljs-comment">//ditto but on FlxG.camera.</span>
 
-FlxG.game.addShader(new CustomShader("example")); //adds a shader onto the entire game (persists between states).
+FlxG.game.addShader(<span class="hljs-keyword">new</span><span class="hljs-type"></span> CustomShader(<span class="hljs-string">"example"</span>)); <span class="hljs-comment">//adds a shader onto the entire game (persists between states).</span>
 
-sprite.shader = new CustomShader("example"); // sets a sprite's shader to a shader. (only one shader can be added per sprite) 
+sprite.shader = <span class="hljs-keyword">new</span><span class="hljs-type"></span> CustomShader(<span class="hljs-string">"example"</span>); <span class="hljs-comment">// sets a sprite's shader to a shader. (only one shader can be added per sprite) </span>
 
-boyfriend.shader = new CustomShader("example"); // ditto but on characters.
+boyfriend.shader = <span class="hljs-keyword">new</span><span class="hljs-type"></span> CustomShader(<span class="hljs-string">"example"</span>); <span class="hljs-comment">// ditto but on characters.</span>
 </code></pre>
 <p>If your shader contains uniform variables that needs to be set, you can do so like this:</p>
-<pre><code class="language-hx">var shader = new CustomShader("example");
-shader.intensity = 0.4;
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">var</span> shader = <span class="hljs-keyword">new</span><span class="hljs-type"></span> CustomShader(<span class="hljs-string">"example"</span>);
+shader.intensity = <span class="hljs-number">0.4</span>;
 camGame.addShader(shader);
 </code></pre>
 <h2>Remember that we only support flixel/openfl shaders.</h2>
 <p>If you got a shader from a site called https://shadertoy.com, you have to manually convert them to flixel/openfl accepted format.</p>
 <p>Here's a sample shader that renders a basic texture.</p>
-<pre><code class="language-glsl">void mainImage( out vec4 fragColor, in vec2 fragCoord )
+<pre class="hljs"><code class="language-glsl"><span class="hljs-type">void</span> mainImage( <span class="hljs-keyword">out</span> <span class="hljs-type">vec4</span> fragColor, <span class="hljs-keyword">in</span> <span class="hljs-type">vec2</span> fragCoord )
 {
-    // Normalized pixel coordinates (from 0 to 1)
-    vec2 uv = fragCoord/iResolution.xy;
-    // Time varying pixel color
-    vec4 col = texture(iChannel0, uv);
-    // Output to screen
+    <span class="hljs-comment">// Normalized pixel coordinates (from 0 to 1)</span>
+    <span class="hljs-type">vec2</span> uv = fragCoord/iResolution.xy;
+    <span class="hljs-comment">// Time varying pixel color</span>
+    <span class="hljs-type">vec4</span> col = <span class="hljs-built_in">texture</span>(iChannel0, uv);
+    <span class="hljs-comment">// Output to screen</span>
     fragColor = col;
 }
 </code></pre>

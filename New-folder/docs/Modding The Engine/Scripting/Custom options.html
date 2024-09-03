@@ -53,23 +53,23 @@
 <p>You may find it useful to have custom options specific to your mod, thankfully you can do just that!</p>
 <p>To get started, put a file in <code>./data/config</code> called <code>options.xml</code>.</p>
 <p>There already exists a template for you to look on, and it looks something like this:</p>
-<pre><code class="language-xml">&lt;menu name="Mod Options" desc="Modify mod options here"&gt;
+<pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">menu</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Mod Options"</span> <span class="hljs-attr">desc</span>=<span class="hljs-string">"Modify mod options here"</span>&gt;</span>
 
-    &lt;checkbox id="checkboxExample" name="Checkbox example" /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">checkbox</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"checkboxExample"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Checkbox example"</span> /&gt;</span>
 
-    &lt;number id="numberExample" name="Number example" min="0" max="10" change="1"/&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">number</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"numberExample"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Number example"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"10"</span> <span class="hljs-attr">change</span>=<span class="hljs-string">"1"</span>/&gt;</span>
 
-    &lt;choice id="choiceExample" name="Choice Example"&gt;
-        &lt;value name="Disabled" value="disabled"/&gt;
-        &lt;value name="This only" value="thisOnly"/&gt;
-        &lt;value name="All" value="all"/&gt;
-    &lt;/choice&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">choice</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"choiceExample"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Choice Example"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">value</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Disabled"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"disabled"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">value</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"This only"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"thisOnly"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">value</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"All"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"all"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">choice</span>&gt;</span>
 
-    &lt;menu name="Submenu Example" desc="Submenu test"&gt;
-        &lt;checkbox id="levelOfIdk2" name="Level of idk" /&gt;
-    &lt;/menu&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">menu</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Submenu Example"</span> <span class="hljs-attr">desc</span>=<span class="hljs-string">"Submenu test"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">checkbox</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"levelOfIdk2"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Level of idk"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">menu</span>&gt;</span>
 
-&lt;/menu&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">menu</span>&gt;</span>
 </code></pre>
 <p><img src="./Custom options.png">
 You're likely wondering: "how does each type of option work?"
@@ -106,16 +106,16 @@ That's what is about to be explained!!</p>
 </ul></li>
 </ul>
 <p>Accessing them in Scripts is done via <code>FlxG.save.data</code>, as you can see below.</p>
-<pre><code class="language-hx">var checkboxExample = FlxG.save.data.checkboxExample;
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">var</span> checkboxExample = FlxG.save.data.checkboxExample;
 </code></pre>
 <p>You may have noticed that none of the option types have a default value property,
 this is because you have to set the default values yourself <em>(in a global script)</em>.<br>
 You have to do this otherwise your options won't save correctly!</p>
 <p>This is rather easy to do, put this in <code>./data/global.hx</code>:</p>
-<pre><code class="language-haxe">function create() {
-    // FlxG.save is your mod's savedata
-    if(FlxG.save.data.checkboxExample == null)
-        FlxG.save.data.checkboxExample = true;
+<pre class="hljs"><code class="language-haxe"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span></span>() {
+    <span class="hljs-comment">// FlxG.save is your mod's savedata</span>
+    <span class="hljs-keyword">if</span>(FlxG.save.data.checkboxExample == <span class="hljs-literal">null</span>)
+        FlxG.save.data.checkboxExample = <span class="hljs-literal">true</span>;
 }
 </code></pre>
 

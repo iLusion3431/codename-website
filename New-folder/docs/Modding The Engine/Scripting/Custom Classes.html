@@ -52,21 +52,21 @@
             <h1>Custom Classes</h1>
 <p>Custom classes can be made either inside the script you need it in or you can make a script file coresponding with the name of the class in <code>./source</code>, and using <code>import</code> to import it.</p>
 <p>Here is a basic Song Script code that uses it:</p>
-<pre><code class="language-hx">class SpecialSprite extends FlxSprite {
-    public var customValue:String = null;
-    public function new(x:Float, y:Float, customValue:String) {
-        super(x, y);
-        this.customValue = customValue;
-        //other code stuff
+<pre class="hljs"><code class="language-hx"><span class="hljs-title class_"><span class="hljs-keyword">class</span> <span class="hljs-title">SpecialSprite</span> <span class="hljs-keyword"><span class="hljs-keyword">extends</span> <span class="hljs-type">FlxSprite</span></span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> customValue:<span class="hljs-type">String </span>= <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">new</span></span>(x:<span class="hljs-type">Float</span>, y:<span class="hljs-type">Float</span>, customValue:<span class="hljs-type">String</span>) {
+        <span class="hljs-keyword">super</span>(x, y);
+        <span class="hljs-built_in">this</span>.customValue = customValue;
+        <span class="hljs-comment">//other code stuff</span>
     }
 
-    public override function update(elapsed) {
-        super.update(elapsed);
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span></span>(elapsed) {
+        <span class="hljs-keyword">super</span>.update(elapsed);
     }
 }
 
-function create() {
-    var spr = new SpecialSprite(200, 400, "powerful");
+<span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span></span>() {
+    <span class="hljs-keyword">var</span> spr = <span class="hljs-keyword">new</span><span class="hljs-type"></span> SpecialSprite(<span class="hljs-number">200</span>, <span class="hljs-number">400</span>, <span class="hljs-string">"powerful"</span>);
     add(spr);
 }
 </code></pre>

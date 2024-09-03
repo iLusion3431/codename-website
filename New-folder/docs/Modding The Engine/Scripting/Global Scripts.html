@@ -53,16 +53,16 @@
 <p>Global Scripts always run during the game, doesn't matter in which state or where, it always runs. <em>(runs from when the mod is loaded/game opened up until the game is closed/different mod is loaded)</em><br>
 You can make one by creating a file in <code>./data/</code> called <code>global.hx</code></p>
 <p>Global Scripts are useful for certain things, for example, here's the default code in the base's global script:</p>
-<pre><code class="language-hx">function update(elapsed:Float)
-    if (FlxG.keys.justPressed.F5) FlxG.resetState();
+<pre class="hljs"><code class="language-hx"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span></span>(elapsed:<span class="hljs-type">Float</span>)
+    <span class="hljs-keyword">if</span> (FlxG.keys.justPressed.F5) FlxG.resetState();
 </code></pre>
 <p>Which makes it so that pressing F5 will refresh any state you are currently in.</p>
 <p>Or a different example:</p>
-<pre><code class="language-hx">static var cashAmount:Float = 0;
-static var playerTitle = "poor";
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">static</span> <span class="hljs-keyword">var</span> cashAmount:<span class="hljs-type">Float </span>= <span class="hljs-number">0</span>;
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">var</span> playerTitle = <span class="hljs-string">"poor"</span>;
 
-function update(elapsed:Float) {
-    if (cashAmount &gt; 1000000) playerTitle = "millionaire";
+<span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span></span>(elapsed:<span class="hljs-type">Float</span>) {
+    <span class="hljs-keyword">if</span> (cashAmount &gt; <span class="hljs-number">1000000</span>) playerTitle = <span class="hljs-string">"millionaire"</span>;
 }
 </code></pre>
 <p>This basic example shows how you can use <code>static</code> variables and trigger actions depending on them. As you can see, these variables are accessible in any script, so you can basically use them in any PlayState Scripts and State Scripts too.</p>

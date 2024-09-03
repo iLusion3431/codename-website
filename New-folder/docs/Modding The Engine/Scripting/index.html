@@ -64,19 +64,19 @@ Scripting can change not only gameplay, but also menus and other engine function
 <p>Things like <code>?.</code>, <code>??</code> and <code>??=</code> are accepted in our HScript language.<br>
 Using those is beneficial as they prove to be very useful to keeping your code clean.<br>
 Example usage:</p>
-<pre><code class="language-hx">if (FlxG.sound.music != null) trace(FlxG.sound.music.time);
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">if</span> (FlxG.sound.music != <span class="hljs-literal">null</span>) <span class="hljs-built_in">trace</span>(FlxG.sound.music.time);
 
-trace(FlxG.sound?.music);
+<span class="hljs-built_in">trace</span>(FlxG.sound?.music);
 </code></pre>
-<pre><code class="language-hx">var time:Float;
-if (FlxG.sound.music != null) time = FlxG.sound.music.time;
-else time = 0;
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">var</span> time:<span class="hljs-type">Float</span>;
+<span class="hljs-keyword">if</span> (FlxG.sound.music != <span class="hljs-literal">null</span>) time = FlxG.sound.music.time;
+<span class="hljs-keyword">else</span> time = <span class="hljs-number">0</span>;
 
-time = FlG.sound?.music ?? 0;
+time = FlG.sound?.music ?? <span class="hljs-number">0</span>;
 </code></pre>
-<pre><code class="language-hx">if (FlxG.save.data.isOpen == null) FlxG.save.data.isOpen = true;
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">if</span> (FlxG.save.data.isOpen == <span class="hljs-literal">null</span>) FlxG.save.data.isOpen = <span class="hljs-literal">true</span>;
 
-FlxG.save.data.isOpen ??= true;
+FlxG.save.data.isOpen ??= <span class="hljs-literal">true</span>;
 </code></pre>
 <h2>To start on basic scripting, you can follow these articles here:</h2>
 <ul>

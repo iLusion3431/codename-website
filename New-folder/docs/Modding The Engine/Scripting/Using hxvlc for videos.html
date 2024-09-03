@@ -57,8 +57,8 @@
 <li><code>FlxSpriteVideo</code> which runs based on an FlxSprite.</li>
 </ul>
 <p>Using an FlxVideo looks something like this:</p>
-<pre><code class="language-hx">var video:FlxVideo = new FlxVideo();
-video.onEndReached.add(function():Void
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">var</span> video:<span class="hljs-type">FlxVideo </span>= <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxVideo();
+video.onEndReached.add(<span class="hljs-title function_"><span class="hljs-keyword">function</span></span>():<span class="hljs-type">Void</span>
 {
     video.dispose();
 
@@ -66,17 +66,17 @@ video.onEndReached.add(function():Void
 });
 FlxG.addChildBelowMouse(video);
 
-if (video.load(Paths.video("video")))
-    new FlxTimer().start(0.001, (_) -&gt; video.play());
+<span class="hljs-keyword">if</span> (video.load(Paths.video(<span class="hljs-string">"video"</span>)))
+    <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxTimer().start(<span class="hljs-number">0.001</span>, (<span class="hljs-literal">_</span>) -&gt; video.play());
 </code></pre>
 <p>And using an FlxVideoSprite looks like this:</p>
-<pre><code class="language-hx">var video:FlxVideoSprite = new FlxVideoSprite(0, 0);
-video.antialiasing = true;
-video.bitmap.onFormatSetup.add(function():Void
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">var</span> video:<span class="hljs-type">FlxVideoSprite </span>= <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxVideoSprite(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+video.antialiasing = <span class="hljs-literal">true</span>;
+video.bitmap.onFormatSetup.add(<span class="hljs-title function_"><span class="hljs-keyword">function</span></span>():<span class="hljs-type">Void</span>
 {
-    if (video.bitmap != null &amp;&amp; video.bitmap.bitmapData != null)
+    <span class="hljs-keyword">if</span> (video.bitmap != <span class="hljs-literal">null</span> &amp;&amp; video.bitmap.bitmapData != <span class="hljs-literal">null</span>)
     {
-        final scale:Float = Math.min(FlxG.width / video.bitmap.bitmapData.width, FlxG.height / video.bitmap.bitmapData.height);
+        <span class="hljs-keyword">final</span> scale:<span class="hljs-type">Float </span>= Math.min(FlxG.width / video.bitmap.bitmapData.width, FlxG.height / video.bitmap.bitmapData.height);
 
         video.setGraphicSize(video.bitmap.bitmapData.width * scale, video.bitmap.bitmapData.height * scale);
         video.updateHitbox();
@@ -86,8 +86,8 @@ video.bitmap.onFormatSetup.add(function():Void
 video.bitmap.onEndReached.add(video.destroy);
 add(video);
 
-if (video.load(Paths.video("video")))
-    new FlxTimer().start(0.001, (_) -&gt; video.play());
+<span class="hljs-keyword">if</span> (video.load(Paths.video(<span class="hljs-string">"video"</span>)))
+    <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxTimer().start(<span class="hljs-number">0.001</span>, (<span class="hljs-literal">_</span>) -&gt; video.play());
 </code></pre>
 <p>These will load the video <code>./videos/video.mp4</code>, and display it on the screen.</p>
 <p>Other thing to note is that when you type <code>Paths.video("video")</code>, keep in mind that you can write the extension next to the path, which let's you load filetypes other than .mp4.</p>

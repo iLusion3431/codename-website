@@ -58,45 +58,45 @@
 ## Events
 Events can be found in ``./data/events``. There's currently 3 files used for events: a script file, a JSON file to determine the parameters of it, and an image file for it's icon. *(they all need to have the same name as the event)*
 <p>First, we'll go over making the JSON file. The JSON file holds all parameters required for the Event, and each parameter can have different types. Each parameter type is listed here:</p>
-<pre><code class="language-json">{
-    "params": [
-        {
-            "name": "Bool",
-            "type": "Bool",
-            "defaultValue": false
-        },
-        {
-            "name": "Int",
-            "type": "Int(0, 99, 1)",
-            "defaultValue": 0
-        },
-        {
-            "name": "Float",
-            "type": "Float(0, 99, 1, 2)",
-            "defaultValue": 0.00
-        },
-        {
-            "name": "String",
-            "type": "String",
-            "defaultValue": "nothing"
-        },
-        {
-            "name": "StrumLine",
-            "type": "StrumLine",
-            "defaultValue": 0
-        },
-        {
-            "name": "ColorWheel",
-            "type": "ColorWheel",
-            "defaultValue": "#FFFFFF"
-        },
-        {
-            "name": "DropDown",
-            "type": "DropDown('entry one', 'entry two')",
-            "defaultValue": "entry one"
-        }
-    ]
-}
+<pre class="hljs"><code class="language-json"><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"params"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Bool"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Bool"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"defaultValue"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span>
+        <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Int"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Int(0, 99, 1)"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"defaultValue"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span>
+        <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Float"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Float(0, 99, 1, 2)"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"defaultValue"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.00</span>
+        <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"String"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"String"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"defaultValue"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"nothing"</span>
+        <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"StrumLine"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"StrumLine"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"defaultValue"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span>
+        <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"ColorWheel"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"ColorWheel"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"defaultValue"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"#FFFFFF"</span>
+        <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"DropDown"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"DropDown('entry one', 'entry two')"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"defaultValue"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"entry one"</span>
+        <span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span>
 </code></pre>
 <p><em>(you can copy these for your own JSON file)</em><br>
 There's a lot of them but we'll go over each one.</p>
@@ -111,10 +111,10 @@ There's a lot of them but we'll go over each one.</p>
 </ul>
 <p><img src="./Events or Notetype Scripts-1.png"></p>
 <p>Now that we have established the Parameters, we can go over scripting the event now. A basic flash camera event looks something like this:</p>
-<pre><code class="language-hx">function onEvent(e) {
-    var params:Array = e.event.params;
-    if (e.event.name == "Flash Camera") {
-        camGame.flash(params[1], params[0]);
+<pre class="hljs"><code class="language-hx"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">onEvent</span></span>(e) {
+    <span class="hljs-keyword">var</span> params:<span class="hljs-type">Array </span>= e.event.params;
+    <span class="hljs-keyword">if</span> (e.event.name == <span class="hljs-string">"Flash Camera"</span>) {
+        camGame.flash(params[<span class="hljs-number">1</span>], params[<span class="hljs-number">0</span>]);
     }
 }
 </code></pre>
@@ -128,10 +128,10 @@ There's a lot of them but we'll go over each one.</p>
 <p>Putting the sprites in <code>./images/game/notes</code> and naming them after the notetype name will automatically replace the default note sprites with those.</p>
 <p>Writing a script for the notetypes is very easy. Though only one script is ran for all existing notetypes instead of each note, you can still code actions for them. <br>
 For example here is code for triggering actions when the player presses it:</p>
-<pre><code class="language-hx">function onPlayerHit(event) {
-    if (event.noteType == "Damage Note") {
-        health -= 0.5;
-        boyfriend.playAnim("hurt");
+<pre class="hljs"><code class="language-hx"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">onPlayerHit</span></span>(event) {
+    <span class="hljs-keyword">if</span> (event.noteType == <span class="hljs-string">"Damage Note"</span>) {
+        health -= <span class="hljs-number">0.5</span>;
+        boyfriend.playAnim(<span class="hljs-string">"hurt"</span>);
     }
 }
 </code></pre>

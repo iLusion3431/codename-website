@@ -53,13 +53,13 @@
 <h2>Gameplay scripts run during gameplay <em>(yep)</em></h2>
 <p>You can run Gameplay Scripts in <strong>a song</strong>, by putting the scripts in <code>./song/YOUR SONG/scripts</code>, or run them in <strong>every song</strong>, by putting them in the <code>./songs</code> folder itself.</p>
 <p>Gameplay Scripts can change the gameplay in various ways, for example, this is how you can hide the player character:</p>
-<pre><code class="language-hx">function create() {
-    boyfriend.visible = false;
+<pre class="hljs"><code class="language-hx"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span></span>() {
+    boyfriend.visible = <span class="hljs-literal">false</span>;
 }
 </code></pre>
 <p>Or how to create a normal sprite:</p>
-<pre><code class="language-hx">function create() {
-    var sprite = new FlxSprite(x, y).loadGraphic(Paths.image("my new sprite")); //picks the png image from the ./images folder
+<pre class="hljs"><code class="language-hx"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span></span>() {
+    <span class="hljs-keyword">var</span> sprite = <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxSprite(x, y).loadGraphic(Paths.image(<span class="hljs-string">"my new sprite"</span>)); <span class="hljs-comment">//picks the png image from the ./images folder</span>
 }
 </code></pre>
 <p>If you notice, this looks slightly like source code, aside from the usual <code>override function</code> or <code>super.create()</code>, which does not exist in our scripting language.<br>
@@ -68,10 +68,10 @@ If you already got the hang of source coding, then scripting will feel like a br
 <h3>Script events.</h3>
 <p>Noting other particularities, Gameplay Scripting relies heavily on <strong>Events</strong>, which triggers callbacks and returns a struct of parameters, basically unclogging the parameter list of functions.<br>
 Which means, handling a note hit looks something like this:</p>
-<pre><code class="language-hx">function onNoteHit(event) {
-    trace(event.note); // the note that has been hit
-    trace(event.score); // how much score gained from this
-    event.cancel(); // cancels out any other handling (useful if you want to write custom note pressing)
+<pre class="hljs"><code class="language-hx"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">onNoteHit</span></span>(event) {
+    <span class="hljs-built_in">trace</span>(event.note); <span class="hljs-comment">// the note that has been hit</span>
+    <span class="hljs-built_in">trace</span>(event.score); <span class="hljs-comment">// how much score gained from this</span>
+    event.cancel(); <span class="hljs-comment">// cancels out any other handling (useful if you want to write custom note pressing)</span>
 }
 </code></pre>
 <p>There's a lot of other events, such as <code>onStartCountdown</code>, <code>onGamePause</code>, <code>onCameraMove</code> and more.<br>
@@ -79,23 +79,23 @@ You can find them all in <a href="../All of the script calls.html">All of the sc
 <p>Despite all of that, functions like <code>update</code>, <code>beatHit</code>, <code>stepHit</code> still receive one parameter *(<code>elapsed:Float</code>, <code>curBeat:Int</code>, <code>curStep:Int</code>)</p>
 <h3>Class importing.</h3>
 <p>Some classes are pre-imported (FlxSprite, FlxMath, FlxAxis etc.), but for classes that aren't pre-imported, it's still possible to import like this:</p>
-<pre><code class="language-hx">import flixel.addons.display.FlxBackdrop;
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">import</span> flixel.addons.display.FlxBackdrop;
 </code></pre>
 <p>*(<code>using</code> does not work) *</p>
 <h3>Accessing characters.</h3>
 <p>Characters are actually accessed differently. Due to the modularity of having more than one Strumline, and having more than one character in a Strumline, characters are accessible like this:</p>
-<pre><code class="language-hx">trace(strumLines.members[0].characters[0]); // opponent character
-trace(strumLines.members[1].characters[0]); // player character
-trace(strumLines.members[2].characters[0]); // girlfriend character
+<pre class="hljs"><code class="language-hx"><span class="hljs-built_in">trace</span>(strumLines.members[<span class="hljs-number">0</span>].characters[<span class="hljs-number">0</span>]); <span class="hljs-comment">// opponent character</span>
+<span class="hljs-built_in">trace</span>(strumLines.members[<span class="hljs-number">1</span>].characters[<span class="hljs-number">0</span>]); <span class="hljs-comment">// player character</span>
+<span class="hljs-built_in">trace</span>(strumLines.members[<span class="hljs-number">2</span>].characters[<span class="hljs-number">0</span>]); <span class="hljs-comment">// girlfriend character</span>
 </code></pre>
 <p>Though we have also established a few shortcuts to avoid typing this much code</p>
-<pre><code class="language-hx">trace(dad);
-trace(boyfriend);
-trace(gf);
+<pre class="hljs"><code class="language-hx"><span class="hljs-built_in">trace</span>(dad);
+<span class="hljs-built_in">trace</span>(boyfriend);
+<span class="hljs-built_in">trace</span>(gf);
 </code></pre>
 <h3>Replacing <code>mustHitSection</code>.</h3>
 <p>Sections do not exists, and therefore, <code>mustHitSection</code> no longer works. But, as a workaround, you can use <code>curCameraTarget</code> to replace it.</p>
-<pre><code class="language-hx">if (curCameraTarget == 1) // mustHitSection == true
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">if</span> (curCameraTarget == <span class="hljs-number">1</span>) <span class="hljs-comment">// mustHitSection == true</span>
 </code></pre>
 
         </div>

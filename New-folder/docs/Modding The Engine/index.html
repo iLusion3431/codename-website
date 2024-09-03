@@ -183,13 +183,13 @@ All of these configs can be found in <code>./data/config/</code></p>
 <h3>credits.xml</h3>
 <p>Crediting people also uses XML data to parse members, though it has a lot of features to cover.<br>
 Here's a template provided by the engine:</p>
-<pre><code class="language-xml">&lt;menu name="Mod Credits" desc="Modify mod credits here"&gt;
+<pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">menu</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Mod Credits"</span> <span class="hljs-attr">desc</span>=<span class="hljs-string">"Modify mod credits here"</span>&gt;</span>
 
-    &lt;credit name="Credit Example" desc="Click me to know more about me!" icon="credit icon example" size="130" url="https://youtu.be/fugtxz1znVw"/&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">credit</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Credit Example"</span> <span class="hljs-attr">desc</span>=<span class="hljs-string">"Click me to know more about me!"</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"credit icon example"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"130"</span> <span class="hljs-attr">url</span>=<span class="hljs-string">"https://youtu.be/fugtxz1znVw"</span>/&gt;</span>
 
-    &lt;github user="NexIsDumb" customName="Nex is Dumb" desc="The bitch who made these credits menus" size="100" portrait="false"/&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">github</span> <span class="hljs-attr">user</span>=<span class="hljs-string">"NexIsDumb"</span> <span class="hljs-attr">customName</span>=<span class="hljs-string">"Nex is Dumb"</span> <span class="hljs-attr">desc</span>=<span class="hljs-string">"The bitch who made these credits menus"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">portrait</span>=<span class="hljs-string">"false"</span>/&gt;</span>
 
-&lt;/menu&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">menu</span>&gt;</span>
 </code></pre>
 <p>As you can see, there's 2 types of nodes: <code>credit</code> and <code>github</code>. <code>credit</code> is the basic crediting node which can be applied to anyone, and <code>github</code> pulls the user from it's database and can only be used for people who have accounts on GitHub <em>(also automatically redirects to their GitHub profile page.)</em></p>
 <p>Their parameters are as follows:</p>

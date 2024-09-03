@@ -55,35 +55,35 @@
 <p>idk bro</p>
 <h2>Global Scripts</h2>
 <h2>Replace pre-existing states with custom states.</h2>
-<pre><code class="language-hx">var redirectStates:Map&lt;FlxState, String&gt; = [
-    TitleState =&gt; "CustomTitleState"
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">var</span> redirectStates:<span class="hljs-type">Map</span>&lt;FlxState, <span class="hljs-keyword">String</span>&gt; = [
+    TitleState =&gt; <span class="hljs-string">"CustomTitleState"</span>
 ];
 
-function preStateSwitch() {
-    for (redirectState in redirectStates.keys()) 
-        if (Std.isOfType(FlxG.game._requestedState, redirectState)) 
-            FlxG.game._requestedState = new ModState(redirectStates.get(redirectState));
+<span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">preStateSwitch</span></span>() {
+    <span class="hljs-keyword">for</span> (redirectState <span class="hljs-keyword">in</span> redirectStates.keys()) 
+        <span class="hljs-keyword">if</span> (Std.isOfType(FlxG.game<span class="hljs-number">._</span>requestedState, redirectState)) 
+            FlxG.game<span class="hljs-number">._</span>requestedState = <span class="hljs-keyword">new</span><span class="hljs-type"></span> ModState(redirectStates.<span class="hljs-keyword">get</span>(redirectState));
 }
 </code></pre>
 <h2>Animated Icons support.</h2>
-<pre><code class="language-haxe">function update(elapsed) {
-    for (i in FlxG.state.members)
-        if (Std.isOfType(i, HealthIcon))
-            if (Assets.exists(Path.withoutExtension(Paths.image("icons/"+i.curCharacter)) + ".xml") &amp;&amp; i.frames.frames[0].name != "losing0000") {
-                i.frames = Paths.getFrames("icons/"+i.curCharacter);
-                i.animation.addByPrefix("losing", "losing", 24, true);
-                i.animation.addByPrefix("normal", "normal", 24, true); 
-                i.animation.play("normal", true);
-                i.curAnimState = -1;
+<pre class="hljs"><code class="language-haxe"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span></span>(elapsed) {
+    <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> FlxG.state.members)
+        <span class="hljs-keyword">if</span> (Std.isOfType(i, HealthIcon))
+            <span class="hljs-keyword">if</span> (Assets.exists(Path.withoutExtension(Paths.image(<span class="hljs-string">"icons/"</span>+i.curCharacter)) + <span class="hljs-string">".xml"</span>) &amp;&amp; i.frames.frames[<span class="hljs-number">0</span>].name != <span class="hljs-string">"losing0000"</span>) {
+                i.frames = Paths.getFrames(<span class="hljs-string">"icons/"</span>+i.curCharacter);
+                i.animation.addByPrefix(<span class="hljs-string">"losing"</span>, <span class="hljs-string">"losing"</span>, <span class="hljs-number">24</span>, <span class="hljs-literal">true</span>);
+                i.animation.addByPrefix(<span class="hljs-string">"normal"</span>, <span class="hljs-string">"normal"</span>, <span class="hljs-number">24</span>, <span class="hljs-literal">true</span>); 
+                i.animation.play(<span class="hljs-string">"normal"</span>, <span class="hljs-literal">true</span>);
+                i.curAnimState = <span class="hljs-number">-1</span>;
             }
 }
-function onHealthIconAnimChange(e) {
-    if (e.healthIcon.animation.exists("normal")) {
+<span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">onHealthIconAnimChange</span></span>(e) {
+    <span class="hljs-keyword">if</span> (e.healthIcon.animation.exists(<span class="hljs-string">"normal"</span>)) {
         e.cancel();
-        e.healthIcon.animation.play(e.amount == 0 ? 'normal' : 'losing', true);  
+        e.healthIcon.animation.play(e.amount == <span class="hljs-number">0</span> ? <span class="hljs-string">'normal'</span> : <span class="hljs-type"></span>'losing<span class="hljs-string">', true);  
     }
 }
-</code></pre>
+</span></code></pre>
 <h2>to be filled with other snippets</h2>
 
         </div>

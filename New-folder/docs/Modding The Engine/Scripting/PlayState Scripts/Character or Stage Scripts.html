@@ -55,19 +55,19 @@
 <p>You can create one of those by making a Script file alongside your character's XML data file <em>(<code>./data/characters/</code>)</em><br>
 In these scripts you don't need to specify the character, since the character becomes the Script's parent.</p>
 <p>Here's an example of a Character Script that makes the character spin..:</p>
-<pre><code class="language-hx">function update(elapsed) {
-    angle += elapsed * 10;
+<pre class="hljs"><code class="language-hx"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span></span>(elapsed) {
+    angle += elapsed * <span class="hljs-number">10</span>;
 }
 </code></pre>
 <h2>Stage Scripts.</h2>
 <p>Creating one of those also goes next to the Stage XML data file <em>(<code>./data/stages/</code>)</em>.<br>
 This script also takes the Stage as it's parent, thus not needing to use <code>stage.getSprite()</code>, instead, sprites becomes the variables</p>
 <p>Here's an example:</p>
-<pre><code class="language-hx">function postCreate() {
-    // animatedObject has already been defined in the XML file.
-    animatedObject.frames = Paths.getFrames("animatedObject");
-    animatedObject.animation.addByPrefix("idle", "idle", 24, true);
-    animatedObject.animation.play("idle");
+<pre class="hljs"><code class="language-hx"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">postCreate</span></span>() {
+    <span class="hljs-comment">// animatedObject has already been defined in the XML file.</span>
+    animatedObject.frames = Paths.getFrames(<span class="hljs-string">"animatedObject"</span>);
+    animatedObject.animation.addByPrefix(<span class="hljs-string">"idle"</span>, <span class="hljs-string">"idle"</span>, <span class="hljs-number">24</span>, <span class="hljs-literal">true</span>);
+    animatedObject.animation.play(<span class="hljs-string">"idle"</span>);
 }
 </code></pre>
 
