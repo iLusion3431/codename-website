@@ -51,7 +51,7 @@
         <div class="content">
             <h1>Gameplay Scripts</h1>
             <h1>Gameplay Scripts</h1>
-<h3>Gameplay scripts run during gameplay <em>(yep)</em></h3>
+<h2>Gameplay scripts run during gameplay <em>(yep)</em></h2>
 <p>You can run Gameplay Scripts in <strong>a song</strong>, by putting the scripts in <code>./song/YOUR SONG/scripts</code>, or run them in <strong>every song</strong>, by putting them in the <code>./songs</code> folder itself.</p>
 <p>Gameplay Scripts can change the gameplay in various ways, for example, this is how you can hide the player character:</p>
 <pre><code class="language-hx">function create() {
@@ -65,8 +65,8 @@
 </code></pre>
 <p>If you notice, this looks slightly like source code, aside from the usual <code>override function</code> or <code>super.create()</code>, which does not exist in our scripting language.<br>
 If you already got the hang of source coding, then scripting will feel like a breeze. If not.. well.. prepare to learn!</p>
-<h3>Particularities</h3>
-<h4>Script events.</h4>
+<h2>Particularities</h2>
+<h3>Script events.</h3>
 <p>Noting other particularities, Gameplay Scripting relies heavily on <strong>Events</strong>, which triggers callbacks and returns a struct of parameters, basically unclogging the parameter list of functions.<br>
 Which means, handling a note hit looks something like this:</p>
 <pre><code class="language-hx">function onNoteHit(event) {
@@ -78,12 +78,12 @@ Which means, handling a note hit looks something like this:</p>
 <p>There's a lot of other events, such as <code>onStartCountdown</code>, <code>onGamePause</code>, <code>onCameraMove</code> and more.<br>
 You can find them all in <a href="../All of the script calls.html">All of the script calls</a>.</p>
 <p>Despite all of that, functions like <code>update</code>, <code>beatHit</code>, <code>stepHit</code> still receive one parameter *(<code>elapsed:Float</code>, <code>curBeat:Int</code>, <code>curStep:Int</code>)</p>
-<h4>Class importing.</h4>
+<h3>Class importing.</h3>
 <p>Some classes are pre-imported (FlxSprite, FlxMath, FlxAxis etc.), but for classes that aren't pre-imported, it's still possible to import like this:</p>
 <pre><code class="language-hx">import flixel.addons.display.FlxBackdrop;
 </code></pre>
 <p>*(<code>using</code> does not work) *</p>
-<h4>Accessing characters.</h4>
+<h3>Accessing characters.</h3>
 <p>Characters are actually accessed differently. Due to the modularity of having more than one Strumline, and having more than one character in a Strumline, characters are accessible like this:</p>
 <pre><code class="language-hx">trace(strumLines.members[0].characters[0]); // opponent character
 trace(strumLines.members[1].characters[0]); // player character
@@ -94,7 +94,7 @@ trace(strumLines.members[2].characters[0]); // girlfriend character
 trace(boyfriend);
 trace(gf);
 </code></pre>
-<h4>Replacing <code>mustHitSection</code>.</h4>
+<h3>Replacing <code>mustHitSection</code>.</h3>
 <p>Sections do not exists, and therefore, <code>mustHitSection</code> no longer works. But, as a workaround, you can use <code>curCameraTarget</code> to replace it.</p>
 <pre><code class="language-hx">if (curCameraTarget == 1) // mustHitSection == true
 </code></pre>

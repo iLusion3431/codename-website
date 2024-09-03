@@ -68,7 +68,7 @@ boyfriend.shader = new CustomShader("example"); // ditto but on characters.
 shader.intensity = 0.4;
 camGame.addShader(shader);
 </code></pre>
-<h3>Remember that we only support flixel/openfl shaders.</h3>
+<h2>Remember that we only support flixel/openfl shaders.</h2>
 <p>If you got a shader from a site called https://shadertoy.com, you have to manually convert them to flixel/openfl accepted format.</p>
 <p>Here's a sample shader that renders a basic texture.</p>
 <pre><code class="language-glsl">void mainImage( out vec4 fragColor, in vec2 fragCoord )
@@ -88,8 +88,8 @@ camGame.addShader(shader);
 <li>replace <code>vec4 col = texture(iChannel0, uv);</code> with <code>vec4 col = texture2D(bitmap, uv);</code> or <code>vec4 col = flixel_texture2D(bitmap, uv);</code> <em>(keep in mind bitmap is the pixels of the camera/sprite the shader is aplied to)</em></li>
 <li>finally, replace <code>fragColor = col;</code> with <code>gl_FragColor = col;</code></li>
 </ol>
-<h4>Keep in mind that this covers the most basic on how to convert a shader from shadertoy.com, complex shaders will need more expertise with handling shaders before converting those.</h4>
-<h3>Important things to note if your shader doesn't work for certain people.</h3>
+<h3>Keep in mind that this covers the most basic on how to convert a shader from shadertoy.com, complex shaders will need more expertise with handling shaders before converting those.</h3>
+<h2>Important things to note if your shader doesn't work for certain people.</h2>
 <p>Avoid using <code>0.</code> or <code>.0</code> for floats, instead, use <code>0.0</code> (ending the float number with an <code>.0</code>)
 <em>(despite half floats working on nVidia gpus, other gpus like AMD gpus don't support this feature)</em></p>
 <p>Avoid using switch cases, and use if statements where possible.

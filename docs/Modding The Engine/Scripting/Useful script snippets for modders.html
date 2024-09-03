@@ -55,7 +55,7 @@
 <h2>Song Scripts</h2>
 <p>idk bro</p>
 <h2>Global Scripts</h2>
-<h3>Replace pre-existing states with custom states.</h3>
+<h2>Replace pre-existing states with custom states.</h2>
 <pre><code class="language-hx">var redirectStates:Map&lt;FlxState, String&gt; = [
     TitleState =&gt; "CustomTitleState"
 ];
@@ -66,7 +66,7 @@ function preStateSwitch() {
             FlxG.game._requestedState = new ModState(redirectStates.get(redirectState));
 }
 </code></pre>
-<h3>Animated Icons support.</h3>
+<h2>Animated Icons support.</h2>
 <pre><code class="language-haxe">function update(elapsed) {
     for (i in FlxG.state.members)
         if (Std.isOfType(i, HealthIcon))
@@ -85,7 +85,7 @@ function onHealthIconAnimChange(e) {
     }
 }
 </code></pre>
-<h3>to be filled with other snippets</h3>
+<h2>to be filled with other snippets</h2>
 
         </div>
     </div>
