@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index - Codename Engine Docs</title>
+    <link rel="stylesheet" href="/docs/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <li><a href="/docs/Home.html">Home</a></li>
+<li><a href="/docs/How to navigate the engine.html">How to navigate the engine</a></li>
+<li><a href="/docs/Differences between the other FNF engines.html">Differences between the other FNF engines</a></li>
+<li><a href="/docs/Modding The Engine/index.html">Modding The Engine</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Creating songs/index.html">Creating songs</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Creating songs/Chart Editor Features.html">Chart Editor Features</a></li>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Creating characters/index.html">Creating characters</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Creating characters/Character Editor Features.html">Character Editor Features</a></li>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Creating stages.html">Creating stages</a></li>
+<li><a href="/docs/Modding The Engine/Cutscenes or Dialogues.html">Cutscenes or Dialogues</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/index.html">Scripting</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Scripting/PlayState Scripts/index.html">PlayState Scripts</a>
+<ul>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Scripting/State Scripts.html">State Scripts</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Global Scripts.html">Global Scripts</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Shaders.html">Shaders</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Using hxvlc for videos.html">Using hxvlc for videos</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Custom options.html">Custom options</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Custom Classes.html">Custom Classes</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/3D rendering.html">3D rendering</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Useful script snippets for modders.html">Useful script snippets for modders</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Scripted Assets Libraries.html">Scripted Assets Libraries</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/NDLL Scripting.html">NDLL Scripting</a></li>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Hardcoding.html">Hardcoding</a></li>
+</ul>
+</li>
+
+        </div>
+
+        <div class="content">
+            <h1>index</h1>
+            <style> 
+    br {
+            display: block;
+            content: "";
+            margin-top: 7px;
+    }
+</style>
+# Creating Songs.
+<p>Creating songs is very simple, there's currently 2 ways of making them, and we will be focusing on the in-engine way for now.</p>
+<h3>Creating the song itself.</h3>
+<p><img src="index.png" alt="alt text"></p>
+<p>Creating a song using the New Song option when entering Chart Editor selection will bring up this menu. This is self-explanatory, just put the song name there, the bpm, time signature, the audio files and you're done here.
+(Vocals are optional here but we forgot to fix a bug haha)</p>
+<p><img src="index-1.png" alt="alt text"></p>
+<p>Proceeding to the next page after inputting our audio files, we arrive at this. This is where we input our meta data, though also self-explanatory and not much to explain. <br>
+Pressing Save &amp; Close and Congratulations your song has been made!</p>
+<h3>Creating difficulties for the song.</h3>
+<p>Although we have made our song, it's still missing the charts. This is where creating difficulties take place.</p>
+<p><img src="index-2.png" alt="alt text"></p>
+<p>Upon selecting New Difficulty, after selecting on our newly created song, brings us to this window. Now this looks overwhelming at first, but keep in mind you only have to focus on the top part the most. <br> Looking at the top part we can change the difficulty name, the stage and the scroll speed. Once you're done filling those you can proceed with pressing Save &amp; Close, and your difficulty will be created. <br> <em>(If you're curious about the bottom part, see <a href="./Chart Editor Features.html">Chart Editor Features</a>)</em></p>
+<h3>Opening the chart editor.</h3>
+<p><img src="index-3.png" alt="alt text"></p>
+<p>Opening the chart editor is done by selecting one of the song's difficulties displayed. After that, you'll be presented with the Chart Editor. After doing the charting work, you can proceed to saving the chart.</p>
+<p><img src="index-4.png" alt="alt text"></p>
+<p>As you can see, there's a lot of options on how to save the chart, but for now only focus on the first 2 save options. Of course, you get to save without having to deal with a file dialogue, as the engine will automatically save the chart on the correct charts folder. <br> While saving normally is highly recommended, we also offer the option to save separately.</p>
+<p>Now that you've learned to make and chart a song, you can proceed to <a href="./Chart Editor Features.html">Chart Editor Features</a>, to learn about advanced features.</p>
+<h3>ADDITIONAL. Different audio per difficulty.</h3>
+<p>If you ever wanted to make an erect-esque difficulty, the engine allows for that without scripting it in. <br> Simply add the alternative audio files and rename it to have a <code>-difficulty</code> at the end. (<code>Voices-difficulty.ogg</code> and <code>Inst-difficulty.ogg</code>).</p>
+<p><img src="index-5.png" alt="alt text"></p>
+
+        </div>
+    </div>
+
+</body></html>

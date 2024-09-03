@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.sidebar {
+    white-space: nowrap;
+    margin-right: 5px;
+}
+
+.content {
+    margin-left: 5px;
+}
+
+ul {
+    margin-top: 0;
+}

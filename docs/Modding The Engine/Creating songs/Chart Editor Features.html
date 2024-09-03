@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart Editor Features - Codename Engine Docs</title>
+    <link rel="stylesheet" href="/docs/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <li><a href="/docs/Home.html">Home</a></li>
+<li><a href="/docs/How to navigate the engine.html">How to navigate the engine</a></li>
+<li><a href="/docs/Differences between the other FNF engines.html">Differences between the other FNF engines</a></li>
+<li><a href="/docs/Modding The Engine/index.html">Modding The Engine</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Creating songs/index.html">Creating songs</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Creating songs/Chart Editor Features.html">Chart Editor Features</a></li>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Creating characters/index.html">Creating characters</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Creating characters/Character Editor Features.html">Character Editor Features</a></li>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Creating stages.html">Creating stages</a></li>
+<li><a href="/docs/Modding The Engine/Cutscenes or Dialogues.html">Cutscenes or Dialogues</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/index.html">Scripting</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Scripting/PlayState Scripts/index.html">PlayState Scripts</a>
+<ul>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Scripting/State Scripts.html">State Scripts</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Global Scripts.html">Global Scripts</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Shaders.html">Shaders</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Using hxvlc for videos.html">Using hxvlc for videos</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Custom options.html">Custom options</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Custom Classes.html">Custom Classes</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/3D rendering.html">3D rendering</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Useful script snippets for modders.html">Useful script snippets for modders</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Scripted Assets Libraries.html">Scripted Assets Libraries</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/NDLL Scripting.html">NDLL Scripting</a></li>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Hardcoding.html">Hardcoding</a></li>
+</ul>
+</li>
+
+        </div>
+
+        <div class="content">
+            <h1>Chart Editor Features</h1>
+            <h1>Additional Chart Editor Features</h1>
+<p>while we have only covered the basic of charting in <a href="./index.html">Creating songs</a>, we will cover the additional chart editor features here, in no particular order.</p>
+<h2>Strumlines.</h2>
+<h3>More than 2.</h3>
+<p>Songs in Codename Engine are more modular, in the sense that you're no longer restricted to just 2 strumlines. This means that, you can have as many strumlines and characters in the song as you like. Moreover, Girlfriend also gets her own strumline.</p>
+<p><img src="Chart Editor Features.png"></p>
+<h3>Moving around.</h3>
+<p>This is only an in-editor thing, but if you don't like how the Strumlines are ordered, and prefer a different order, you can reposition them easily with just this lock button.<br>
+(insert a gif here)</p>
+<h3>Hitsounds</h3>
+<p>Pretty self explanatory, but you get to choose which Strumline should play a Hitsound when you get past a Note.</p>
+<p><img src="Chart Editor Features-1.png"></p>
+<h3>Waveforms.</h3>
+<p>Waveforms allows for visualizing songs, and we have that too. You get 2 or more options depending on how many audio files you have in the songs.</p>
+<p><img src="Chart Editor Features-2.png"></p>
+<p><img src="Chart Editor Features-3.png"></p>
+<h3>Editing Strumlines Data.</h3>
+<p>Strumlines have more options than usual, being able to do things without scripting them in.</p>
+<p><img src="Chart Editor Features-4.png"></p>
+<ul>
+<li><strong>Characters</strong>, is where you input your characters. As you can see, you can have more than one character per Strumline.</li>
+<li><strong>Type</strong>, is where you determine the type of the strumline. Player makes the Strumline playable by a player, while Opponent and Additional makes the Strumline be handled by a CPU.</li>
+<li><strong>Stage positioning</strong>, is where you select where the Strumline characters will be placed, pretty self-explanatory.</li>
+<li><strong>Scale and HUD position</strong>, is where you set the scale of the strumline and the position in the HUD. <em>(keep in mind when setting the HUD positioning, the X axis is determined by a float, aka. 0.25 is Opponent side, 0.75 is Player side, and 0.5 is the middle point, while y axis uses actual positioning)</em></li>
+<li><strong>Visible</strong> determines whether or not your Strumline shows up in the song. If you have it disabled, your Strumline will cease to exist <em>(though your notes will be intact and still play)</em>.</li>
+<li><strong>Scroll Speed and that switch with a long name in it</strong> determines if this Strumline should use a scroll speed, separately from the other Strumlines.</li>
+<li><strong>Vocal Suffix</strong> is covered in this next section.</li>
+</ul>
+<h3>Multi-Vocals</h3>
+<p>You can have different vocal audio files per Strumline. As seen previously, there's an option to set Vocal Suffixes on a Strumline.</p>
+<p>For this, you have to obviously have different vocal audio files ready, with a suffix at the end <em>(for example <code>Voices-bf.ogg</code> has a <code>-bf</code> suffix at the end)</em>
+<img src="./Chart Editor Features-16.png">
+<img src="./Chart Editor Features-15.png"></p>
+<h2>Events &amp; Notetypes.</h2>
+<h3>Events</h3>
+<p>Events exist in the Chart Editor to avoid coding a lot of code for just a few events. Some of them are already built-in but you can also code your own <em>(see <a href="../Scripting/PlayState Scripts/Events or Notetype Scripts.html">Events/Notetype Scripts</a>)</em>.</p>
+<p><img src="Chart Editor Features-5.png">
+<img src="Chart Editor Features-6.png"></p>
+<p>Each event has it's own parameters, instead of a pre-established number of parameters. <br> Events are also stackable, without having to painstakingly putting them close together.</p>
+<p><img src="Chart Editor Features-8.png">
+<img src="Chart Editor Features-7.png"></p>
+<p>Events are also movable.<br>
+(insert gif of moving events)</p>
+<h3>Notetypes</h3>
+<p><img src="Chart Editor Features-9.png"></p>
+<p>You can code your own notetypes, or use the pre-existing one <em>(though only 2 exists currently)</em>. They need to first be added to the Notetypes list before being able to use them. Afterwards you can simply select them from the dropdown here.</p>
+<p><img src="Chart Editor Features-10.png"></p>
+<p>You can also change the graphic of a Notetype without programming, by putting the Notetype's spritesheet in <code>images/game/notes</code>.</p>
+<h2>Changing additional chart/meta data.</h2>
+<p><img src="Chart Editor Features-12.png"></p>
+<p>If you wish to change some data regarding the chart <em>(scroll speed, bpm, stage etc.)</em>, you can do so here.</p>
+<h3>Editing chart data.</h3>
+<p><img src="Chart Editor Features-13.png"></p>
+<p>Editing chart data has only 2 options, and they're self explanatory.</p>
+<h3>Editing metadata information.</h3>
+<p><img src="Chart Editor Features-14.png"></p>
+<p>Editing metadata information, is also self-explanatory, though you can notice this menu is similar to what you've seen in <a href="./index.html">Creating songs</a>, so this should be easy to figure out. Though you might also notice there's a new option, <strong>Custom Values</strong>. These are extra values that let's you set certain values specifically for the song <em>(for example, crediting someone for a song)</em>. This will be covered in <a href="../Scripting/PlayState Scripts/Gameplay Scripts.html">Gameplay Scripts</a>.</p>
+<h2>Saving.</h2>
+<p>The chart editor allows for multiple ways to save a chart. Currently, there's about 10 ways to save the information of a chart.</p>
+<p><img src="Chart Editor Features-11.png"></p>
+<p>We know what the first option does, but what about those other ones? Well, here's what they do:</p>
+<ul>
+<li><strong>Save Without Events</strong> saves the chart without saving it's events.</li>
+<li><strong>Save Events Separately</strong> saves the events in a separate file, which gets parsed on any difficulty chart you play on. <em>(Note that if you used this you have to also use <strong>Save Without Events</strong>, otherwise you will face issues with duplicate events)</em></li>
+<li><strong>Save Meta</strong> saves the meta into a separate file.</li>
+<li><strong>Export For FNF Legacy</strong> saves the chart in a format that is supported by other FNF engines.</li>
+<li><strong>Save For Psych Engine</strong> saves the chart specifically in Psych Engine's format.</li>
+</ul>
+
+        </div>
+    </div>
+
+</body></html>

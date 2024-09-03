@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom options - Codename Engine Docs</title>
+    <link rel="stylesheet" href="/docs/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <li><a href="/docs/Home.html">Home</a></li>
+<li><a href="/docs/How to navigate the engine.html">How to navigate the engine</a></li>
+<li><a href="/docs/Differences between the other FNF engines.html">Differences between the other FNF engines</a></li>
+<li><a href="/docs/Modding The Engine/index.html">Modding The Engine</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Creating songs/index.html">Creating songs</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Creating songs/Chart Editor Features.html">Chart Editor Features</a></li>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Creating characters/index.html">Creating characters</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Creating characters/Character Editor Features.html">Character Editor Features</a></li>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Creating stages.html">Creating stages</a></li>
+<li><a href="/docs/Modding The Engine/Cutscenes or Dialogues.html">Cutscenes or Dialogues</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/index.html">Scripting</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Scripting/PlayState Scripts/index.html">PlayState Scripts</a>
+<ul>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Scripting/State Scripts.html">State Scripts</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Global Scripts.html">Global Scripts</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Shaders.html">Shaders</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Using hxvlc for videos.html">Using hxvlc for videos</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Custom options.html">Custom options</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Custom Classes.html">Custom Classes</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/3D rendering.html">3D rendering</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Useful script snippets for modders.html">Useful script snippets for modders</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Scripted Assets Libraries.html">Scripted Assets Libraries</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/NDLL Scripting.html">NDLL Scripting</a></li>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Hardcoding.html">Hardcoding</a></li>
+</ul>
+</li>
+
+        </div>
+
+        <div class="content">
+            <h1>Custom options</h1>
+            <h1>Custom Options</h1>
+<p>You may find it useful to have custom options specific to your mod, thankfully you can do just that!</p>
+<p>To get started, put a file in <code>./data/config</code> called <code>options.xml</code>.</p>
+<p>There already exists a template for you to look on, and it looks something like this:</p>
+<pre><code class="language-xml">&lt;menu name="Mod Options" desc="Modify mod options here"&gt;
+
+    &lt;checkbox id="checkboxExample" name="Checkbox example" /&gt;
+
+    &lt;number id="numberExample" name="Number example" min="0" max="10" change="1"/&gt;
+
+    &lt;choice id="choiceExample" name="Choice Example"&gt;
+        &lt;value name="Disabled" value="disabled"/&gt;
+        &lt;value name="This only" value="thisOnly"/&gt;
+        &lt;value name="All" value="all"/&gt;
+    &lt;/choice&gt;
+
+    &lt;menu name="Submenu Example" desc="Submenu test"&gt;
+        &lt;checkbox id="levelOfIdk2" name="Level of idk" /&gt;
+    &lt;/menu&gt;
+
+&lt;/menu&gt;
+</code></pre>
+<p>You're likely wondering: "how does each type of option work?"
+That's what is about to be explained!!</p>
+<p>All option types (except for <code>menu</code>) share 2 common properties:</p>
+<ul>
+<li><code>id</code> - The ID of the option to pull from save data (which we cover just below this section!)</li>
+<li><code>name</code> - This is the name of the option displayed on screen</li>
+</ul>
+<h3>Here's what the properties for each type are:</h3>
+<ul>
+<li><p><code>menu</code> - A menu to put your options into, you can have sub-menus inside of them aswell</p>
+<ul>
+<li><code>name</code> - This is the name of the menu displayed on screen</li>
+<li><code>desc</code> - This is the description of the menu displayed on screen</li>
+</ul></li>
+<li><p><code>checkbox</code> - Makes a checkbox to toggle an option on and off</p>
+<ul>
+<li>There is no properties, this is the simplest an option can get</li>
+</ul></li>
+<li><p><code>number</code> - Self-explanatory i think</p>
+<ul>
+<li><code>min</code> - The minimum value this number is allowed to stay at</li>
+<li><code>max</code> - The maximum value this number is allowed to stay at</li>
+<li><code>change</code> - How much this number is allowed to change by, could be in 5s, 10s, etc</li>
+</ul></li>
+<li><p><code>choice</code> - A multiple choice option, which can cycle through several given values</p>
+<ul>
+<li><code>value</code> - A value that can be chosen
+<ul>
+<li><code>name</code> - This is the name of the value displayed on screen</li>
+<li><code>value</code> - This is the actual data/value applied to the option when chosen</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Accessing them in Scripts is done via <code>FlxG.save.data</code>, as you can see below.</p>
+<pre><code class="language-hx">var checkboxExample = FlxG.save.data.checkboxExample;
+</code></pre>
+<p>You may have noticed that none of the option types have a default value property,
+this is because you have to set the default values yourself <em>(in a global script)</em>.<br>
+You have to do this otherwise your options won't save correctly!</p>
+<p>This is rather easy to do, put this in <code>./data/global.hx</code>:</p>
+<pre><code class="language-haxe">function create() {
+    // FlxG.save is your mod's savedata
+    if(FlxG.save.data.checkboxExample == null)
+        FlxG.save.data.checkboxExample = true;
+}
+</code></pre>
+
+        </div>
+    </div>
+
+</body></html>

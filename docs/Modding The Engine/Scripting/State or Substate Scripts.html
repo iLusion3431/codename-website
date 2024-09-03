@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State or Substate Scripts - Codename Engine Docs</title>
+    <link rel="stylesheet" href="/docs/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <li><a href="/docs/Home.html">Home</a></li>
+<li><a href="/docs/How to navigate the engine.html">How to navigate the engine</a></li>
+<li><a href="/docs/Differences between the other FNF engines.html">Differences between the other FNF engines</a></li>
+<li><a href="/docs/Modding The Engine/index.html">Modding The Engine</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Creating songs/index.html">Creating songs</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Creating songs/Chart Editor Features.html">Chart Editor Features</a></li>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Creating characters/index.html">Creating characters</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Creating characters/Character Editor Features.html">Character Editor Features</a></li>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Creating stages.html">Creating stages</a></li>
+<li><a href="/docs/Modding The Engine/Cutscenes or Dialogues.html">Cutscenes or Dialogues</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/index.html">Scripting</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Scripting/PlayState Scripts/index.html">PlayState Scripts</a>
+<ul>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Scripting/State Scripts.html">State Scripts</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Global Scripts.html">Global Scripts</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Shaders.html">Shaders</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Using hxvlc for videos.html">Using hxvlc for videos</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Custom options.html">Custom options</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Custom Classes.html">Custom Classes</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/3D rendering.html">3D rendering</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Useful script snippets for modders.html">Useful script snippets for modders</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Scripted Assets Libraries.html">Scripted Assets Libraries</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/NDLL Scripting.html">NDLL Scripting</a></li>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Hardcoding.html">Hardcoding</a></li>
+</ul>
+</li>
+
+        </div>
+
+        <div class="content">
+            <h1>State or Substate Scripts</h1>
+            <h1>State/Substate Scripts</h1>
+<p>State/Substate Scripts are scripts that can change any state or substate of the game.<br>
+You can change the Main Menu, the Freeplay Menu and even the Chart Editor.</p>
+<h3>Modifying a pre-existing State/Substate</h3>
+<p>To get started, make a Script in <code>./data/states</code> and name it corresponding to the state/substate you want to change.</p>
+<p>For example, if you decide to change the Main Menu, make a Script like this <code>./data/states/MainMenuState.hx</code><br>
+A basic Main Menu modification looks like this:</p>
+<pre><code class="language-hx">function postCreate() {
+    forceCenterX = false; // disable the code that centers the menu buttons.
+    for (i=&gt;button in menuItems.members) {
+        button.x += Math.sin(i) * 300; // move buttons
+    }
+}
+</code></pre>
+<p>This code results in the menu looking like this.
+<img src="./State or Substate Scripts.png"></p>
+<p>You can do this with every State/Substate of course, but keep in mind you have to study the state's code first before modifying it. <em>(you can find the code in <a href="https://github.com/FNF-CNE-Devs/CodenameEngine">Codename Engine's Repository</a>)</em><br>
+<em>Also look for <a href="./All of the script calls.html">All of the script calls</a> for menu script calls</em></p>
+<h3>Creating custom States/Substates</h3>
+<p>You can also create entirely custom ones too! By putting them in the same <code>./data/states/</code> folder, you create new ModStates/ModSubstates.</p>
+<p>Accessing them is done via this piece of code:</p>
+<pre><code class="language-hx">FlxG.switchState(new ModState("MyCustomState")); // assuming we have made a new Script ./data/states/MyCustomState.hx
+</code></pre>
+<p>or this code</p>
+<pre><code class="language-hx">openSubstate(new ModSubstate("MyCustomSubstate")) // assuming we have made a new Script ./data/states/MyCustomSubstate.hx
+</code></pre>
+
+        </div>
+    </div>
+
+</body></html>

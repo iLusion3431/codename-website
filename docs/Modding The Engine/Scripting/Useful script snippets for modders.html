@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Useful script snippets for modders - Codename Engine Docs</title>
+    <link rel="stylesheet" href="/docs/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <li><a href="/docs/Home.html">Home</a></li>
+<li><a href="/docs/How to navigate the engine.html">How to navigate the engine</a></li>
+<li><a href="/docs/Differences between the other FNF engines.html">Differences between the other FNF engines</a></li>
+<li><a href="/docs/Modding The Engine/index.html">Modding The Engine</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Creating songs/index.html">Creating songs</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Creating songs/Chart Editor Features.html">Chart Editor Features</a></li>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Creating characters/index.html">Creating characters</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Creating characters/Character Editor Features.html">Character Editor Features</a></li>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Creating stages.html">Creating stages</a></li>
+<li><a href="/docs/Modding The Engine/Cutscenes or Dialogues.html">Cutscenes or Dialogues</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/index.html">Scripting</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Scripting/PlayState Scripts/index.html">PlayState Scripts</a>
+<ul>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Scripting/State Scripts.html">State Scripts</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Global Scripts.html">Global Scripts</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Shaders.html">Shaders</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Using hxvlc for videos.html">Using hxvlc for videos</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Custom options.html">Custom options</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Custom Classes.html">Custom Classes</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/3D rendering.html">3D rendering</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Useful script snippets for modders.html">Useful script snippets for modders</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Scripted Assets Libraries.html">Scripted Assets Libraries</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/NDLL Scripting.html">NDLL Scripting</a></li>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Hardcoding.html">Hardcoding</a></li>
+</ul>
+</li>
+
+        </div>
+
+        <div class="content">
+            <h1>Useful script snippets for modders</h1>
+            <h1>Useful script snippets for modders</h1>
+<p>Some features don't exist in our engine, luckily, we can script them in!</p>
+<h2>Song Scripts</h2>
+<p>idk bro</p>
+<h2>Global Scripts</h2>
+<h3>Replace pre-existing states with custom states.</h3>
+<pre><code class="language-hx">var redirectStates:Map&lt;FlxState, String&gt; = [
+    TitleState =&gt; "CustomTitleState"
+];
+
+function preStateSwitch() {
+    for (redirectState in redirectStates.keys()) 
+        if (Std.isOfType(FlxG.game._requestedState, redirectState)) 
+            FlxG.game._requestedState = new ModState(redirectStates.get(redirectState));
+}
+</code></pre>
+<h3>Animated Icons support.</h3>
+<pre><code class="language-haxe">function update(elapsed) {
+    for (i in FlxG.state.members)
+        if (Std.isOfType(i, HealthIcon))
+            if (Assets.exists(Path.withoutExtension(Paths.image("icons/"+i.curCharacter)) + ".xml") &amp;&amp; i.frames.frames[0].name != "losing0000") {
+                i.frames = Paths.getFrames("icons/"+i.curCharacter);
+                i.animation.addByPrefix("losing", "losing", 24, true);
+                i.animation.addByPrefix("normal", "normal", 24, true); 
+                i.animation.play("normal", true);
+                i.curAnimState = -1;
+            }
+}
+function onHealthIconAnimChange(e) {
+    if (e.healthIcon.animation.exists("normal")) {
+        e.cancel();
+        e.healthIcon.animation.play(e.amount == 0 ? 'normal' : 'losing', true);  
+    }
+}
+</code></pre>
+<h3>to be filled with other snippets</h3>
+
+        </div>
+    </div>
+
+</body></html>

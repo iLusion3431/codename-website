@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Scripts - Codename Engine Docs</title>
+    <link rel="stylesheet" href="/docs/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <li><a href="/docs/Home.html">Home</a></li>
+<li><a href="/docs/How to navigate the engine.html">How to navigate the engine</a></li>
+<li><a href="/docs/Differences between the other FNF engines.html">Differences between the other FNF engines</a></li>
+<li><a href="/docs/Modding The Engine/index.html">Modding The Engine</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Creating songs/index.html">Creating songs</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Creating songs/Chart Editor Features.html">Chart Editor Features</a></li>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Creating characters/index.html">Creating characters</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Creating characters/Character Editor Features.html">Character Editor Features</a></li>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Creating stages.html">Creating stages</a></li>
+<li><a href="/docs/Modding The Engine/Cutscenes or Dialogues.html">Cutscenes or Dialogues</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/index.html">Scripting</a>
+<ul>
+<li><a href="/docs/Modding The Engine/Scripting/PlayState Scripts/index.html">PlayState Scripts</a>
+<ul>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Scripting/State Scripts.html">State Scripts</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Global Scripts.html">Global Scripts</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Shaders.html">Shaders</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Using hxvlc for videos.html">Using hxvlc for videos</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Custom options.html">Custom options</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Custom Classes.html">Custom Classes</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/3D rendering.html">3D rendering</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Useful script snippets for modders.html">Useful script snippets for modders</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/Scripted Assets Libraries.html">Scripted Assets Libraries</a></li>
+<li><a href="/docs/Modding The Engine/Scripting/NDLL Scripting.html">NDLL Scripting</a></li>
+</ul>
+</li>
+<li><a href="/docs/Modding The Engine/Hardcoding.html">Hardcoding</a></li>
+</ul>
+</li>
+
+        </div>
+
+        <div class="content">
+            <h1>Global Scripts</h1>
+            <h1>Global Scripts</h1>
+<p>Global Scripts always run during the game, doesn't matter in which state or where, it always runs. <em>(runs from when the mod is loaded/game opened up until the game is closed/different mod is loaded)</em><br>
+You can make one by creating a file in <code>./data/</code> called <code>global.hx</code></p>
+<p>Global Scripts are useful for certain things, for example, here's the default code in the base's global script:</p>
+<pre><code class="language-hx">function update(elapsed:Float)
+    if (FlxG.keys.justPressed.F5) FlxG.resetState();
+</code></pre>
+<p>Which makes it so that pressing F5 will refresh any state you are currently in.</p>
+<p>Or a different example:</p>
+<pre><code class="language-hx">static var cashAmount:Float = 0;
+static var playerTitle = "poor";
+
+function update(elapsed:Float) {
+    if (cashAmount &gt; 1000000) playerTitle = "millionaire";
+}
+</code></pre>
+<p>This basic example shows how you can use <code>static</code> variables and trigger actions depending on them. As you can see, these variables are accessible in any script, so you can basically use them in any PlayState Scripts and State Scripts too.</p>
+<p><a href="./Useful script snippets for modders.html">Useful script snippets for modders</a> contains a few useful code snippets that take advantage of Global Scripts.</p>
+
+        </div>
+    </div>
+
+</body></html>
