@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index - Codename Engine Docs</title>
+    <link rel="stylesheet" href="/New-folder/docs/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <li><a href="/New-folder/docs/Home.html">Home</a></li>
+<li><a href="/New-folder/docs/How to navigate the engine.html">How to navigate the engine</a></li>
+<li><a href="/New-folder/docs/Differences between the other FNF engines.html">Differences between the other FNF engines</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/index.html">Modding The Engine</a>
+<ul>
+<li><a href="/New-folder/docs/Modding The Engine/Creating songs/index.html">Creating songs</a>
+<ul>
+<li><a href="/New-folder/docs/Modding The Engine/Creating songs/Chart Editor Features.html">Chart Editor Features</a></li>
+</ul>
+</li>
+<li><a href="/New-folder/docs/Modding The Engine/Creating characters/index.html">Creating characters</a>
+<ul>
+<li><a href="/New-folder/docs/Modding The Engine/Creating characters/Character Editor Features.html">Character Editor Features</a></li>
+</ul>
+</li>
+<li><a href="/New-folder/docs/Modding The Engine/Creating stages.html">Creating stages</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Cutscenes or Dialogues.html">Cutscenes or Dialogues</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/index.html">Scripting</a>
+<ul>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/index.html">PlayState Scripts</a>
+<ul>
+</ul>
+</li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/State Scripts.html">State Scripts</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/Global Scripts.html">Global Scripts</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/Shaders.html">Shaders</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/Using hxvlc for videos.html">Using hxvlc for videos</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/Custom options.html">Custom options</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/Custom Classes.html">Custom Classes</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/3D rendering.html">3D rendering</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/Useful script snippets for modders.html">Useful script snippets for modders</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/Scripted Assets Libraries.html">Scripted Assets Libraries</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/NDLL Scripting.html">NDLL Scripting</a></li>
+</ul>
+</li>
+<li><a href="/New-folder/docs/Modding The Engine/Hardcoding.html">Hardcoding</a></li>
+</ul>
+</li>
+
+        </div>
+
+        <div class="content">
+            <h1>Creating stages</h1>
+<p>Stages are defined via XML files, similar to <a href="../Creating characters/index.html">Creating characters</a>. By creating an XML file in <code>./data/stages</code>, you officially created a stage.</p>
+<p>The default stage XML looks something like this:</p>
+<pre><code class="language-xml">&lt;stage zoom="0.9" name="stage" folder="stages/default/" startCamPosY="600" startCamPosX="1000"&gt;
+&lt;sprite name="bg" x="-600" y="-200" sprite="stageback" scroll="0.9"/&gt;
+&lt;sprite name="stageFront" x="-600" y="600" sprite="stagefront" scroll="0.9"/&gt;
+&lt;girlfriend/&gt;
+&lt;dad/&gt;
+&lt;boyfriend/&gt;
+&lt;sprite name="stageCurtains" x="-500" y="-300" sprite="stagecurtains" scroll="1.3"/&gt;
+&lt;/stage&gt;
+</code></pre>
+<p>There's a lot to pack but we will explain what's going on here.</p>
+<p>First, to start with the "parent node", which is the <code>stage</code> node, that is where stage options are being defined.<br></p>
+<pre><code class="language-xml">&lt;stage zoom="0.9" name="stage" folder="stages/default/" startCamPosY="600" startCamPosX="1000"&gt;
+</code></pre>
+<p>Noting options that you can set there:</p>
+<ul>
+<li><code>zoom</code> which controls the default zoom of the stage.</li>
+<li><code>name</code>, name of the stage when you look for it in the Chart Editor.</li>
+<li><code>folder</code> which changes the destination of where the sprites are taken from <em>(like <code>images/stages/default/</code>)</em>.</li>
+<li><code>startCamPosX, startCamPosY</code> set the destination of where the camera starts from <em>(before countdown)</em></li>
+</ul>
+<p>As for the other nodes, there's about <code>7 types</code> of them <em>(and more if you script them in, see <a href="../Scripting/PlayState Scripts/Character or Stage Scripts.html">Character/Stage Scripts</a>)</em>, we'll go through each of them.</p>
+<p><em>(note that it's important which order you put them in because they will take the same order in-game too)</em></p>
+<h2>Sprite node (<code>sprite</code>, <code>spr</code>, <code>sparrow</code>)</h2>
+<p>The sprite node defines the basic sprites in a stage.</p>
+<pre><code class="language-xml">&lt;sprite name="bg" x="-600" y="-200" sprite="stageback" scroll="0.9"/&gt;
+</code></pre>
+<p>The options are:</p>
+<ul>
+<li><code>name</code> which defines the internal name used for scripting.</li>
+<li><code>x</code> and <code>y</code> define it's position in-game.</li>
+<li><code>sprite</code> is the name of the sprite in the files. <em>(keep in mind if you set this to point to a sparrow spritesheet it will automatically make an animation of all the frames in the spritesheet)</em></li>
+<li><code>scroll</code>, <code>scrollx</code> and <code>scrolly</code> determine the scrollFactor of the sprite <em>(how much it moves with the camera)</em></li>
+</ul>
+<p>Other options include:</p>
+<ul>
+<li><code>skewx</code> and <code>skewy</code> skewes the sprite.</li>
+<li><code>antialiasing</code> determines whether or not the sprite has antialiasing. <em>(true by default)</em></li>
+<li><code>width</code> and <code>height</code> determine the width and height of the sprite's hitbox. <em>(does not affect the sprite itself)</em></li>
+<li><code>scale</code>, <code>scalex</code> and <code>scaley</code> are size multipliers for the sprite's width and height. <em>(setting it to 2 means double the size)</em></li>
+<li><code>graphicSize</code>, <code>graphicSizex</code> and <code>graphicSizey</code> determine the width and height of the sprite.</li>
+<li><code>updateHitbox</code> determines whether or not to update the sprite's hitbox.</li>
+<li><code>zoomFactor</code> defines how much the sprite should scale with the camera's zoom. <em>(setting it to 0 will make it stay to the original size no matter what)</em></li>
+<li><code>alpha</code> is the "opacity" of the sprite</li>
+<li><code>color</code> tints the sprite in the color you set it to <em>(example #FF0000 will tint the sprite in full red)</em></li>
+<li><code>playOnCountdown</code> tells the sprite whether or not to play it's animation during countdown or not.</li>
+<li><code>beatInterval, beatOffset</code>, honestly, I don't even know what this shit is okay.</li>
+</ul>
+<p>You can also define animations by giving it a child node called <code>anim</code>. A sprite node with an animation node looks something like this:</p>
+<pre><code class="language-xml">&lt;sprite name="dancer1" sprite="limoDancer" type="onbeat"&gt;
+    &lt;anim name="danceLeft" anim="bg dancer sketch PINK" loop="false"/&gt;
+    &lt;anim name="danceRight" anim="bg dancer sketch PINK" loop="false"/&gt;
+&lt;/sprite&gt;
+</code></pre>
+<p>An anim node can define these options:</p>
+<ul>
+<li><code>name</code> defines the internal name of the animation <em>(used for scripting)</em></li>
+<li><code>anim</code> is the prefix for finding the animation in the spritesheet.</li>
+<li><code>indices</code> indicates which frames to play from the previously found frames.</li>
+<li><code>type</code> determines the type of the animation. either <code>beat</code> or <code>loop</code>.</li>
+<li><code>fps</code> is the framerate of your animation.</li>
+<li><code>x</code> and <code>y</code> are the animation offset. <em>(offset is only applied when the animation is played)</em></li>
+<li><code>forced</code> whether or not to force animation playback while a different one is already playing.</li>
+<li><code>loop</code> to make your animation loop.</li>
+</ul>
+<p>Defining advanced properties is also possible. Like this:</p>
+<pre><code class="language-xml">&lt;sprite name="clouds" sprite="clouds"&gt;
+    &lt;property name="moves" type="bool" value="true"&gt;
+    &lt;property name="velocity.x" type="float" value="40.0"&gt;
+&lt;/sprite&gt;
+</code></pre>
+<h2>Solid node (<code>solid</code>, <code>box</code>)</h2>
+<p>Solid nodes are sprites that is, unlike a Sprite Node, composed of only one select color. This node has less parameters since it doesn't use images. <br>
+Creating one of these looks something like this:</p>
+<pre><code class="language-xml">&lt;solid name="void" color="#FFFFFF" width="1280" height="720"&gt;
+</code></pre>
+<p><em>(there's a difference between using <code>solid</code> and <code>box</code>, while <code>solid</code> offers more performance, it might break with shaders and other stuff, so if that happens, use <code>box</code> instead)</em></p>
+<p>Accepted parameters:</p>
+<ul>
+<li><code>name</code> internal name.</li>
+<li><code>color</code> which colors the solid/box.</li>
+<li><code>x</code> and <code>y</code> determine the position in the stage.</li>
+<li><code>width</code> and <code>height</code> defines the size of the solid/box.</li>
+</ul>
+<h2>Character nodes (<code>boyfriend</code>, <code>bf</code>, <code>player</code>, <code>girlfriend</code>, <code>gf</code>, <code>dad</code>, <code>opponent</code>, <code>character</code>, <code>char</code>)</h2>
+<p>Character nodes are used to position characters in the stage. A Character node looks something like this:</p>
+<pre><code class="language-xml">&lt;boyfriend x="200" y="400"/&gt;
+</code></pre>
+<p>Accepted parametters are:</p>
+<ul>
+<li><code>x</code> and <code>y</code> for positioning.</li>
+<li><code>camxoffset</code> and <code>camyoffset</code> for changing the character's camera point.</li>
+<li><code>skewx</code> and <code>skewy</code> for skewing.</li>
+<li><code>alpha</code> which determines the opacity of the character sprite.</li>
+<li><code>flip</code> for if you want to flip the character for specifically for the stage.</li>
+<li><code>scroll</code>, <code>scrollx</code> and <code>scrolly</code> to change the scrollFactor of the character.</li>
+</ul>
+<p>For the <code>character</code> and <code>char</code> nodes only use them if you want to change a specific character <em>(ex. if you want to change pico's positions)</em></p>
+<pre><code class="language-xml">&lt;character name="pico" x="400" y="200"&gt;
+</code></pre>
+<p>Keep in mind that where you put these nodes is important as the character will be layered depending on that.</p>
+<pre><code class="language-xml">&lt;boyfriend/&gt;
+&lt;sprite name="stageCurtains" x="-500" y="-300" sprite="stagecurtains" scroll="1.3"/&gt;
+</code></pre>
+<p><em>(this will put boyfriend behind the <code>stageCurtains</code> sprite)</em></p>
+<h2>Ratings sprites node (<code>ratings</code>, <code>combo</code>)</h2>
+<p>This node is only used to position the rating sprites and does nothing else <em>(atm)</em>. Positioning in nodes doesn't matter here.</p>
+<pre><code class="language-xml">&lt;ratings x="200" y="400"&gt;
+</code></pre>
+<p>The only parameters are <code>x</code> and <code>y</code>.</p>
+
+        </div>
+    </div>
+
+</body></html>
