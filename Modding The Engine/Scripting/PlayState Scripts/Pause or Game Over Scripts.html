@@ -1,0 +1,43 @@
+<h1>Pause and Game Over Scripts</h1>
+<h3>Pause Scripts</h3>
+<p>Pause Scripts can change the pause menu, either entirely or tiny bits of it.&lt;br&gt;
+To use one, you have to load it from a Script <em>(any script can do, even Song Scripts)</em>.</p>
+<pre><code class="language-hx">PauseSubState.script = 'data/scripts/pause';
+</code></pre>
+<p>This code points to the script that can be found in <code>./data/scripts/</code> and is called <code>pause.hx</code>.</p>
+<p>You can do many things in this script. For example, this is how you can override it and have your own entirely custom pause menu here:</p>
+<pre><code class="language-hx">function create(event){
+    event.cancel();
+
+    camera = pauseCam = new FlxCamera();
+    pauseCam.bgColor = FlxColor.TRANSPARENT;
+    FlxG.cameras.add(pauseCam, false);
+
+    // your code here
+}
+</code></pre>
+<p><em>(<code>create</code>'s event has more parameters than that. Check for &lt;a href=&quot;./All of the script calls.md&quot;&gt;All of the script calls&lt;/a&gt;, and for calls other than <code>create</code>)</em>&lt;br&gt;
+This script will prevent the base pause menu from loading and allows you to add whatever you want to it.</p>
+<p>Important functions to use when coding the pause menu:</p>
+<ul>
+<li><code>close();</code> - Closes the pause menu, resumes gameplay.</li>
+<li><code>FlxG.switchState(new PlayState());</code> - Reloads the state, restarts the song.</li>
+</ul>
+<h3>Game Over Scripts</h3>
+<p>Game over scripts work the same as Pause Scripts, though presents some differences.
+This is how you load one:</p>
+<pre><code class="language-hx">GameOverSubstate.script = &quot;data/scripts/gameover&quot;
+</code></pre>
+<p>This code points to the script that can be found in <code>./data/scripts/</code> and is called <code>gameover.hx</code>.</p>
+<p>Here's an example of playing a video when the player dies:</p>
+<pre><code class="language-hx">function create(event) {
+    event.cancel(); // cancels out initializing characters and stuff
+
+    deathVideo = new FlxVideo();
+    deathVideo.onEndReached.add(deathVideo.dispose);
+    var path = Paths.file(&quot;videos/death.mp4&quot;);
+    deathVideo.load(Assets.getPath(path));
+    deathVideo.play();
+}
+</code></pre>
+<p><code>create</code>'s event has even more parameters for changing SFX and other stuff. Check for &lt;a href=&quot;./All of the script calls.md&quot;&gt;All of the script calls&lt;/a&gt;, and for calls other than <code>create</code>.</p>

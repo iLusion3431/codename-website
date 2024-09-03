@@ -1,0 +1,68 @@
+<h1>Custom Options</h1>
+<p>You may find it useful to have custom options specific to your mod, thankfully you can do just that!</p>
+<p>To get started, put a file in <code>./data/config</code> called <code>options.xml</code>.</p>
+<p>There already exists a template for you to look on, and it looks something like this:</p>
+<pre><code class="language-xml">&lt;menu name=&quot;Mod Options&quot; desc=&quot;Modify mod options here&quot;&gt;
+
+    &lt;checkbox id=&quot;checkboxExample&quot; name=&quot;Checkbox example&quot; /&gt;
+
+    &lt;number id=&quot;numberExample&quot; name=&quot;Number example&quot; min=&quot;0&quot; max=&quot;10&quot; change=&quot;1&quot;/&gt;
+
+    &lt;choice id=&quot;choiceExample&quot; name=&quot;Choice Example&quot;&gt;
+        &lt;value name=&quot;Disabled&quot; value=&quot;disabled&quot;/&gt;
+        &lt;value name=&quot;This only&quot; value=&quot;thisOnly&quot;/&gt;
+        &lt;value name=&quot;All&quot; value=&quot;all&quot;/&gt;
+    &lt;/choice&gt;
+
+    &lt;menu name=&quot;Submenu Example&quot; desc=&quot;Submenu test&quot;&gt;
+        &lt;checkbox id=&quot;levelOfIdk2&quot; name=&quot;Level of idk&quot; /&gt;
+    &lt;/menu&gt;
+
+&lt;/menu&gt;
+</code></pre>
+<p>You're likely wondering: &quot;how does each type of option work?&quot;
+That's what is about to be explained!!</p>
+<p>All option types (except for <code>menu</code>) share 2 common properties:</p>
+<ul>
+<li><code>id</code> - The ID of the option to pull from save data (which we cover just below this section!)</li>
+<li><code>name</code> - This is the name of the option displayed on screen</li>
+</ul>
+<h3>Here's what the properties for each type are:</h3>
+<ul>
+<li><p><code>menu</code> - A menu to put your options into, you can have sub-menus inside of them aswell</p>
+<ul>
+<li><code>name</code> - This is the name of the menu displayed on screen</li>
+<li><code>desc</code> - This is the description of the menu displayed on screen</li>
+</ul></li>
+<li><p><code>checkbox</code> - Makes a checkbox to toggle an option on and off</p>
+<ul>
+<li>There is no properties, this is the simplest an option can get</li>
+</ul></li>
+<li><p><code>number</code> - Self-explanatory i think</p>
+<ul>
+<li><code>min</code> - The minimum value this number is allowed to stay at</li>
+<li><code>max</code> - The maximum value this number is allowed to stay at</li>
+<li><code>change</code> - How much this number is allowed to change by, could be in 5s, 10s, etc</li>
+</ul></li>
+<li><p><code>choice</code> - A multiple choice option, which can cycle through several given values</p>
+<ul>
+<li><code>value</code> - A value that can be chosen
+<ul>
+<li><code>name</code> - This is the name of the value displayed on screen</li>
+<li><code>value</code> - This is the actual data/value applied to the option when chosen</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Accessing them in Scripts is done via <code>FlxG.save.data</code>, as you can see below.</p>
+<pre><code class="language-hx">var checkboxExample = FlxG.save.data.checkboxExample;
+</code></pre>
+<p>You may have noticed that none of the option types have a default value property,
+this is because you have to set the default values yourself <em>(in a global script)</em>.&lt;br&gt;
+You have to do this otherwise your options won't save correctly!</p>
+<p>This is rather easy to do, put this in <code>./data/global.hx</code>:</p>
+<pre><code class="language-haxe">function create() {
+    // FlxG.save is your mod's savedata
+    if(FlxG.save.data.checkboxExample == null)
+        FlxG.save.data.checkboxExample = true;
+}
+</code></pre>

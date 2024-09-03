@@ -1,0 +1,28 @@
+<h1>Custom Classes</h1>
+<p>Custom classes can be made either inside the script you need it in or you can make a script file coresponding with the name of the class in <code>./source</code>, and using <code>import</code> to import it.</p>
+<p>Here is a basic Song Script code that uses it:</p>
+<pre><code class="language-hx">class SpecialSprite extends FlxSprite {
+    public var customValue:String = null;
+    public function new(x:Float, y:Float, customValue:String) {
+        super(x, y);
+        this.customValue = customValue;
+        //other code stuff
+    }
+
+    public override function update(elapsed) {
+        super.update(elapsed);
+    }
+}
+
+function create() {
+    var spr = new SpecialSprite(200, 400, &quot;powerful&quot;);
+    add(spr);
+}
+</code></pre>
+<h3>Particularities</h3>
+<p>As of writing this, this system is very limited and also presents some defects. For example:</p>
+<ul>
+<li>You cannot extend FlxGroups or other typed classes <em>(the ones that end with a <code>&lt;T&gt;</code>)</em>.</li>
+<li>Certain classes like FlxText needs to have their <code>update</code> function manually called.</li>
+<li>all variables need to be public in order to be accessed inside the class.</li>
+</ul>

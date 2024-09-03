@@ -1,0 +1,43 @@
+<h1>Using hxvlc for videos</h1>
+<p>Using hxvlc, you can display videos anywhere, and can be used as a sprite as well.</p>
+<p>To get started, you get 2 choices:</p>
+<ul>
+<li><code>FlxVideo</code> which runs based on flash bitmap, and</li>
+<li><code>FlxSpriteVideo</code> which runs based on an FlxSprite.</li>
+</ul>
+<p>Using an FlxVideo looks something like this:</p>
+<pre><code class="language-hx">var video:FlxVideo = new FlxVideo();
+video.onEndReached.add(function():Void
+{
+    video.dispose();
+
+    FlxG.removeChild(video);
+});
+FlxG.addChildBelowMouse(video);
+
+if (video.load(Paths.video(&quot;video&quot;)))
+    new FlxTimer().start(0.001, (_) -&gt; video.play());
+</code></pre>
+<p>And using an FlxVideoSprite looks like this:</p>
+<pre><code class="language-hx">var video:FlxVideoSprite = new FlxVideoSprite(0, 0);
+video.antialiasing = true;
+video.bitmap.onFormatSetup.add(function():Void
+{
+    if (video.bitmap != null &amp;&amp; video.bitmap.bitmapData != null)
+    {
+        final scale:Float = Math.min(FlxG.width / video.bitmap.bitmapData.width, FlxG.height / video.bitmap.bitmapData.height);
+
+        video.setGraphicSize(video.bitmap.bitmapData.width * scale, video.bitmap.bitmapData.height * scale);
+        video.updateHitbox();
+        video.screenCenter();
+    }
+});
+video.bitmap.onEndReached.add(video.destroy);
+add(video);
+
+if (video.load(Paths.video(&quot;video&quot;)))
+    new FlxTimer().start(0.001, (_) -&gt; video.play());
+</code></pre>
+<p>These will load the video <code>./videos/video.mp4</code>, and display it on the screen.</p>
+<p>Other thing to note is that when you type <code>Paths.video(&quot;video&quot;)</code>, keep in mind that you can write the extension next to the path, which let's you load filetypes other than .mp4.</p>
+<p><em>(btw tiny thing to also note is that if your video suffers from huge filesize i recommend using .webm instead of .mp4)</em></p>

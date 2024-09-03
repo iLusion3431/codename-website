@@ -1,0 +1,21 @@
+<h1>Character/Stage Scripts</h1>
+<p>Character/Stage Scripts run alongside them, or something like that.</p>
+<h3>Character Script.</h3>
+<p>You can create one of those by making a Script file alongside your character's XML data file <em>(<code>./data/characters/</code>)</em>&lt;br&gt;
+In these scripts you don't need to specify the character, since the character becomes the Script's parent.</p>
+<p>Here's an example of a Character Script that makes the character spin..:</p>
+<pre><code class="language-hx">function update(elapsed) {
+    angle += elapsed * 10;
+}
+</code></pre>
+<h3>Stage Scripts.</h3>
+<p>Creating one of those also goes next to the Stage XML data file <em>(<code>./data/stages/</code>)</em>.&lt;br&gt;
+This script also takes the Stage as it's parent, thus not needing to use <code>stage.getSprite()</code>, instead, sprites becomes the variables</p>
+<p>Here's an example:</p>
+<pre><code class="language-hx">function postCreate() {
+    // animatedObject has already been defined in the XML file.
+    animatedObject.frames = Paths.getFrames(&quot;animatedObject&quot;);
+    animatedObject.animation.addByPrefix(&quot;idle&quot;, &quot;idle&quot;, 24, true);
+    animatedObject.animation.play(&quot;idle&quot;);
+}
+</code></pre>

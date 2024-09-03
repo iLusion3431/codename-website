@@ -1,0 +1,51 @@
+<h1>Scripting</h1>
+<p>The engine's biggest feature yet, scripting. Currently, you can script in HScript <em>(haxe scripting language)</em>, or in NDLL format <em>(compiled C++ code)</em>, but mainly in HScript, which should make the experience similar to coding in source code.&lt;br&gt;
+Scripting can change not only gameplay, but also menus and other engine functions.&lt;br&gt;</p>
+<p>We will focus on writting in HScript, so whenever you have to create a script, the filename has to end with an <code>.hx</code>.&lt;br&gt;
+<em>(you can also use <code>.hscript</code>, <code>.hxc</code> and <code>.hxs</code>)</em></p>
+<h4>Scripting relies heavily on having a console opened at all times.</h4>
+<p>The console helps you track down errors and bugs with your script. To access it, you can either:</p>
+<ul>
+<li>Press F2 to open a window, or</li>
+<li>Start the game in a cmd or powershell window (or in terminal for linux/mac users)</li>
+</ul>
+<h4>Our HScript accepts special syntax from Haxe 4.3.x</h4>
+<p>Things like <code>?.</code>, <code>??</code> and <code>??=</code> are accepted in our HScript language.&lt;br&gt;
+Using those is beneficial as they prove to be very useful to keeping your code clean.&lt;br&gt;
+Example usage:</p>
+<pre><code class="language-hx">if (FlxG.sound.music != null) trace(FlxG.sound.music.time);
+
+trace(FlxG.sound?.music);
+</code></pre>
+<pre><code class="language-hx">var time:Float;
+if (FlxG.sound.music != null) time = FlxG.sound.music.time;
+else time = 0;
+
+time = FlG.sound?.music ?? 0;
+</code></pre>
+<pre><code class="language-hx">if (FlxG.save.data.isOpen == null) FlxG.save.data.isOpen = true;
+
+FlxG.save.data.isOpen ??= true;
+</code></pre>
+<h3>To start on basic scripting, you can follow these articles here:</h3>
+<ul>
+<li>&lt;a href=&quot;./PlayState Scripts/Gameplay Scripts.md&quot;&gt;Gameplay Scripts&lt;/a&gt;</li>
+<li>&lt;a href=&quot;./PlayState Scripts/Events or Notetype Scripts.md&quot;&gt;Events/Notetype Scripts&lt;/a&gt;</li>
+<li>&lt;a href=&quot;./State or Substate Scripts.md&quot;&gt;State/Substate Scripts&lt;/a&gt;&lt;br&gt;&lt;br&gt;</li>
+<li>&lt;a href=&quot;./Useful script snippets for modders.md&quot;&gt;Useful script snippets for modders&lt;/a&gt;</li>
+<li>&lt;a href=&quot;./All of the script calls.md&quot;&gt;All of the script calls&lt;/a&gt;</li>
+</ul>
+<p>And if you wanna go advanced, follow the rest of the articles here:</p>
+<ul>
+<li>&lt;a href=&quot;./PlayState Scripts/Pause or Game Over Scripts.md&quot;&gt;Pause/Game Over Scripts&lt;/a&gt;</li>
+<li>&lt;a href=&quot;./PlayState Scripts/Cutscenes or Dialogue Scripts.md.md&quot;&gt;Cutscenes/Dialogue Scripts&lt;/a&gt;</li>
+<li>&lt;a href=&quot;./PlayState Scripts/Character or Stage Scripts.md.md&quot;&gt;Character/Stage Scripts&lt;/a&gt;&lt;br&gt;&lt;br&gt;</li>
+<li>&lt;a href=&quot;./Global Scripts.md&quot;&gt;Global Scripts&lt;/a&gt;</li>
+<li>&lt;a href=&quot;./Custom options.md&quot;&gt;Custom options&lt;/a&gt;</li>
+<li>&lt;a href=&quot;./Shaders.md&quot;&gt;Shaders&lt;/a&gt;</li>
+<li>&lt;a href=&quot;./3D rendering.md&quot;&gt;3D rendering&lt;/a&gt;</li>
+<li>&lt;a href=&quot;./Using hxvlc for videos.md&quot;&gt;Using hxvlc for videos&lt;/a&gt;&lt;br&gt;&lt;br&gt;</li>
+<li>&lt;a href=&quot;./Scripted Assets Libraries.md&quot;&gt;Scripted Assets Libraries&lt;/a&gt;</li>
+<li>&lt;a href=&quot;./Custom Classes.md&quot;&gt;Custom Classes&lt;/a&gt;</li>
+<li>&lt;a href=&quot;./NDLL Scripting.md&quot;&gt;NDLL Scripting&lt;/a&gt;</li>
+</ul>

@@ -1,0 +1,86 @@
+<p>&lt;style&gt;
+img {
+width: 10vw
+}
+&lt;/style&gt;</p>
+<h1>Events/Notetype Scripts</h1>
+<h3>Events</h3>
+<p>Events can be found in <code>./data/events</code>. There's currently 3 files used for events: a script file, a JSON file to determine the parameters of it, and an image file for it's icon. <em>(they all need to have the same name as the event)</em></p>
+<p>First, we'll go over making the JSON file. The JSON file holds all parameters required for the Event, and each parameter can have different types. Each parameter type is listed here:</p>
+<pre><code class="language-json">{
+    &quot;params&quot;: [
+        {
+            &quot;name&quot;: &quot;Bool&quot;,
+            &quot;type&quot;: &quot;Bool&quot;,
+            &quot;defaultValue&quot;: false
+        },
+        {
+            &quot;name&quot;: &quot;Int&quot;,
+            &quot;type&quot;: &quot;Int(0, 99, 1)&quot;,
+            &quot;defaultValue&quot;: 0
+        },
+        {
+            &quot;name&quot;: &quot;Float&quot;,
+            &quot;type&quot;: &quot;Float(0, 99, 1, 2)&quot;,
+            &quot;defaultValue&quot;: 0.00
+        },
+        {
+            &quot;name&quot;: &quot;String&quot;,
+            &quot;type&quot;: &quot;String&quot;,
+            &quot;defaultValue&quot;: &quot;nothing&quot;
+        },
+        {
+            &quot;name&quot;: &quot;StrumLine&quot;,
+            &quot;type&quot;: &quot;StrumLine&quot;,
+            &quot;defaultValue&quot;: 0
+        },
+        {
+            &quot;name&quot;: &quot;ColorWheel&quot;,
+            &quot;type&quot;: &quot;ColorWheel&quot;,
+            &quot;defaultValue&quot;: &quot;#FFFFFF&quot;
+        },
+        {
+            &quot;name&quot;: &quot;DropDown&quot;,
+            &quot;type&quot;: &quot;DropDown('entry one', 'entry two')&quot;,
+            &quot;defaultValue&quot;: &quot;entry one&quot;
+        }
+    ]
+}
+</code></pre>
+<p><em>(you can copy these for your own JSON file)</em>&lt;br&gt;
+There's a lot of them but we'll go over each one.</p>
+<ul>
+<li><strong>Bool</strong> creates a checkmark and returns true or false.</li>
+<li><strong>Int()</strong> returns an int. This one has parameters for minimum value, maximum value, and stepper <em>(non-functional)</em></li>
+<li><strong>Float()</strong> is the same as int, but has an extra parameter for precision.</li>
+<li><strong>String</strong> returns a string.</li>
+<li><strong>StrumLine</strong> creates a dropdown menu that contains the current StrumLine in the chart. Returns Ints corresponding the StrumLine index in the group <code>strumLines</code>.</li>
+<li><strong>ColorWheel</strong> creates a color wheel that returns the color in Int hex format.</li>
+<li><strong>DropDown()</strong> generates a dropdown menu that contains the entries inside the brackets.</li>
+</ul>
+<p>&lt;img src=&quot;Events or Notetype Scripts-1.png&quot;/&gt;</p>
+<p>Now that we have established the Parameters, we can go over scripting the event now. A basic flash camera event looks something like this:</p>
+<pre><code class="language-hx">function onEvent(e) {
+    var params:Array = e.event.params;
+    if (e.event.name == &quot;Flash Camera&quot;) {
+        camGame.flash(params[1], params[0]);
+    }
+}
+</code></pre>
+<p>In this example, we assume that we set our parameters to be the duration of the flash <em>(float)</em>, and the color of it <em>(colorwheel)</em>. &lt;br&gt;
+&lt;img src=&quot;Events or Notetype Scripts.png&quot;/&gt;</p>
+<p>The order of the parameters in <code>e.event.params</code> coresponds to the order you've put the params in.</p>
+<p>For the icon, place a <em>(preferabily 16x16)</em> image in the same directory as the event files.</p>
+<p><em>Write about .pack files later</em></p>
+<h3>Notetypes</h3>
+<p>Making notetypes only consists of 2 files: the script file and the note sprites.</p>
+<p>Putting the sprites in <code>./images/game/notes</code> and naming them after the notetype name will automatically replace the default note sprites with those.</p>
+<p>Writing a script for the notetypes is very easy. Though only one script is ran for all existing notetypes instead of each note, you can still code actions for them. &lt;br&gt;
+For example here is code for triggering actions when the player presses it:</p>
+<pre><code class="language-hx">function onPlayerHit(event) {
+    if (event.noteType == &quot;Damage Note&quot;) {
+        health -= 0.5;
+        boyfriend.playAnim(&quot;hurt&quot;);
+    }
+}
+</code></pre>

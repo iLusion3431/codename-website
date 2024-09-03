@@ -1,0 +1,26 @@
+<h1>State/Substate Scripts</h1>
+<p>State/Substate Scripts are scripts that can change any state or substate of the game.&lt;br&gt;
+You can change the Main Menu, the Freeplay Menu and even the Chart Editor.</p>
+<h3>Modifying a pre-existing State/Substate</h3>
+<p>To get started, make a Script in <code>./data/states</code> and name it corresponding to the state/substate you want to change.</p>
+<p>For example, if you decide to change the Main Menu, make a Script like this <code>./data/states/MainMenuState.hx</code>&lt;br&gt;
+A basic Main Menu modification looks like this:</p>
+<pre><code class="language-hx">function postCreate() {
+    forceCenterX = false; // disable the code that centers the menu buttons.
+    for (i=&gt;button in menuItems.members) {
+        button.x += Math.sin(i) * 300; // move buttons
+    }
+}
+</code></pre>
+<p>This code results in the menu looking like this.
+&lt;img src=&quot;./State or Substate Scripts.png&quot;/&gt;</p>
+<p>You can do this with every State/Substate of course, but keep in mind you have to study the state's code first before modifying it. <em>(you can find the code in &lt;a href=&quot;https://github.com/FNF-CNE-Devs/CodenameEngine&quot;&gt;Codename Engine's Repository&lt;/a&gt;)</em>&lt;br&gt;
+<em>Also look for &lt;a href=&quot;./All of the script calls.md&quot;&gt;All of the script calls&lt;/a&gt; for menu script calls</em></p>
+<h3>Creating custom States/Substates</h3>
+<p>You can also create entirely custom ones too! By putting them in the same <code>./data/states/</code> folder, you create new ModStates/ModSubstates.</p>
+<p>Accessing them is done via this piece of code:</p>
+<pre><code class="language-hx">FlxG.switchState(new ModState(&quot;MyCustomState&quot;)); // assuming we have made a new Script ./data/states/MyCustomState.hx
+</code></pre>
+<p>or this code</p>
+<pre><code class="language-hx">openSubstate(new ModSubstate(&quot;MyCustomSubstate&quot;)) // assuming we have made a new Script ./data/states/MyCustomSubstate.hx
+</code></pre>
