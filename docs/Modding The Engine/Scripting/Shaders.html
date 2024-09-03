@@ -52,20 +52,20 @@
             <h1>Shaders</h1>
 <p>Shaders are pretty easy to do due to our shader backend that does the hard work for us. All you have to do is make a file in <code>./shaders/</code>. Our system supports both fragment and vertex shaders to change both pixels and vertices. <em>(for example <code>./shaders/example.frag</code> and <code>./shaders/example.vert</code>)</em></p>
 <p>To use them, you have to script them in <em>(obviously)</em>. To do so, look at these pieces of code.</p>
-<pre class="hljs"><code class="language-hx">camHUD.addShader(<span class="hljs-keyword">new</span><span class="hljs-type"></span> CustomShader(<span class="hljs-string">"example"</span>)); <span class="hljs-comment">//adds a shader onto the camera.</span>
+<pre class="hljs"><code class="language-hx">camHUD.<span class="hljs-title function_">addShader</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomShader</span>(<span class="hljs-string">"example"</span>)); <span class="hljs-comment">//adds a shader onto the camera.</span>
 
-FlxG.camera.addShader(<span class="hljs-keyword">new</span><span class="hljs-type"></span> CustomShader(<span class="hljs-string">"example"</span>)); <span class="hljs-comment">//ditto but on FlxG.camera.</span>
+<span class="hljs-title class_">FlxG</span>.<span class="hljs-property">camera</span>.<span class="hljs-title function_">addShader</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomShader</span>(<span class="hljs-string">"example"</span>)); <span class="hljs-comment">//ditto but on FlxG.camera.</span>
 
-FlxG.game.addShader(<span class="hljs-keyword">new</span><span class="hljs-type"></span> CustomShader(<span class="hljs-string">"example"</span>)); <span class="hljs-comment">//adds a shader onto the entire game (persists between states).</span>
+<span class="hljs-title class_">FlxG</span>.<span class="hljs-property">game</span>.<span class="hljs-title function_">addShader</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomShader</span>(<span class="hljs-string">"example"</span>)); <span class="hljs-comment">//adds a shader onto the entire game (persists between states).</span>
 
-sprite.shader = <span class="hljs-keyword">new</span><span class="hljs-type"></span> CustomShader(<span class="hljs-string">"example"</span>); <span class="hljs-comment">// sets a sprite's shader to a shader. (only one shader can be added per sprite) </span>
+sprite.<span class="hljs-property">shader</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomShader</span>(<span class="hljs-string">"example"</span>); <span class="hljs-comment">// sets a sprite's shader to a shader. (only one shader can be added per sprite) </span>
 
-boyfriend.shader = <span class="hljs-keyword">new</span><span class="hljs-type"></span> CustomShader(<span class="hljs-string">"example"</span>); <span class="hljs-comment">// ditto but on characters.</span>
+boyfriend.<span class="hljs-property">shader</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomShader</span>(<span class="hljs-string">"example"</span>); <span class="hljs-comment">// ditto but on characters.</span>
 </code></pre>
 <p>If your shader contains uniform variables that needs to be set, you can do so like this:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">var</span> shader = <span class="hljs-keyword">new</span><span class="hljs-type"></span> CustomShader(<span class="hljs-string">"example"</span>);
-shader.intensity = <span class="hljs-number">0.4</span>;
-camGame.addShader(shader);
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">var</span> shader = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomShader</span>(<span class="hljs-string">"example"</span>);
+shader.<span class="hljs-property">intensity</span> = <span class="hljs-number">0.4</span>;
+camGame.<span class="hljs-title function_">addShader</span>(shader);
 </code></pre>
 <h2>Remember that we only support flixel/openfl shaders.</h2>
 <p>If you got a shader from a site called https://shadertoy.com, you have to manually convert them to flixel/openfl accepted format.</p>

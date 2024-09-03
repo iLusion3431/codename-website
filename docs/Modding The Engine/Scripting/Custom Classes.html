@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Character or Stage Scripts - Codename Engine Docs</title>
+    <title>Custom Classes - Codename Engine Docs</title>
     <link rel="stylesheet" href="/New-folder/docs/style.css">
 </head>
 <body>
@@ -49,27 +49,34 @@
         </div>
 
         <div class="content">
-            <h1>Character/Stage Scripts</h1>
-<p>Character/Stage Scripts run alongside them, or something like that.</p>
-<h2>Character Script.</h2>
-<p>You can create one of those by making a Script file alongside your character's XML data file <em>(<code>./data/characters/</code>)</em><br>
-In these scripts you don't need to specify the character, since the character becomes the Script's parent.</p>
-<p>Here's an example of a Character Script that makes the character spin..:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span></span>(elapsed) {
-    angle += elapsed * <span class="hljs-number">10</span>;
+            <h1>Custom Classes</h1>
+<p>Custom classes can be made either inside the script you need it in or you can make a script file coresponding with the name of the class in <code>./source</code>, and using <code>import</code> to import it.</p>
+<p>Here is a basic Song Script code that uses it:</p>
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">class</span> <span class="hljs-title class_">SpecialSprite</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">FlxSprite</span> {
+    public <span class="hljs-keyword">var</span> <span class="hljs-attr">customValue</span>:<span class="hljs-title class_">String</span> = <span class="hljs-literal">null</span>;
+    public <span class="hljs-keyword">function</span> <span class="hljs-title function_">new</span>(<span class="hljs-params">x:Float, y:Float, customValue:<span class="hljs-built_in">String</span></span>) {
+        <span class="hljs-variable language_">super</span>(x, y);
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">customValue</span> = customValue;
+        <span class="hljs-comment">//other code stuff</span>
+    }
+
+    public override <span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">elapsed</span>) {
+        <span class="hljs-variable language_">super</span>.<span class="hljs-title function_">update</span>(elapsed);
+    }
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">var</span> spr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SpecialSprite</span>(<span class="hljs-number">200</span>, <span class="hljs-number">400</span>, <span class="hljs-string">"powerful"</span>);
+    <span class="hljs-title function_">add</span>(spr);
 }
 </code></pre>
-<h2>Stage Scripts.</h2>
-<p>Creating one of those also goes next to the Stage XML data file <em>(<code>./data/stages/</code>)</em>.<br>
-This script also takes the Stage as it's parent, thus not needing to use <code>stage.getSprite()</code>, instead, sprites becomes the variables</p>
-<p>Here's an example:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">postCreate</span></span>() {
-    <span class="hljs-comment">// animatedObject has already been defined in the XML file.</span>
-    animatedObject.frames = Paths.getFrames(<span class="hljs-string">"animatedObject"</span>);
-    animatedObject.animation.addByPrefix(<span class="hljs-string">"idle"</span>, <span class="hljs-string">"idle"</span>, <span class="hljs-number">24</span>, <span class="hljs-literal">true</span>);
-    animatedObject.animation.play(<span class="hljs-string">"idle"</span>);
-}
-</code></pre>
+<h2>Particularities</h2>
+<p>As of writing this, this system is very limited and also presents some defects. For example:</p>
+<ul>
+<li>You cannot extend FlxGroups or other typed classes <em>(the ones that end with a <code>&lt;T&gt;</code>)</em>.</li>
+<li>Certain classes like FlxText needs to have their <code>update</code> function manually called.</li>
+<li>all variables need to be public in order to be accessed inside the class.</li>
+</ul>
 
         </div>
     </div>

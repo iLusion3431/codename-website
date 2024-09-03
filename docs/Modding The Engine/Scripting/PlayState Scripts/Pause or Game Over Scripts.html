@@ -53,16 +53,16 @@
 <h2>Pause Scripts</h2>
 <p>Pause Scripts can change the pause menu, either entirely or tiny bits of it.<br>
 To use one, you have to load it from a Script <em>(any script can do, even Song Scripts)</em>.</p>
-<pre class="hljs"><code class="language-hx">PauseSubState.script = <span class="hljs-string">'data/scripts/pause'</span>;
+<pre class="hljs"><code class="language-hx"><span class="hljs-title class_">PauseSubState</span>.<span class="hljs-property">script</span> = <span class="hljs-string">'data/scripts/pause'</span>;
 </code></pre>
 <p>This code points to the script that can be found in <code>./data/scripts/</code> and is called <code>pause.hx</code>.</p>
 <p>You can do many things in this script. For example, this is how you can override it and have your own entirely custom pause menu here:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span></span>(event){
-    event.cancel();
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params">event</span>){
+    event.<span class="hljs-title function_">cancel</span>();
 
-    camera = pauseCam = <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxCamera();
-    pauseCam.bgColor = FlxColor.TRANSPARENT;
-    FlxG.cameras.add(pauseCam, <span class="hljs-literal">false</span>);
+    camera = pauseCam = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxCamera</span>();
+    pauseCam.<span class="hljs-property">bgColor</span> = <span class="hljs-title class_">FlxColor</span>.<span class="hljs-property">TRANSPARENT</span>;
+    <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">cameras</span>.<span class="hljs-title function_">add</span>(pauseCam, <span class="hljs-literal">false</span>);
 
     <span class="hljs-comment">// your code here</span>
 }
@@ -77,18 +77,18 @@ This script will prevent the base pause menu from loading and allows you to add 
 <h2>Game Over Scripts</h2>
 <p>Game over scripts work the same as Pause Scripts, though presents some differences.
 This is how you load one:</p>
-<pre class="hljs"><code class="language-hx">GameOverSubstate.script = <span class="hljs-string">"data/scripts/gameover"</span>
+<pre class="hljs"><code class="language-hx"><span class="hljs-title class_">GameOverSubstate</span>.<span class="hljs-property">script</span> = <span class="hljs-string">"data/scripts/gameover"</span>
 </code></pre>
 <p>This code points to the script that can be found in <code>./data/scripts/</code> and is called <code>gameover.hx</code>.</p>
 <p>Here's an example of playing a video when the player dies:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span></span>(event) {
-    event.cancel(); <span class="hljs-comment">// cancels out initializing characters and stuff</span>
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params">event</span>) {
+    event.<span class="hljs-title function_">cancel</span>(); <span class="hljs-comment">// cancels out initializing characters and stuff</span>
 
-    deathVideo = <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxVideo();
-    deathVideo.onEndReached.add(deathVideo.dispose);
-    <span class="hljs-keyword">var</span> path = Paths.file(<span class="hljs-string">"videos/death.mp4"</span>);
-    deathVideo.load(Assets.getPath(path));
-    deathVideo.play();
+    deathVideo = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxVideo</span>();
+    deathVideo.<span class="hljs-property">onEndReached</span>.<span class="hljs-title function_">add</span>(deathVideo.<span class="hljs-property">dispose</span>);
+    <span class="hljs-keyword">var</span> path = <span class="hljs-title class_">Paths</span>.<span class="hljs-title function_">file</span>(<span class="hljs-string">"videos/death.mp4"</span>);
+    deathVideo.<span class="hljs-title function_">load</span>(<span class="hljs-title class_">Assets</span>.<span class="hljs-title function_">getPath</span>(path));
+    deathVideo.<span class="hljs-title function_">play</span>();
 }
 </code></pre>
 <p><code>create</code>'s event has even more parameters for changing SFX and other stuff. Check for <a href="./All of the script calls.html">All of the script calls</a>, and for calls other than <code>create</code>.</p>

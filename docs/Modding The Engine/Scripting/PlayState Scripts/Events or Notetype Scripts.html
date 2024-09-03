@@ -111,10 +111,10 @@ There's a lot of them but we'll go over each one.</p>
 </ul>
 <p><img src="./Events or Notetype Scripts-1.png"></p>
 <p>Now that we have established the Parameters, we can go over scripting the event now. A basic flash camera event looks something like this:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">onEvent</span></span>(e) {
-    <span class="hljs-keyword">var</span> params:<span class="hljs-type">Array </span>= e.event.params;
-    <span class="hljs-keyword">if</span> (e.event.name == <span class="hljs-string">"Flash Camera"</span>) {
-        camGame.flash(params[<span class="hljs-number">1</span>], params[<span class="hljs-number">0</span>]);
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">onEvent</span>(<span class="hljs-params">e</span>) {
+    <span class="hljs-keyword">var</span> <span class="hljs-attr">params</span>:<span class="hljs-title class_">Array</span> = e.<span class="hljs-property">event</span>.<span class="hljs-property">params</span>;
+    <span class="hljs-keyword">if</span> (e.<span class="hljs-property">event</span>.<span class="hljs-property">name</span> == <span class="hljs-string">"Flash Camera"</span>) {
+        camGame.<span class="hljs-title function_">flash</span>(params[<span class="hljs-number">1</span>], params[<span class="hljs-number">0</span>]);
     }
 }
 </code></pre>
@@ -128,10 +128,10 @@ There's a lot of them but we'll go over each one.</p>
 <p>Putting the sprites in <code>./images/game/notes</code> and naming them after the notetype name will automatically replace the default note sprites with those.</p>
 <p>Writing a script for the notetypes is very easy. Though only one script is ran for all existing notetypes instead of each note, you can still code actions for them. <br>
 For example here is code for triggering actions when the player presses it:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">onPlayerHit</span></span>(event) {
-    <span class="hljs-keyword">if</span> (event.noteType == <span class="hljs-string">"Damage Note"</span>) {
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">onPlayerHit</span>(<span class="hljs-params">event</span>) {
+    <span class="hljs-keyword">if</span> (event.<span class="hljs-property">noteType</span> == <span class="hljs-string">"Damage Note"</span>) {
         health -= <span class="hljs-number">0.5</span>;
-        boyfriend.playAnim(<span class="hljs-string">"hurt"</span>);
+        boyfriend.<span class="hljs-title function_">playAnim</span>(<span class="hljs-string">"hurt"</span>);
     }
 }
 </code></pre>

@@ -56,13 +56,13 @@ You can change the Main Menu, the Freeplay Menu and even the Chart Editor.</p>
 <p>To get started, make a Script in <code>./data/states</code> and name it corresponding to the state/substate you want to change.</p>
 <p>For example, if you decide to change the Main Menu, make a Script like this <code>./data/states/MainMenuState.hx</code><br>
 A basic Main Menu modification looks like this:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">postCreate</span></span>() {
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">postCreate</span>(<span class="hljs-params"></span>) {
     forceCenterX = <span class="hljs-literal">false</span>; <span class="hljs-comment">// disable the code that centers the menu buttons.</span>
-    <span class="hljs-keyword">for</span> (i=&gt;button <span class="hljs-keyword">in</span> menuItems.members) {
-        button.x += Math.sin(i) * <span class="hljs-number">300</span>; <span class="hljs-comment">// move buttons</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-function"><span class="hljs-params">i</span>=&gt;<span class="hljs-params">button</span> <span class="hljs-params">in</span> <span class="hljs-params">menuItems</span>.<span class="hljs-params">members</span>) {
+        <span class="hljs-params">button</span>.<span class="hljs-params">x</span> += <span class="hljs-params">Math</span>.<span class="hljs-params">sin</span>(<span class="hljs-params">i</span>) * 300; // <span class="hljs-params">move</span> <span class="hljs-params">buttons</span>
     }
 }
-</code></pre>
+</span></code></pre>
 <p>This code results in the menu looking like this.
 <img src="./State or Substate Scripts.png"></p>
 <p>You can do this with every State/Substate of course, but keep in mind you have to study the state's code first before modifying it. <em>(you can find the code in <a href="https://github.com/FNF-CNE-Devs/CodenameEngine">Codename Engine's Repository</a>)</em><br>
@@ -70,10 +70,10 @@ A basic Main Menu modification looks like this:</p>
 <h2>Creating custom States/Substates</h2>
 <p>You can also create entirely custom ones too! By putting them in the same <code>./data/states/</code> folder, you create new ModStates/ModSubstates.</p>
 <p>Accessing them is done via this piece of code:</p>
-<pre class="hljs"><code class="language-hx">FlxG.switchState(<span class="hljs-keyword">new</span><span class="hljs-type"></span> ModState(<span class="hljs-string">"MyCustomState"</span>)); <span class="hljs-comment">// assuming we have made a new Script ./data/states/MyCustomState.hx</span>
+<pre class="hljs"><code class="language-hx"><span class="hljs-title class_">FlxG</span>.<span class="hljs-title function_">switchState</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ModState</span>(<span class="hljs-string">"MyCustomState"</span>)); <span class="hljs-comment">// assuming we have made a new Script ./data/states/MyCustomState.hx</span>
 </code></pre>
 <p>or this code</p>
-<pre class="hljs"><code class="language-hx">openSubstate(<span class="hljs-keyword">new</span><span class="hljs-type"></span> ModSubstate(<span class="hljs-string">"MyCustomSubstate"</span>)) <span class="hljs-comment">// assuming we have made a new Script ./data/states/MyCustomSubstate.hx</span>
+<pre class="hljs"><code class="language-hx"><span class="hljs-title function_">openSubstate</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ModSubstate</span>(<span class="hljs-string">"MyCustomSubstate"</span>)) <span class="hljs-comment">// assuming we have made a new Script ./data/states/MyCustomSubstate.hx</span>
 </code></pre>
 
         </div>

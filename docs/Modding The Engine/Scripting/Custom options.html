@@ -106,16 +106,16 @@ That's what is about to be explained!!</p>
 </ul></li>
 </ul>
 <p>Accessing them in Scripts is done via <code>FlxG.save.data</code>, as you can see below.</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">var</span> checkboxExample = FlxG.save.data.checkboxExample;
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">var</span> checkboxExample = <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">save</span>.<span class="hljs-property">data</span>.<span class="hljs-property">checkboxExample</span>;
 </code></pre>
 <p>You may have noticed that none of the option types have a default value property,
 this is because you have to set the default values yourself <em>(in a global script)</em>.<br>
 You have to do this otherwise your options won't save correctly!</p>
 <p>This is rather easy to do, put this in <code>./data/global.hx</code>:</p>
-<pre class="hljs"><code class="language-haxe"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span></span>() {
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params"></span>) {
     <span class="hljs-comment">// FlxG.save is your mod's savedata</span>
-    <span class="hljs-keyword">if</span>(FlxG.save.data.checkboxExample == <span class="hljs-literal">null</span>)
-        FlxG.save.data.checkboxExample = <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">if</span>(<span class="hljs-title class_">FlxG</span>.<span class="hljs-property">save</span>.<span class="hljs-property">data</span>.<span class="hljs-property">checkboxExample</span> == <span class="hljs-literal">null</span>)
+        <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">save</span>.<span class="hljs-property">data</span>.<span class="hljs-property">checkboxExample</span> = <span class="hljs-literal">true</span>;
 }
 </code></pre>
 
