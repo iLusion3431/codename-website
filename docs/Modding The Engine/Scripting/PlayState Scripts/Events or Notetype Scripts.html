@@ -23,19 +23,19 @@
 </ul>
 </li>
 <li><a href="/New-folder/docs/Modding The Engine/Creating stages.html">Creating stages</a></li>
-<li><a href="/New-folder/docs/Modding The Engine/Cutscenes or Dialogues.html">Cutscenes or Dialogues</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Cutscenes or Dialogues.html">Cutscenes/Dialogues</a></li>
 <li><a href="/New-folder/docs/Modding The Engine/Scripting/index.html">Scripting</a>
 <ul>
 <li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/index.html">PlayState Scripts</a>
 <ul>
 <li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/Gameplay Scripts.html">Gameplay Scripts</a></li>
-<li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/Events or Notetype Scripts.html">Events or Notetype Scripts</a></li>
-<li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/Cutscenes or Dialogue Scripts.html">Cutscenes or Dialogue Scripts</a></li>
-<li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/Character or Stage Scripts.html">Character or Stage Scripts</a></li>
-<li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/Pause or Game Over Scripts.html">Pause or Game Over Scripts</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/Events or Notetype Scripts.html">Events/Notetype Scripts</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/Cutscenes or Dialogue Scripts.html">Cutscenes/Dialogue Scripts</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/Character or Stage Scripts.html">Character/Stage Scripts</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/Pause or Game Over Scripts.html">Pause/Game Over Scripts</a></li>
 </ul>
 </li>
-<li><a href="/New-folder/docs/Modding The Engine/Scripting/State Scripts.html">State Scripts</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/State or Substate Scripts.html">State/Substate Scripts</a></li>
 <li><a href="/New-folder/docs/Modding The Engine/Scripting/Global Scripts.html">Global Scripts</a></li>
 <li><a href="/New-folder/docs/Modding The Engine/Scripting/Shaders.html">Shaders</a></li>
 <li><a href="/New-folder/docs/Modding The Engine/Scripting/Using hxvlc for videos.html">Using hxvlc for videos</a></li>
@@ -54,14 +54,9 @@
         </div>
 
         <div class="content">
-            <style>
-    img {
-        width: 10vw
-    }
-</style>
-# Events/Notetype Scripts
-## Events
-Events can be found in ``./data/events``. There's currently 3 files used for events: a script file, a JSON file to determine the parameters of it, and an image file for it's icon. *(they all need to have the same name as the event)*
+            <h1>Events/Notetype Scripts</h1>
+<h2>Events</h2>
+<p>Events can be found in <code>./data/events</code>. There's currently 3 files used for events: a script file, a JSON file to determine the parameters of it, and an image file for it's icon. <em>(they all need to have the same name as the event)</em></p>
 <p>First, we'll go over making the JSON file. The JSON file holds all parameters required for the Event, and each parameter can have different types. Each parameter type is listed here:</p>
 <pre class="hljs"><code class="language-json"><span class="hljs-punctuation">{</span>
     <span class="hljs-attr">"params"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>

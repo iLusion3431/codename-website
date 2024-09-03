@@ -23,19 +23,19 @@
 </ul>
 </li>
 <li><a href="/New-folder/docs/Modding The Engine/Creating stages.html">Creating stages</a></li>
-<li><a href="/New-folder/docs/Modding The Engine/Cutscenes or Dialogues.html">Cutscenes or Dialogues</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Cutscenes or Dialogues.html">Cutscenes/Dialogues</a></li>
 <li><a href="/New-folder/docs/Modding The Engine/Scripting/index.html">Scripting</a>
 <ul>
 <li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/index.html">PlayState Scripts</a>
 <ul>
 <li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/Gameplay Scripts.html">Gameplay Scripts</a></li>
-<li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/Events or Notetype Scripts.html">Events or Notetype Scripts</a></li>
-<li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/Cutscenes or Dialogue Scripts.html">Cutscenes or Dialogue Scripts</a></li>
-<li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/Character or Stage Scripts.html">Character or Stage Scripts</a></li>
-<li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/Pause or Game Over Scripts.html">Pause or Game Over Scripts</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/Events or Notetype Scripts.html">Events/Notetype Scripts</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/Cutscenes or Dialogue Scripts.html">Cutscenes/Dialogue Scripts</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/Character or Stage Scripts.html">Character/Stage Scripts</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/PlayState Scripts/Pause or Game Over Scripts.html">Pause/Game Over Scripts</a></li>
 </ul>
 </li>
-<li><a href="/New-folder/docs/Modding The Engine/Scripting/State Scripts.html">State Scripts</a></li>
+<li><a href="/New-folder/docs/Modding The Engine/Scripting/State or Substate Scripts.html">State/Substate Scripts</a></li>
 <li><a href="/New-folder/docs/Modding The Engine/Scripting/Global Scripts.html">Global Scripts</a></li>
 <li><a href="/New-folder/docs/Modding The Engine/Scripting/Shaders.html">Shaders</a></li>
 <li><a href="/New-folder/docs/Modding The Engine/Scripting/Using hxvlc for videos.html">Using hxvlc for videos</a></li>
@@ -70,23 +70,6 @@
 <p>If you notice, this looks slightly like source code, aside from the usual <code>override function</code> or <code>super.create()</code>, which does not exist in our scripting language.<br>
 If you already got the hang of source coding, then scripting will feel like a breeze. If not.. well.. prepare to learn!</p>
 <h2>Particularities</h2>
-<h3>Script events.</h3>
-<p>Noting other particularities, Gameplay Scripting relies heavily on <strong>Events</strong>, which triggers callbacks and returns a struct of parameters, basically unclogging the parameter list of functions.<br>
-Which means, handling a note hit looks something like this:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">onNoteHit</span>(<span class="hljs-params">event</span>) {
-    <span class="hljs-title function_">trace</span>(event.<span class="hljs-property">note</span>); <span class="hljs-comment">// the note that has been hit</span>
-    <span class="hljs-title function_">trace</span>(event.<span class="hljs-property">score</span>); <span class="hljs-comment">// how much score gained from this</span>
-    event.<span class="hljs-title function_">cancel</span>(); <span class="hljs-comment">// cancels out any other handling (useful if you want to write custom note pressing)</span>
-}
-</code></pre>
-<p>There's a lot of other events, such as <code>onStartCountdown</code>, <code>onGamePause</code>, <code>onCameraMove</code> and more.<br>
-You can find them all in <a href="../All of the script calls.html">All of the script calls</a>.</p>
-<p>Despite all of that, functions like <code>update</code>, <code>beatHit</code>, <code>stepHit</code> still receive one parameter *(<code>elapsed:Float</code>, <code>curBeat:Int</code>, <code>curStep:Int</code>)</p>
-<h3>Class importing.</h3>
-<p>Some classes are pre-imported (FlxSprite, FlxMath, FlxAxis etc.), but for classes that aren't pre-imported, it's still possible to import like this:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">import</span> flixel.<span class="hljs-property">addons</span>.<span class="hljs-property">display</span>.<span class="hljs-property">FlxBackdrop</span>;
-</code></pre>
-<p><em>(<code>using</code> does not work, yet)</em></p>
 <h3>Accessing characters.</h3>
 <p>Characters are actually accessed differently. Due to the modularity of having more than one Strumline, and having more than one character in a Strumline, characters are accessible like this:</p>
 <pre class="hljs"><code class="language-hx"><span class="hljs-title function_">trace</span>(strumLines.<span class="hljs-property">members</span>[<span class="hljs-number">0</span>].<span class="hljs-property">characters</span>[<span class="hljs-number">0</span>]); <span class="hljs-comment">// opponent character</span>
