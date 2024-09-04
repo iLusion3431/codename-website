@@ -1,5 +1,5 @@
 * {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: white
 }
 
@@ -8,30 +8,33 @@ body {
 }
 
 .container {
-    display: flex;
-    flex-direction: row;
-    width: fit-content;
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
 }
 
 .sidebar {
-    width: fit-content;
-    white-space: nowrap;
-    margin-right: 5px;
-    background: rgb(40, 40, 40);
+  width: fit-content;
+  white-space: nowrap;
+  margin-right: 5px;
+  background: rgb(28, 28, 28);
 }
 
 .content {
-    margin-left: 5px;
+  margin-left: 5px;
+  background: rgb(28, 28, 28);
+  padding: 0 2%;
 }
 
 ul {
-    width: 100%;
-    margin-top: 0.4em;
-    list-style: none;
-    padding-left: 0;
+  width: 100%;
+  margin-top: 0.4em;
+  list-style: none;
+  padding-left: 0;
 }
 
 a {
+  display: inline-block;
   color: white;
   text-decoration: none;
 }
@@ -42,36 +45,42 @@ li {
   overflow: auto;
 }
 
-li:has(a):hover {
+li>a {
+  margin-right: 1em;
+}
+
+li:hover:not(:has(li:hover)) {
   background: rgba(255, 255, 255, 0.05);
 }
 
-@media screen and (max-width: 40.5em) {
+@media screen and (max-width: 50.5em) {
   .sidebar {
     position: absolute;
     width: max-content;
     visibility: hidden;
   }
+
   ul {
     margin-top: 0;
     list-style: none;
-}
+  }
+
   .container {
     width: fit-content;
     overflow: hidden;
   }
 }
 
-@media screen and (min-width: 50.5em) {
-    .content {
-      width: 60%;
-      margin: 0 auto;
-    }
+@media screen and (min-width: 60.5em) {
+  .content {
+    padding: 0 5%;
+    margin: 0 auto;
+  }
 }
 
 .hljs {
-    padding: 20px;
-    border-radius: 8px;
+  padding: 20px;
+  border-radius: 8px;
 }
 
 /* hljs */
