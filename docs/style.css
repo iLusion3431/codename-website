@@ -64,7 +64,10 @@ body {
 .sidebar-list-item>a:hover {
   background: rgba(255, 255, 255, 0.05);
 }
-.sidebar-list-item>#selected {
+.sidebar-list-item>a.selected:hover {
+  background: rgb(166, 86, 241);
+}
+.sidebar-list-item>.selected {
   background: blueviolet;
 }
 
