@@ -67,18 +67,18 @@
             <h1>Shaders</h1>
 <p>Shaders are pretty easy to do due to our shader backend that does the hard work for us. All you have to do is make a file in <code class="inline-code">./shaders/</code>. Our system supports both fragment and vertex shaders to change both pixels and vertices. <em>(for example <code class="inline-code">./shaders/example.frag</code> and <code class="inline-code">./shaders/example.vert</code>)</em></p>
 <p>To use them, you have to script them in <em>(obviously)</em>. To do so, look at these pieces of code.</p>
-<pre class="hljs"><code class="language-hx">camHUD.<span class="hljs-title function_">addShader</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomShader</span>(<span class="hljs-string">"example"</span>)); <span class="hljs-comment">//adds a shader onto the camera.</span>
+<pre class="hljs"><code class="language-haxe">camHUD.<span class="hljs-title function_">addShader</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomShader</span>(<span class="hljs-string">"example"</span>)); <span class="hljs-comment">//adds a shader onto the camera.</span>
 
 <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">camera</span>.<span class="hljs-title function_">addShader</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomShader</span>(<span class="hljs-string">"example"</span>)); <span class="hljs-comment">//ditto but on FlxG.camera.</span>
 
 <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">game</span>.<span class="hljs-title function_">addShader</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomShader</span>(<span class="hljs-string">"example"</span>)); <span class="hljs-comment">//adds a shader onto the entire game (persists between states).</span>
 
-sprite.<span class="hljs-property">shader</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomShader</span>(<span class="hljs-string">"example"</span>); <span class="hljs-comment">// sets a sprite's shader to a shader. (only one shader can be added per sprite) </span>
+sprite.<span class="hljs-property">shader</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomShader</span>(<span class="hljs-string">"example"</span>); <span class="hljs-comment">// sets a sprite's shader to a shader. (only one shader can be added per sprite)</span>
 
 boyfriend.<span class="hljs-property">shader</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomShader</span>(<span class="hljs-string">"example"</span>); <span class="hljs-comment">// ditto but on characters.</span>
 </code></pre>
 <p>If your shader contains uniform variables that needs to be set, you can do so like this:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">var</span> shader = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomShader</span>(<span class="hljs-string">"example"</span>);
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">var</span> shader = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomShader</span>(<span class="hljs-string">"example"</span>);
 shader.<span class="hljs-property">intensity</span> = <span class="hljs-number">0.4</span>;
 camGame.<span class="hljs-title function_">addShader</span>(shader);
 </code></pre>
@@ -130,8 +130,8 @@ Instead, use floats where it's expected. Like mod(1.0, 2.0) instead of mod(1, 2)
 <p>as they are unsupported on certain platforms.</p>
 <p>Avoid using <code class="inline-code">gl_</code> at the start of your variables <em>(ex, <code class="inline-code">float gl_Number</code> can break your shaders)</em>.</p>
 <p>Applying defaults to uniforms is not possible, so please set the defaults in your shader constructor or after initializing the shader.</p>
-<p>Avoid using <code class="inline-code">&lt;number&gt;u</code> <em>(ex, 8u)</em>
-Avoid initializing variables with the name <code class="inline-code">input</code> or <code class="inline-code">sample</code>, as those cause the shader to stop working on AMD gpus or other platforms.</p>
+<p>Avoid using <code class="inline-code">&lt;number&gt;u</code> <em>(ex, 8u)</em></p>
+<p>Avoid initializing variables with the name <code class="inline-code">input</code> or <code class="inline-code">sample</code>, as those cause the shader to stop working on AMD gpus or other platforms.</p>
 <p>Avoid using the % operator and instead use the mod function.</p>
 <p>Avoid using arrays.</p>
 

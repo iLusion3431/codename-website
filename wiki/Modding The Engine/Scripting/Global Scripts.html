@@ -68,12 +68,12 @@
 <p>Global Scripts always run during the game, doesn't matter in which state or where, it always runs. <em>(runs from when the mod is loaded/game opened up until the game is closed/different mod is loaded)</em><br>
 You can make one by creating a file in <code class="inline-code">./data/</code> called <code class="inline-code">global.hx</code></p>
 <p>Global Scripts are useful for certain things, for example, here's the default code in the base's global script:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">elapsed:<span class="hljs-built_in">Float</span></span>)
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">elapsed:<span class="hljs-built_in">Float</span></span>)
     <span class="hljs-keyword">if</span> (<span class="hljs-title class_">FlxG</span>.<span class="hljs-property">keys</span>.<span class="hljs-property">justPressed</span>.<span class="hljs-property">F5</span>) <span class="hljs-title class_">FlxG</span>.<span class="hljs-title function_">resetState</span>();
 </code></pre>
 <p>Which makes it so that pressing F5 will refresh any state you are currently in.</p>
 <p>Or a different example:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">static</span> <span class="hljs-keyword">var</span> <span class="hljs-attr">cashAmount</span>:<span class="hljs-title class_">Float</span> = <span class="hljs-number">0</span>;
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">static</span> <span class="hljs-keyword">var</span> <span class="hljs-attr">cashAmount</span>:<span class="hljs-title class_">Float</span> = <span class="hljs-number">0</span>;
 <span class="hljs-keyword">static</span> <span class="hljs-keyword">var</span> playerTitle = <span class="hljs-string">"poor"</span>;
 
 <span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">elapsed:<span class="hljs-built_in">Float</span></span>) {

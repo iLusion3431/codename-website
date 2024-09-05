@@ -70,7 +70,7 @@
 <p>You can create one of those by making a Script file alongside your character's XML data file <em>(<code class="inline-code">./data/characters/</code>)</em><br>
 In these scripts you don't need to specify the character, since the character becomes the Script's parent.</p>
 <p>Here's an example of a Character Script that makes the character spin..:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">elapsed</span>) {
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">elapsed</span>) {
     angle += elapsed * <span class="hljs-number">10</span>;
 }
 </code></pre>
@@ -78,7 +78,7 @@ In these scripts you don't need to specify the character, since the character be
 <p>Creating one of those also goes next to the Stage XML data file <em>(<code class="inline-code">./data/stages/</code>)</em>.<br>
 This script also takes the Stage as it's parent, thus not needing to use <code class="inline-code">stage.getSprite()</code>, instead, sprites becomes the variables</p>
 <p>Here's an example:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">postCreate</span>(<span class="hljs-params"></span>) {
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">postCreate</span>(<span class="hljs-params"></span>) {
     <span class="hljs-comment">// animatedObject has already been defined in the XML file.</span>
     animatedObject.<span class="hljs-property">frames</span> = <span class="hljs-title class_">Paths</span>.<span class="hljs-title function_">getFrames</span>(<span class="hljs-string">"animatedObject"</span>);
     animatedObject.<span class="hljs-property">animation</span>.<span class="hljs-title function_">addByPrefix</span>(<span class="hljs-string">"idle"</span>, <span class="hljs-string">"idle"</span>, <span class="hljs-number">24</span>, <span class="hljs-literal">true</span>);

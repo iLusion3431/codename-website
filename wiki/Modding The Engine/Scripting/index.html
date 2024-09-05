@@ -79,24 +79,24 @@ Scripting can change not only gameplay, but also menus and other engine function
 <p>Things like <code class="inline-code">?.</code>, <code class="inline-code">??</code> and <code class="inline-code">??=</code> are accepted in our HScript language.<br>
 Using those is beneficial as they prove to be very useful to keeping your code clean.<br>
 Example usage:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">if</span> (<span class="hljs-title class_">FlxG</span>.<span class="hljs-property">sound</span>.<span class="hljs-property">music</span> != <span class="hljs-literal">null</span>) <span class="hljs-title function_">trace</span>(<span class="hljs-title class_">FlxG</span>.<span class="hljs-property">sound</span>.<span class="hljs-property">music</span>.<span class="hljs-property">time</span>);
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">if</span> (<span class="hljs-title class_">FlxG</span>.<span class="hljs-property">sound</span>.<span class="hljs-property">music</span> != <span class="hljs-literal">null</span>) <span class="hljs-title function_">trace</span>(<span class="hljs-title class_">FlxG</span>.<span class="hljs-property">sound</span>.<span class="hljs-property">music</span>.<span class="hljs-property">time</span>);
 
 <span class="hljs-title function_">trace</span>(<span class="hljs-title class_">FlxG</span>.<span class="hljs-property">sound</span>?.<span class="hljs-property">music</span>);
 </code></pre>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">var</span> <span class="hljs-attr">time</span>:<span class="hljs-title class_">Float</span>;
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">var</span> <span class="hljs-attr">time</span>:<span class="hljs-title class_">Float</span>;
 <span class="hljs-keyword">if</span> (<span class="hljs-title class_">FlxG</span>.<span class="hljs-property">sound</span>.<span class="hljs-property">music</span> != <span class="hljs-literal">null</span>) time = <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">sound</span>.<span class="hljs-property">music</span>.<span class="hljs-property">time</span>;
 <span class="hljs-keyword">else</span> time = <span class="hljs-number">0</span>;
 
 time = <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">sound</span>?.<span class="hljs-property">music</span> ?? <span class="hljs-number">0</span>;
 </code></pre>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">if</span> (<span class="hljs-title class_">FlxG</span>.<span class="hljs-property">save</span>.<span class="hljs-property">data</span>.<span class="hljs-property">isOpen</span> == <span class="hljs-literal">null</span>) <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">save</span>.<span class="hljs-property">data</span>.<span class="hljs-property">isOpen</span> = <span class="hljs-literal">true</span>;
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">if</span> (<span class="hljs-title class_">FlxG</span>.<span class="hljs-property">save</span>.<span class="hljs-property">data</span>.<span class="hljs-property">isOpen</span> == <span class="hljs-literal">null</span>) <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">save</span>.<span class="hljs-property">data</span>.<span class="hljs-property">isOpen</span> = <span class="hljs-literal">true</span>;
 
 <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">save</span>.<span class="hljs-property">data</span>.<span class="hljs-property">isOpen</span> ??= <span class="hljs-literal">true</span>;
 </code></pre>
 <h3>Script events.</h3>
 <p>Scripting relies heavily on <strong>Events</strong>, which triggers callbacks and returns a struct of parameters, basically unclogging the parameter list of functions.<br>
 Which means, handling a note hit looks something like this:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">onNoteHit</span>(<span class="hljs-params">event</span>) {
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">onNoteHit</span>(<span class="hljs-params">event</span>) {
     <span class="hljs-title function_">trace</span>(event.<span class="hljs-property">note</span>); <span class="hljs-comment">// the note that has been hit</span>
     <span class="hljs-title function_">trace</span>(event.<span class="hljs-property">score</span>); <span class="hljs-comment">// how much score gained from this</span>
     event.<span class="hljs-title function_">cancel</span>(); <span class="hljs-comment">// cancels out any other handling (useful if you want to write custom note pressing)</span>
@@ -107,7 +107,7 @@ You can find them all in <a href="../All of the script calls.html">All of the sc
 <p>Despite all of that, functions like <code class="inline-code">update</code>, <code class="inline-code">beatHit</code>, <code class="inline-code">stepHit</code> still receive one parameter *(<code class="inline-code">elapsed:Float</code>, <code class="inline-code">curBeat:Int</code>, <code class="inline-code">curStep:Int</code>)</p>
 <h3>Class importing.</h3>
 <p>Some classes are pre-imported (FlxSprite, FlxMath, FlxAxis etc.), but for classes that aren't pre-imported, it's still possible to import like this:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">import</span> flixel.<span class="hljs-property">addons</span>.<span class="hljs-property">display</span>.<span class="hljs-property">FlxBackdrop</span>;
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">import</span> flixel.<span class="hljs-property">addons</span>.<span class="hljs-property">display</span>.<span class="hljs-property">FlxBackdrop</span>;
 </code></pre>
 <p><em>(<code class="inline-code">using</code> does not work, yet)</em></p>
 <h2>To start on basic scripting, you can follow these articles here:</h2>

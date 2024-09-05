@@ -71,7 +71,7 @@ You can change the Main Menu, the Freeplay Menu and even the Chart Editor.</p>
 <p>To get started, make a Script in <code class="inline-code">./data/states</code> and name it corresponding to the state/substate you want to change.</p>
 <p>For example, if you decide to change the Main Menu, make a Script like this <code class="inline-code">./data/states/MainMenuState.hx</code><br>
 A basic Main Menu modification looks like this:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">postCreate</span>(<span class="hljs-params"></span>) {
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">postCreate</span>(<span class="hljs-params"></span>) {
     forceCenterX = <span class="hljs-literal">false</span>; <span class="hljs-comment">// disable the code that centers the menu buttons.</span>
     <span class="hljs-keyword">for</span> (<span class="hljs-function"><span class="hljs-params">i</span>=&gt;</span>button <span class="hljs-keyword">in</span> menuItems.<span class="hljs-property">members</span>) {
         button.<span class="hljs-property">x</span> += <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">sin</span>(i) * <span class="hljs-number">300</span>; <span class="hljs-comment">// move buttons</span>
@@ -85,10 +85,10 @@ A basic Main Menu modification looks like this:</p>
 <h2>Creating custom States/Substates</h2>
 <p>You can also create entirely custom ones too! By putting them in the same <code class="inline-code">./data/states/</code> folder, you create new ModStates/ModSubstates.</p>
 <p>Accessing them is done via this piece of code:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-title class_">FlxG</span>.<span class="hljs-title function_">switchState</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ModState</span>(<span class="hljs-string">"MyCustomState"</span>)); <span class="hljs-comment">// assuming we have made a new Script ./data/states/MyCustomState.hx</span>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-title class_">FlxG</span>.<span class="hljs-title function_">switchState</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ModState</span>(<span class="hljs-string">"MyCustomState"</span>)); <span class="hljs-comment">// assuming we have made a new Script ./data/states/MyCustomState.hx</span>
 </code></pre>
 <p>or this code</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-title function_">openSubstate</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ModSubstate</span>(<span class="hljs-string">"MyCustomSubstate"</span>)) <span class="hljs-comment">// assuming we have made a new Script ./data/states/MyCustomSubstate.hx</span>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-title function_">openSubstate</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ModSubstate</span>(<span class="hljs-string">"MyCustomSubstate"</span>)) <span class="hljs-comment">// assuming we have made a new Script ./data/states/MyCustomSubstate.hx</span>
 </code></pre>
 
         </div>

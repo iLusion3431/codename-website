@@ -72,7 +72,7 @@
 <li><code class="inline-code">FlxSpriteVideo</code> which runs based on an FlxSprite.</li>
 </ul>
 <p>Using an FlxVideo looks something like this:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">var</span> <span class="hljs-attr">video</span>:<span class="hljs-title class_">FlxVideo</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxVideo</span>();
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">var</span> <span class="hljs-attr">video</span>:<span class="hljs-title class_">FlxVideo</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxVideo</span>();
 video.<span class="hljs-property">onEndReached</span>.<span class="hljs-title function_">add</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>):<span class="hljs-title class_">Void</span>
 {
     video.<span class="hljs-title function_">dispose</span>();
@@ -85,7 +85,7 @@ video.<span class="hljs-property">onEndReached</span>.<span class="hljs-title fu
     <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxTimer</span>().<span class="hljs-title function_">start</span>(<span class="hljs-number">0.001</span>, (_) -&gt; video.<span class="hljs-title function_">play</span>());
 </code></pre>
 <p>And using an FlxVideoSprite looks like this:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">var</span> <span class="hljs-attr">video</span>:<span class="hljs-title class_">FlxVideoSprite</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxVideoSprite</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">var</span> <span class="hljs-attr">video</span>:<span class="hljs-title class_">FlxVideoSprite</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxVideoSprite</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
 video.<span class="hljs-property">antialiasing</span> = <span class="hljs-literal">true</span>;
 video.<span class="hljs-property">bitmap</span>.<span class="hljs-property">onFormatSetup</span>.<span class="hljs-title function_">add</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>):<span class="hljs-title class_">Void</span>
 {

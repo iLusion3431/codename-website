@@ -68,12 +68,12 @@
 <h2>Gameplay scripts run during gameplay <em>(yep)</em></h2>
 <p>You can run Gameplay Scripts in <strong>a song</strong>, by putting the scripts in <code class="inline-code">./song/YOUR SONG/scripts</code>, or run them in <strong>every song</strong>, by putting them in the <code class="inline-code">./songs</code> folder itself.</p>
 <p>Gameplay Scripts can change the gameplay in various ways, for example, this is how you can hide the player character:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params"></span>) {
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params"></span>) {
     boyfriend.<span class="hljs-property">visible</span> = <span class="hljs-literal">false</span>;
 }
 </code></pre>
 <p>Or how to create a normal sprite:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params"></span>) {
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params"></span>) {
     <span class="hljs-keyword">var</span> sprite = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxSprite</span>(x, y).<span class="hljs-title function_">loadGraphic</span>(<span class="hljs-title class_">Paths</span>.<span class="hljs-title function_">image</span>(<span class="hljs-string">"my new sprite"</span>)); <span class="hljs-comment">//picks the png image from the ./images folder</span>
 }
 </code></pre>
@@ -82,18 +82,18 @@ If you already got the hang of source coding, then scripting will feel like a br
 <h2>Particularities</h2>
 <h3>Accessing characters.</h3>
 <p>Characters are actually accessed differently. Due to the modularity of having more than one Strumline, and having more than one character in a Strumline, characters are accessible like this:</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-title function_">trace</span>(strumLines.<span class="hljs-property">members</span>[<span class="hljs-number">0</span>].<span class="hljs-property">characters</span>[<span class="hljs-number">0</span>]); <span class="hljs-comment">// opponent character</span>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-title function_">trace</span>(strumLines.<span class="hljs-property">members</span>[<span class="hljs-number">0</span>].<span class="hljs-property">characters</span>[<span class="hljs-number">0</span>]); <span class="hljs-comment">// opponent character</span>
 <span class="hljs-title function_">trace</span>(strumLines.<span class="hljs-property">members</span>[<span class="hljs-number">1</span>].<span class="hljs-property">characters</span>[<span class="hljs-number">0</span>]); <span class="hljs-comment">// player character</span>
 <span class="hljs-title function_">trace</span>(strumLines.<span class="hljs-property">members</span>[<span class="hljs-number">2</span>].<span class="hljs-property">characters</span>[<span class="hljs-number">0</span>]); <span class="hljs-comment">// girlfriend character</span>
 </code></pre>
 <p>Though we have also established a few shortcuts to avoid typing this much code</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-title function_">trace</span>(dad);
+<pre class="hljs"><code class="language-haxe"><span class="hljs-title function_">trace</span>(dad);
 <span class="hljs-title function_">trace</span>(boyfriend);
 <span class="hljs-title function_">trace</span>(gf);
 </code></pre>
 <h3>Replacing <code class="inline-code">mustHitSection</code>.</h3>
 <p>Sections do not exists, and therefore, <code class="inline-code">mustHitSection</code> no longer works. But, as a workaround, you can use <code class="inline-code">curCameraTarget</code> to replace it.</p>
-<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">if</span> (curCameraTarget == <span class="hljs-number">1</span>) <span class="hljs-comment">// mustHitSection == true</span>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">if</span> (curCameraTarget == <span class="hljs-number">1</span>) <span class="hljs-comment">// mustHitSection == true</span>
 </code></pre>
 
         </div>
