@@ -77,6 +77,16 @@ shader.<span class="hljs-property">intensity</span> = <span class="hljs-number">
 camGame.<span class="hljs-title function_">addShader</span>(shader);
 </code></pre>
 <h2>Remember that we only support flixel/openfl shaders.</h2>
+<p>A basic shader looks like this:</p>
+<pre class="hljs"><code class="language-glsl"><span class="hljs-meta">#pragma header //important to prevent your game from crashing</span>
+function main() {
+    <span class="hljs-type">vec2</span> uv = openfl_TextureCoordv;
+
+    <span class="hljs-type">vec4</span> col = flixel_texture2D(bitmap, uv);
+
+    <span class="hljs-built_in">gl_FragColor</span> = col;
+}
+</code></pre>
 <p>If you got a shader from a site called https://shadertoy.com, you have to manually convert them to flixel/openfl accepted format.</p>
 <p>Here's a sample shader that renders a basic texture.</p>
 <pre class="hljs"><code class="language-glsl"><span class="hljs-type">void</span> mainImage( <span class="hljs-keyword">out</span> <span class="hljs-type">vec4</span> fragColor, <span class="hljs-keyword">in</span> <span class="hljs-type">vec2</span> fragCoord )
