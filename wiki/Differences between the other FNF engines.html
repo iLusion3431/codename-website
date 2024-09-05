@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Differences between the other FNF engines - Codename Engine Docs</title>
+    <link rel="stylesheet" href="/New-folder/style.css">
+    <link rel="stylesheet" href="/New-folder/docs.css">
+</head>
+<body>
+    <div class="header">
+        <header>
+    <h2>Codename Engine</h2>
+    <div>
+        <!-- <a href="root/docs/">API Docs</a> -->
+        <a href="/New-folder/wiki/">Wiki</a>
+        <!-- <a href="root/tools/">Tools</a> -->
+    </div>
+</header>
+    </div>
+    <div class="container">
+        <div class="sidebar-wrapper">
+            <input type="checkbox" class="sidebar-button">
+            <span class="sidebar-button-front"></span>
+            <div class="sidebar">
+                <li class="sidebar-list-item"><a href="/New-folder/wiki/index.html">Home</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/How to navigate the engine.html">How to navigate the engine</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Differences between the other FNF engines.html" class="selected">Differences between the other FNF engines</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/index.html">Modding The Engine</a><ul class="sidebar-unordered-list">
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Creating songs/index.html">Creating songs</a><ul class="sidebar-unordered-list">
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Creating songs/Chart Editor Features.html">Chart Editor Features</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Creating characters/index.html">Creating characters</a><ul class="sidebar-unordered-list">
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Creating characters/Character Editor Features.html">Character Editor Features</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Creating stages.html">Creating stages</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Cutscenes or Dialogues.html">Cutscenes/Dialogues</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/index.html">Scripting</a><ul class="sidebar-unordered-list">
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/PlayState Scripts/index.html">PlayState Scripts</a><ul class="sidebar-unordered-list">
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/PlayState Scripts/Gameplay Scripts.html">Gameplay Scripts</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/PlayState Scripts/Events or Notetype Scripts.html">Events/Notetype Scripts</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/PlayState Scripts/Cutscenes or Dialogue Scripts.html">Cutscenes/Dialogue Scripts</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/PlayState Scripts/Character or Stage Scripts.html">Character/Stage Scripts</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/PlayState Scripts/Pause or Game Over Scripts.html">Pause/Game Over Scripts</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/State or Substate Scripts.html">State/Substate Scripts</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Global Scripts.html">Global Scripts</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Shaders.html">Shaders</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Using hxvlc for videos.html">Using hxvlc for videos</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Custom options.html">Custom options</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Custom Classes.html">Custom Classes</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/3D rendering.html">3D rendering</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Useful script snippets for modders.html">Useful script snippets for modders</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Scripted Assets Libraries.html">Scripted Assets Libraries</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/NDLL Scripting.html">NDLL Scripting</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Hardcoding.html">Hardcoding</a></li>
+</ul>
+</li>
+
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Differences between the other FNF engines.</h1>
+<h3>First of all, <strong>this engine does not have built-in LUA scripting</strong>, unlike <a href="https://github.com/ShadowMario/FNF-PsychEngine">Psych Engine</a>.</h3>
+<p>Codename engine is based on <strong>Base Game's week 6 code</strong> (AKA. version 0.2.7.1), and shows heavy modifications from the original source (for example, optimized PlayState ~1400 lines, rewritten systems etc.). It is not a fork of any other engines and hasn't taken code from other engines either.</p>
+<p>Compared to the usual engines (Psych Engine, FPS plus), these are the few differences that makes it stand out:</p>
+<ul>
+<li>Scripting system is specifically HScript Improved, a custom fork made by the devs themselves.</li>
+<li>Uses forks of popular libraries tailored specifically for the engine for the goal of better optimization.</li>
+<li>Modding system and softcoding is as capable as source coding.</li>
+<li>Focuses heavily on optimization, and encourages its users to also take on optimization practices.</li>
+<li>Bloated, in the sense that it offers as many modding tools as possible without changing the core gameplay and the base to mod on.</li>
+<li>Allows modularity using addons and mods that apply on top of the core mod.</li>
+<li>Advanced editors which allows for possibly better experience and easiness when creating the mod.</li>
+</ul>
+<h6>Please keep in mind that, despite these differences, we do not consider our engine to be any better than the others and this page exists purely for people to distinguish our engine from the other engines in the community.</h6>
+
+        </div>
+    </div>
+
+</body></html>

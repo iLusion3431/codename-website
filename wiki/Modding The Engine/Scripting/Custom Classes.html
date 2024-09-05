@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Classes - Codename Engine Docs</title>
+    <link rel="stylesheet" href="/New-folder/style.css">
+    <link rel="stylesheet" href="/New-folder/docs.css">
+</head>
+<body>
+    <div class="header">
+        <header>
+    <h2>Codename Engine</h2>
+    <div>
+        <!-- <a href="root/docs/">API Docs</a> -->
+        <a href="/New-folder/wiki/">Wiki</a>
+        <!-- <a href="root/tools/">Tools</a> -->
+    </div>
+</header>
+    </div>
+    <div class="container">
+        <div class="sidebar-wrapper">
+            <input type="checkbox" class="sidebar-button">
+            <span class="sidebar-button-front"></span>
+            <div class="sidebar">
+                <li class="sidebar-list-item"><a href="/New-folder/wiki/index.html">Home</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/How to navigate the engine.html">How to navigate the engine</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Differences between the other FNF engines.html">Differences between the other FNF engines</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/index.html">Modding The Engine</a><ul class="sidebar-unordered-list">
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Creating songs/index.html">Creating songs</a><ul class="sidebar-unordered-list">
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Creating songs/Chart Editor Features.html">Chart Editor Features</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Creating characters/index.html">Creating characters</a><ul class="sidebar-unordered-list">
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Creating characters/Character Editor Features.html">Character Editor Features</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Creating stages.html">Creating stages</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Cutscenes or Dialogues.html">Cutscenes/Dialogues</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/index.html">Scripting</a><ul class="sidebar-unordered-list">
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/PlayState Scripts/index.html">PlayState Scripts</a><ul class="sidebar-unordered-list">
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/PlayState Scripts/Gameplay Scripts.html">Gameplay Scripts</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/PlayState Scripts/Events or Notetype Scripts.html">Events/Notetype Scripts</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/PlayState Scripts/Cutscenes or Dialogue Scripts.html">Cutscenes/Dialogue Scripts</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/PlayState Scripts/Character or Stage Scripts.html">Character/Stage Scripts</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/PlayState Scripts/Pause or Game Over Scripts.html">Pause/Game Over Scripts</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/State or Substate Scripts.html">State/Substate Scripts</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Global Scripts.html">Global Scripts</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Shaders.html">Shaders</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Using hxvlc for videos.html">Using hxvlc for videos</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Custom options.html">Custom options</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Custom Classes.html" class="selected">Custom Classes</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/3D rendering.html">3D rendering</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Useful script snippets for modders.html">Useful script snippets for modders</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Scripted Assets Libraries.html">Scripted Assets Libraries</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/NDLL Scripting.html">NDLL Scripting</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Hardcoding.html">Hardcoding</a></li>
+</ul>
+</li>
+
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Custom Classes</h1>
+<p>Custom classes can be made either inside the script you need it in or you can make a script file coresponding with the name of the class in <code class="inline-code">./source</code>, and using <code class="inline-code">import</code> to import it.</p>
+<p>Here is a basic Song Script code that uses it:</p>
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">class</span> <span class="hljs-title class_">SpecialSprite</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">FlxSprite</span> {
+    public <span class="hljs-keyword">var</span> <span class="hljs-attr">customValue</span>:<span class="hljs-title class_">String</span> = <span class="hljs-literal">null</span>;
+    public <span class="hljs-keyword">function</span> <span class="hljs-title function_">new</span>(<span class="hljs-params">x:<span class="hljs-built_in">Float</span>, y:<span class="hljs-built_in">Float</span>, customValue:<span class="hljs-built_in">String</span></span>) {
+        <span class="hljs-variable language_">super</span>(x, y);
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">customValue</span> = customValue;
+        <span class="hljs-comment">//other code stuff</span>
+    }
+
+    public override <span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">elapsed</span>) {
+        <span class="hljs-variable language_">super</span>.<span class="hljs-title function_">update</span>(elapsed);
+    }
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">var</span> spr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SpecialSprite</span>(<span class="hljs-number">200</span>, <span class="hljs-number">400</span>, <span class="hljs-string">"powerful"</span>);
+    <span class="hljs-title function_">add</span>(spr);
+}
+</code></pre>
+<h2>Particularities</h2>
+<p>As of writing this, this system is very limited and also presents some defects. For example:</p>
+<ul>
+<li>You cannot extend FlxGroups or other typed classes <em>(the ones that end with a <code class="inline-code">&lt;T&gt;</code>)</em>.</li>
+<li>Certain classes like FlxText needs to have their <code class="inline-code">update</code> function manually called.</li>
+<li>all variables need to be public in order to be accessed inside the class.</li>
+</ul>
+
+        </div>
+    </div>
+
+</body></html>

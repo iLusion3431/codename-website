@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events or Notetype Scripts - Codename Engine Docs</title>
+    <link rel="stylesheet" href="/New-folder/style.css">
+    <link rel="stylesheet" href="/New-folder/docs.css">
+</head>
+<body>
+    <div class="header">
+        <header>
+    <h2>Codename Engine</h2>
+    <div>
+        <!-- <a href="root/docs/">API Docs</a> -->
+        <a href="/New-folder/wiki/">Wiki</a>
+        <!-- <a href="root/tools/">Tools</a> -->
+    </div>
+</header>
+    </div>
+    <div class="container">
+        <div class="sidebar-wrapper">
+            <input type="checkbox" class="sidebar-button">
+            <span class="sidebar-button-front"></span>
+            <div class="sidebar">
+                <li class="sidebar-list-item"><a href="/New-folder/wiki/index.html">Home</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/How to navigate the engine.html">How to navigate the engine</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Differences between the other FNF engines.html">Differences between the other FNF engines</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/index.html">Modding The Engine</a><ul class="sidebar-unordered-list">
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Creating songs/index.html">Creating songs</a><ul class="sidebar-unordered-list">
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Creating songs/Chart Editor Features.html">Chart Editor Features</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Creating characters/index.html">Creating characters</a><ul class="sidebar-unordered-list">
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Creating characters/Character Editor Features.html">Character Editor Features</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Creating stages.html">Creating stages</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Cutscenes or Dialogues.html">Cutscenes/Dialogues</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/index.html">Scripting</a><ul class="sidebar-unordered-list">
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/PlayState Scripts/index.html">PlayState Scripts</a><ul class="sidebar-unordered-list">
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/PlayState Scripts/Gameplay Scripts.html">Gameplay Scripts</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/PlayState Scripts/Events or Notetype Scripts.html" class="selected">Events/Notetype Scripts</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/PlayState Scripts/Cutscenes or Dialogue Scripts.html">Cutscenes/Dialogue Scripts</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/PlayState Scripts/Character or Stage Scripts.html">Character/Stage Scripts</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/PlayState Scripts/Pause or Game Over Scripts.html">Pause/Game Over Scripts</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/State or Substate Scripts.html">State/Substate Scripts</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Global Scripts.html">Global Scripts</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Shaders.html">Shaders</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Using hxvlc for videos.html">Using hxvlc for videos</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Custom options.html">Custom options</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Custom Classes.html">Custom Classes</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/3D rendering.html">3D rendering</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Useful script snippets for modders.html">Useful script snippets for modders</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/Scripted Assets Libraries.html">Scripted Assets Libraries</a></li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Scripting/NDLL Scripting.html">NDLL Scripting</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item"><a href="/New-folder/wiki/Modding The Engine/Hardcoding.html">Hardcoding</a></li>
+</ul>
+</li>
+
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Events/Notetype Scripts</h1>
+<h2>Events</h2>
+<p>Events can be found in <code class="inline-code">./data/events</code>. There's currently 3 files used for events: a script file, a JSON file to determine the parameters of it, and an image file for it's icon. <em>(they all need to have the same name as the event)</em></p>
+<p>First, we'll go over making the JSON file. The JSON file holds all parameters required for the Event, and each parameter can have different types. Each parameter type is listed here:</p>
+<pre class="hljs"><code class="language-json"><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"params"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Bool"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Bool"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"defaultValue"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span>
+        <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Int"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Int(0, 99, 1)"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"defaultValue"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span>
+        <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Float"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Float(0, 99, 1, 2)"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"defaultValue"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.00</span>
+        <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"String"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"String"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"defaultValue"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"nothing"</span>
+        <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"StrumLine"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"StrumLine"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"defaultValue"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span>
+        <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"ColorWheel"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"ColorWheel"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"defaultValue"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"#FFFFFF"</span>
+        <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"DropDown"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"DropDown('entry one', 'entry two')"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"defaultValue"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"entry one"</span>
+        <span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+<p><em>(you can copy these for your own JSON file)</em><br>
+There's a lot of them but we'll go over each one.</p>
+<ul>
+<li><strong>Bool</strong> creates a checkmark and returns true or false.</li>
+<li><strong>Int()</strong> returns an int. This one has parameters for minimum value, maximum value, and stepper <em>(non-functional)</em></li>
+<li><strong>Float()</strong> is the same as int, but has an extra parameter for precision.</li>
+<li><strong>String</strong> returns a string.</li>
+<li><strong>StrumLine</strong> creates a dropdown menu that contains the current StrumLine in the chart. Returns Ints corresponding the StrumLine index in the group <code class="inline-code">strumLines</code>.</li>
+<li><strong>ColorWheel</strong> creates a color wheel that returns the color in Int hex format.</li>
+<li><strong>DropDown()</strong> generates a dropdown menu that contains the entries inside the brackets.</li>
+</ul>
+<p><img src="./Events or Notetype Scripts-1.png"></p>
+<p>Now that we have established the Parameters, we can go over scripting the event now. A basic flash camera event looks something like this:</p>
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">onEvent</span>(<span class="hljs-params">e</span>) {
+    <span class="hljs-keyword">var</span> <span class="hljs-attr">params</span>:<span class="hljs-title class_">Array</span> = e.<span class="hljs-property">event</span>.<span class="hljs-property">params</span>;
+    <span class="hljs-keyword">if</span> (e.<span class="hljs-property">event</span>.<span class="hljs-property">name</span> == <span class="hljs-string">"Flash Camera"</span>) {
+        camGame.<span class="hljs-title function_">flash</span>(params[<span class="hljs-number">1</span>], params[<span class="hljs-number">0</span>]);
+    }
+}
+</code></pre>
+<p>In this example, we assume that we set our parameters to be the duration of the flash <em>(float)</em>, and the color of it <em>(colorwheel)</em>. <br>
+<img src="./Events or Notetype Scripts.png"></p>
+<p>The order of the parameters in <code class="inline-code">e.event.params</code> coresponds to the order you've put the params in.</p>
+<p>For the icon, place a <em>(preferabily 16x16)</em> image in the same directory as the event files.</p>
+<p><em>Write about .pack files later</em></p>
+<h2>Notetypes</h2>
+<p>Making notetypes only consists of 2 files: the script file and the note sprites.</p>
+<p>Putting the sprites in <code class="inline-code">./images/game/notes</code> and naming them after the notetype name will automatically replace the default note sprites with those.</p>
+<p>Writing a script for the notetypes is very easy. Though only one script is ran for all existing notetypes instead of each note, you can still code actions for them. <br>
+For example here is code for triggering actions when the player presses it:</p>
+<pre class="hljs"><code class="language-hx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">onPlayerHit</span>(<span class="hljs-params">event</span>) {
+    <span class="hljs-keyword">if</span> (event.<span class="hljs-property">noteType</span> == <span class="hljs-string">"Damage Note"</span>) {
+        health -= <span class="hljs-number">0.5</span>;
+        boyfriend.<span class="hljs-title function_">playAnim</span>(<span class="hljs-string">"hurt"</span>);
+    }
+}
+</code></pre>
+
+        </div>
+    </div>
+
+</body></html>
