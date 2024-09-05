@@ -27,6 +27,12 @@ header > div > a {
   font-size: 1.2em;
 }
 
+br {
+  display: block;
+  content: "";
+  margin-top: 7px;
+}
+
 .header {
   background: linear-gradient(0deg, var(--primary-color) 0%, var(--secondary-color) 100%);
 }
