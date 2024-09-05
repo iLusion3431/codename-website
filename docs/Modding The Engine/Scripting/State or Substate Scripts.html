@@ -62,11 +62,11 @@ You can change the Main Menu, the Freeplay Menu and even the Chart Editor.</p>
 A basic Main Menu modification looks like this:</p>
 <pre class="hljs"><code class="language-hx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">postCreate</span>(<span class="hljs-params"></span>) {
     forceCenterX = <span class="hljs-literal">false</span>; <span class="hljs-comment">// disable the code that centers the menu buttons.</span>
-    <span class="hljs-keyword">for</span> (<span class="hljs-function"><span class="hljs-params">i</span>=&gt;<span class="hljs-params">button</span> <span class="hljs-params">in</span> <span class="hljs-params">menuItems</span>.<span class="hljs-params">members</span>) {
-        <span class="hljs-params">button</span>.<span class="hljs-params">x</span> += <span class="hljs-params">Math</span>.<span class="hljs-params">sin</span>(<span class="hljs-params">i</span>) * 300; // <span class="hljs-params">move</span> <span class="hljs-params">buttons</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-function"><span class="hljs-params">i</span>=&gt;</span>button <span class="hljs-keyword">in</span> menuItems.<span class="hljs-property">members</span>) {
+        button.<span class="hljs-property">x</span> += <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">sin</span>(i) * <span class="hljs-number">300</span>; <span class="hljs-comment">// move buttons</span>
     }
 }
-</span></code></pre>
+</code></pre>
 <p>This code results in the menu looking like this.
 <img src="./State or Substate Scripts.png"></p>
 <p>You can do this with every State/Substate of course, but keep in mind you have to study the state's code first before modifying it. <em>(you can find the code in <a href="https://github.com/FNF-CNE-Devs/CodenameEngine">Codename Engine's Repository</a>)</em><br>

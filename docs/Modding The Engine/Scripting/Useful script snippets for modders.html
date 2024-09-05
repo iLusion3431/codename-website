@@ -60,15 +60,15 @@
 <h2>Global Scripts</h2>
 <h2>Replace pre-existing states with custom states.</h2>
 <pre class="hljs"><code class="language-hx"><span class="hljs-keyword">var</span> <span class="hljs-attr">redirectStates</span>:<span class="hljs-title class_">Map</span>&lt;<span class="hljs-title class_">FlxState</span>, <span class="hljs-title class_">String</span>&gt; = [
-    <span class="hljs-function"><span class="hljs-params">TitleState</span> =&gt; "<span class="hljs-params">CustomTitleState</span>"
+    <span class="hljs-function"><span class="hljs-params">TitleState</span> =&gt;</span> <span class="hljs-string">"CustomTitleState"</span>
 ];
 
-<span class="hljs-params">function</span> <span class="hljs-params">preStateSwitch</span>() {
-    <span class="hljs-params">for</span> (<span class="hljs-params">redirectState <span class="hljs-keyword">in</span> redirectStates.keys()</span>) 
-        <span class="hljs-params">if</span> (<span class="hljs-params">Std.isOfType(FlxG.game._requestedState, redirectState)</span>) 
-            <span class="hljs-params">FlxG</span>.<span class="hljs-params">game</span>.<span class="hljs-params">_requestedState</span> = <span class="hljs-params">new</span> <span class="hljs-params">ModState</span>(<span class="hljs-params">redirectStates.get(redirectState)</span>);
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">preStateSwitch</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">for</span> (redirectState <span class="hljs-keyword">in</span> redirectStates.<span class="hljs-title function_">keys</span>()) 
+        <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Std</span>.<span class="hljs-title function_">isOfType</span>(<span class="hljs-title class_">FlxG</span>.<span class="hljs-property">game</span>.<span class="hljs-property">_requestedState</span>, redirectState)) 
+            <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">game</span>.<span class="hljs-property">_requestedState</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ModState</span>(redirectStates.<span class="hljs-title function_">get</span>(redirectState));
 }
-</span></code></pre>
+</code></pre>
 <h2>Animated Icons support.</h2>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">elapsed</span>) {
     <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">state</span>.<span class="hljs-property">members</span>)
