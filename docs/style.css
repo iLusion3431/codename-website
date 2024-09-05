@@ -5,7 +5,7 @@
 
 body {
   background: rgb(40, 40, 40);
-  margin: 0 1em;
+  margin: 0 0em;
 }
 
 .container {
@@ -28,9 +28,8 @@ body {
 }
 
 .content {
-  margin-left: 5px;
   background: rgb(28, 28, 28);
-  padding: 0 2%;
+  padding: 0 4%;
 }
 
 .sidebar-unordered-list {
@@ -130,6 +129,9 @@ img {
   }
   img {
     max-width: 60%;
+  }
+  .container {
+    margin: 0 1em;
   }
 }
 
