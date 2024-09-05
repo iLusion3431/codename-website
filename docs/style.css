@@ -63,7 +63,7 @@ body {
   background: rgba(255, 255, 255, 0.05);
 }
 .sidebar-list-item>#selected {
-  background: purple;
+  background: blueviolet;
 }
 
 /*li:hover:not(:has(li:hover)) {
