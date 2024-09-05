@@ -14,6 +14,9 @@ body {
 }
 
 .sidebar {
+  height: 100%;
+  top: 0;
+  position: sticky;
   width: fit-content;
   white-space: nowrap;
   margin-right: 5px;
@@ -53,6 +56,24 @@ li:hover:not(:has(li:hover)) {
   background: rgba(255, 255, 255, 0.05);
 }
 
+img {
+  width: 100%;
+}
+
+.sidebar-button {
+  position: absolute;
+  flex-shrink: 0;
+}
+
+.sidebar-button-front {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  height: 50px;
+  width: 50px;
+  background-color: green;
+}
+
 @media screen and (max-width: 50.5em) {
   .sidebar {
     position: absolute;
@@ -75,6 +96,9 @@ li:hover:not(:has(li:hover)) {
   .content {
     padding: 0 5%;
     margin: 0 auto;
+  }
+  img {
+    width: 60%;
   }
 }
 
