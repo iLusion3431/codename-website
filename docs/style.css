@@ -3,6 +3,21 @@
   color: white
 }
 
+header {
+  display: flex;
+  padding: 0em 2em;
+}
+
+header > div {
+  margin: auto;
+}
+
+header > div > a {
+  display: inline-block;
+  margin-left: 3vw;
+  font-size: 1.2em;
+}
+
 body {
   background: rgb(40, 40, 40);
   margin: 0 0em;
@@ -28,7 +43,7 @@ li {
   width: 100%;
 }
 
-li>a {
+li > a {
   display: inline-block;
   width: 100%;
   padding: 0.4em 0.7em;
@@ -51,7 +66,6 @@ code {
   width: fit-content;
   display: inline-block;
 }
-
 .sidebar {
   height: calc(100vh);
   top: 0;
@@ -91,20 +105,19 @@ li>a {
   width: 100%;
   display: block;
   padding: 0em 1em;
-  line-height: 250%;
+  line-height:250%;
 }
 
 li>a:hover {
   background: rgba(255, 255, 255, 0.05);
 }
-
-.sidebar-list-item>a.selected:hover {
-  background: rgb(166, 86, 241);
-}
-
-.sidebar-list-item>.selected {
+.sidebar-list-item>#selected {
   background: blueviolet;
 }
+
+/*li:hover:not(:has(li:hover)) {
+  background: rgba(255, 255, 255, 0.05);
+}*/
 
 img {
   max-width: 100%;
@@ -149,11 +162,11 @@ img {
     position: fixed;
   }
 
-  .container:has(.sidebar-button:checked)>.sidebar-wrapper>.sidebar {
+  .container:has(.sidebar-button:checked) > .sidebar-wrapper > .sidebar {
     display: inherit;
   }
 
-  .container:has(.sidebar-button:checked)>.sidebar-wrapper {
+  .container:has(.sidebar-button:checked) > .sidebar-wrapper {
     height: 100%;
   }
 
@@ -168,11 +181,9 @@ img {
     padding: 0 5%;
     margin: 0 auto;
   }
-
   img {
     max-width: 60%;
   }
-
   .container {
     margin: 0 1em;
   }
