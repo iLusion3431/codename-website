@@ -16,6 +16,7 @@ body {
 
 .sidebar-wrapper {
   width: fit-content;
+  display: inline-block;
 }
 .sidebar {
   height: calc(100vh);
@@ -61,6 +62,9 @@ body {
 .sidebar-list-item>a:hover {
   background: rgba(255, 255, 255, 0.05);
 }
+.sidebar-list-item>#selected {
+  background: purple;
+}
 
 /*li:hover:not(:has(li:hover)) {
   background: rgba(255, 255, 255, 0.05);
@@ -96,19 +100,25 @@ img {
   }
 
   .sidebar-wrapper {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7)
+    background: rgba(0, 0, 0, 0.7);
   }
 
   .sidebar {
     display: none;
     width: max-content;
+    position: fixed;
   }
 
   .container:has(.sidebar-button:checked) > .sidebar-wrapper > .sidebar {
     display: inherit;
+  }
+
+  .container:has(.sidebar-button:checked) > .sidebar-wrapper {
+    height: 100%;
   }
 
   ul {
