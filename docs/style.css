@@ -18,6 +18,10 @@ header > div > a {
   font-size: 1.2em;
 }
 
+.header {
+  background: blueviolet;
+}
+
 body {
   background: rgb(40, 40, 40);
   margin: 0 0em;
