@@ -214,13 +214,10 @@ img {
 @media screen and (min-width: 60.5em) {
   .content {
     padding: 0 5%;
-    margin: 0 auto;
+    margin: 0 2em;
   }
   img {
     max-width: 60%;
-  }
-  .container {
-    margin: 0 1em;
   }
 }
 
