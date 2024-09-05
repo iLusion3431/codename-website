@@ -11,7 +11,7 @@ body {
 .container {
   display: flex;
   flex-direction: row;
-  width: fit-content;
+  width: auto;
 }
 
 .sidebar-wrapper {
@@ -29,8 +29,10 @@ body {
 }
 
 .content {
+  display: block;
   background: rgb(28, 28, 28);
   padding: 0 4%;
+  flex-grow: 1;
 }
 
 .sidebar-unordered-list {
