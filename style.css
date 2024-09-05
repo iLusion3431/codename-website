@@ -67,7 +67,7 @@ code.inline-code {
   white-space: pre-wrap;
 }
 
-pre.hljs code * {
+pre.hljs code, pre.hljs code * {
   font-family: monospace;
   white-space: pre-wrap;
 }
