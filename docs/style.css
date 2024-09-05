@@ -33,23 +33,23 @@ body {
   padding: 0 2%;
 }
 
-ul {
+.sidebar-unordered-list {
   width: 100%;
   margin-top: 0.4em;
   list-style: none;
   padding-left: 0;
 }
 
-li {
+.sidebar-list-item {
   list-style: none;
   overflow: hidden;
 }
 
-ul {
+.sidebar-unordered-list {
   margin: 0 1em;
 }
 
-li>a {
+.sidebar-list-item>a {
   display: inline-block;
   margin-right: 2em;
   width: 100%;
@@ -59,7 +59,7 @@ li>a {
   line-height:250%;
 }
 
-a:hover {
+.sidebar-list-item>a:hover {
   background: rgba(255, 255, 255, 0.05);
 }
 
