@@ -8,6 +8,39 @@ body {
   margin: 0 0em;
 }
 
+h1 {
+  border-bottom: thin solid white;
+  padding-bottom: 0.2em;
+}
+
+ul {
+  list-style: "> ";
+}
+
+ul:has(li>a) {
+  padding-left: 0em;
+  background: rgb(13, 13, 13);
+  overflow: hidden;
+  text-decoration: double;
+}
+
+li {
+  width: 100%;
+}
+
+li>a {
+  display: inline-block;
+  width: 100%;
+  padding: 0.4em 0.7em;
+}
+
+code {
+  background: #282c34;
+  padding: 0em 0.4em;
+  border-radius: 8px;
+  color: #d19a66;
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -18,6 +51,7 @@ body {
   width: fit-content;
   display: inline-block;
 }
+
 .sidebar {
   height: calc(100vh);
   top: 0;
@@ -36,44 +70,41 @@ body {
 }
 
 .sidebar-unordered-list {
+  background: none;
   width: 100%;
   margin-top: 0.4em;
   list-style: none;
   padding-left: 0;
+  margin: 0 1em;
 }
 
 .sidebar-list-item {
+  width: 100%;
   list-style: none;
   overflow: hidden;
 }
 
-.sidebar-unordered-list {
-  margin: 0 1em;
-}
-
-.sidebar-list-item>a {
+li>a {
+  background: none;
   display: inline-block;
   margin-right: 2em;
   width: 100%;
   display: block;
-  text-decoration: none;
   padding: 0em 1em;
-  line-height:250%;
+  line-height: 250%;
 }
 
-.sidebar-list-item>a:hover {
+li>a:hover {
   background: rgba(255, 255, 255, 0.05);
 }
+
 .sidebar-list-item>a.selected:hover {
   background: rgb(166, 86, 241);
 }
+
 .sidebar-list-item>.selected {
   background: blueviolet;
 }
-
-/*li:hover:not(:has(li:hover)) {
-  background: rgba(255, 255, 255, 0.05);
-}*/
 
 img {
   max-width: 100%;
@@ -118,17 +149,12 @@ img {
     position: fixed;
   }
 
-  .container:has(.sidebar-button:checked) > .sidebar-wrapper > .sidebar {
+  .container:has(.sidebar-button:checked)>.sidebar-wrapper>.sidebar {
     display: inherit;
   }
 
-  .container:has(.sidebar-button:checked) > .sidebar-wrapper {
+  .container:has(.sidebar-button:checked)>.sidebar-wrapper {
     height: 100%;
-  }
-
-  ul {
-    margin-top: 0;
-    list-style: none;
   }
 
   .container {
@@ -142,9 +168,11 @@ img {
     padding: 0 5%;
     margin: 0 auto;
   }
+
   img {
     max-width: 60%;
   }
+
   .container {
     margin: 0 1em;
   }
