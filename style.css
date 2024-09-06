@@ -214,7 +214,7 @@ img {
   }
 
   .sidebar {
-    width: max-content;
+    width: 80%;
     position: fixed;
     left: -100%;
     transition: left 0.3s ease-in-out;
