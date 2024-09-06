@@ -55,7 +55,6 @@ ul:has(li>a) {
   padding-left: 0em;
   background: var(--list-background-color);
   overflow: hidden;
-  text-decoration: double;
 }
 
 li {
@@ -67,6 +66,7 @@ li > a {
   display: inline-block;
   width: 100%;
   padding: 0.4em 0.7em;
+  text-decoration: none;
 }
 
 code {
@@ -99,7 +99,7 @@ pre.hljs code, pre.hljs code * {
 }
 
 .sidebar-wrapper {
-  width: fit-content;
+  width: 40vw;
   display: inline-block;
 }
 .sidebar {
@@ -224,6 +224,10 @@ img {
   }
   img {
     max-width: 60%;
+  }
+  .sidebar-wrapper {
+    width: 25vw;
+    display: inline-block;
   }
 }
 
