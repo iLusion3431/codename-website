@@ -51,7 +51,6 @@ h1 {
 
 ul {
   list-style: "> ";
-  border-radius: 10px;
 }
 
 ul:has(li>a) {
@@ -133,17 +132,39 @@ pre.hljs code * {
   overflow: hidden;
 }
 
+.content > ul {
+  position: relative;;
+  overflow: hidden;
+}
+
 li>a {
   text-decoration: none;
-  border-bottom: solid thin rgba(255, 255, 255, 0.05);
+  /*border-bottom: solid thin rgba(255, 255, 255, 0.05);*/
   display: inline-block;
   margin-right: 2em;
   width: 100%;
   padding: 0em 1em;
   line-height: 250%;
 }
+li>a:before {
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  content: "Ff";
+  color: transparent;
+  width: 100%;
+  border-bottom: solid thin rgba(0, 0, 0, 0.3);
+}
 
-li>a:hover {
+.sidebar-list-item>a {
+  background: transparent;
+}
+
+li.odd>a:before {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+li>a:hover:before {
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -208,6 +229,7 @@ img {
 
   .sidebar-wrapper {
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
@@ -274,7 +296,6 @@ img {
 
 .hljs {
   padding: 20px;
-  border-radius: 8px;
   text-wrap: wrap;
 }
 
