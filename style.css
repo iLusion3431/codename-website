@@ -9,7 +9,7 @@
 }
 
 * {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;;
   color: var(--text-color);
   scrollbar-color: var(--scrollbar-color) var(--background-secondary-color);
 }
