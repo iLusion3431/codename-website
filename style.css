@@ -248,6 +248,10 @@ img {
     width: fit-content;
     overflow: hidden;
   }
+
+  body:has(.sidebar-button:checked) {
+    overflow: hidden;
+  }
 }
 
 @media screen and (min-width: 60.5em) {
