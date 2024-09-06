@@ -17,11 +17,11 @@ header {
   padding: 0em 2em;
 }
 
-header > div {
+header>div {
   margin: auto;
 }
 
-header > div > a {
+header>div>a {
   display: inline-block;
   margin-left: 3vw;
   font-size: 1.2em;
@@ -62,13 +62,6 @@ li {
   width: 100%;
 }
 
-li > a {
-  display: inline-block;
-  width: 100%;
-  padding: 0.4em 0.7em;
-  text-decoration: none;
-}
-
 code {
   background: #282c34;
   border-radius: 8px;
@@ -87,7 +80,8 @@ pre.inline-code {
   width: fit-content;
 }
 
-pre.hljs code, pre.hljs code * {
+pre.hljs code,
+pre.hljs code * {
   font-family: monospace;
   white-space: pre-wrap;
 }
@@ -102,6 +96,7 @@ pre.hljs code, pre.hljs code * {
   width: 40vw;
   display: inline-block;
 }
+
 .sidebar {
   height: calc(100vh);
   top: 0;
@@ -136,13 +131,13 @@ pre.hljs code, pre.hljs code * {
 }
 
 li>a {
-  background: none;
+  text-decoration: none;
+  border-bottom: solid thin rgba(255, 255, 255, 0.05);
   display: inline-block;
   margin-right: 2em;
   width: 100%;
-  display: block;
   padding: 0em 1em;
-  line-height:250%;
+  line-height: 250%;
 }
 
 li>a:hover {
@@ -152,6 +147,7 @@ li>a:hover {
 .sidebar-list-item>.selected:hover {
   background: rgb(166, 86, 241);
 }
+
 .sidebar-list-item>.selected {
   background: #531a7d;
 }
@@ -203,11 +199,11 @@ img {
     position: fixed;
   }
 
-  .container:has(.sidebar-button:checked) > .sidebar-wrapper > .sidebar {
+  .container:has(.sidebar-button:checked)>.sidebar-wrapper>.sidebar {
     display: inherit;
   }
 
-  .container:has(.sidebar-button:checked) > .sidebar-wrapper {
+  .container:has(.sidebar-button:checked)>.sidebar-wrapper {
     height: 100%;
   }
 
@@ -222,9 +218,11 @@ img {
     padding: 0 5%;
     margin: 0 2em;
   }
+
   img {
     max-width: 60%;
   }
+
   .sidebar-wrapper {
     width: 25vw;
     display: inline-block;
