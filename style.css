@@ -138,6 +138,7 @@ pre.hljs code * {
 }
 
 li>a {
+  z-index: 1;
   text-decoration: none;
   /*border-bottom: solid thin rgba(255, 255, 255, 0.05);*/
   display: inline-block;
@@ -146,7 +147,9 @@ li>a {
   padding: 0em 1em;
   line-height: 250%;
 }
+
 li>a:before {
+  z-index: -1;
   position: absolute;
   left: 0;
   display: inline-block;
@@ -168,11 +171,11 @@ li>a:hover:before {
   background: rgba(255, 255, 255, 0.05);
 }
 
-.sidebar-list-item>.selected:hover {
+.sidebar-list-item>.selected:hover:before {
   background: rgb(166, 86, 241);
 }
 
-.sidebar-list-item>.selected {
+.sidebar-list-item>.selected:before {
   background: #531a7d;
 }
 
@@ -229,7 +232,7 @@ img {
 
   .sidebar-wrapper {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     left: 0;
     width: 100%;
