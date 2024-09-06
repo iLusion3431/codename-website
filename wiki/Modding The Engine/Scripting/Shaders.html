@@ -85,7 +85,7 @@ camGame.<span class="hljs-title function_">addShader</span>(shader);
 <h2>Remember that we only support flixel/openfl shaders.</h2>
 <p>A basic shader looks like this:</p>
 <pre class="hljs"><code class="language-glsl"><span class="hljs-meta">#pragma header //important to prevent your game from crashing</span>
-function main() {
+<span class="hljs-type">void</span> main() {
     <span class="hljs-type">vec2</span> uv = openfl_TextureCoordv;
 
     <span class="hljs-type">vec4</span> col = flixel_texture2D(bitmap, uv);
