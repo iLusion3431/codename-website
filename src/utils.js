@@ -1,6 +1,9 @@
 var jsdom = require("jsdom");
 var path = require("path");
 var hljs = require('highlight.js');
+const fs = require("fs");
+const pngToJpeg = require('png-to-jpeg');
+var path = require("path");
 
 function fixHtmlRefs(html, pageDir, _pageDir) {
     var dom = new jsdom.JSDOM(html);
@@ -8,7 +11,7 @@ function fixHtmlRefs(html, pageDir, _pageDir) {
     var imageSrcs = dom.window.document.querySelectorAll("[src]");
 
     for(const link of links) {
-        link.href = link.href.replace(/.md$/, ".html").replace("./" + pageDir, "./");
+        link.href = link.href.replace(/\.md$/, ".html").replace("./" + pageDir, "./");
         if(link.href.startsWith("/")) {
             link.href = path.normalize("/" + pageDir + link.href.substring(1));
         }
@@ -18,7 +21,7 @@ function fixHtmlRefs(html, pageDir, _pageDir) {
     }
 
     for(const image of imageSrcs) {
-        image.src = image.src.replace(/.md$/, ".html").replace("./" + pageDir, "./");
+        image.src = image.src.replace(/\.md$/, ".html").replace("./" + pageDir, "./");
         if(image.src.startsWith("/")) {
             image.src = path.normalize("/" + _pageDir + image.src.substring(1));
         }
@@ -47,6 +50,38 @@ function fixHtmlRefs(html, pageDir, _pageDir) {
     return dom
 }
 
+function copyImage(inpath, outpath, quality=80, convertToJpeg=true) {
+    if(!convertToJpeg || path.parse(inpath).ext != ".png") {
+        fs.copyFile(inpath, outpath, () => {});
+        return outpath;
+    }
+
+    outpath = outpath.replace(/\.png$/, ".jpg");
+
+    // is png
+
+    fs.readFile(inpath, (readErr, buffer) => {
+        if (readErr) {
+            console.error('Error reading file:', readErr);
+            return;
+        }
+
+        pngToJpeg({ quality })(buffer)
+            .then(output => {
+                fs.writeFile(outpath, output, (writeErr) => {
+                    if (writeErr) {
+                        console.error('Error writing file:', writeErr);
+                        return;
+                    }
+                    //console.log('Image copied successfully');
+                });
+            })
+            .catch(err => console.error('Error converting image:', err));
+    });
+    return outpath;
+}
+
 module.exports = {
-    fixHtmlRefs: fixHtmlRefs
+    fixHtmlRefs: fixHtmlRefs,
+    copyImage: copyImage
 }

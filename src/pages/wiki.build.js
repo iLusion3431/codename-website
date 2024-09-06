@@ -5,7 +5,8 @@ var jsdom = require("jsdom");
 var fs = require('fs');
 var hljs = require('highlight.js');
 
-var { fixHtmlRefs } = require("../utils.js");
+var { fixHtmlRefs, copyImage } = require("../utils.js");
+const { trace } = require('console');
 
 var header = fs.readFileSync("./src/pages/templates/header.html", 'utf8');
 
@@ -17,7 +18,7 @@ function generateSidebar(list, basePath = '', selected = null) {
 		if(item.length > 1 && item[1] != null) {
 			visualName = item[1];
 		}
-		console.log(visualName);
+		//console.log(visualName);
 		visualName = visualName.replace("UNFINISHED", "<span style='color: #FF0000;'>UNFINISHED</span>")
 		var hasChildren = item.length > 2 && item[2] != null;
 		html += `<li class="sidebar-list-item">`;
@@ -59,14 +60,26 @@ function buildHtml(_pageDir, _exportPath) {
 		html: true,
 	});
 
+	var changedImages = {};
+
 	for (i of filenames) {
 		var parsedName = path.parse(i);
 		var ext = parsedName.ext;
 		if (ext == "" && !fs.existsSync(exportPath + i))
 			fs.mkdirSync(exportPath + i, {recursive: true});
 		if (ext == ".png" || ext == ".jpg" || ext == ".jpeg" || ext == ".gif") {
-			fs.copyFile("./src/" + wikiDir + i, exportPath + i, () => {});
+			if(ext == ".png") {
+				console.log("Converting " + i + " to jpg");
+				changedImages[i] = true;
+			}
+			copyImage("./src/" + wikiDir + i, exportPath + i);
+			//fs.copyFile("./src/" + wikiDir + i, exportPath + i, () => {});
 		}
+	}
+
+	for (i of filenames) {
+		var parsedName = path.parse(i);
+		var ext = parsedName.ext;
 		if (ext == ".md") {
 			var filename = parsedName.name;
 
@@ -86,6 +99,12 @@ function buildHtml(_pageDir, _exportPath) {
 			});
 
 			var dom = fixHtmlRefs(html, pageDir, _pageDir);
+
+			var imageSrcs = dom.window.document.querySelectorAll("[src]");
+
+			for(const image of imageSrcs) {
+				image.src = image.src.replace(/\.png$/, ".jpg");
+			}
 
 			//console.log(data);
 			fs.writeFileSync(
