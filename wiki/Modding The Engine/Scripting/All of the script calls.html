@@ -12,7 +12,7 @@
     <div>
         <!-- <a href="root/docs/">API Docs</a> -->
         <a href="/New-folder/wiki/">Wiki</a>
-        <a href="/New-folder/tools/">Tools</a>
+        <!-- <a href="root/tools/">Tools</a> -->
     </div>
 </header>
     </div>
@@ -30,7 +30,7 @@
             <div class="sidebar">
                 <li class="sidebar-list-item even"><a href="/New-folder/wiki/index.html" class="even">Home</a></li>
 <li class="sidebar-list-item odd"><a href="/New-folder/wiki/How to navigate the engine.html" class="odd">How to navigate the engine</a></li>
-<li class="sidebar-list-item even"><a href="/New-folder/wiki/Differences between the other FNF engines.html" class="even">Differences between the other FNF engines</a></li>
+<li class="sidebar-list-item even"><a href="/New-folder/wiki/Differences between the other FNF engines.html" class="even">Differences between other FNF engines</a></li>
 <li class="sidebar-list-item odd"><a href="/New-folder/wiki/Modding The Engine/index.html" class="odd">Modding The Engine</a><ul class="sidebar-unordered-list odd">
 <li class="sidebar-list-item even"><a href="/New-folder/wiki/Modding The Engine/Creating songs/index.html" class="even">Creating songs</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/New-folder/wiki/Modding The Engine/Creating songs/Chart Editor Features.html" class="odd">Chart Editor Features</a></li>
@@ -79,30 +79,40 @@
 <h3>stepHit(curStep:Int), beatHit(curBeat:Int), measureHit(curMeasure:Int)</h3>
 <h3>onFocus(), onFocusLost()</h3>
 <h3>draw(event:DrawEvent), postDraw(event:DrawEvent)</h3>
-<h3>onStateSwitch(event:StateEvent)</h3>
-<h3>onOpenSubState(event:StateEvent)</h3>
+<p>The <code class="inline-code">event</code> has no parameters but can be cancelled</p>
+<h3>onStateSwitch(event:StateEvent), onOpenSubState(event:StateEvent)</h3>
+<p>The <code class="inline-code">event</code> in question has the following parameter:</p>
+<ul>
+<li><code class="inline-code">substate</code> which represents the state/substate it's about to open</li>
+</ul>
 <h3>onResize(event:ResizeEvent)</h3>
+<p>The <code class="inline-code">event</code> in question has the following parameters:</p>
+<ul>
+<li><code class="inline-code">width</code> and <code class="inline-code">height</code> which represents the new width and height of the game.</li>
+<li><code class="inline-code">oldWidth</code> and <code class="inline-code">oldHeight</code> which represents the old width and height of the game.</li>
+</ul>
 <h3>destroy()</h3>
 <h2>PlayState.hx</h2>
-<h3>onStageXMLParsed, onStageNodeParsed</h3>
-<h3>onPreGenerateStrums, onPostGenerateStrums</h3>
-<h3>onStrumCreation, onPostStrumCreation</h3>
-<h3>onNoteCreation, onPostNoteCreation</h3>
-<h3>onStartCountdown, onPostStartCountdown</h3>
-<h3>onCountdown, onPostCountdown</h3>
-<h3>onSongStart, onStartSong, onSongEnd</h3>
-<h3>onInputUpdate, onPostInputUpdate</h3>
-<h3>onRatingUpdate</h3>
-<h3>onPlayerHit, onDadHit, onNoteHit</h3>
-<h3>onPlayerMiss</h3>
-<h3>onCameraMove</h3>
-<h3>onEvent</h3>
-<h3>onSubstateOpen, onSubstateClose</h3>
-<h3>onGamePause</h3>
-<h3>onGameOver, onPostGameOver</h3>
-<h3>onVocalsResync</h3>
+<h3>onStageXMLParsed(event:StageXMLEvent), onStageNodeParsed(event:StageNodeEvent)</h3>
+<h3>onPreGenerateStrums(event:AmountEvent), onPostGenerateStrums(event:AmountEvent)</h3>
+<h3>onStrumCreation(event:StrumCreationEvent), onPostStrumCreation(event:StrumCreationEvent)</h3>
+<h3>onNoteCreation(event:NoteCreationEvent), onPostNoteCreation(event:NoteCreationEvent)</h3>
+<h3>onStartCountdown(event:CancellableEvent), onPostStartCountdown()</h3>
+<h3>onCountdown(event:CountdownEvent), onPostCountdown(event:CountdownEvent)</h3>
+<h3>onSongStart(), onStartSong(), onSongEnd()</h3>
+<h3>onInputUpdate(event:InputSystemEvent), onPostInputUpdate()</h3>
+<h3>onRatingUpdate(event:RatingUpdateEvent)</h3>
+<h3>onPlayerHit(event:NoteHitEvent), onDadHit(event:NoteHitEvent), onNoteHit(event:NoteHitEvent)</h3>
+<h3>onPlayerMiss(event:NoteMissEvent)</h3>
+<h3>onCameraMove(event:CamMoveEvent)</h3>
+<h3>onEvent(event:EventGameEvent)</h3>
+<h3>onSubstateOpen(event:StateEvent), onSubstateClose(event:StateEvent)</h3>
+<h3>onGamePause(event:CancellableEvent)</h3>
+<h3>onGameOver(event:GameOverEvent), onPostGameOver(event:GameOverEvent)</h3>
+<h3>onVocalsResync()</h3>
 <h2>Global Scripts</h2>
 <h3>focusLost(), focusGained()</h3>
+<p>more coming soon</p>
 
         </div>
     </div>
