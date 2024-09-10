@@ -77,6 +77,10 @@ code.inline-code {
   white-space: pre-wrap;
 }
 
+pre.inline-code code {
+  background: unset;
+}
+
 pre.inline-code {
   background: #282c34;
   width: fit-content;
