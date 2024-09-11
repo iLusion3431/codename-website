@@ -55,7 +55,7 @@
 <li class="sidebar-list-item even"><a href="/New-folder/wiki/Modding The Engine/Scripting/Global Scripts.html" class="even">Global Scripts</a></li>
 <li class="sidebar-list-item odd"><a href="/New-folder/wiki/Modding The Engine/Scripting/Shaders.html" class="odd">Shaders</a></li>
 <li class="sidebar-list-item even"><a href="/New-folder/wiki/Modding The Engine/Scripting/Using hxvlc for videos.html" class="even">Using hxvlc for videos</a></li>
-<li class="sidebar-list-item odd"><a href="/New-folder/wiki/Modding The Engine/Scripting/Custom options.html" class="odd">Custom options</a></li>
+<li class="sidebar-list-item odd"><a href="/New-folder/wiki/Modding The Engine/Scripting/Custom Options.html" class="odd">Custom Options</a></li>
 <li class="sidebar-list-item even"><a href="/New-folder/wiki/Modding The Engine/Scripting/Custom Classes.html" class="even">Custom Classes</a></li>
 <li class="sidebar-list-item odd"><a href="/New-folder/wiki/Modding The Engine/Scripting/3D rendering.html" class="odd">3D rendering - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 <li class="sidebar-list-item even"><a href="/New-folder/wiki/Modding The Engine/Scripting/All of the script calls.html" class="even">All of the script calls - <span style="color: #FF0000;">UNFINISHED</span></a></li>
@@ -83,8 +83,8 @@
 ];
 
 <span class="hljs-keyword">function</span> <span class="hljs-title function_">preStateSwitch</span>(<span class="hljs-params"></span>) {
-    <span class="hljs-keyword">for</span> (redirectState <span class="hljs-keyword">in</span> redirectStates.<span class="hljs-title function_">keys</span>()) 
-        <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Std</span>.<span class="hljs-title function_">isOfType</span>(<span class="hljs-title class_">FlxG</span>.<span class="hljs-property">game</span>.<span class="hljs-property">_requestedState</span>, redirectState)) 
+    <span class="hljs-keyword">for</span> (redirectState <span class="hljs-keyword">in</span> redirectStates.<span class="hljs-title function_">keys</span>())
+        <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Std</span>.<span class="hljs-title function_">isOfType</span>(<span class="hljs-title class_">FlxG</span>.<span class="hljs-property">game</span>.<span class="hljs-property">_requestedState</span>, redirectState))
             <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">game</span>.<span class="hljs-property">_requestedState</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ModState</span>(redirectStates.<span class="hljs-title function_">get</span>(redirectState));
 }
 </code></pre>
@@ -95,7 +95,7 @@
             <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Assets</span>.<span class="hljs-title function_">exists</span>(<span class="hljs-title class_">Path</span>.<span class="hljs-title function_">withoutExtension</span>(<span class="hljs-title class_">Paths</span>.<span class="hljs-title function_">image</span>(<span class="hljs-string">"icons/"</span>+i.<span class="hljs-property">curCharacter</span>)) + <span class="hljs-string">".xml"</span>) &amp;&amp; i.<span class="hljs-property">frames</span>.<span class="hljs-property">frames</span>[<span class="hljs-number">0</span>].<span class="hljs-property">name</span> != <span class="hljs-string">"losing0000"</span>) {
                 i.<span class="hljs-property">frames</span> = <span class="hljs-title class_">Paths</span>.<span class="hljs-title function_">getFrames</span>(<span class="hljs-string">"icons/"</span>+i.<span class="hljs-property">curCharacter</span>);
                 i.<span class="hljs-property">animation</span>.<span class="hljs-title function_">addByPrefix</span>(<span class="hljs-string">"losing"</span>, <span class="hljs-string">"losing"</span>, <span class="hljs-number">24</span>, <span class="hljs-literal">true</span>);
-                i.<span class="hljs-property">animation</span>.<span class="hljs-title function_">addByPrefix</span>(<span class="hljs-string">"normal"</span>, <span class="hljs-string">"normal"</span>, <span class="hljs-number">24</span>, <span class="hljs-literal">true</span>); 
+                i.<span class="hljs-property">animation</span>.<span class="hljs-title function_">addByPrefix</span>(<span class="hljs-string">"normal"</span>, <span class="hljs-string">"normal"</span>, <span class="hljs-number">24</span>, <span class="hljs-literal">true</span>);
                 i.<span class="hljs-property">animation</span>.<span class="hljs-title function_">play</span>(<span class="hljs-string">"normal"</span>, <span class="hljs-literal">true</span>);
                 i.<span class="hljs-property">curAnimState</span> = -<span class="hljs-number">1</span>;
             }
@@ -103,7 +103,7 @@
 <span class="hljs-keyword">function</span> <span class="hljs-title function_">onHealthIconAnimChange</span>(<span class="hljs-params">e</span>) {
     <span class="hljs-keyword">if</span> (e.<span class="hljs-property">healthIcon</span>.<span class="hljs-property">animation</span>.<span class="hljs-title function_">exists</span>(<span class="hljs-string">"normal"</span>)) {
         e.<span class="hljs-title function_">cancel</span>();
-        e.<span class="hljs-property">healthIcon</span>.<span class="hljs-property">animation</span>.<span class="hljs-title function_">play</span>(e.<span class="hljs-property">amount</span> == <span class="hljs-number">0</span> ? <span class="hljs-string">'normal'</span> : <span class="hljs-string">'losing'</span>, <span class="hljs-literal">true</span>);  
+        e.<span class="hljs-property">healthIcon</span>.<span class="hljs-property">animation</span>.<span class="hljs-title function_">play</span>(e.<span class="hljs-property">amount</span> == <span class="hljs-number">0</span> ? <span class="hljs-string">'normal'</span> : <span class="hljs-string">'losing'</span>, <span class="hljs-literal">true</span>);
     }
 }
 </code></pre>
