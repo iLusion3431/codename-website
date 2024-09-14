@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State or Substate Scripts - Codename Engine Docs</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/docs.css">
+</head>
+<body>
+    <div class="header">
+        <header>
+    <h2>Codename Engine</h2>
+    <div>
+        <a href="/api-docs/">API Docs</a>
+        <a href="/wiki/">Wiki</a>
+        <!-- <a href="root/tools/">Tools</a> -->
+    </div>
+</header>
+    </div>
+    <div class="container">
+        <div class="sidebar-wrapper">
+            <input type="checkbox" class="sidebar-button">
+            <span class="sidebar-button-front">
+                <svg viewBox="0 0 100 80" width="40" height="40">
+                    <rect width="100" height="20" rx="10"></rect>
+                    <rect y="30" width="100" height="20" rx="10"></rect>
+                    <rect y="60" width="100" height="20" rx="10"></rect>
+                </svg>
+                <svg width="800px" height="800px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path stroke="#000000" d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z"></path></svg>
+            </span>
+            <div class="sidebar">
+                <li class="sidebar-list-item even"><a href="/wiki/index.html" class="even">Home</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/How to navigate the engine.html" class="odd">How to navigate the engine</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/Differences between the other FNF engines.html" class="even">Differences between other FNF engines</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/index.html" class="odd">Modding The Engine</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Creating songs/index.html" class="even">Creating songs</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Creating songs/Chart Editor Features.html" class="odd">Chart Editor Features</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Creating characters/index.html" class="even">Creating characters</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Creating characters/Character Editor Features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Creating stages.html" class="even">Creating stages</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Cutscenes or Dialogues.html" class="odd">Cutscenes/Dialogues</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Scripting/index.html" class="even">Scripting</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Scripting/PlayState Scripts/index.html" class="odd">PlayState Scripts</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Scripting/PlayState Scripts/Gameplay Scripts.html" class="even">Gameplay Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Scripting/PlayState Scripts/Events or Notetype Scripts.html" class="odd">Events/Notetype Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Scripting/PlayState Scripts/Cutscenes or Dialogue Scripts.html" class="even">Cutscenes/Dialogue Scripts - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Scripting/PlayState Scripts/Character or Stage Scripts.html" class="odd">Character/Stage Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Scripting/PlayState Scripts/Pause or Game Over Scripts.html" class="even">Pause/Game Over Scripts</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Scripting/State or Substate Scripts.html" class="odd selected">State/Substate Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Scripting/Global Scripts.html" class="even">Global Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Scripting/Shaders.html" class="odd">Shaders</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Scripting/Using hxvlc for videos.html" class="even">Using hxvlc for videos</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Scripting/Custom Options.html" class="odd">Custom Options</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Scripting/Custom Classes.html" class="even">Custom Classes</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Scripting/3D rendering.html" class="odd">3D rendering - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Scripting/All of the script calls.html" class="even">All of the script calls - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Scripting/Useful script snippets for modders.html" class="odd">Useful script snippets for modders - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Scripting/Scripted Assets Libraries.html" class="even">Scripted Assets Libraries - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Scripting/NDLL Scripting.html" class="odd">NDLL Scripting - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Hardcoding/index.html" class="even">Hardcoding - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>State/Substate Scripts</h1>
+<p>State/Substate Scripts are scripts that can change any state or substate of the game.<br>
+You can change the Main Menu, the Freeplay Menu and even the Chart Editor.</p>
+<h2>Modifying a pre-existing State/Substate</h2>
+<p>To get started, make a Script in <code class="inline-code">./data/states</code> and name it corresponding to the state/substate you want to change.</p>
+<p>For example, if you decide to change the Main Menu, make a Script like this <code class="inline-code">./data/states/MainMenuState.hx</code><br>
+A basic Main Menu modification looks like this:</p>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">postCreate</span>(<span class="hljs-params"></span>) {
+    forceCenterX = <span class="hljs-literal">false</span>; <span class="hljs-comment">// disable the code that centers the menu buttons.</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-function"><span class="hljs-params">i</span>=&gt;</span>button <span class="hljs-keyword">in</span> menuItems.<span class="hljs-property">members</span>) {
+        button.<span class="hljs-property">x</span> += <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">sin</span>(i) * <span class="hljs-number">300</span>; <span class="hljs-comment">// move buttons</span>
+    }
+}
+</code></pre>
+<p>This code results in the menu looking like this.</p>
+<p><img src="./State or Substate Scripts.png"></p>
+<p>You can do this with every State/Substate of course, but keep in mind you have to study the state's code first before modifying it. <em>(you can find the code in <a href="https://github.com/FNF-CNE-Devs/CodenameEngine">Codename Engine's Repository</a>)</em><br>
+<em>Also look for <a href="./All of the script calls.html">All of the script calls</a> for menu script calls</em></p>
+<h2>Creating custom States/Substates</h2>
+<p>You can also create entirely custom ones too! By putting them in the same <code class="inline-code">./data/states/</code> folder, you create new ModStates/ModSubstates.</p>
+<p>Accessing them is done via this piece of code:</p>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-title class_">FlxG</span>.<span class="hljs-title function_">switchState</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ModState</span>(<span class="hljs-string">"MyCustomState"</span>)); <span class="hljs-comment">// assuming we have made a new Script ./data/states/MyCustomState.hx</span>
+</code></pre>
+<p>or this code</p>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-title function_">openSubstate</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ModSubstate</span>(<span class="hljs-string">"MyCustomSubstate"</span>)) <span class="hljs-comment">// assuming we have made a new Script ./data/states/MyCustomSubstate.hx</span>
+</code></pre>
+
+        </div>
+    </div>
+
+</body></html>
