@@ -8,6 +8,10 @@
     margin: 1em;
 }
 
+div.compact {
+    margin-top: 0.3em;
+}
+
 .logo-container {
     display: flex;
     justify-content: center;
