@@ -1,0 +1,320 @@
+:root {
+  --primary-color: #531a7d;
+  --secondary-color: #43206e;
+  --background-primary-color: #1e1826;
+  --background-secondary-color: #17121d;
+  --list-background-color: #110d15;
+  --text-color: white;
+  --scrollbar-color: #2a2235;
+}
+
+a {
+  color: deepskyblue;
+}
+
+.default-button {
+  color: var(--text-color);
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.7em;
+  background: var(--primary-color);
+  border: solid rgba(0, 0, 0, 0.2) 2px;
+}
+
+* {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+  color: var(--text-color);
+  scrollbar-color: var(--scrollbar-color) var(--background-secondary-color);
+}
+
+header {
+  display: flex;
+  padding: 0em 2em;
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.3), 0px 0px 0px 2px rgba(0, 0, 0, 0.2) inset;
+  justify-content: space-between;
+}
+
+header>div {
+  background: var(--background-secondary-color);
+  display: flex;
+}
+
+header>h1 {
+  margin: 0;
+  margin-bottom: 15px;
+  align-self: end;
+}
+
+header>a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+header>a>img {
+  max-width: 20%;
+  margin-right: 0.5em;
+}
+
+header>div>a {
+  display: flex;
+  padding: 0 1vw;
+  font-size: 1.2em;
+  width: 76px;
+  text-align: center;
+  color: white;
+  height: 100%;
+  align-content: center;
+  box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.2) inset;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+}
+
+header>div>a:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+br {
+  display: block;
+  content: "";
+  margin-top: 7px;
+}
+
+.header {
+  position: relative;
+  z-index: 5;
+  background: linear-gradient(0deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+body {
+  background: var(--background-primary-color);
+  margin: 0 0em;
+}
+
+h1 {
+  border-bottom: thin solid white;
+  padding-bottom: 0.2em;
+}
+
+ul {
+  list-style: "> ";
+}
+
+ul:has(li>a) {
+  padding-left: 0em;
+  background: var(--list-background-color);
+  overflow: hidden;
+}
+
+li {
+  padding: 0em 1em;
+  width: 100%;
+}
+
+code {
+  background: #2a2235;
+  border-radius: 8px;
+}
+
+code.inline-code {
+  padding: 0em 0.4em;
+  color: #d19a66;
+
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+
+pre.inline-code code {
+  background: unset;
+}
+
+pre.inline-code {
+  background: #282c34;
+  width: fit-content;
+}
+
+pre.hljs code,
+pre.hljs code * {
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+}
+
+.content {
+  border: solid rgba(0, 0, 0, 0.2) 2px;
+  display: block;
+  background: var(--background-secondary-color);
+  padding: 0 4%;
+  flex-grow: 1;
+}
+
+.content>ul {
+  position: relative;
+  overflow: hidden;
+}
+
+li>a {
+  color: var(--text-color);
+  z-index: 1;
+  text-decoration: none;
+  /*border-bottom: solid thin rgba(255, 255, 255, 0.05);*/
+  display: inline-block;
+  margin-right: 2em;
+  width: 100%;
+  padding: 0em 1em;
+  line-height: 250%;
+}
+
+li>a:before {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  content: "Ff";
+  color: transparent;
+  width: 100%;
+  border: solid rgba(0, 0, 0, 0.2) 2px;
+}
+
+li.odd>a:before {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+li>a:hover:before {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/*li:hover:not(:has(li:hover)) {
+  background: rgba(255, 255, 255, 0.05);
+}*/
+
+img {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 50.5em) {
+  .container {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 60.5em) {
+  .content {
+    padding: 0 5%;
+    margin: 1.5em 1.5em;
+  }
+
+  img {
+    max-width: 60%;
+  }
+
+}
+
+.hljs {
+  padding: 20px;
+  text-wrap: wrap;
+}
+
+/* hljs */
+
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  color: #abb2bf;
+  background: #2a2235;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: #98c379;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
