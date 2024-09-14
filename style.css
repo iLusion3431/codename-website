@@ -52,6 +52,8 @@ br {
 }
 
 .header {
+  position: relative;
+  z-index: 5;
   background: linear-gradient(0deg, var(--primary-color) 0%, var(--secondary-color) 100%);
 }
 
