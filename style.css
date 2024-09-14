@@ -51,6 +51,10 @@ header>a {
   align-items: center;
 }
 
+header>a {
+  text-wrap: nowrap;
+}
+
 header>a>img {
   max-width: 20%;
   margin-right: 0.5em;
