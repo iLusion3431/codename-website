@@ -46,18 +46,19 @@ header>h1 {
 }
 
 header>a {
+  text-wrap: nowrap;
   text-decoration: none;
   display: flex;
   align-items: center;
 }
 
-header>a {
-  text-wrap: nowrap;
+header>a>img {
+  /*! max-height: 30%; */
+  margin-right: 0.5em;
 }
 
-header>a>img {
-  max-width: 20%;
-  margin-right: 0.5em;
+header>a>.mobile {
+  display: none;
 }
 
 header>div>a {
@@ -206,6 +207,20 @@ img {
   .container {
     width: 100%;
     overflow: hidden;
+  }
+  header>a>.mobile {
+    display: initial;
+  }
+  header>a>.desktop, header>h2 {
+    display: none;
+  }
+  header {
+    padding: 0;
+    padding-left: 0.3em;
+  }
+  .content {
+    background: none;
+    border: none;
   }
 }
 
