@@ -16,6 +16,10 @@
   background: var(--background-secondary-color);
 }
 
+.sidebar > ul {
+  margin: unset;
+}
+
 .sidebar-unordered-list {
   background: none;
   width: 100%;
