@@ -288,7 +288,7 @@ img {
 @media screen and (min-width: 60.5em) {
   .content {
     padding: 0 5%;
-    margin: 0 2em;
+    margin: 1.5em 1.5em;
   }
 
   img {
