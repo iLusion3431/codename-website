@@ -8,6 +8,10 @@
   --scrollbar-color: #2a2235;
 }
 
+a {
+  color: deepskyblue;
+}
+
 .default-button {
   text-decoration: none;
   display: inline-block;
@@ -118,6 +122,7 @@ pre.hljs code * {
 }
 
 li>a {
+  color: var(--text-color);
   z-index: 1;
   text-decoration: none;
   /*border-bottom: solid thin rgba(255, 255, 255, 0.05);*/
