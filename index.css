@@ -34,7 +34,7 @@
     top: 0;
     left: 0;
 
-    animation: rotate 1s infinite linear alternate;
+    animation: rotate 1.5s infinite ease-in-out alternate;
 }
 
 .os-button {
