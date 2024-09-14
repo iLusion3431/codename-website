@@ -1,0 +1,38 @@
+.content {
+    padding: 0 5%;
+    padding-bottom: 2em;
+    text-align: center;
+}
+
+.content > div {
+    margin: 1em;
+}
+
+@media screen and (max-width: 50.5em) {
+    .container {
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
+@media screen and (min-width: 30.5em) {
+    .content {
+        margin: 1.5em 1.5em;
+    }
+
+    img {
+        max-width: 60%;
+    }
+
+}
+
+@media screen and (min-width: 80.5em) {
+    .content {
+        margin: 3em 10em;
+    }
+
+    img {
+        max-width: 60%;
+    }
+
+}
