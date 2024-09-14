@@ -8,6 +8,59 @@
     margin: 1em;
 }
 
+.logo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.logo img {
+    max-width: none;
+    width: 100%;
+    height: 100%;
+}
+
+.logo img.logo-bg {
+    border-radius: 15px;
+}
+
+.logo img.question {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    animation: rotate 1s infinite linear alternate;
+}
+
+.os-button {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.os-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.downloads {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.downloads a span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media screen and (max-width: 50.5em) {
     .container {
         width: 100%;
@@ -35,4 +88,13 @@
         max-width: 60%;
     }
 
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(5deg);
+    }
 }
