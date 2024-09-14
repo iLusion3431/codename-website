@@ -57,8 +57,11 @@ header>a>img {
   margin-right: 0.5em;
 }
 
-header>a>.mobile {
+.mobile {
   display: none;
+}
+.desktop {
+  display: initial;
 }
 
 header>div>a {
@@ -208,10 +211,13 @@ img {
     width: 100%;
     overflow: hidden;
   }
-  header>a>.mobile {
+  .mobile {
     display: initial;
   }
-  header>a>.desktop, header>h2 {
+  .desktop {
+    display: none;
+  }
+  header>h2 {
     display: none;
   }
   header {
