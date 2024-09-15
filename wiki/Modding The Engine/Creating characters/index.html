@@ -90,7 +90,7 @@ The spritesheet goes in <code class="inline-code">./images/characters/</code> an
     <span class="hljs-tag">&lt;<span class="hljs-name">anim</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"singDOWN"</span> <span class="hljs-attr">anim</span>=<span class="hljs-string">"Dad Sing Note DOWN"</span> <span class="hljs-attr">fps</span>=<span class="hljs-string">"24"</span> <span class="hljs-attr">loop</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"-30"</span>/&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">character</span>&gt;</span>
 </code></pre>
-<p>There's a lot to unpack, but we'll go over the <code class="inline-code">character</code> node's properties first:</p>
+<p>There's a lot to unpack, but we'll go over the <code class="hljs-name inline-code">character</code> node's properties first:</p>
 <ul>
 <li><code class="inline-code">sprite</code> determines which sprite to load, if you have a spritesheet with a different name.</li>
 <li><code class="inline-code">isPlayer</code> determines whether your character is a player character or not <em>(for example, boyfriend is a player character)</em>.</li>
@@ -106,7 +106,7 @@ The spritesheet goes in <code class="inline-code">./images/characters/</code> an
 </ul>
 <p>These are about all properties you can apply to the character node.<br>
 You can obviously apply more properties and access them in Scripts, see <a href="../Scripting/PlayState Scripts/Character or Stage Scripts.html">Character/Stage Scripts</a>.</p>
-<p>As for animation nodes, they're pretty self-explanatory but here's a list of properties of them too:</p>
+<p>As for the <code class="hljs-name inline-code">anim</code> nodes, they're pretty self-explanatory but here's a list of properties of them too:</p>
 <ul>
 <li><code class="inline-code">name</code> defines the internal name of the animation <em>(used for scripting)</em></li>
 <li><code class="inline-code">anim</code> is the prefix for finding the animation in the spritesheet.</li>

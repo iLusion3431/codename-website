@@ -105,19 +105,19 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">dialogue</span>&gt;</span>
 </code></pre>
 <p>This dialogue covers all types of characters <em>(only having 3 types of positions)</em>.</p>
-<p>Starting with the <code class="inline-code">dialogue</code> node, it only has 2 parameters:</p>
+<p>Starting with the <code class="hljs-name inline-code">dialogue</code> node, it only has 2 parameters:</p>
 <ul>
 <li><code class="inline-code">box</code> which, well, determines the textbox that it should use.</li>
 <li><code class="inline-code">forceBoxDefaultTxtSound</code> which overrides all text sounds and applies the default one.</li>
 </ul>
-<p>For the <code class="inline-code">char</code> node, it has the following parameters:</p>
+<p>For the <code class="hljs-name inline-code">char</code> node, it has the following parameters:</p>
 <ul>
 <li><code class="inline-code">name</code> determines which character to introduce.</li>
 <li><code class="inline-code">position</code> determines the position which the character stays on.</li>
 <li><code class="inline-code">textSound</code> determines what sound the character should play when it speaks. <em>(takes from the <code class="inline-code">./sounds</code> folder)</em></li>
 <li><code class="inline-code">defaultAnim</code> i have no idea what that is bro</li>
 </ul>
-<p>As for the <code class="inline-code">line</code> node, the example shows it's default usage, so the next parameters are mostly for advanced usage:</p>
+<p>As for the <code class="hljs-name inline-code">line</code> node, the example shows it's default usage, so the next parameters are mostly for advanced usage:</p>
 <ul>
 <li><code class="inline-code">bubble</code> determines the animation the textbox should play.</li>
 <li><code class="inline-code">callback</code> determines what function to call in a Dialogue Script <em>(see <a href="./Scripting/PlayState Scripts/Cutscenes or Dialogue Scripts.html">Cutscenes/Dialogue Scripts</a>)</em></li>
@@ -128,7 +128,7 @@
 <li><code class="inline-code">playSound</code> is the sound that plays once you proceed to the next line.</li>
 <li><code class="inline-code">nextSound</code> also plays a sound once you proceed to the next line. <em>(I really can't figure out why this exists)</em></li>
 </ul>
-<p>The <code class="inline-code">line</code> node also accepts <code class="inline-code">format</code> children, to format different parts of the text. The parameters are:</p>
+<p>The <code class="hljs-name inline-code">line</code> node also accepts <code class="hljs-name inline-code">format</code> children, to format different parts of the text. The parameters are:</p>
 <ul>
 <li><code class="inline-code">color</code> for coloring.</li>
 <li><code class="inline-code">font</code> to change the font of the text.</li>
@@ -141,7 +141,7 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">anim</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"normal"</span> <span class="hljs-attr">anim</span>=<span class="hljs-string">"normal"</span> <span class="hljs-attr">fps</span>=<span class="hljs-string">"24"</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">character</span>&gt;</span>
 </code></pre>
-<p>We'll quickly go through the parameters here, for <code class="inline-code">character</code>:</p>
+<p>We'll quickly go through the parameters here, for <code class="hljs-name inline-code">character</code>:</p>
 <ul>
 <li><code class="inline-code">name</code> which defines the internal name used for scripting.</li>
 <li><code class="inline-code">x</code> and <code class="inline-code">y</code> define it's position in-game.</li>
@@ -161,7 +161,7 @@
 <li><code class="inline-code">playOnCountdown</code> tells the sprite whether or not to play it's animation during countdown or not.</li>
 <li><code class="inline-code">beatInterval, beatOffset</code>, honestly, I don't even know what this shit is okay.</li>
 </ul>
-<p>As for the <code class="inline-code">anim</code> nodes, these are the parameters:</p>
+<p>As for the <code class="hljs-name inline-code">anim</code> nodes, these are the parameters:</p>
 <ul>
 <li><code class="inline-code">name</code> defines the internal name of the animation <em>(used for scripting)</em></li>
 <li><code class="inline-code">anim</code> is the prefix for finding the animation in the spritesheet.</li>
@@ -202,8 +202,8 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">dialoguebox</span>&gt;</span>
 </code></pre>
 <p>There's a lot to unpack but we'll go over each step in understanding this.</p>
-<p>The <code class="inline-code">dialoguebox</code> node parameters and also the <code class="inline-code">anim</code> node parameters are exactly like the Dialogue Character ones <em>(such as <code class="inline-code">sprite</code> for dialoguebox)</em>, so we'll skip those. <em>(keep in mind if you make an animation with an <code class="inline-code">-open</code> at the end it will be used as an opening animation)</em>.</p>
-<p>For the <code class="inline-code">text</code> node, which is required for this Dialogue Box to be considered valid, has the following parameters:</p>
+<p>The <code class="hljs-name inline-code">dialoguebox</code> node parameters and also the <code class="hljs-name inline-code">anim</code> node parameters are exactly like the Dialogue Character ones <em>(such as <code class="inline-code">sprite</code> for <code class="hljs-name inline-code">dialoguebox</code>)</em>, so we'll skip those. <em>(keep in mind if you make an animation with an <code class="hljs-string inline-code">-open</code> at the end it will be used as an opening animation)</em>.</p>
+<p>For the <code class="hljs-name inline-code">text</code> node, which is required for this Dialogue Box to be considered valid, has the following parameters:</p>
 <ul>
 <li><code class="inline-code">x</code> and <code class="inline-code">y</code> to change the positioning of the text in the box.</li>
 <li><code class="inline-code">width</code> to determine the width of the field.</li>
@@ -219,7 +219,7 @@
 <li><code class="inline-code">borderColor</code> for coloring the border.</li>
 </ul></li>
 </ul>
-<p>Now, for the <code class="inline-code">charpos</code> node, it's pretty simple, these are the parameters:</p>
+<p>Now, for the <code class="hljs-name inline-code">charpos</code> node, it's pretty simple, these are the parameters:</p>
 <ul>
 <li><code class="inline-code">name</code> is the name of the position.</li>
 <li><code class="inline-code">x</code> and <code class="inline-code">y</code> is for the position itself, i guess.</li>

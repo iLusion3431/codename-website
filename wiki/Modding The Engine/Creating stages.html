@@ -90,7 +90,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">stage</span>&gt;</span>
 </code></pre>
 <p>There's a lot to pack but we will explain what's going on here.</p>
-<p>First, to start with the "parent node", which is the <code class="inline-code">stage</code> node, that is where stage options are being defined.<br></p>
+<p>First, to start with the "parent node", which is the <code class="hljs-name inline-code">stage</code> node, that is where stage options are being defined.<br></p>
 <pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">stage</span> <span class="hljs-attr">zoom</span>=<span class="hljs-string">"0.9"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"stage"</span> <span class="hljs-attr">folder</span>=<span class="hljs-string">"stages/default/"</span> <span class="hljs-attr">startCamPosY</span>=<span class="hljs-string">"600"</span> <span class="hljs-attr">startCamPosX</span>=<span class="hljs-string">"1000"</span>&gt;</span>
 </code></pre>
 <p>Noting options that you can set there:</p>
@@ -100,9 +100,9 @@
 <li><code class="inline-code">folder</code> which changes the destination of where the sprites are taken from <em>(like <code class="inline-code">images/stages/default/</code>)</em>.</li>
 <li><code class="inline-code">startCamPosX, startCamPosY</code> set the destination of where the camera starts from <em>(before countdown)</em></li>
 </ul>
-<p>As for the other nodes, there's about <code class="inline-code">7 types</code> of them <em>(and more if you script them in, see <a href="./Scripting/PlayState Scripts/Character or Stage Scripts.html">Character/Stage Scripts</a>)</em>, we'll go through each of them.</p>
+<p>As for the other nodes, there's about <em>7 types</em> of them <em>(and more if you script them in, see <a href="./Scripting/PlayState Scripts/Character or Stage Scripts.html">Character/Stage Scripts</a>)</em>, we'll go through each of them.</p>
 <p><em>(note that it's important which order you put them in because they will take the same order in-game too)</em></p>
-<h2>Sprite node (<code class="inline-code">sprite</code>, <code class="inline-code">spr</code>, <code class="inline-code">sparrow</code>)</h2>
+<h2>Sprite node (<code class="hljs-name inline-code">sprite</code>, <code class="hljs-name inline-code">spr</code>, <code class="hljs-name inline-code">sparrow</code>)</h2>
 <p>The sprite node defines the basic sprites in a stage.</p>
 <pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">sprite</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"bg"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"-600"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"-200"</span> <span class="hljs-attr">sprite</span>=<span class="hljs-string">"stageback"</span> <span class="hljs-attr">scroll</span>=<span class="hljs-string">"0.9"</span>/&gt;</span>
 </code></pre>
@@ -127,13 +127,13 @@
 <li><code class="inline-code">playOnCountdown</code> tells the sprite whether or not to play it's animation during countdown or not.</li>
 <li><code class="inline-code">beatInterval, beatOffset</code>, honestly, I don't even know what this shit is okay.</li>
 </ul>
-<p>You can also define animations by giving it a child node called <code class="inline-code">anim</code>. A sprite node with an animation node looks something like this:</p>
+<p>You can also define animations by giving it a child node called <code class="hljs-name inline-code">anim</code>. A sprite node with an animation node looks something like this:</p>
 <pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">sprite</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"dancer1"</span> <span class="hljs-attr">sprite</span>=<span class="hljs-string">"limoDancer"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"onbeat"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">anim</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"danceLeft"</span> <span class="hljs-attr">anim</span>=<span class="hljs-string">"bg dancer sketch PINK"</span> <span class="hljs-attr">loop</span>=<span class="hljs-string">"false"</span>/&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">anim</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"danceRight"</span> <span class="hljs-attr">anim</span>=<span class="hljs-string">"bg dancer sketch PINK"</span> <span class="hljs-attr">loop</span>=<span class="hljs-string">"false"</span>/&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">sprite</span>&gt;</span>
 </code></pre>
-<p>An anim node can define these options:</p>
+<p>An <code class="hljs-name inline-code">anim</code> node can define these options:</p>
 <ul>
 <li><code class="inline-code">name</code> defines the internal name of the animation <em>(used for scripting)</em></li>
 <li><code class="inline-code">anim</code> is the prefix for finding the animation in the spritesheet.</li>
@@ -150,12 +150,12 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"velocity.x"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"float"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"40.0"</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">sprite</span>&gt;</span>
 </code></pre>
-<h2>Solid node (<code class="inline-code">solid</code>, <code class="inline-code">box</code>)</h2>
+<h2>Solid node (<code class="hljs-name inline-code">solid</code>, <code class="hljs-name inline-code">box</code>)</h2>
 <p>Solid nodes are sprites that is, unlike a Sprite Node, composed of only one select color. This node has less parameters since it doesn't use images. <br>
 Creating one of these looks something like this:</p>
 <pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">solid</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"void"</span> <span class="hljs-attr">color</span>=<span class="hljs-string">"#FFFFFF"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"1280"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"720"</span>&gt;</span>
 </code></pre>
-<p><em>(there's a difference between using <code class="inline-code">solid</code> and <code class="inline-code">box</code>, while <code class="inline-code">solid</code> offers more performance, it might break with shaders and other stuff, so if that happens, use <code class="inline-code">box</code> instead)</em></p>
+<p><em>(there's a difference between using <code class="hljs-name inline-code">solid</code> and <code class="hljs-name inline-code">box</code>, while <code class="hljs-name inline-code">solid</code> offers more performance, it might break with shaders and other stuff, so if that happens, use <code class="hljs-name inline-code">box</code> instead)</em></p>
 <p>Accepted parameters:</p>
 <ul>
 <li><code class="inline-code">name</code> internal name.</li>
@@ -163,7 +163,7 @@ Creating one of these looks something like this:</p>
 <li><code class="inline-code">x</code> and <code class="inline-code">y</code> determine the position in the stage.</li>
 <li><code class="inline-code">width</code> and <code class="inline-code">height</code> defines the size of the solid/box.</li>
 </ul>
-<h2>Character nodes (<code class="inline-code">boyfriend</code>, <code class="inline-code">bf</code>, <code class="inline-code">player</code>, <code class="inline-code">girlfriend</code>, <code class="inline-code">gf</code>, <code class="inline-code">dad</code>, <code class="inline-code">opponent</code>, <code class="inline-code">character</code>, <code class="inline-code">char</code>)</h2>
+<h2>Character nodes (<code class="hljs-name inline-code">boyfriend</code>, <code class="hljs-name inline-code">bf</code>, <code class="hljs-name inline-code">player</code>, <code class="hljs-name inline-code">girlfriend</code>, <code class="hljs-name inline-code">gf</code>, <code class="hljs-name inline-code">dad</code>, <code class="hljs-name inline-code">opponent</code>, <code class="hljs-name inline-code">character</code>, <code class="hljs-name inline-code">char</code>)</h2>
 <p>Character nodes are used to position characters in the stage. A Character node looks something like this:</p>
 <pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">boyfriend</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"400"</span>/&gt;</span>
 </code></pre>
@@ -176,15 +176,15 @@ Creating one of these looks something like this:</p>
 <li><code class="inline-code">flip</code> for if you want to flip the character for specifically for the stage.</li>
 <li><code class="inline-code">scroll</code>, <code class="inline-code">scrollx</code> and <code class="inline-code">scrolly</code> to change the scrollFactor of the character.</li>
 </ul>
-<p>For the <code class="inline-code">character</code> and <code class="inline-code">char</code> nodes only use them if you want to change a specific character <em>(ex. if you want to change pico's positions)</em></p>
+<p>For the <code class="hljs-name inline-code">character</code> and <code class="hljs-name inline-code">char</code> nodes only use them if you want to change a specific character <em>(ex. if you want to change pico's positions)</em></p>
 <pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">character</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"pico"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"200"</span>&gt;</span>
 </code></pre>
 <p>Keep in mind that where you put these nodes is important as the character will be layered depending on that.</p>
 <pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">boyfriend</span>/&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">sprite</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"stageCurtains"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"-500"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"-300"</span> <span class="hljs-attr">sprite</span>=<span class="hljs-string">"stagecurtains"</span> <span class="hljs-attr">scroll</span>=<span class="hljs-string">"1.3"</span>/&gt;</span>
 </code></pre>
-<p><em>(this will put boyfriend behind the <code class="inline-code">stageCurtains</code> sprite)</em></p>
-<h2>Ratings sprites node (<code class="inline-code">ratings</code>, <code class="inline-code">combo</code>)</h2>
+<p><em>(this will put boyfriend behind the <code class="hljs-string inline-code">stageCurtains</code> sprite)</em></p>
+<h2>Ratings sprites node (<code class="hljs-name inline-code">ratings</code>, <code class="hljs-name inline-code">combo</code>)</h2>
 <p>This node is only used to position the rating sprites and does nothing else <em>(atm)</em>. Positioning in nodes doesn't matter here.</p>
 <pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">ratings</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"400"</span>&gt;</span>
 </code></pre>
