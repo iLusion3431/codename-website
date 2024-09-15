@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating songs - Codename Engine Docs</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/wiki.css">
+</head>
+<body>
+    <div class="header">
+        <header>
+    <a href="/">
+        <img src="/img/logo-header.png" style="width: 50px;" alt="Codename Logo">
+        <h2 class="mobile">CNE</h2>
+        <h2 class="desktop">Codename Engine</h2>
+    </a>
+    <h2>Creating songs</h2>
+    <div>
+        <a href="/api-docs/">API</a><a href="/wiki/">Wiki</a>
+    </div>
+</header>
+    </div>
+    <div class="container">
+        <div class="sidebar-wrapper">
+            <input type="checkbox" class="sidebar-button">
+            <span class="sidebar-button-front">
+                <svg viewBox="0 0 100 80" width="40" height="40">
+                    <rect width="100" height="20" rx="10"></rect>
+                    <rect y="30" width="100" height="20" rx="10"></rect>
+                    <rect y="60" width="100" height="20" rx="10"></rect>
+                </svg>
+                <svg width="800px" height="800px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path stroke="#000000" d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z"></path></svg>
+            </span>
+            <div class="sidebar">
+                <ul class="sidebar-unordered-list">
+                    <li class="sidebar-list-item even"><a href="/wiki/index.html" class="even">Home</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/How to navigate the engine.html" class="odd">How to navigate the engine</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/Differences between the other FNF engines.html" class="even">Differences between other FNF engines</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/index.html" class="odd">Modding The Engine</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Creating songs/index.html" class="even selected">Creating songs</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Creating songs/Chart Editor Features.html" class="odd">Chart Editor Features</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Creating characters/index.html" class="even">Creating characters</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Creating characters/Character Editor Features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Creating stages.html" class="even">Creating stages</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Cutscenes or Dialogues.html" class="odd">Cutscenes/Dialogues</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Scripting/index.html" class="even">Scripting</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Scripting/PlayState Scripts/index.html" class="odd">PlayState Scripts</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Scripting/PlayState Scripts/Gameplay Scripts.html" class="even">Gameplay Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Scripting/PlayState Scripts/Events or Notetype Scripts.html" class="odd">Events/Notetype Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Scripting/PlayState Scripts/Cutscenes or Dialogue Scripts.html" class="even">Cutscenes/Dialogue Scripts - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Scripting/PlayState Scripts/Character or Stage Scripts.html" class="odd">Character/Stage Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Scripting/PlayState Scripts/Pause or Game Over Scripts.html" class="even">Pause/Game Over Scripts</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Scripting/State or Substate Scripts.html" class="odd">State/Substate Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Scripting/Global Scripts.html" class="even">Global Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Scripting/Shaders.html" class="odd">Shaders</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Scripting/Using hxvlc for videos.html" class="even">Using hxvlc for videos</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Scripting/Custom Options.html" class="odd">Custom Options</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Scripting/Custom Classes.html" class="even">Custom Classes</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Scripting/3D rendering.html" class="odd">3D rendering - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Scripting/All of the script calls.html" class="even">All of the script calls - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Scripting/Useful script snippets for modders.html" class="odd">Useful script snippets for modders - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Scripting/Scripted Assets Libraries.html" class="even">Scripted Assets Libraries - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/Modding The Engine/Scripting/NDLL Scripting.html" class="odd">NDLL Scripting - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/Modding The Engine/Hardcoding/index.html" class="even">Hardcoding - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Creating Songs.</h1>
+<p>Creating songs is very simple, there's currently 2 ways of making them, and we will be focusing on the in-engine way for now.</p>
+<h2>Creating the song itself.</h2>
+<p><img src="./index.png"></p>
+<p>Creating a song using the New Song option when entering Chart Editor selection will bring up this menu. This is self-explanatory, just put the song name there, the bpm, time signature, the audio files and you're done here.
+(Vocals are optional here but we forgot to fix a bug haha)</p>
+<p><img src="./index-1.png"></p>
+<p>Proceeding to the next page after inputting our audio files, we arrive at this. This is where we input our meta data, though also self-explanatory and not much to explain. <br>
+Pressing Save &amp; Close and Congratulations your song has been made!</p>
+<h2>Creating difficulties for the song.</h2>
+<p>Although we have made our song, it's still missing the charts. This is where creating difficulties take place.</p>
+<p><img src="./index-2.png"></p>
+<p>Upon selecting New Difficulty, after selecting on our newly created song, brings us to this window. Now this looks overwhelming at first, but keep in mind you only have to focus on the top part the most. <br> Looking at the top part we can change the difficulty name, the stage and the scroll speed. Once you're done filling those you can proceed with pressing Save &amp; Close, and your difficulty will be created. <br> <em>(If you're curious about the bottom part, see <a href="./Chart Editor Features.html">Chart Editor Features</a>)</em></p>
+<h2>Opening the chart editor.</h2>
+<p><img src="./index-3.png"></p>
+<p>Opening the chart editor is done by selecting one of the song's difficulties displayed. After that, you'll be presented with the Chart Editor. After doing the charting work, you can proceed to saving the chart.</p>
+<p><img src="./index-4.png"></p>
+<p>As you can see, there's a lot of options on how to save the chart, but for now only focus on the first 2 save options. Of course, you get to save without having to deal with a file dialogue, as the engine will automatically save the chart on the correct charts folder. <br> While saving normally is highly recommended, we also offer the option to save separately.</p>
+<p>Now that you've learned to make and chart a song, you can proceed to <a href="./Chart Editor Features.html">Chart Editor Features</a>, to learn about advanced features.</p>
+<h2>ADDITIONAL. Different audio per difficulty.</h2>
+<p>If you ever wanted to make an erect-esque difficulty, the engine allows for that without scripting it in. <br> Simply add the alternative audio files and rename it to have a <code class="inline-code">-difficulty</code> at the end. (<code class="inline-code">Voices-difficulty.ogg</code> and <code class="inline-code">Inst-difficulty.ogg</code>).</p>
+<p><img src="./index-5.png"></p>
+
+        </div>
+    </div>
+
+</body></html>
