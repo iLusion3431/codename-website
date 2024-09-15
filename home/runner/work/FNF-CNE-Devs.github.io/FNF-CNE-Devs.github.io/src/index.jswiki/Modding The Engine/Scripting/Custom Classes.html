@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Classes - Codename Engine Docs</title>
+    <link rel="stylesheet" href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/style.css">
+    <link rel="stylesheet" href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki.css">
+</head>
+<body>
+    <div class="header">
+        <header>
+    <a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/">
+        <img src="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/img/logo-header.png" style="width: 50px;" alt="Codename Logo">
+        <h2 class="mobile">CNE</h2>
+        <h2 class="desktop">Codename Engine</h2>
+    </a>
+    <h2>Custom Classes</h2>
+    <div>
+        <a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/api-docs/">API</a><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/">Wiki</a>
+    </div>
+</header>
+    </div>
+    <div class="container">
+        <div class="sidebar-wrapper">
+            <input type="checkbox" class="sidebar-button">
+            <span class="sidebar-button-front">
+                <svg viewBox="0 0 100 80" width="40" height="40">
+                    <rect width="100" height="20" rx="10"></rect>
+                    <rect y="30" width="100" height="20" rx="10"></rect>
+                    <rect y="60" width="100" height="20" rx="10"></rect>
+                </svg>
+                <svg width="800px" height="800px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path stroke="#000000" d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z"></path></svg>
+            </span>
+            <div class="sidebar">
+                <ul class="sidebar-unordered-list">
+                    <li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/index.html" class="even">Home</a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/How to navigate the engine.html" class="odd">How to navigate the engine</a></li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Differences between the other FNF engines.html" class="even">Differences between other FNF engines</a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/index.html" class="odd">Modding The Engine</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Creating songs/index.html" class="even">Creating songs</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Creating songs/Chart Editor Features.html" class="odd">Chart Editor Features</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Creating characters/index.html" class="even">Creating characters</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Creating characters/Character Editor Features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Creating stages.html" class="even">Creating stages</a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Cutscenes or Dialogues.html" class="odd">Cutscenes/Dialogues</a></li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/index.html" class="even">Scripting</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/PlayState Scripts/index.html" class="odd">PlayState Scripts</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/PlayState Scripts/Gameplay Scripts.html" class="even">Gameplay Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/PlayState Scripts/Events or Notetype Scripts.html" class="odd">Events/Notetype Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/PlayState Scripts/Cutscenes or Dialogue Scripts.html" class="even">Cutscenes/Dialogue Scripts - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/PlayState Scripts/Character or Stage Scripts.html" class="odd">Character/Stage Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/PlayState Scripts/Pause or Game Over Scripts.html" class="even">Pause/Game Over Scripts</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/State or Substate Scripts.html" class="odd">State/Substate Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/Global Scripts.html" class="even">Global Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/Shaders.html" class="odd">Shaders</a></li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/Using hxvlc for videos.html" class="even">Using hxvlc for videos</a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/Custom Options.html" class="odd">Custom Options</a></li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/Custom Classes.html" class="even selected">Custom Classes</a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/3D rendering.html" class="odd">3D rendering - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/All of the script calls.html" class="even">All of the script calls - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/Useful script snippets for modders.html" class="odd">Useful script snippets for modders - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/Scripted Assets Libraries.html" class="even">Scripted Assets Libraries - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/NDLL Scripting.html" class="odd">NDLL Scripting - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Hardcoding/index.html" class="even">Hardcoding - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Custom Classes</h1>
+<p>Custom classes can be made either inside the script you need it in or you can make a script file corresponding with the name of the class in <code class="inline-code">./source</code>, and using <code class="inline-code">import</code> to import it.</p>
+<p>Here is a basic Song Script code that uses it:</p>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">class</span> <span class="hljs-title class_">SpecialSprite</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">FlxSprite</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> <span class="hljs-attr">customValue</span>:<span class="hljs-title class_">String</span> = <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">new</span>(<span class="hljs-params">?x:<span class="hljs-built_in">Float</span> = <span class="hljs-number">0</span>, ?y:<span class="hljs-built_in">Float</span> = <span class="hljs-number">0</span>, ?graphic:FlxGraphicAsset, customValue:<span class="hljs-built_in">String</span></span>) { <span class="hljs-comment">// it also has to start with the same arguments as the super class, (limitation for now)</span>
+        <span class="hljs-variable language_">super</span>(x, y, graphic); <span class="hljs-comment">// this does nothing currently, its purely visual for now, but it will be used in the future</span>
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">customValue</span> = customValue;
+        <span class="hljs-comment">//other code stuff</span>
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">elapsed</span>) {
+        <span class="hljs-variable language_">super</span>.<span class="hljs-title function_">update</span>(elapsed);
+    }
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">var</span> spr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SpecialSprite</span>(<span class="hljs-number">200</span>, <span class="hljs-number">400</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">"powerful"</span>);
+    <span class="hljs-title function_">add</span>(spr);
+}
+</code></pre>
+<h2>Particularities</h2>
+<p>As of writing this, this system is very limited and also presents some defects. For example:</p>
+<ul>
+<li>You cannot extend FlxGroups or other typed classes <em>(the ones that end with a <code class="inline-code">&lt;T&gt;</code>)</em>.</li>
+<li>Classes that override a class needs to have the same arguments on the constructor as the class it overrides. Same when creating the instance of the class.</li>
+<li>Compiled Classes that do not override a function in their code cannot have that function overridden by custom classes. For example, you can't override the <code class="inline-code">draw</code> method in a custom class that extends <code class="inline-code">FlxParticle</code>, because <code class="inline-code">FlxParticle</code> does not override <code class="inline-code">draw</code>.</li>
+<li>all variables need to be public in order to be accessed inside the class.</li>
+<li>static variables are not supported. (yet)</li>
+<li>static functions are not supported. (yet)</li>
+<li>private variables are not supported. They act as public variables.</li>
+<li>private functions are not supported. They act as public functions.</li>
+<li>You cannot extend a custom class. (yet)</li>
+<li>You can only extend a class that is in the packages, <code class="inline-code">flixel</code>, <code class="inline-code">funkin</code></li>
+</ul>
+
+        </div>
+    </div>
+
+</body></html>

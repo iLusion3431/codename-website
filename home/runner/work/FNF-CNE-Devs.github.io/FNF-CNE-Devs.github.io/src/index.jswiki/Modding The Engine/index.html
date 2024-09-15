@@ -1,0 +1,252 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modding The Engine - Codename Engine Docs</title>
+    <link rel="stylesheet" href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/style.css">
+    <link rel="stylesheet" href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki.css">
+</head>
+<body>
+    <div class="header">
+        <header>
+    <a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/">
+        <img src="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/img/logo-header.png" style="width: 50px;" alt="Codename Logo">
+        <h2 class="mobile">CNE</h2>
+        <h2 class="desktop">Codename Engine</h2>
+    </a>
+    <h2>Modding The Engine</h2>
+    <div>
+        <a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/api-docs/">API</a><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/">Wiki</a>
+    </div>
+</header>
+    </div>
+    <div class="container">
+        <div class="sidebar-wrapper">
+            <input type="checkbox" class="sidebar-button">
+            <span class="sidebar-button-front">
+                <svg viewBox="0 0 100 80" width="40" height="40">
+                    <rect width="100" height="20" rx="10"></rect>
+                    <rect y="30" width="100" height="20" rx="10"></rect>
+                    <rect y="60" width="100" height="20" rx="10"></rect>
+                </svg>
+                <svg width="800px" height="800px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path stroke="#000000" d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z"></path></svg>
+            </span>
+            <div class="sidebar">
+                <ul class="sidebar-unordered-list">
+                    <li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/index.html" class="even">Home</a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/How to navigate the engine.html" class="odd">How to navigate the engine</a></li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Differences between the other FNF engines.html" class="even">Differences between other FNF engines</a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/index.html" class="odd selected">Modding The Engine</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Creating songs/index.html" class="even">Creating songs</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Creating songs/Chart Editor Features.html" class="odd">Chart Editor Features</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Creating characters/index.html" class="even">Creating characters</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Creating characters/Character Editor Features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Creating stages.html" class="even">Creating stages</a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Cutscenes or Dialogues.html" class="odd">Cutscenes/Dialogues</a></li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/index.html" class="even">Scripting</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/PlayState Scripts/index.html" class="odd">PlayState Scripts</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/PlayState Scripts/Gameplay Scripts.html" class="even">Gameplay Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/PlayState Scripts/Events or Notetype Scripts.html" class="odd">Events/Notetype Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/PlayState Scripts/Cutscenes or Dialogue Scripts.html" class="even">Cutscenes/Dialogue Scripts - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/PlayState Scripts/Character or Stage Scripts.html" class="odd">Character/Stage Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/PlayState Scripts/Pause or Game Over Scripts.html" class="even">Pause/Game Over Scripts</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/State or Substate Scripts.html" class="odd">State/Substate Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/Global Scripts.html" class="even">Global Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/Shaders.html" class="odd">Shaders</a></li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/Using hxvlc for videos.html" class="even">Using hxvlc for videos</a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/Custom Options.html" class="odd">Custom Options</a></li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/Custom Classes.html" class="even">Custom Classes</a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/3D rendering.html" class="odd">3D rendering - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/All of the script calls.html" class="even">All of the script calls - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/Useful script snippets for modders.html" class="odd">Useful script snippets for modders - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/Scripted Assets Libraries.html" class="even">Scripted Assets Libraries - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Scripting/NDLL Scripting.html" class="odd">NDLL Scripting - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/opt/hostedtoolcache/node/20.17.0/x64/bin/node/wiki/Modding The Engine/Hardcoding/index.html" class="even">Hardcoding - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Modding The Engine</h1>
+<p>To start modding the engine, you simply make a folder in <code class="inline-code">./mods</code>. It's really that simple, as making a mod does not require any setup.</p>
+<p>You can make the mod run constantly by putting it in <code class="inline-code">./addons</code> instead.</p>
+<p>As for the next steps, we will cover those in this documentation as well.</p>
+<p>For starters, we have to know what a mod structure looks like. A mod with only the essential features looks something like this:</p>
+<pre class="inline-code"><code class="inline-code">songs
+    example song
+        song
+            Inst.ogg
+            Voices.ogg
+            Voices-dad.ogg
+            Voices-bf.ogg
+        charts
+            easy.json
+            normal.json
+            hard.json
+        scripts
+            modchart.hx
+        meta.json
+data
+    characters
+        example character.xml
+    stages
+        example stage.xml
+    states
+        MainMenuState.hx
+images
+    characters
+        example character.xml
+        example character.png
+    stages
+        example stage
+            stage.png
+            animated element.xml
+            animated element.png
+</code></pre>
+<p>This is the super basic structure of a minimal mod. It doesn't look much, but trust me, you can totally do a lot more than that.</p>
+<p></p><details>
+<summary>(btw if you're curious this is how a mod looks like fully decked out)</summary><p></p>
+<pre class="inline-code"><code class="inline-code">songs
+    example song
+        song
+            Inst.ogg
+            Voices.ogg
+            Voices-dad.ogg
+            Voices-bf.ogg
+            Inst-hard.ogg
+            Voices-hard.ogg
+            Voices-dad-hard.ogg
+            Voices-bf-hard.ogg
+        charts
+            easy.json
+            normal.json
+            hard.json
+            example custom difficulty.json
+        scripts
+            modchart.hx
+            example script.hx
+        meta.json
+data
+    characters
+        example character.xml
+        example character.hx
+    stages
+        example stage.xml
+        example stage.hx
+    notes
+        example notetype.hx
+    splashes
+        example splashes.xml
+    dialogue
+        boxes
+            example box.xml
+            example box.hx
+        characters
+            example portrait.xml
+            example portrait.hx
+    config
+        credits.xml
+        discord.json
+        menuItems.txt
+        options.xml
+    titlescreen
+        introText.txt
+        titlescreen.xml
+    weeks
+        weeks
+            example week.xml
+        characters
+            example character.xml
+        weeks.txt
+images
+fonts
+sounds
+music
+shaders
+videos
+</code></pre>
+<p>fill this shit later
+</p></details>
+<br><p></p>
+<p>Once you're done looking at this structure, you can begin with recreating it in your mods folder.</p>
+<p>Afterwards, you have to find the devtools (or basically just the editors), by going to the game's Main Menu and pressing 7.</p>
+<p><img src="./index.png"></p>
+<p>Here you'll find the essential tools, and some options for debug <em>(for example, enabling the console in Debug Options)</em></p>
+<p>The next steps are covered in these articles:</p>
+<ul>
+<li><a href="./Creating songs/index.html">Creating songs</a></li>
+<li><a href="./Creating characters/index.html">Creating characters</a></li>
+<li><a href="./Creating stages.html">Creating stages</a></li>
+<li><a href="./Scripting/index.html">Scripting</a></li>
+</ul>
+<p>And when you're done with the basic steps you're finally ready for release, or if you want, go through more advanced stuff, like these:</p>
+<ul>
+<li><a href="./Cutscenes or Dialogues.html">Cutscenes/Dialogues</a></li>
+<li><a href="./Scripting/Shaders.html">Shaders</a></li>
+<li><a href="./Scripting/3D rendering.html">3D rendering</a></li>
+<li><a href="./Scripting/Global Scripts.html">Global Scripts</a></li>
+<li><a href="./Scripting/Custom Options.html">Custom Options</a></li>
+<li><a href="./Scripting/Scripted Assets Libraries.html">Scripted Assets Libraries</a></li>
+<li><a href="./Scripting/NDLL Scripting.html">NDLL Scripting</a></li>
+</ul>
+<h2>Config</h2>
+<p>Some config is still required for things like Discord RPC. so we're gonna get over them here.<br>
+All of these configs can be found in <code class="inline-code">./data/config/</code></p>
+<h3>discord.json</h3>
+<pre class="inline-code"><code class="inline-code">{
+    "clientID": discord token,
+    "logoKey": "icon"
+}
+</code></pre>
+<p>Before doing this, make sure to make a discord application at https://discord.com/developers/applications, if you don't know how... please search a guide on google. After that, copy the application ID and insert it there.</p>
+<h3>credits.xml</h3>
+<p>Crediting people also uses XML data to parse members, though it has a lot of features to cover.<br>
+Here's a template provided by the engine:</p>
+<pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">menu</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Mod Credits"</span> <span class="hljs-attr">desc</span>=<span class="hljs-string">"Modify mod credits here"</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">credit</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Credit Example"</span> <span class="hljs-attr">desc</span>=<span class="hljs-string">"Click me to know more about me!"</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"credit icon example"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"130"</span> <span class="hljs-attr">url</span>=<span class="hljs-string">"https://youtu.be/fugtxz1znVw"</span>/&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">github</span> <span class="hljs-attr">user</span>=<span class="hljs-string">"NexIsDumb"</span> <span class="hljs-attr">customName</span>=<span class="hljs-string">"Nex is Dumb"</span> <span class="hljs-attr">desc</span>=<span class="hljs-string">"The bitch who made these credits menus"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">portrait</span>=<span class="hljs-string">"false"</span>/&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">menu</span>&gt;</span>
+</code></pre>
+<p>As you can see, there's 2 types of nodes: <code class="inline-code">credit</code> and <code class="inline-code">github</code>. <code class="inline-code">credit</code> is the basic crediting node which can be applied to anyone, and <code class="inline-code">github</code> pulls the user from it's database and can only be used for people who have accounts on GitHub <em>(also automatically redirects to their GitHub profile page.)</em></p>
+<p>Their parameters are as follows:</p>
+<ul>
+<li><code class="inline-code">credit</code>
+<ul>
+<li><code class="inline-code">name</code> which is the name of the person.</li>
+<li><code class="inline-code">desc</code> determines the description of that person.</li>
+<li><code class="inline-code">icon</code> determines which PNG file to pick from <code class="inline-code">./images/credits</code>.</li>
+<li><code class="inline-code">size</code> defines the size of the icon i think.</li>
+<li><code class="inline-code">url</code> is the page where you get redirected when pressing enter on the person.</li>
+<li><code class="inline-code">color</code> changes the color of the text that displays the name.</li>
+<li><code class="inline-code">portrait</code> determines whether or not to crop the picture to a circular form.</li>
+</ul></li>
+<li><code class="inline-code">github</code>
+<ul>
+<li><code class="inline-code">user</code> determines which user to grab from the GitHub database.</li>
+<li><code class="inline-code">customName</code> is the display name you wish to refer to the person.</li>
+<li><code class="inline-code">size</code> defines the size of the icon i think.</li>
+<li><code class="inline-code">color</code> changes the color of the text that displays the name.</li>
+<li><code class="inline-code">portrait</code> determines whether or not to crop the picture to a circular form.</li>
+</ul></li>
+</ul>
+<p>Also, if you notice, you can wrap these with the <code class="inline-code">menu</code> node to separate the credits <em>(like probably having an artist submenu and stuff)</em></p>
+<h3>options.xml</h3>
+<p>options.xml is explained in this article <a href="./Scripting/Custom options.html">Custom options</a>.</p>
+
+        </div>
+    </div>
+
+</body></html>
