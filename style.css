@@ -121,8 +121,7 @@ li {
 }
 
 code {
-  background: #2a2235;
-  border-radius: 8px;
+  background: var(--list-background-color);
 }
 
 code.inline-code {
@@ -138,7 +137,8 @@ pre.inline-code code {
 }
 
 pre.inline-code {
-  background: #282c34;
+  background: var(--list-background-color);
+  padding: 1em;
   width: fit-content;
 }
 
