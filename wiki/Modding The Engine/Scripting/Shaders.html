@@ -122,7 +122,7 @@ camGame.<span class="hljs-title function_">addShader</span>(shader);
 <ol>
 <li>replace <code class="inline-code">void mainImage( out vec4 fragColor, in vec2 fragCoord )</code> with a simple <code class="inline-code">void main()</code> <em>(flixel and openfl do not have any parameters since the coords are defined outside the function)</em></li>
 <li>replace <code class="inline-code">vec2 uv = fragCoord/iResolution.xy;</code> with <code class="inline-code">vec2 uv = openfl_TextureCoordv</code> <em>(or in some cases, add <code class="inline-code">vec2 fragCoord = openfl_TextureCoordv*openfl_TextureSize.xy</code> before it and replace <code class="inline-code">iResolution.xy</code> with <code class="inline-code">openfl_TextureSize.xy</code> (if the uv value is different than usual))</em></li>
-<li>replace <code class="inline-code">vec4 col = texture(iChannel0, uv);</code> with <code class="inline-code">vec4 col = texture2D(bitmap, uv);</code> or <code class="inline-code">vec4 col = flixel_texture2D(bitmap, uv);</code> <em>(keep in mind bitmap is the pixels of the camera/sprite the shader is aplied to)</em></li>
+<li>replace <code class="inline-code">vec4 col = texture(iChannel0, uv);</code> with <code class="inline-code">vec4 col = texture2D(bitmap, uv);</code> or <code class="inline-code">vec4 col = flixel_texture2D(bitmap, uv);</code> <em>(keep in mind bitmap is the pixels of the camera/sprite the shader is applied to)</em></li>
 <li>finally, replace <code class="inline-code">fragColor = col;</code> with <code class="inline-code">gl_FragColor = col;</code></li>
 </ol>
 <h3>Keep in mind that this covers the most basic on how to convert a shader from shadertoy.com, complex shaders will need more expertise with handling shaders before converting those.</h3>
@@ -131,7 +131,7 @@ camGame.<span class="hljs-title function_">addShader</span>(shader);
 <em>(despite half floats working on nVidia gpus, other gpus like AMD gpus don't support this feature)</em></p>
 <p>Avoid using switch cases, and use if statements where possible.
 <em>(switch cases are not supported on macOS or miscellaneous platforms)</em></p>
-<p>Ints are not recommended when initiating vectors. <em>(ex, vec2(1, 1) is not supported on certain platforms)</em>.
+<p>Ints are not recommended when initiating vectors. <em>(ex, vec2(1, 1) is not supported on certain platforms, use vec2(1.0, 1.0) instead)</em>.
 Instead, use floats where it's expected. Like mod(1.0, 2.0) instead of mod(1, 2)</p>
 <p>Avoid using the following types:</p>
 <ul>
@@ -142,11 +142,11 @@ Instead, use floats where it's expected. Like mod(1.0, 2.0) instead of mod(1, 2)
 </ul>
 <p>as they are unsupported on certain platforms.</p>
 <p>Avoid using <code class="inline-code">gl_</code> at the start of your variables <em>(ex, <code class="inline-code">float gl_Number</code> can break your shaders)</em>.</p>
-<p>Applying defaults to uniforms is not possible, so please set the defaults in your shader constructor or after initializing the shader.</p>
+<p>Setting defaults on uniforms is not recommended, since its not supported on all platforms, so please set the defaults in your shader constructor or after initializing the shader.</p>
 <p>Avoid using <code class="inline-code">&lt;number&gt;u</code> <em>(ex, 8u)</em></p>
 <p>Avoid initializing variables with the name <code class="inline-code">input</code> or <code class="inline-code">sample</code>, as those cause the shader to stop working on AMD gpus or other platforms.</p>
-<p>Avoid using the % operator and instead use the mod function.</p>
-<p>Avoid using arrays.</p>
+<p>Avoid using the % (modulo) operator and instead use the mod function.</p>
+<p>Avoid using arrays. Since some platforms don't support them.</p>
 
         </div>
     </div>
