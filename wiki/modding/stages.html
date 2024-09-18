@@ -78,7 +78,7 @@
 
         <div class="content">
             <h1>Creating stages</h1>
-<p>Stages are defined via XML files, similar to <a href="./Creating characters/index.html">Creating characters</a>. By creating an XML file in <code class="inline-code">./data/stages</code>, you officially created a stage.</p>
+<p>Stages are defined via XML files, similar to <a href="./characters/index.html">Creating characters</a>. By creating an XML file in <code class="inline-code">./data/stages</code>, you officially created a stage.</p>
 <p>The default stage XML looks something like this:</p>
 <pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">stage</span> <span class="hljs-attr">zoom</span>=<span class="hljs-string">"0.9"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"stage"</span> <span class="hljs-attr">folder</span>=<span class="hljs-string">"stages/default/"</span> <span class="hljs-attr">startCamPosY</span>=<span class="hljs-string">"600"</span> <span class="hljs-attr">startCamPosX</span>=<span class="hljs-string">"1000"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">sprite</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"bg"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"-600"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"-200"</span> <span class="hljs-attr">sprite</span>=<span class="hljs-string">"stageback"</span> <span class="hljs-attr">scroll</span>=<span class="hljs-string">"0.9"</span>/&gt;</span>
@@ -100,7 +100,7 @@
 <li><code class="inline-code">folder</code> which changes the destination of where the sprites are taken from <em>(like <code class="inline-code">images/stages/default/</code>)</em>.</li>
 <li><code class="inline-code">startCamPosX, startCamPosY</code> set the destination of where the camera starts from <em>(before countdown)</em></li>
 </ul>
-<p>As for the other nodes, there's about <em>7 types</em> of them <em>(and more if you script them in, see <a href="./Scripting/PlayState Scripts/Character or Stage Scripts.html">Character/Stage Scripts</a>)</em>, we'll go through each of them.</p>
+<p>As for the other nodes, there's about <em>7 types</em> of them <em>(and more if you script them in, see <a href="./scripting/playstate-scripts/character-stage-scripts.html">Character/Stage Scripts</a>)</em>, we'll go through each of them.</p>
 <p><em>(note that it's important which order you put them in because they will take the same order in-game too)</em></p>
 <h2>Sprite node (<code class="hljs-name inline-code">sprite</code>, <code class="hljs-name inline-code">spr</code>, <code class="hljs-name inline-code">sparrow</code>)</h2>
 <p>The sprite node defines the basic sprites in a stage.</p>
@@ -167,7 +167,7 @@ Creating one of these looks something like this:</p>
 <p>Character nodes are used to position characters in the stage. A Character node looks something like this:</p>
 <pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">boyfriend</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"400"</span>/&gt;</span>
 </code></pre>
-<p>Accepted parametters are:</p>
+<p>Accepted parameters are:</p>
 <ul>
 <li><code class="inline-code">x</code> and <code class="inline-code">y</code> for positioning.</li>
 <li><code class="inline-code">camxoffset</code> and <code class="inline-code">camyoffset</code> for changing the character's camera point.</li>
