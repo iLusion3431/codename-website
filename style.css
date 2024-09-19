@@ -278,7 +278,7 @@ hue-6-2: #e6c07b
 
 .hljs-comment,
 .hljs-quote {
-  color: #5c6370;
+  color: #5c6370 !important;
   font-style: italic;
 }
 
@@ -297,7 +297,7 @@ hue-6-2: #e6c07b
 }
 
 .hljs-literal {
-  color: #56b6c2;
+  color: #56b6c2 !important;
 }
 
 .hljs-string,
@@ -316,7 +316,7 @@ hue-6-2: #e6c07b
 .hljs-selector-attr,
 .hljs-selector-pseudo,
 .hljs-number {
-  color: #d19a66;
+  color: #d19a66 !important;
 }
 
 .hljs-symbol,
@@ -325,13 +325,13 @@ hue-6-2: #e6c07b
 .hljs-meta,
 .hljs-selector-id,
 .hljs-title {
-  color: #61aeee;
+  color: #61aeee !important;
 }
 
 .hljs-built_in,
 .hljs-title.class_,
 .hljs-class .hljs-title {
-  color: #e6c07b;
+  color: #e6c07b !important;
 }
 
 .hljs-emphasis {
