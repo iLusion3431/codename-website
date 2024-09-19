@@ -211,7 +211,7 @@ All of these configs can be found in <code class="inline-code">./data/config/</c
     <span class="hljs-attr">"logoKey"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"icon"</span>
 <span class="hljs-punctuation">}</span>
 </code></pre>
-<p>Before doing this, make sure to make a discord application at https://discord.com/developers/applications, if you don't know how... please search a guide on google. After that, copy the application ID and insert it there.</p>
+<p>Before doing this, make sure to make a discord application at https://discord.com/developers/applications, if you don't know how... please search for a guide on google. After that, copy the application ID and insert it there.</p>
 <h3>credits.xml</h3>
 <p>Crediting people also uses XML data to parse members, though it has a lot of features to cover.<br>
 Here's a template provided by the engine:</p>
@@ -223,10 +223,10 @@ Here's a template provided by the engine:</p>
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">menu</span>&gt;</span>
 </code></pre>
-<p>As you can see, there's 2 types of nodes: <code class="hljs-name inline-code">credit</code> and <code class="hljs-name inline-code">github</code>. <code class="hljs-name inline-code">credit</code> is the basic crediting node which can be applied to anyone, and <code class="hljs-name inline-code">github</code> pulls the user from it's database and can only be used for people who have accounts on GitHub <em>(also automatically redirects to their GitHub profile page.)</em></p>
+<p>As you can see, there's 2 types of nodes: <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">credit</span>&gt;</span></code> and <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">github</span>&gt;</span></code>. <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">credit</span>&gt;</span></code> is the basic crediting node which can be applied to anyone, and <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">github</span>&gt;</span></code> pulls the user from it's database and can only be used for people who have accounts on GitHub <em>(also automatically redirects to their GitHub profile page.)</em></p>
 <p>Their parameters are as follows:</p>
 <ul>
-<li><code class="hljs-name inline-code">credit</code> <!-- applies special coloring -->
+<li><code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">credit</span>&gt;</span></code> <!-- applies special coloring -->
 <ul>
 <li><code class="inline-code">name</code> which is the name of the person.</li>
 <li><code class="inline-code">desc</code> determines the description of that person.</li>
@@ -236,7 +236,7 @@ Here's a template provided by the engine:</p>
 <li><code class="inline-code">color</code> changes the color of the text that displays the name.</li>
 <li><code class="inline-code">portrait</code> determines whether or not to crop the picture to a circular form.</li>
 </ul></li>
-<li><code class="hljs-name inline-code">github</code>
+<li><code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">github</span>&gt;</span></code>
 <ul>
 <li><code class="inline-code">user</code> determines which user to grab from the GitHub database.</li>
 <li><code class="inline-code">customName</code> is the display name you wish to refer to the person.</li>
@@ -245,7 +245,7 @@ Here's a template provided by the engine:</p>
 <li><code class="inline-code">portrait</code> determines whether or not to crop the picture to a circular form.</li>
 </ul></li>
 </ul>
-<p>Also, if you notice, you can wrap these with the <code class="hljs-name inline-code">menu</code> node to separate the credits <em>(like probably having an artist submenu and stuff)</em></p>
+<p>Also, if you notice, you can wrap these with the <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">menu</span>&gt;</span></code> node to separate the credits <em>(like probably having an artist submenu and stuff)</em></p>
 <h3>options.xml</h3>
 <p>options.xml is explained in this article <a href="./scripting/custom-options.html">Custom options</a>.</p>
 

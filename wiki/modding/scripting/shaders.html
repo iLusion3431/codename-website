@@ -122,6 +122,7 @@ camGame.<span class="hljs-title function_">addShader</span>(shader);
 }
 </code></pre>
 <p>We'll show each step to converting this shader into an usable openfl/flixel shader.</p>
+<!-- I could use <syntax lang="glsl"> but it looks weird af -->
 <ol>
 <li>replace <code class="inline-code">void mainImage( out vec4 fragColor, in vec2 fragCoord )</code> with a simple <code class="inline-code">void main()</code> <em>(flixel and openfl do not have any parameters since the coords are defined outside the function)</em></li>
 <li>replace <code class="inline-code">vec2 uv = fragCoord/iResolution.xy;</code> with <code class="inline-code">vec2 uv = openfl_TextureCoordv</code> <em>(or in some cases, add <code class="inline-code">vec2 fragCoord = openfl_TextureCoordv*openfl_TextureSize.xy</code> before it and replace <code class="inline-code">iResolution.xy</code> with <code class="inline-code">openfl_TextureSize.xy</code> (if the uv value is different than usual))</em></li>

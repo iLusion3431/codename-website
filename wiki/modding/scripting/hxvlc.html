@@ -84,8 +84,8 @@
 <p>Using hxvlc, you can display videos anywhere, and can be used as a sprite as well.</p>
 <p>To get started, you get 2 choices:</p>
 <ul>
-<li><code class="inline-code">FlxVideo</code> which runs based on flash bitmap, and</li>
-<li><code class="inline-code">FlxSpriteVideo</code> which runs based on an FlxSprite.</li>
+<li><code class="inline-syntax inline-code"><span class="hljs-title class_">FlxVideo</span></code> which runs based on flash bitmap, and</li>
+<li><code class="inline-syntax inline-code"><span class="hljs-title class_">FlxSpriteVideo</span></code> which runs based on an FlxSprite.</li>
 </ul>
 <p>Using an FlxVideo looks something like this:</p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">var</span> <span class="hljs-attr">video</span>:<span class="hljs-title class_">FlxVideo</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxVideo</span>();
@@ -121,7 +121,7 @@ video.<span class="hljs-property">bitmap</span>.<span class="hljs-property">onEn
     <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxTimer</span>().<span class="hljs-title function_">start</span>(<span class="hljs-number">0.001</span>, (_) -&gt; video.<span class="hljs-title function_">play</span>());
 </code></pre>
 <p>These will load the video <code class="inline-code">./videos/video.mp4</code>, and display it on the screen.</p>
-<p>Other thing to note is that when you type <code class="inline-code">Paths.video("video")</code>, keep in mind that you can write the extension next to the path, which let's you load filetypes other than .mp4.</p>
+<p>Other thing to note is that when you type <code class="inline-syntax inline-code"><span class="hljs-title class_">Paths</span>.<span class="hljs-title function_">video</span>(<span class="hljs-string">"video"</span>)</code>, keep in mind that you can write the extension next to the path, which let's you load filetypes other than .mp4.</p>
 <p><em>(btw tiny thing to also note is that if your video suffers from huge file size i recommend using .webm instead of .mp4)</em></p>
 
         </div>

@@ -81,7 +81,7 @@
 
         <div class="content">
             <h1>Custom Classes</h1>
-<p>Custom classes can be made either inside the script you need it in or you can make a script file corresponding with the name of the class in <code class="inline-code">./source</code>, and using <code class="inline-code">import</code> to import it.</p>
+<p>Custom classes can be made either inside the script you need it in or you can make a script file corresponding with the name of the class in <code class="inline-code">./source</code>, and using <code class="inline-syntax inline-code"><span class="hljs-keyword">import</span></code> to import it.</p>
 <p>Here is a basic Song Script code that uses it:</p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">class</span> <span class="hljs-title class_">SpecialSprite</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">FlxSprite</span> {
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> <span class="hljs-attr">customValue</span>:<span class="hljs-title class_">String</span> = <span class="hljs-literal">null</span>;
@@ -106,7 +106,7 @@
 <ul>
 <li>You cannot extend FlxGroups or other typed classes <em>(the ones that end with a <code class="inline-code">&lt;T&gt;</code>)</em>.</li>
 <li>Classes that override a class needs to have the same arguments on the constructor as the class it overrides. Same when creating the instance of the class.</li>
-<li>Compiled Classes that do not override a function in their code cannot have that function overridden by custom classes. For example, you can't override the <code class="inline-code">draw</code> method in a custom class that extends <code class="inline-code">FlxParticle</code>, because <code class="inline-code">FlxParticle</code> does not override <code class="inline-code">draw</code>.</li>
+<li>Compiled Classes that do not override a function in their code cannot have that function overridden by custom classes. For example, you can't override the <code class="inline-code">draw</code> method in a custom class that extends <code class="inline-syntax inline-code"><span class="hljs-title class_">FlxParticle</span></code>, because <code class="inline-syntax inline-code"><span class="hljs-title class_">FlxParticle</span></code> does not override <code class="inline-code">draw</code>.</li>
 <li>all variables need to be public in order to be accessed inside the class.</li>
 <li>static variables are not supported. (yet)</li>
 <li>static functions are not supported. (yet)</li>

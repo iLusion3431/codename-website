@@ -126,7 +126,7 @@
 <li><code class="inline-code">updateHitbox</code> determines whether or not to update the sprite's hitbox.</li>
 <li><code class="inline-code">zoomFactor</code> defines how much the sprite should scale with the camera's zoom. <em>(setting it to 0 will make it stay to the original size no matter what)</em></li>
 <li><code class="inline-code">alpha</code> is the "opacity" of the sprite</li>
-<li><code class="inline-code">color</code> tints the sprite in the color you set it to <em>(example #FF0000 will tint the sprite in full red)</em></li>
+<li><code class="inline-code">color</code> tints the sprite in the color you set it to <em>(example <code class="hljs-string inline-code">#FF0000</code> will tint the sprite in full red)</em></li>
 <li><code class="inline-code">playOnCountdown</code> tells the sprite whether or not to play it's animation during countdown or not.</li>
 <li><code class="inline-code">beatInterval, beatOffset</code>, honestly, I don't even know what this shit is okay.</li>
 </ul>
@@ -141,7 +141,7 @@
 <li><code class="inline-code">name</code> defines the internal name of the animation <em>(used for scripting)</em></li>
 <li><code class="inline-code">anim</code> is the prefix for finding the animation in the spritesheet.</li>
 <li><code class="inline-code">indices</code> indicates which frames to play from the previously found frames.</li>
-<li><code class="inline-code">type</code> determines the type of the animation. either <code class="inline-code">beat</code> or <code class="inline-code">loop</code>.</li>
+<li><code class="inline-code">type</code> determines the type of the animation. either <code class="hljs-string inline-code">beat</code> or <code class="hljs-string inline-code">loop</code>.</li>
 <li><code class="inline-code">fps</code> is the framerate of your animation.</li>
 <li><code class="inline-code">x</code> and <code class="inline-code">y</code> are the animation offset. <em>(offset is only applied when the animation is played)</em></li>
 <li><code class="inline-code">forced</code> whether or not to force animation playback while a different one is already playing.</li>
@@ -202,10 +202,10 @@ Creating one of these looks something like this:</p>
 <p>Accepted parameters:</p>
 <ul>
 <li><code class="inline-code">script</code> which is the name of the script to load.</li>
-<li><code class="inline-code">folder</code> which is the folder to load the script from. (defaults to <code class="inline-code">data/scripts/</code>)</li>
-<li><code class="inline-code">isShortLived</code> which determines whether or not the script is destroyed after the stage has finished loading. (defaults to <code class="inline-code">false</code>)</li>
-<li><code class="inline-code">importStageSprites</code> which determines whether or not to import the stage sprites into the script. (defaults to <code class="inline-code">false</code>)</li>
-<li><code class="inline-code">loadBefore</code> which determines whether or not to load the script before going through the other stage's nodes, exactly like the default stage's script allowing for example to call <code class="inline-code">onStageXMLParsed</code>. If instead you want the script to load after a certain node or such, set this to <code class="inline-code">false</code>. (defaults to <code class="inline-code">true</code>)</li>
+<li><code class="inline-code">folder</code> which is the folder to load the script from. (defaults to <code class="hljs-string inline-code">"data/scripts/"</code>)</li>
+<li><code class="inline-code">isShortLived</code> which determines whether or not the script is destroyed after the stage has finished loading. (defaults to <code class="hljs-string inline-code">false</code>)</li>
+<li><code class="inline-code">importStageSprites</code> which determines whether or not to import the stage sprites into the script. (defaults to <code class="hljs-string inline-code">false</code>)</li>
+<li><code class="inline-code">loadBefore</code> which determines whether or not to load the script before going through the other stage's nodes, exactly like the default stage's script allowing for example to call <code class="inline-code">onStageXMLParsed</code>. If instead you want the script to load after a certain node or such, set this to <code class="hljs-string inline-code">false</code>. (defaults to <code class="hljs-string inline-code">true</code>)</li>
 </ul>
 <p>This allows you to load custom scripts for your stages, that allow for adding custom stage nodes, or whatever else you can think of.</p>
 <p>Check out the <a href="./stage-extensions.html">Stage Extensions</a> page for more information.</p>

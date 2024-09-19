@@ -105,38 +105,38 @@
 <p><img src="./Custom Options.png"></p>
 <p>You're likely wondering: "how does each type of option work?"
 That's what is about to be explained!!</p>
-<p>All option types (except for <code class="inline-code">menu</code>) share 2 common properties:</p>
+<p>All option types (except for <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">menu</span>&gt;</span></code>) share 2 common properties:</p>
 <ul>
 <li><code class="inline-code">id</code> - The ID of the option to pull from save data (which we cover just below this section!)</li>
 <li><code class="inline-code">name</code> - This is the name of the option displayed on screen</li>
 </ul>
 <h2>Here's what the properties for each type are:</h2>
 <ul>
-<li><p><code class="inline-code">menu</code> - A menu to put your options into, you can have sub-menus inside of them as well</p>
+<li><p><code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">menu</span>&gt;</span></code> - A menu to put your options into, you can have sub-menus inside of them as well</p>
 <ul>
 <li><code class="inline-code">name</code> - This is the name of the menu displayed on screen</li>
 <li><code class="inline-code">desc</code> - This is the description of the menu displayed on screen</li>
 </ul></li>
-<li><p><code class="inline-code">checkbox</code> - Makes a checkbox to toggle an option on and off</p>
+<li><p><code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">checkbox</span>&gt;</span></code> - Makes a checkbox to toggle an option on and off</p>
 <ul>
 <li>There is no properties, this is the simplest an option can get</li>
 </ul></li>
-<li><p><code class="inline-code">number</code> - Self-explanatory i think</p>
+<li><p><code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">number</span>&gt;</span></code> - Self-explanatory i think</p>
 <ul>
 <li><code class="inline-code">min</code> - The minimum value this number is allowed to stay at</li>
 <li><code class="inline-code">max</code> - The maximum value this number is allowed to stay at</li>
 <li><code class="inline-code">change</code> - How much this number is allowed to change by, could be in 5s, 10s, etc</li>
 </ul></li>
-<li><p><code class="inline-code">choice</code> - A multiple choice option, which can cycle through several given values</p>
+<li><p><code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">choice</span>&gt;</span></code> - A multiple choice option, which can cycle through several given values</p>
 <ul>
-<li><code class="inline-code">value</code> - A value that can be chosen
+<li><code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span></code> - A value that can be chosen
 <ul>
 <li><code class="inline-code">name</code> - This is the name of the value displayed on screen</li>
 <li><code class="inline-code">value</code> - This is the actual data/value applied to the option when chosen</li>
 </ul></li>
 </ul></li>
 </ul>
-<p>Accessing them in Scripts is done via <code class="inline-code">FlxG.save.data</code>, as you can see below.</p>
+<p>Accessing them in Scripts is done via <code class="inline-syntax inline-code"><span class="hljs-title class_">FlxG</span>.<span class="hljs-property">save</span>.<span class="hljs-property">data</span></code>, as you can see below.</p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">var</span> checkboxExample = <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">save</span>.<span class="hljs-property">data</span>.<span class="hljs-property">checkboxExample</span>;
 </code></pre>
 <p>You may have noticed that none of the option types have a default value property,

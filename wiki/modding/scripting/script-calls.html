@@ -82,45 +82,45 @@
         <div class="content">
             <h1>List of all script calls</h1>
 <h2>All states/substates</h2>
-<h3>preCreate(), create(), postCreate()</h3>
-<h3>preUpdate(elapsed:Float), update(elapsed:Float), postUpdate(elapsed:Float)</h3>
-<h3>stepHit(curStep:Int), beatHit(curBeat:Int), measureHit(curMeasure:Int)</h3>
-<h3>onFocus(), onFocusLost()</h3>
-<h3>draw(event:DrawEvent), postDraw(event:DrawEvent)</h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">preCreate</span>()</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">create</span>()</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">postCreate</span>()</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">preUpdate</span>(<span class="hljs-attr">elapsed</span>:<span class="hljs-title class_">Float</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">update</span>(<span class="hljs-attr">elapsed</span>:<span class="hljs-title class_">Float</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">postUpdate</span>(<span class="hljs-attr">elapsed</span>:<span class="hljs-title class_">Float</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">stepHit</span>(<span class="hljs-attr">curStep</span>:<span class="hljs-title class_">Int</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">beatHit</span>(<span class="hljs-attr">curBeat</span>:<span class="hljs-title class_">Int</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">measureHit</span>(<span class="hljs-attr">curMeasure</span>:<span class="hljs-title class_">Int</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onFocus</span>()</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onFocusLost</span>()</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">draw</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">DrawEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">postDraw</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">DrawEvent</span>)</code></h3>
 <p>The <code class="inline-code">event</code> has no parameters but can be cancelled</p>
-<h3>onStateSwitch(event:StateEvent), onOpenSubState(event:StateEvent)</h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onStateSwitch</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StateEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onOpenSubState</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StateEvent</span>)</code></h3>
 <p>The <code class="inline-code">event</code> in question has the following parameter:</p>
 <ul>
 <li><code class="inline-code">substate</code> which represents the state/substate it's about to open</li>
 </ul>
-<h3>onResize(event:ResizeEvent)</h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onResize</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">ResizeEvent</span>)</code></h3>
 <p>The <code class="inline-code">event</code> in question has the following parameters:</p>
 <ul>
 <li><code class="inline-code">width</code> and <code class="inline-code">height</code> which represents the new width and height of the game.</li>
 <li><code class="inline-code">oldWidth</code> and <code class="inline-code">oldHeight</code> which represents the old width and height of the game.</li>
 </ul>
-<h3>destroy()</h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">destroy</span>()</code></h3>
 <h2>PlayState.hx</h2>
-<h3>onStageXMLParsed(event:StageXMLEvent), onStageNodeParsed(event:StageNodeEvent)</h3>
-<h3>onPreGenerateStrums(event:AmountEvent), onPostGenerateStrums(event:AmountEvent)</h3>
-<h3>onStrumCreation(event:StrumCreationEvent), onPostStrumCreation(event:StrumCreationEvent)</h3>
-<h3>onNoteCreation(event:NoteCreationEvent), onPostNoteCreation(event:NoteCreationEvent)</h3>
-<h3>onStartCountdown(event:CancellableEvent), onPostStartCountdown()</h3>
-<h3>onCountdown(event:CountdownEvent), onPostCountdown(event:CountdownEvent)</h3>
-<h3>onSongStart(), onStartSong(), onSongEnd()</h3>
-<h3>onInputUpdate(event:InputSystemEvent), onPostInputUpdate()</h3>
-<h3>onRatingUpdate(event:RatingUpdateEvent)</h3>
-<h3>onPlayerHit(event:NoteHitEvent), onDadHit(event:NoteHitEvent), onNoteHit(event:NoteHitEvent)</h3>
-<h3>onPlayerMiss(event:NoteMissEvent)</h3>
-<h3>onCameraMove(event:CamMoveEvent)</h3>
-<h3>onEvent(event:EventGameEvent)</h3>
-<h3>onSubstateOpen(event:StateEvent), onSubstateClose(event:StateEvent)</h3>
-<h3>onGamePause(event:CancellableEvent)</h3>
-<h3>onGameOver(event:GameOverEvent), onPostGameOver(event:GameOverEvent)</h3>
-<h3>onVocalsResync()</h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onStageXMLParsed</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StageXMLEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onStageNodeParsed</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StageNodeEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onPreGenerateStrums</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">AmountEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostGenerateStrums</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">AmountEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onStrumCreation</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StrumCreationEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostStrumCreation</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StrumCreationEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onNoteCreation</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">NoteCreationEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostNoteCreation</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">NoteCreationEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onStartCountdown</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">CancellableEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostStartCountdown</span>()</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onCountdown</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">CountdownEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostCountdown</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">CountdownEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onSongStart</span>()</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onStartSong</span>()</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onSongEnd</span>()</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onInputUpdate</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">InputSystemEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostInputUpdate</span>()</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onRatingUpdate</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">RatingUpdateEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onPlayerHit</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">NoteHitEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onDadHit</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">NoteHitEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onNoteHit</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">NoteHitEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onPlayerMiss</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">NoteMissEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onCameraMove</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">CamMoveEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onEvent</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">EventGameEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onSubstateOpen</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StateEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onSubstateClose</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StateEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onGamePause</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">CancellableEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onGameOver</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">GameOverEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostGameOver</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">GameOverEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onVocalsResync</span>()</code></h3>
 <h2>Global Scripts</h2>
-<h3>focusLost(), focusGained()</h3>
-<p>more coming soon</p>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">focusLost</span>()</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">focusGained</span>()</code></h3>
+<p>more to be documented soon</p>
 
         </div>
     </div>
