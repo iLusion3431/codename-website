@@ -35,25 +35,25 @@ header {
   justify-content: space-between;
 }
 
-header>div {
+header > div {
   background: var(--background-secondary-color);
   display: flex;
 }
 
-header>h1 {
+header > h1 {
   margin: 0;
   margin-bottom: 15px;
   align-self: end;
 }
 
-header>a {
+header > a {
   text-wrap: nowrap;
   text-decoration: none;
   display: flex;
   align-items: center;
 }
 
-header>a>img {
+header > a > img {
   /*! max-height: 30%; */
   margin-right: 0.5em;
 }
@@ -61,11 +61,12 @@ header>a>img {
 .mobile {
   display: none;
 }
+
 .desktop {
   display: initial;
 }
 
-header>div>a {
+header > div > a {
   display: flex;
   padding: 0 1vw;
   font-size: 1.2em;
@@ -80,7 +81,7 @@ header>div>a {
   align-items: center;
 }
 
-header>div>a:hover {
+header > div > a:hover {
   background: rgba(0, 0, 0, 0.2);
 }
 
@@ -110,7 +111,7 @@ ul {
   list-style: "> ";
 }
 
-ul:has(li>a) {
+ul:has(li > a) {
   padding-left: 0em;
   background: var(--list-background-color);
   overflow: hidden;
@@ -128,9 +129,15 @@ code {
 code.inline-code {
   padding: 0em 0.4em;
   color: #d19a66;
-
   font-family: monospace;
   white-space: pre-wrap;
+}
+code.inline-code.inline-syntax {
+  color: #fff;
+}
+
+code.inline-code * {
+  font-family: monospace;
 }
 
 pre.inline-code code {
@@ -164,12 +171,12 @@ pre.hljs code * {
   flex-grow: 1;
 }
 
-.content>ul {
+.content > ul {
   position: relative;
   overflow: hidden;
 }
 
-li>a {
+li > a {
   color: var(--text-color);
   z-index: 1;
   text-decoration: none;
@@ -181,7 +188,7 @@ li>a {
   line-height: 250%;
 }
 
-li>a:before {
+li > a:before {
   z-index: -1;
   position: absolute;
   left: 0;
@@ -192,18 +199,17 @@ li>a:before {
   border: solid rgba(0, 0, 0, 0.2) 2px;
 }
 
-li.odd>a:before {
+li.odd > a:before {
   background: rgba(255, 255, 255, 0.01);
 }
 
-li>a:hover:before {
+li > a:hover:before {
   background: rgba(255, 255, 255, 0.05);
 }
 
 /*li:hover:not(:has(li:hover)) {
   background: rgba(255, 255, 255, 0.05);
 }*/
-
 img {
   max-width: 100%;
 }
@@ -219,7 +225,7 @@ img {
   .desktop {
     display: none;
   }
-  header>h2 {
+  header > h2 {
     display: none;
   }
   header {
@@ -231,26 +237,21 @@ img {
     border: none;
   }
 }
-
 @media screen and (min-width: 60.5em) {
   .content {
     padding: 0 5%;
     margin: 1.5em 1.5em;
   }
-
   img {
     max-width: 60%;
   }
-
 }
-
 .hljs {
   padding: 20px;
   text-wrap: wrap;
 }
 
 /* hljs */
-
 /*
 
 Atom One Dark by Daniel Gamage
@@ -270,7 +271,6 @@ hue-6:   #d19a66
 hue-6-2: #e6c07b
 
 */
-
 .hljs {
   color: #abb2bf;
   background: var(--code-background);
