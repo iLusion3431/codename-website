@@ -113,7 +113,6 @@ ul {
 
 ul:has(li > a) {
   padding-left: 0em;
-  background: var(--list-background-color);
   overflow: hidden;
 }
 
@@ -172,6 +171,8 @@ pre.hljs code * {
 }
 
 .content > ul {
+  z-index: 0;
+  background: var(--list-background-color);
   position: relative;
   overflow: hidden;
 }
@@ -195,7 +196,7 @@ li > a:before {
   display: inline-block;
   content: "Ff";
   color: transparent;
-  width: 100%;
+  width: calc(100% - 4px);
   border: solid rgba(0, 0, 0, 0.2) 2px;
 }
 

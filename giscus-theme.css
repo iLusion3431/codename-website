@@ -119,3 +119,12 @@
 .gsc-upvote-button {
   display: none !important;
 }
+
+button:hover:not(button:disabled) {
+  filter: brightness(125%);
+  backdrop-filter: brightness(125%);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-color);
+}
