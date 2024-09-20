@@ -15,7 +15,9 @@
   scrollbar-color: var(--scrollbar-color) var(--background-secondary-color);
 }
 
-*, ::after, ::before {
+*,
+::after,
+::before {
   border: none;
 }
 
@@ -108,7 +110,12 @@
   border-bottom: dotted 3px rgba(0, 0, 0, 0.5) !important;
 }
 
-.gsc-comment-box-textarea, .gsc-comment-box-textarea-extras {
+.gsc-comment-box-textarea,
+.gsc-comment-box-textarea-extras {
   border: none;
   border-radius: 0 !important;
+}
+
+.gsc-upvote-button {
+  display: none !important;
 }
