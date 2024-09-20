@@ -209,6 +209,7 @@ Creating one of these looks something like this:</p>
 <li><code class="inline-code">importStageSprites</code> which determines whether or not to import the stage sprites into the script. (defaults to <code class="hljs-string inline-code">false</code>)</li>
 <li><code class="inline-code">loadBefore</code> which determines whether or not to load the script before going through the other stage's nodes, exactly like the default stage's script allowing for example to call <code class="hljs-title inline-code">onStageXMLParsed</code>. If instead you want the script to load after a certain node or such, set this to <code class="hljs-string inline-code">false</code>. (defaults to <code class="hljs-string inline-code">true</code>)</li>
 </ul>
+<p>All of these attributes above get stored inside a list, singular Imported XML scripts can access their infos easily through a variable called <code class="inline-code">scriptInfo</code> (this variable uses a <code class="inline-syntax inline-code"><span class="hljs-title class_">XMLImportedScriptInfo</span></code> class and it's automatically imported into these scripts).</p>
 <p>This allows you to load custom scripts for your stages, that allow for adding custom stage nodes, or whatever else you can think of.</p>
 <p>Check out the <a href="./stage-extensions.html">Stage Extensions</a> page for more information.</p>
 
