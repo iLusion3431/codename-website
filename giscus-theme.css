@@ -45,7 +45,7 @@
   font-weight: 400;
 }
 
-.gsc-comment-box-bottom button {
+.btn-primary {
   background: var(--primary-color);
   padding: 5px 16px;
   border-radius: 0 !important;
@@ -120,7 +120,7 @@
   display: none !important;
 }
 
-button:hover:not(button:disabled) {
+button:hover:not(button:disabled), .btn-primary:hover {
   filter: brightness(125%);
   backdrop-filter: brightness(125%);
 }
