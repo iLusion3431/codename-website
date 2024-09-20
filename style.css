@@ -9,6 +9,12 @@
   --code-background: #100d15;
 }
 
+* {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+  color: var(--text-color);
+  scrollbar-color: var(--scrollbar-color) var(--background-secondary-color);
+}
+
 a {
   color: deepskyblue;
 }
@@ -20,12 +26,6 @@ a {
   padding: 0.7em;
   background: var(--primary-color);
   border: solid rgba(0, 0, 0, 0.2) 2px;
-}
-
-* {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
-  color: var(--text-color);
-  scrollbar-color: var(--scrollbar-color) var(--background-secondary-color);
 }
 
 header {

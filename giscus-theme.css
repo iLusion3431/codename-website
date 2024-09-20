@@ -1,0 +1,114 @@
+:root {
+  --primary-color: #531a7d;
+  --secondary-color: #43206e;
+  --background-primary-color: #1e1826;
+  --background-secondary-color: #17121d;
+  --list-background-color: #110d15;
+  --text-color: white;
+  --scrollbar-color: #2a2235;
+  --code-background: #100d15;
+}
+
+* {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+  color: var(--text-color);
+  scrollbar-color: var(--scrollbar-color) var(--background-secondary-color);
+}
+
+*, ::after, ::before {
+  border: none;
+}
+
+.gsc-comment-box-tabs {
+  border: none !important;
+}
+
+.gsc-comment-box-tabs button {
+  font-weight: 600;
+  border-radius: 0 !important;
+  border: solid rgba(0, 0, 0, 0.2) 2px !important;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.color-box-border-info {
+  border: none;
+}
+
+.gsc-comment-box-is-reply {
+  border: none !important;
+}
+
+.gsc-comment-box-tabs button.color-text-secondary {
+  color: gray;
+  font-weight: 400;
+}
+
+.gsc-comment-box-bottom button {
+  background: var(--primary-color);
+  padding: 5px 16px;
+  border-radius: 0 !important;
+  border: solid rgba(0, 0, 0, 0.2) 2px !important;
+}
+
+.gsc-comment-box-bottom .btn-primary:disabled {
+  color: gray;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.gsc-comment-box-bottom button:not(.btn-primary) {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.gsc-reactions-popover {
+  border: solid rgba(0, 0, 0, 0.2) 2px !important;
+  background: var(--list-background-color) !important;
+  border-radius: 0 !important;
+}
+
+.gsc-reactions-popover.open::before {
+  color: #0e0a11 !important;
+}
+
+.gsc-timeline {
+  background: var(--list-background-color);
+  gap: 0 !important;
+}
+
+.gsc-comment {
+  border: solid rgba(0, 0, 0, 0.2) 2px;
+}
+
+.gsc-comment > div {
+  border: none;
+}
+
+.gsc-reply-box {
+  border-top: none;
+}
+
+.gsc-reply-box button {
+  border: solid rgba(0, 0, 0, 0.2) 2px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0 !important;
+}
+
+.gsc-comment-box:not(.gsc-comment-box-is-reply) {
+  border-radius: 0 !important;
+  border: solid rgba(0, 0, 0, 0.2) 2px !important;
+  background: var(--list-background-color) !important;
+}
+
+.gsc-comment-box-write {
+  border-radius: 0 !important;
+  border: solid rgba(0, 0, 0, 0.2) 2px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.gsc-comment-box-textarea {
+  border-bottom: dotted 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+.gsc-comment-box-textarea, .gsc-comment-box-textarea-extras {
+  border: none;
+  border-radius: 0 !important;
+}
