@@ -128,3 +128,7 @@ button:hover:not(button:disabled), .btn-primary:hover {
 .btn-primary:hover {
   background-color: var(--primary-color);
 }
+
+.gsc-comment img {
+  max-width: 50% !important;
+}
