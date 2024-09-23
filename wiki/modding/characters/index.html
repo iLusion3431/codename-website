@@ -122,6 +122,13 @@ You can obviously apply more properties and access them in Scripts, see <a href=
 <li><code class="inline-code">forced</code> whether or not to force animation playback while a different one is already playing.</li>
 <li><code class="inline-code">loop</code> to make your animation loop.</li>
 </ul>
+<h2>Health Icons</h2>
+<p>In this engine, health icons have a bit more functionality than the ordinary engine. Such as:</p>
+<h3>Adding more than just a neutral and a losing icon.</h3>
+<p>Meaning that you can also add a winning icon <em>(by making the icon image 450x150 instead of 300x150)</em>, but it doesn't stop at just the winning icon, because you can add as many icons as you like <em>(for example pre winning or pre pre losing etc)</em><br>
+Keep in mind that the width of the icon image is determined by 150 * the amount of icons you want to have.</p>
+<h3>Script Event for when the icon changes it's icon state.</h3>
+<p>Using this event in a Global Script to run code for when the icon changes it's state: <code class="inline-code">onHealthIconAnimChange</code>.</p>
 
 
 			<div class="giscus"></div>
