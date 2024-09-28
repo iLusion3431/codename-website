@@ -10,18 +10,36 @@ function randomizeOrder() {
 		modsArray[j] = temp;
 	}
 
-	parent.innerHTML = "";
+	var fragment = document.createDocumentFragment();
 	for (var i = 0; i < modsArray.length; i++) {
-		parent.appendChild(modsArray[i]);
+		fragment.appendChild(modsArray[i].cloneNode(true));
+	}
+	clearElement(parent);
+	parent.appendChild(fragment);
+}
+
+function clearElement(element) {
+	while (element.firstChild) {
+		element.removeChild(element.firstChild);
 	}
 }
 
 function sortByTime(a, b) {
 	var aTime = a.getAttribute("data-time");
 	var bTime = b.getAttribute("data-time");
-	if(aTime == "unknown") return 1;
-	if(bTime == "unknown") return -1;
-	return new Date(bTime) - new Date(aTime);
+
+	if (aTime == null) return 1;           // Push null to the bottom
+	if (bTime == null) return -1;
+	if (aTime === "unreleased") return 1;  // Push "unreleased" to the bottom
+	if (bTime === "unreleased") return -1;
+	if (aTime === "unknown") return 1;     // Push "unknown" to the bottom
+	if (bTime === "unknown") return -1;
+
+	var aDate = new Date(aTime).getTime();
+	var bDate = new Date(bTime).getTime();
+
+	if (aDate === bDate) return 0;
+	return bDate > aDate ? 1 : -1;
 }
 
 function recentOrder() {
@@ -29,11 +47,15 @@ function recentOrder() {
 	var parent = mods[0].parentNode;
 	var modsArray = Array.from(mods);
 
-	var sorted = modsArray.sort(sortByTime);
-	parent.innerHTML = "";
-	for (var i = 0; i < sorted.length; i++) {
-		parent.appendChild(sorted[i]);
+	modsArray.sort(sortByTime);
+
+	var fragment = document.createDocumentFragment();
+	for (var i = 0; i < modsArray.length; i++) {
+		fragment.appendChild(modsArray[i].cloneNode(true));
 	}
+
+	clearElement(parent);
+	parent.appendChild(fragment);
 }
 
 var sortButtons = document.querySelectorAll(".sort-button");
