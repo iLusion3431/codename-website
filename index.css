@@ -144,9 +144,6 @@ div.compact {
 .featured-mod img {
   max-width: 100%;
 }
-.featured-mod .sparkles {
-  display: none;
-}
 .featured-mod .card-content {
   text-align: left;
   padding: 10px;
