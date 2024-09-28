@@ -147,13 +147,6 @@ div.compact {
 .featured-mod .sparkles {
   display: none;
 }
-.featured-mod.best .sparkles {
-  width: 250px;
-  display: initial;
-  position: absolute;
-  top: 0;
-  left: -5;
-}
 .featured-mod .card-content {
   text-align: left;
   padding: 10px;
