@@ -15,6 +15,14 @@
   scrollbar-color: var(--scrollbar-color) var(--background-secondary-color);
 }
 
+.hide-nojs {
+  display: initial;
+}
+
+.nojs .hide-nojs {
+  display: none;
+}
+
 *,
 ::after,
 ::before {
@@ -24,7 +32,6 @@
 .gsc-comment-box-tabs {
   border: none !important;
 }
-
 .gsc-comment-box-tabs button {
   font-weight: 600;
   border-radius: 0 !important;
@@ -56,7 +63,6 @@
   color: gray;
   background: rgba(0, 0, 0, 0.2);
 }
-
 .gsc-comment-box-bottom button:not(.btn-primary) {
   background: rgba(0, 0, 0, 0.2);
 }
@@ -66,7 +72,6 @@
   background: var(--list-background-color) !important;
   border-radius: 0 !important;
 }
-
 .gsc-reactions-popover.open::before {
   color: #0e0a11 !important;
 }
@@ -79,7 +84,6 @@
 .gsc-comment {
   border: solid rgba(0, 0, 0, 0.2) 2px;
 }
-
 .gsc-comment > div {
   border: none;
 }
@@ -87,7 +91,6 @@
 .gsc-reply-box {
   border-top: none;
 }
-
 .gsc-reply-box button {
   border: solid rgba(0, 0, 0, 0.2) 2px;
   background: rgba(0, 0, 0, 0.2);
@@ -108,9 +111,10 @@
 
 .gsc-comment-box-textarea {
   border-bottom: dotted 3px rgba(0, 0, 0, 0.5) !important;
+  border: none;
+  border-radius: 0 !important;
 }
 
-.gsc-comment-box-textarea,
 .gsc-comment-box-textarea-extras {
   border: none;
   border-radius: 0 !important;
@@ -120,12 +124,14 @@
   display: none !important;
 }
 
-button:hover:not(button:disabled), .btn-primary:hover {
+button:hover:not(button:disabled) {
   filter: brightness(125%);
   backdrop-filter: brightness(125%);
 }
 
 .btn-primary:hover {
+  filter: brightness(125%);
+  backdrop-filter: brightness(125%);
   background-color: var(--primary-color);
 }
 

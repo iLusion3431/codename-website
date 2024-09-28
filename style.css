@@ -15,6 +15,14 @@
   scrollbar-color: var(--scrollbar-color) var(--background-secondary-color);
 }
 
+.hide-nojs {
+  display: initial;
+}
+
+.nojs .hide-nojs {
+  display: none;
+}
+
 a {
   color: deepskyblue;
 }
@@ -27,6 +35,10 @@ a {
   background: var(--primary-color);
   border: solid rgba(0, 0, 0, 0.2) 2px;
 }
+.default-button:hover {
+  filter: brightness(140%) saturate(140%);
+  backdrop-filter: brightness(140%) saturate(140%);
+}
 
 header {
   display: flex;
@@ -34,25 +46,21 @@ header {
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.3), 0px 0px 0px 2px rgba(0, 0, 0, 0.2) inset;
   justify-content: space-between;
 }
-
 header > div {
   background: var(--background-secondary-color);
   display: flex;
 }
-
 header > h1 {
   margin: 0;
   margin-bottom: 15px;
   align-self: end;
 }
-
 header > a {
   text-wrap: nowrap;
   text-decoration: none;
   display: flex;
   align-items: center;
 }
-
 header > a > img {
   /*! max-height: 30%; */
   margin-right: 0.5em;
@@ -80,7 +88,6 @@ header > div > a {
   justify-content: center;
   align-items: center;
 }
-
 header > div > a:hover {
   background: rgba(0, 0, 0, 0.2);
 }
@@ -110,7 +117,6 @@ h1 {
 ul {
   list-style: "> ";
 }
-
 ul:has(li > a) {
   padding-left: 0em;
   overflow: hidden;
@@ -124,7 +130,6 @@ li {
 code {
   background: var(--code-background);
 }
-
 code.inline-code {
   padding: 0em 0.4em;
   color: #d19a66;
@@ -134,13 +139,8 @@ code.inline-code {
 code.inline-code.inline-syntax {
   color: #fff;
 }
-
 code.inline-code * {
   font-family: monospace;
-}
-
-pre.inline-code code {
-  background: unset;
 }
 
 pre.inline-code {
@@ -148,8 +148,14 @@ pre.inline-code {
   padding: 1em;
   width: fit-content;
 }
-
-pre.hljs code,
+pre.inline-code code {
+  background: unset;
+}
+pre.hljs code {
+  background: var(--code-background);
+  font-family: monospace;
+  white-space: pre-wrap;
+}
 pre.hljs code * {
   background: var(--code-background);
   font-family: monospace;
@@ -169,7 +175,6 @@ pre.hljs code * {
   padding: 0 4%;
   flex-grow: 1;
 }
-
 .content > ul {
   z-index: 0;
   background: var(--list-background-color);
@@ -188,7 +193,6 @@ li > a {
   padding: 0em 1em;
   line-height: 250%;
 }
-
 li > a:before {
   z-index: -1;
   position: absolute;
@@ -199,11 +203,9 @@ li > a:before {
   width: calc(100% - 4px);
   border: solid rgba(0, 0, 0, 0.2) 2px;
 }
-
 li.odd > a:before {
   background: rgba(255, 255, 255, 0.01);
 }
-
 li > a:hover:before {
   background: rgba(255, 255, 255, 0.05);
 }
@@ -226,12 +228,12 @@ img {
   .desktop {
     display: none;
   }
-  header > h2 {
-    display: none;
-  }
   header {
     padding: 0;
     padding-left: 0.3em;
+  }
+  header > h2 {
+    display: none;
   }
   .content {
     background: none;
@@ -250,6 +252,8 @@ img {
 .hljs {
   padding: 20px;
   text-wrap: wrap;
+  color: #abb2bf;
+  background: var(--code-background);
 }
 
 /* hljs */
@@ -272,11 +276,6 @@ hue-6:   #d19a66
 hue-6-2: #e6c07b
 
 */
-.hljs {
-  color: #abb2bf;
-  background: var(--code-background);
-}
-
 .hljs-comment,
 .hljs-quote {
   color: #5c6370 !important;
@@ -345,4 +344,10 @@ hue-6-2: #e6c07b
 
 .hljs-link {
   text-decoration: underline;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
 }
