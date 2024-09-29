@@ -94,7 +94,6 @@
     transition: background-color 0.3s;
   }
   .sidebar {
-    width: 80%;
     position: fixed;
     left: -100%;
     transition: left 0.3s ease-in-out;
@@ -127,4 +126,13 @@
     width: 25vw;
     display: inline-block;
   }
+}
+i.fa::before {
+  position: absolute;
+  left: -20px;
+  top: -13px;
+}
+
+i.fa {
+  position: relative;
 }
