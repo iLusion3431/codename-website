@@ -109,7 +109,7 @@ br {
 .header {
   position: relative;
   z-index: 5;
-  background: url("img/sigma ndj.png");
+  background: url("img/sigma ndj.webp");
   background-position: center center;
   background-size: cover;
 }
