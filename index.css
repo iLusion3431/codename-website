@@ -177,8 +177,12 @@ div.compact {
   display: none;
 }
 
+.sort-button:not(.selected) {
+  filter: brightness(70%);
+}
+
 .sort-button.selected {
-  background: #7c39ae;
+  background: var(--primary-color);
 }
 
 .last-updated {

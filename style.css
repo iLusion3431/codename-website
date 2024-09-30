@@ -1,12 +1,12 @@
 :root {
-  --primary-color: #531a7d;
+  --primary-color: #b265bd;
   --secondary-color: #43206e;
-  --background-primary-color: #1e1826;
-  --background-secondary-color: #17121d;
-  --list-background-color: #110d15;
+  --background-primary-color: #2d1e32;
+  --background-secondary-color: #211625;
+  --list-background-color: #150e17;
   --text-color: white;
-  --scrollbar-color: #2a2235;
-  --code-background: #100d15;
+  --scrollbar-color: #302235;
+  --code-background: #130d15;
 }
 
 * {
@@ -36,8 +36,8 @@ a {
   border: solid rgba(0, 0, 0, 0.2) 2px;
 }
 .default-button:hover {
-  filter: brightness(140%) saturate(140%);
-  backdrop-filter: brightness(140%) saturate(140%);
+  filter: brightness(140%);
+  backdrop-filter: brightness(140%);
 }
 
 *, *::before, *::after {
@@ -45,6 +45,7 @@ a {
 }
 
 header {
+  height: 75px;
   display: flex;
   padding: 0em 2em;
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.3), 0px 0px 0px 2px rgba(0, 0, 0, 0.2) inset;
@@ -66,6 +67,9 @@ header > a {
   align-items: center;
 }
 header > a > img {
+  height: 40px;
+  width: auto !important;
+  max-width: fit-content !important;
   /*! max-height: 30%; */
   margin-right: 0.5em;
 }
@@ -105,7 +109,9 @@ br {
 .header {
   position: relative;
   z-index: 5;
-  background: linear-gradient(0deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: url("img/sigma ndj.png");
+  background-position: center center;
+  background-size: cover;
 }
 
 body {
