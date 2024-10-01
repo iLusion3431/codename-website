@@ -104,6 +104,11 @@ div.compact {
     max-width: 60%;
   }
 }
+@media screen and (max-width: 315px) {
+  .featured-mod {
+    width: 100% !important;
+  }
+}
 @keyframes rotate {
   0% {
     transform: rotate(-5deg);
@@ -231,4 +236,9 @@ div.compact {
 }
 .warning p {
   margin-top: 0.25em;
+}
+
+.content-logo {
+  width: 90%;
+  margin-top: 1em;
 }
