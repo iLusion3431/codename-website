@@ -145,7 +145,6 @@ div.compact {
   border: solid rgba(0, 0, 0, 0.1) 2px;
   transition: background-color 0.2s;
   margin: 6px;
-  height: min-content;
 }
 .featured-mod a {
   text-decoration: none;
@@ -159,8 +158,11 @@ div.compact {
 .featured-mod .card-content {
   text-align: left;
   padding: 10px;
-  height: 100px;
-  position: relative;
+}
+.featured-mod .last-updated {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
 }
 .featured-mod h3 {
   display: inline;
@@ -185,6 +187,10 @@ div.compact {
   font-size: 12px;
 }
 
+.placement {
+  opacity: 0;
+}
+
 .featured-mod.upcoming {
   display: none;
 }
@@ -196,9 +202,6 @@ div.compact {
 .last-updated {
   color: #8e7a9a;
   font-size: 0.8em;
-  left: 10px;
-  bottom: 10px;
-  position: absolute;
 }
 
 .sort-buttons {
