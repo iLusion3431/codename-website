@@ -105,10 +105,12 @@ div.compact {
 .content {
   flex-grow: 1;
 }
+.content.main-content {
+  width: 60%;
+}
 .content.mods {
   flex-grow: 0;
   width: 565px;
-  display: table;
   padding: 0;
 }
 
@@ -177,10 +179,6 @@ div.compact {
   display: none;
 }
 
-.sort-button:not(.selected) {
-  filter: brightness(70%);
-}
-
 .sort-button.selected {
   background: var(--primary-color);
 }
@@ -197,7 +195,7 @@ div.compact {
   margin: 0 !important;
 }
 
-.category-button {
+.category-button, .order-button {
   margin-bottom: 0;
   border: solid rgba(0, 0, 0, 0.1) 2px;
   border-bottom: none;
