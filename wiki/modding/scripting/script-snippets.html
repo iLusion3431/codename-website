@@ -1,25 +1,25 @@
 <!DOCTYPE html><html lang="en"><head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Useful script snippets for modders - Codename Engine Wiki</title>
+	<title>Script Snippets - Codename Engine Wiki</title>
 	<link rel="stylesheet" href="/style.css">
 	<link rel="stylesheet" href="/wiki.css">
 
-	<meta name="title" content="Useful script snippets for modders - Codename Engine Wiki">
-	<meta name="description" content="Website dedicated to things for Codename Engine!">
-	<meta property="og:description" content="Website dedicated to things for Codename Engine!">
-	<meta property="twitter:description" content="Website dedicated to things for Codename Engine!">
+	<meta name="title" content="Script Snippets - Codename Engine Wiki">
+	<meta name="description" content="This page contains useful script snippets for modders">
+	<meta property="og:description" content="This page contains useful script snippets for modders">
+	<meta property="twitter:description" content="This page contains useful script snippets for modders">
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://fnf-cne-devs.github.io/">
-	<meta property="og:title" content="Useful script snippets for modders - Codename Engine Wiki">
+	<meta property="og:title" content="Script Snippets - Codename Engine Wiki">
 	<meta property="og:image" content="https://fnf-cne-devs.github.io/img/banner.png">
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="https://fnf-cne-devs.github.io/">
-	<meta property="twitter:title" content="Useful script snippets for modders - Codename Engine Wiki">
+	<meta property="twitter:title" content="Script Snippets - Codename Engine Wiki">
 	<meta property="twitter:image" content="https://fnf-cne-devs.github.io/img/banner.png">
 
 	<meta name="theme-color" content="#7f33b8">
@@ -31,7 +31,7 @@
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
         <img src="/img/logo-banner-mini.png" alt="Codename Logo" class="mobile">
     </a>
-    <h2 class="header-title">Useful script snippets for modders</h2>
+    <h2 class="header-title">Script Snippets</h2>
     <div>
         <a href="/api-docs/">API</a><a href="/wiki/">Wiki</a>
     </div>
@@ -116,31 +116,34 @@
             <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">game</span>.<span class="hljs-property">_requestedState</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ModState</span>(redirectStates.<span class="hljs-title function_">get</span>(redirectState));
 }
 </code></pre>
-<h2>Animated Icons support.</h2>
-<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">elapsed</span>) {
-    <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">state</span>.<span class="hljs-property">members</span>)
-        <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Std</span>.<span class="hljs-title function_">isOfType</span>(i, <span class="hljs-title class_">HealthIcon</span>))
-            <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Assets</span>.<span class="hljs-title function_">exists</span>(<span class="hljs-title class_">Path</span>.<span class="hljs-title function_">withoutExtension</span>(<span class="hljs-title class_">Paths</span>.<span class="hljs-title function_">image</span>(<span class="hljs-string">"icons/"</span>+i.<span class="hljs-property">curCharacter</span>)) + <span class="hljs-string">".xml"</span>) &amp;&amp; i.<span class="hljs-property">frames</span>.<span class="hljs-property">frames</span>[<span class="hljs-number">0</span>].<span class="hljs-property">name</span> != <span class="hljs-string">"losing0000"</span>) {
-                i.<span class="hljs-property">frames</span> = <span class="hljs-title class_">Paths</span>.<span class="hljs-title function_">getFrames</span>(<span class="hljs-string">"icons/"</span>+i.<span class="hljs-property">curCharacter</span>);
-                i.<span class="hljs-property">animation</span>.<span class="hljs-title function_">addByPrefix</span>(<span class="hljs-string">"losing"</span>, <span class="hljs-string">"losing"</span>, <span class="hljs-number">24</span>, <span class="hljs-literal">true</span>);
-                i.<span class="hljs-property">animation</span>.<span class="hljs-title function_">addByPrefix</span>(<span class="hljs-string">"normal"</span>, <span class="hljs-string">"normal"</span>, <span class="hljs-number">24</span>, <span class="hljs-literal">true</span>);
-                i.<span class="hljs-property">animation</span>.<span class="hljs-title function_">play</span>(<span class="hljs-string">"normal"</span>, <span class="hljs-literal">true</span>);
-                i.<span class="hljs-property">curAnimState</span> = -<span class="hljs-number">1</span>;
+<!--
+## Animated Icons support.
+```haxe
+function update(elapsed) {
+    for (i in FlxG.state.members)
+        if (Std.isOfType(i, HealthIcon))
+            if (Assets.exists(Path.withoutExtension(Paths.image("icons/"+i.curCharacter)) + ".xml") && i.frames.frames[0].name != "losing0000") {
+                i.frames = Paths.getFrames("icons/"+i.curCharacter);
+                i.animation.addByPrefix("losing", "losing", 24, true);
+                i.animation.addByPrefix("normal", "normal", 24, true);
+                i.animation.play("normal", true);
+                i.curAnimState = -1;
             }
 }
-<span class="hljs-keyword">function</span> <span class="hljs-title function_">onHealthIconAnimChange</span>(<span class="hljs-params">e</span>) {
-    <span class="hljs-keyword">if</span> (e.<span class="hljs-property">healthIcon</span>.<span class="hljs-property">animation</span>.<span class="hljs-title function_">exists</span>(<span class="hljs-string">"normal"</span>)) {
-        e.<span class="hljs-title function_">cancel</span>();
-        e.<span class="hljs-property">healthIcon</span>.<span class="hljs-property">animation</span>.<span class="hljs-title function_">play</span>(e.<span class="hljs-property">amount</span> == <span class="hljs-number">0</span> ? <span class="hljs-string">'normal'</span> : <span class="hljs-string">'losing'</span>, <span class="hljs-literal">true</span>);
+function onHealthIconAnimChange(e) {
+    if (e.healthIcon.animation.exists("normal")) {
+        e.cancel();
+        e.healthIcon.animation.play(e.amount == 0 ? 'normal' : 'losing', true);
     }
 }
-</code></pre>
+```
+-->
 <h2>to be filled with other snippets</h2>
 
 
 			<div class="info">
 				
-				
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-09-02T18:14:26.000Z">2024-09-02</span></div>
 			</div>
 
 			<div class="giscus"></div>
