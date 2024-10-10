@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="en"><head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Script Snippets - Codename Engine Wiki</title>
+	<link rel="stylesheet" href="/style.css">
+	<link rel="stylesheet" href="/wiki.css">
+
+	<meta name="title" content="Script Snippets - Codename Engine Wiki">
+	<meta name="description" content="This page contains useful script snippets for modders">
+	<meta property="og:description" content="This page contains useful script snippets for modders">
+	<meta property="twitter:description" content="This page contains useful script snippets for modders">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://fnf-cne-devs.github.io/">
+	<meta property="og:title" content="Script Snippets - Codename Engine Wiki">
+	<meta property="og:image" content="https://fnf-cne-devs.github.io/img/banner.png">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://fnf-cne-devs.github.io/">
+	<meta property="twitter:title" content="Script Snippets - Codename Engine Wiki">
+	<meta property="twitter:image" content="https://fnf-cne-devs.github.io/img/banner.png">
+
+	<meta name="theme-color" content="#7f33b8">
+</head>
+<body>
+	<div class="header">
+		<header>
+    <a href="/">
+        <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
+        <img src="/img/logo-banner-mini.png" alt="Codename Logo" class="mobile">
+    </a>
+    <h2 class="header-title">Script Snippets</h2>
+    <div>
+        <a href="/api-docs/">API</a><a href="/wiki/">Wiki</a>
+    </div>
+</header>
+	</div>
+	<div class="container">
+		<div class="sidebar-wrapper">
+			<input type="checkbox" class="sidebar-button">
+			<span class="sidebar-button-front">
+				<svg viewBox="0 0 100 80" width="40" height="40">
+					<rect width="100" height="20" rx="10"></rect>
+					<rect y="30" width="100" height="20" rx="10"></rect>
+					<rect y="60" width="100" height="20" rx="10"></rect>
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path stroke="#000" d="M195 195a64 64 0 0 1 91 0l226 227 226-227a64 64 0 0 1 91 91L602 512l227 226a64 64 0 0 1-91 91L512 602 286 829a64 64 0 0 1-91-91l227-226-227-226a64 64 0 0 1 0-91z"></path></svg>
+			</span>
+			<div class="sidebar">
+				<ul class="sidebar-unordered-list">
+					<li class="sidebar-list-item even"><a href="/wiki/" class="even">Home</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/navigation.html" class="odd">How to navigate the engine</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/differences.html" class="even">Differences between other FNF engines</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/" class="odd">Modding The Engine</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/wiki/modding/songs/" class="even">Creating songs</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/songs/editor-features.html" class="odd">Chart Editor Features</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/characters/" class="even">Creating characters</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions.html" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/cutscenes-dialogues.html" class="even">Cutscenes/Dialogues</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/note-splashes.html" class="odd">Note Splashes</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/" class="even">Scripting</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/" class="odd">PlayState Scripts</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/gameplay-scripts.html" class="even">Gameplay Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/events-notetypes-scripts.html" class="odd">Events/Notetype Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts.html" class="even">Cutscenes/Dialogue Scripts - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/character-stage-scripts.html" class="odd">Character/Stage Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/pause-gamover-scripts.html" class="even">Pause/Game Over Scripts</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/state-substate-scripts.html" class="odd">State/Substate Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/global-scripts.html" class="even">Global Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/shaders.html" class="odd">Shaders</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/hxvlc.html" class="even">Using hxvlc for videos</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/custom-options.html" class="odd">Custom Options</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/custom-classes.html" class="even">Custom Classes</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/3d-rendering.html" class="odd">3D rendering - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/script-calls.html" class="even">All of the script calls - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/script-snippets.html" class="odd selected">Useful script snippets for modders - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/scripted-assets-libraries.html" class="even">Scripted Assets Libraries - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/ndll-scripting.html" class="odd">NDLL Scripting - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/custom-transitions.html" class="even">Custom Transitions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/hardcoding/" class="odd">Hardcoding - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<div class="content">
+			<h1>Useful script snippets for modders</h1>
+<p>Some features don't exist in our engine, luckily, we can script them in!</p>
+<h2>Song Scripts</h2>
+<p>idk bro</p>
+<h2>Global Scripts</h2>
+<h2>Replace pre-existing states with custom states.</h2>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">var</span> <span class="hljs-attr">redirectStates</span>:<span class="hljs-title class_">Map</span>&lt;<span class="hljs-title class_">FlxState</span>, <span class="hljs-title class_">String</span>&gt; = [
+    <span class="hljs-function"><span class="hljs-params">TitleState</span> =&gt;</span> <span class="hljs-string">"CustomTitleState"</span>
+];
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">preStateSwitch</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">for</span> (redirectState <span class="hljs-keyword">in</span> redirectStates.<span class="hljs-title function_">keys</span>())
+        <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Std</span>.<span class="hljs-title function_">isOfType</span>(<span class="hljs-title class_">FlxG</span>.<span class="hljs-property">game</span>.<span class="hljs-property">_requestedState</span>, redirectState))
+            <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">game</span>.<span class="hljs-property">_requestedState</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ModState</span>(redirectStates.<span class="hljs-title function_">get</span>(redirectState));
+}
+</code></pre>
+<!--
+## Animated Icons support.
+```haxe
+function update(elapsed) {
+    for (i in FlxG.state.members)
+        if (Std.isOfType(i, HealthIcon))
+            if (Assets.exists(Path.withoutExtension(Paths.image("icons/"+i.curCharacter)) + ".xml") && i.frames.frames[0].name != "losing0000") {
+                i.frames = Paths.getFrames("icons/"+i.curCharacter);
+                i.animation.addByPrefix("losing", "losing", 24, true);
+                i.animation.addByPrefix("normal", "normal", 24, true);
+                i.animation.play("normal", true);
+                i.curAnimState = -1;
+            }
+}
+function onHealthIconAnimChange(e) {
+    if (e.healthIcon.animation.exists("normal")) {
+        e.cancel();
+        e.healthIcon.animation.play(e.amount == 0 ? 'normal' : 'losing', true);
+    }
+}
+```
+-->
+<h2>to be filled with other snippets</h2>
+
+
+			<div class="info">
+				
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-09-02T18:14:26.000Z">2024-09-02</span></div>
+			</div>
+
+			<div class="giscus"></div>
+			<div class="giscus-frame"></div>
+
+			<script src="https://giscus.app/client.js" data-repo="FNF-CNE-Devs/FNF-CNE-Devs.github.io" data-repo-id="R_kgDOMm2E8w" data-category="Website" data-category-id="DIC_kwDOMm2E884Cio1F" data-mapping="pathname" data-strict="0" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="https://fnf-cne-devs.github.io/giscus-theme.css" data-lang="en" data-loading="lazy" crossorigin="anonymous" async="">
+			</script>
+		</div>
+	</div>
+
+	<script src="/wiki.js"></script>
+
+</body></html>

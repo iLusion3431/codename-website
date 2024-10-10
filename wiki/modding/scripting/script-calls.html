@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="en"><head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>All script calls - Codename Engine Wiki</title>
+	<link rel="stylesheet" href="/style.css">
+	<link rel="stylesheet" href="/wiki.css">
+
+	<meta name="title" content="All script calls - Codename Engine Wiki">
+	<meta name="description" content="This page contains a list of all script calls">
+	<meta property="og:description" content="This page contains a list of all script calls">
+	<meta property="twitter:description" content="This page contains a list of all script calls">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://fnf-cne-devs.github.io/">
+	<meta property="og:title" content="All script calls - Codename Engine Wiki">
+	<meta property="og:image" content="https://fnf-cne-devs.github.io/img/banner.png">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://fnf-cne-devs.github.io/">
+	<meta property="twitter:title" content="All script calls - Codename Engine Wiki">
+	<meta property="twitter:image" content="https://fnf-cne-devs.github.io/img/banner.png">
+
+	<meta name="theme-color" content="#7f33b8">
+</head>
+<body>
+	<div class="header">
+		<header>
+    <a href="/">
+        <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
+        <img src="/img/logo-banner-mini.png" alt="Codename Logo" class="mobile">
+    </a>
+    <h2 class="header-title">All script calls</h2>
+    <div>
+        <a href="/api-docs/">API</a><a href="/wiki/">Wiki</a>
+    </div>
+</header>
+	</div>
+	<div class="container">
+		<div class="sidebar-wrapper">
+			<input type="checkbox" class="sidebar-button">
+			<span class="sidebar-button-front">
+				<svg viewBox="0 0 100 80" width="40" height="40">
+					<rect width="100" height="20" rx="10"></rect>
+					<rect y="30" width="100" height="20" rx="10"></rect>
+					<rect y="60" width="100" height="20" rx="10"></rect>
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path stroke="#000" d="M195 195a64 64 0 0 1 91 0l226 227 226-227a64 64 0 0 1 91 91L602 512l227 226a64 64 0 0 1-91 91L512 602 286 829a64 64 0 0 1-91-91l227-226-227-226a64 64 0 0 1 0-91z"></path></svg>
+			</span>
+			<div class="sidebar">
+				<ul class="sidebar-unordered-list">
+					<li class="sidebar-list-item even"><a href="/wiki/" class="even">Home</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/navigation.html" class="odd">How to navigate the engine</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/differences.html" class="even">Differences between other FNF engines</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/" class="odd">Modding The Engine</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/wiki/modding/songs/" class="even">Creating songs</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/songs/editor-features.html" class="odd">Chart Editor Features</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/characters/" class="even">Creating characters</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions.html" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/cutscenes-dialogues.html" class="even">Cutscenes/Dialogues</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/note-splashes.html" class="odd">Note Splashes</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/" class="even">Scripting</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/" class="odd">PlayState Scripts</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/gameplay-scripts.html" class="even">Gameplay Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/events-notetypes-scripts.html" class="odd">Events/Notetype Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts.html" class="even">Cutscenes/Dialogue Scripts - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/character-stage-scripts.html" class="odd">Character/Stage Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/pause-gamover-scripts.html" class="even">Pause/Game Over Scripts</a></li>
+</ul>
+</li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/state-substate-scripts.html" class="odd">State/Substate Scripts</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/global-scripts.html" class="even">Global Scripts</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/shaders.html" class="odd">Shaders</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/hxvlc.html" class="even">Using hxvlc for videos</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/custom-options.html" class="odd">Custom Options</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/custom-classes.html" class="even">Custom Classes</a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/3d-rendering.html" class="odd">3D rendering - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/script-calls.html" class="even selected">All of the script calls - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/script-snippets.html" class="odd">Useful script snippets for modders - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/scripted-assets-libraries.html" class="even">Scripted Assets Libraries - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/ndll-scripting.html" class="odd">NDLL Scripting - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/custom-transitions.html" class="even">Custom Transitions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/hardcoding/" class="odd">Hardcoding - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+</ul>
+</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<div class="content">
+			<h1>List of all script calls</h1>
+<h2>All states/substates</h2>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">preCreate</span>()</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">create</span>()</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">postCreate</span>()</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">preUpdate</span>(<span class="hljs-attr">elapsed</span>:<span class="hljs-title class_">Float</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">update</span>(<span class="hljs-attr">elapsed</span>:<span class="hljs-title class_">Float</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">postUpdate</span>(<span class="hljs-attr">elapsed</span>:<span class="hljs-title class_">Float</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">stepHit</span>(<span class="hljs-attr">curStep</span>:<span class="hljs-title class_">Int</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">beatHit</span>(<span class="hljs-attr">curBeat</span>:<span class="hljs-title class_">Int</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">measureHit</span>(<span class="hljs-attr">curMeasure</span>:<span class="hljs-title class_">Int</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onFocus</span>()</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onFocusLost</span>()</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">draw</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">DrawEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">postDraw</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">DrawEvent</span>)</code></h3>
+<p>The <code class="inline-code">event</code> has no parameters but can be cancelled</p>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onStateSwitch</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StateEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onOpenSubState</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StateEvent</span>)</code></h3>
+<p>The <code class="inline-code">event</code> in question has the following parameter:</p>
+<ul>
+<li><code class="inline-code">substate</code> which represents the state/substate it's about to open</li>
+</ul>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onResize</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">ResizeEvent</span>)</code></h3>
+<p>The <code class="inline-code">event</code> in question has the following parameters:</p>
+<ul>
+<li><code class="inline-code">width</code> and <code class="inline-code">height</code> which represents the new width and height of the game.</li>
+<li><code class="inline-code">oldWidth</code> and <code class="inline-code">oldHeight</code> which represents the old width and height of the game.</li>
+</ul>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">destroy</span>()</code></h3>
+<h2>PlayState.hx</h2>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onStageXMLParsed</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StageXMLEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onStageNodeParsed</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StageNodeEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onPreGenerateStrums</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">AmountEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostGenerateStrums</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">AmountEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onStrumCreation</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StrumCreationEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostStrumCreation</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StrumCreationEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onNoteCreation</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">NoteCreationEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostNoteCreation</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">NoteCreationEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onStartCountdown</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">CancellableEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostStartCountdown</span>()</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onCountdown</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">CountdownEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostCountdown</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">CountdownEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onSongStart</span>()</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onStartSong</span>()</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onSongEnd</span>()</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onInputUpdate</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">InputSystemEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostInputUpdate</span>()</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onRatingUpdate</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">RatingUpdateEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onPlayerHit</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">NoteHitEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onDadHit</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">NoteHitEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onNoteHit</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">NoteHitEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onPlayerMiss</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">NoteMissEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onCameraMove</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">CamMoveEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onEvent</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">EventGameEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onSubstateOpen</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StateEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onSubstateClose</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StateEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onGamePause</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">CancellableEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onGameOver</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">GameOverEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostGameOver</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">GameOverEvent</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onVocalsResync</span>()</code></h3>
+<h2>Global Scripts</h2>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">focusLost</span>()</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">focusGained</span>()</code></h3>
+<p>more to be documented soon</p>
+
+
+			<div class="info">
+				<div class="written">Written by: Frakits</div>
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-09-10T13:10:47.000Z">2024-09-10</span></div>
+			</div>
+
+			<div class="giscus"></div>
+			<div class="giscus-frame"></div>
+
+			<script src="https://giscus.app/client.js" data-repo="FNF-CNE-Devs/FNF-CNE-Devs.github.io" data-repo-id="R_kgDOMm2E8w" data-category="Website" data-category-id="DIC_kwDOMm2E884Cio1F" data-mapping="pathname" data-strict="0" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="https://fnf-cne-devs.github.io/giscus-theme.css" data-lang="en" data-loading="lazy" crossorigin="anonymous" async="">
+			</script>
+		</div>
+	</div>
+
+	<script src="/wiki.js"></script>
+
+</body></html>
