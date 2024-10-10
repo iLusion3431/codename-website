@@ -1,25 +1,25 @@
 <!DOCTYPE html><html lang="en"><head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Stage Extensions - Codename Engine Wiki</title>
+	<title>Troubleshooting - Codename Engine Wiki</title>
 	<link rel="stylesheet" href="/style.css">
 	<link rel="stylesheet" href="/wiki.css">
 
-	<meta name="title" content="Stage Extensions - Codename Engine Wiki">
-	<meta name="description" content="How to make stage extensions.">
-	<meta property="og:description" content="How to make stage extensions.">
-	<meta property="twitter:description" content="How to make stage extensions.">
+	<meta name="title" content="Troubleshooting - Codename Engine Wiki">
+	<meta name="description" content="This page explains how to fix common issues.">
+	<meta property="og:description" content="This page explains how to fix common issues.">
+	<meta property="twitter:description" content="This page explains how to fix common issues.">
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://codename-engine.com/">
-	<meta property="og:title" content="Stage Extensions - Codename Engine Wiki">
+	<meta property="og:title" content="Troubleshooting - Codename Engine Wiki">
 	<meta property="og:image" content="https://codename-engine.com/img/banner.png">
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="https://codename-engine.com/">
-	<meta property="twitter:title" content="Stage Extensions - Codename Engine Wiki">
+	<meta property="twitter:title" content="Troubleshooting - Codename Engine Wiki">
 	<meta property="twitter:image" content="https://codename-engine.com/img/banner.png">
 
 	<meta name="theme-color" content="#7f33b8">
@@ -31,7 +31,7 @@
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
         <img src="/img/logo-banner-mini.png" alt="Codename Logo" class="mobile">
     </a>
-    <h2 class="header-title">Stage Extensions</h2>
+    <h2 class="header-title">Troubleshooting</h2>
     <div>
         <a href="/api-docs/">API</a><a href="/wiki/">Wiki</a>
     </div>
@@ -54,7 +54,7 @@
 <li class="sidebar-list-item odd"><a href="/wiki/navigation.html" class="odd">How to navigate the engine</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/differences.html" class="even">Differences between other FNF engines</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/faq.html" class="odd">FAQ</a></li>
-<li class="sidebar-list-item even"><a href="/wiki/troubleshooting.html" class="even">Troubleshooting</a></li>
+<li class="sidebar-list-item even"><a href="/wiki/troubleshooting.html" class="even selected">Troubleshooting</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/" class="odd">Modding The Engine</a><ul class="sidebar-unordered-list odd">
 <li class="sidebar-list-item even"><a href="/wiki/modding/songs/" class="even">Creating songs</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/songs/editor-features.html" class="odd">Chart Editor Features</a></li>
@@ -65,7 +65,7 @@
 </ul>
 </li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating stages</a><ul class="sidebar-unordered-list even">
-<li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions.html" class="odd selected">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions.html" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/cutscenes-dialogues.html" class="even">Cutscenes/Dialogues</a></li>
@@ -102,14 +102,18 @@
 		</div>
 
 		<div class="content">
-			<h1>Stage Extensions</h1>
-<p>idk should this be in scripting?</p>
-<p>todo: document this</p>
+			<h1>Troubleshooting</h1>
+<h2>My notes are only appearing on the left side of the screen.</h2>
+<p>Open the strumline options and for the bf strumline set the X ratio to 0.75, and for the dad strumline set the X ratio to 0.25.</p>
+<h2>The character editor is buggy.</h2>
+<p>Please have some patience as we are working on fixing the issues that are causing this.</p>
+<h2>Rotating a strum moves the notes.</h2>
+<p>To prevent this behavior, you can do <code class="inline-syntax inline-code">strum.<span class="hljs-property">noteAngle</span> = <span class="hljs-number">0</span>;</code></p>
 
 
 			<div class="info">
-				
-				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-09-19T21:06:37.000Z">2024-09-19</span></div>
+				<div class="written">Written by: Ne_Eo</div>
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-10-10T16:52:20.000Z">2024-10-10</span></div>
 			</div>
 
 			<div class="giscus"></div>
