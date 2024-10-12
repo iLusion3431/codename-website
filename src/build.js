@@ -7,6 +7,7 @@ var apiDocs = require('./pages/apiDocs.build.js');
 var indexPage = require('./pages/index.build.js');
 
 var { copyDir, fixHtmlRefs, parseTemplate, compileSass, compileJs, setGlobals, getGlobals } = require('./utils.js');
+const modsBuild = require('./pages/mods.build.js');
 
 var isFullBuild = process.argv.includes('--full');
 process.argv = process.argv.filter(arg => arg != '--full');
@@ -35,6 +36,8 @@ if (!fs.existsSync(exportPath)) {
 }
 
 console.log("Building pages...");
+
+modsBuild.buildHtml(pageDir, exportPath); // builds into /mods // Temp place, move this down later
 
 copyDir("./src/img/", exportPath + "/img/");
 
