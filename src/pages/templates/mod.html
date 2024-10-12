@@ -43,14 +43,15 @@
 		<div class="content">
 			<img class="cover-image" src="{{ cover }}" alt="{{ modName }}">
 			<div>
-				<h2>{{ modName }}</h2>
-				<p>Author: {{ author }}</p>
+				<h2>{{ modName }} <small> by {{ author }}</small></h2>
 				<p>Version: {{ version }}</p>
 				<p>Last Updated: {{ lastUpdated }}</p>
 				<p>Source: {{ source }}</p>
 				<p>Tags: {{ tags }}</p>
 				<p>Description: {{ description }}</p>
 				<p>Link: {{ link }}</p>
+
+				{{ content }}
 			</div>
 		</div>
 	</div>
