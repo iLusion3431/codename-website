@@ -109,12 +109,28 @@
 
 		<div class="content">
 			<h1>Cutscenes/Dialogue Scripts</h1>
-<p>coming soon.</p>
+<p>Cutscenes/Dialogue Scripts make Scripted Cutscenes/Dialogues possible!</p>
+<p>For the both of them: you can start them manually with also with custom prefix through other scripts using the <code class="inline-code">startCutscene</code> PlayState function or other ways that will be said down below.<br>
+For more advanced users: if you even want to avoid using the <code class="inline-code">startCutscene</code> function you can play with classes like <code class="inline-syntax inline-code"><span class="hljs-title class_">VideoCutscene</span></code>, <code class="inline-syntax inline-code"><span class="hljs-title class_">ScriptedCutscene</span></code> and etc; check the source code!</p>
+<h2>Cutscenes</h2>
+<p>You can automatically start a scripted cutscene by placing the script in <code class="inline-code">./song/YOUR SONG/cutscene.hx</code>.</p>
+<p>The cutscenes code is rather simple to recreate, you can find the most simple examples in Tankman's songs and a bit of advanced ones inside Roses and Thorns: if you checked Roses you can also understand that the game automatically detects for scripts that are named as <code class="inline-code">end-cutscene.hx</code> like with any other cutscenes as it was already said in <a href="../../cutscenes-dialogues.html">Cutscenes and Dialogues</a>.</p>
+<p>The code has SOME functions that can be found in the substates behaviour referenced in the <a href="../script-calls.html">All of the script calls</a> page, such as <code class="inline-code">create</code>, <code class="inline-code">destroy</code>, <code class="inline-code">stepHit</code> and more.<br>
+<em>(I'd recommend to actually mainly use <code class="inline-code">destroy</code> to for example destroy some eventual sprites, stop some eventual timers or such as the cutscene COULD get skipped and so end/finish prematurely)</em></p>
+<p>Important functions to use when coding the pause menu:</p>
+<ul>
+<li><code class="inline-syntax inline-code"><span class="hljs-title function_">close</span>();</code> - Closes the scripted cutscene.</li>
+<li><code class="inline-syntax inline-code"><span class="hljs-title function_">startVideo</span>(<span class="hljs-attr">path</span>:<span class="hljs-title class_">String</span>, ?<span class="hljs-attr">callback</span>:<span class="hljs-title class_">Void</span>-&gt;<span class="hljs-title class_">Void</span>);</code> - Starts a Video Cutscene and uses an optional <code class="inline-code">callback</code> whenever it ended. You can check if it's done through the boolean variable <code class="inline-code">isVideoPlaying</code>.</li>
+<li><code class="inline-syntax inline-code"><span class="hljs-title function_">startDialogue</span>(<span class="hljs-attr">path</span>:<span class="hljs-title class_">String</span>, ?<span class="hljs-attr">callback</span>:<span class="hljs-title class_">Void</span>-&gt;<span class="hljs-title class_">Void</span>);</code> - Starts a Dialogue Cutscene and uses an optional <code class="inline-code">callback</code> whenever it ended. You can check if it's done through the boolean variable <code class="inline-code">isDialoguePlaying</code>.</li>
+</ul>
+<h2>Dialogues</h2>
+<p>Dialogue Scripts behave a little bit differently than Scripted Cutscenes.</p>
+<p>(to be finished, maybe should create a new cutscene section for teh dialogue ones since there are also boxes and dialogue character scripts)</p>
 
 
 			<div class="info">
-				
-				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-09-11T15:57:10.000Z">2024-09-11</span></div>
+				<div class="written">Written by: Nex_isDumb</div>
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-10-13T22:48:19.093Z">2024-10-13</span></div>
 
 				<div class="github-edit-button">
 					<a href="https://github.com/FNF-CNE-Devs/FNF-CNE-Devs.github.io/tree/main/src/pages/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts.md">Edit this page on GitHub</a>

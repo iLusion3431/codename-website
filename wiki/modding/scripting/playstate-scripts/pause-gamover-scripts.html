@@ -116,7 +116,7 @@ To use one, you have to load it from a Script <em>(any script can do, even Song 
 </code></pre>
 <p>This code points to the script that can be found in <code class="inline-code">./data/scripts/</code> and is called <code class="inline-code">pause.hx</code>.</p>
 <p>You can do many things in this script. For example, this is how you can override it and have your own entirely custom pause menu here:</p>
-<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params">event</span>){
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params">event</span>) {
     event.<span class="hljs-title function_">cancel</span>();
 
     camera = pauseCam = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxCamera</span>();
