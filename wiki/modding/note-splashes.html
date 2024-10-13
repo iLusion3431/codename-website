@@ -108,13 +108,71 @@
 		</div>
 
 		<div class="content">
-			<h1>Note splashes</h1>
-<p>todo</p>
+			<h1>Note Splashes</h1>
+<p>First, you need to put the .png and .xml of the note splashes into <code class="inline-code">images/game/splashes/</code>
+The filename should be the name you want to reference the splashes in the data, in this case we'll use <code class="inline-code">sploosh</code>.
+Here is how the spritesheet should look like:</p>
+<!-- TODO: get custom ones so we dont have to worry about copyrights -->
+<img src="./note-splashes-1.png">
+<img src="./note-splashes-2.png">
+<p>Keep in mind the names of the animations in the .xml because you will need them to form the splashes data.</p>
+<h3>Making the splash xml</h3>
+<p>Next, you need to make a .xml file for the data of the splashes, you can do this by placing the xml file in <code class="inline-code">data/splashes/sploosh.xml</code></p>
+<pre class="hljs"><code class="language-xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">codename-engine-splashes</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">splashes</span> <span class="hljs-attr">sprite</span>=<span class="hljs-string">"game/splashes/sploosh"</span> <span class="hljs-attr">alpha</span>=<span class="hljs-string">"0.6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">strum</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"0"</span>&gt;</span> <span class="hljs-comment">&lt;!-- LEFT --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">anim</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"splash purple"</span> <span class="hljs-attr">anim</span>=<span class="hljs-string">"sploosh left"</span> <span class="hljs-attr">fps</span>=<span class="hljs-string">"24"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">strum</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">strum</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"1"</span>&gt;</span> <span class="hljs-comment">&lt;!-- DOWN --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">anim</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"splash blue"</span> <span class="hljs-attr">anim</span>=<span class="hljs-string">"sploosh down"</span> <span class="hljs-attr">fps</span>=<span class="hljs-string">"24"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">strum</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">strum</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"2"</span>&gt;</span> <span class="hljs-comment">&lt;!-- UP --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">anim</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"splash green"</span> <span class="hljs-attr">anim</span>=<span class="hljs-string">"sploosh up"</span> <span class="hljs-attr">fps</span>=<span class="hljs-string">"24"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">strum</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">strum</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"3"</span>&gt;</span> <span class="hljs-comment">&lt;!-- RIGHT --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">anim</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"splash red"</span> <span class="hljs-attr">anim</span>=<span class="hljs-string">"sploosh right"</span> <span class="hljs-attr">fps</span>=<span class="hljs-string">"24"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">strum</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">splashes</span>&gt;</span>
+</code></pre>
+<p>Heres what the essential variables for the data .xml are:</p>
+<p>To start, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">splashes</span>&gt;</span></code> is where you start with. It has basic attributes like:</p>
+<ul>
+<li><code class="inline-code">sprite</code>: The sprite that appears for the note splashes (starting from <code class="inline-code">./images/</code>).</li>
+<li><code class="inline-code">alpha</code>: The visibility of the splash, with 1being completely solid and 0 being useless because it just   makes the splash transparent. (default is <code class="hljs-string inline-code">1</code>).</li>
+<li><code class="inline-code">antialiasing</code>: Changes if the splashes are antialiased or not. (default is <code class="hljs-string inline-code">true</code>).</li>
+<li><code class="inline-code">scale</code>: The scale the splashes show up as. (default is <code class="hljs-string inline-code">1</code>).</li>
+</ul>
+<p>After defining the previous node, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">strum</span>&gt;</span></code> is for defining each strum. It only has one singular attribute which is:</p>
+<ul>
+<li><code class="inline-code">id</code>: The ID of the splash you're making data for. (left = 0, down = 1, etc.).</li>
+</ul>
+<p>Then, to define the animation of the splash (or animations since you can have multiple of those) use <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">anim</span>&gt;</span></code>, the following attributes are:</p>
+<ul>
+<li><code class="inline-code">name</code>: This is the name of the animation that you're editing in the data</li>
+<li><code class="inline-code">anim</code>: This is the name of the animation that you're editing in the spritesheet .xml file.</li>
+<li><code class="inline-code">fps</code>: The framerate of the animation. (default is <code class="hljs-string inline-code">24</code>).</li>
+<li><code class="inline-code">x</code>: This is the X offset (use this if the splash is not centered on the arrow).</li>
+<li><code class="inline-code">y</code>: This is the Y offset (use this if the splash is not centered on the arrow).</li>
+</ul>
+<h2>Making the splash show up</h2>
+<p>Now that you setup the note splashes, you have to code them in. <br>
+All you have to do is add this one piece of code in a Gameplay Script: <em>(change <code class="hljs-string inline-code">"sploosh"</code> to the name of the splashes you just made)</em></p>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">onPlayerHit</span>(<span class="hljs-params">e</span>)
+{
+    e.<span class="hljs-property">note</span>.<span class="hljs-property">splash</span> = <span class="hljs-string">"sploosh"</span>;
+}
+</code></pre>
+<p>And then this is how they should look in-game or something like that.</p>
+<!-- muted is required for autoplay on chromium -->
+<video width="360" height="360" autoplay="" muted="" loop="">
+  <source src="./note-splashes.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 
 			<div class="info">
-				
-				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-09-20T04:02:47.000Z">2024-09-20</span></div>
+				<div class="written">Written by: Microkat (KadePleaseHelpMe) &amp; Frakits &amp; Ne_Eo</div>
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-10-13T17:46:45.182Z">2024-10-13</span></div>
 
 				<div class="github-edit-button">
 					<a href="https://github.com/FNF-CNE-Devs/FNF-CNE-Devs.github.io/tree/main/src/pages/wiki/modding/note-splashes.md">Edit this page on GitHub</a>
