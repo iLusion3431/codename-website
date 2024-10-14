@@ -122,7 +122,7 @@
 <h2 id="rotating-strum-moves-notes">Rotating a strum moves the notes.</h2>
 <p>To prevent this behavior, you can do <code class="inline-syntax inline-code">strum.<span class="hljs-property">noteAngle</span> = <span class="hljs-number">0</span>;</code></p>
 <h2 id="velocity-not-working">Velocity/Acceleration doesn't move my sprite</h2>
-<p>You need to set <code class="inline-code">sprite.moves = true;</code> to make it move, its automatically enabled if you set the property using <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">property</span> /&gt;</span></code> in the stage xml.</p>
+<p>You need to set <code class="inline-code">sprite.moves = true;</code> to make it move, its automatically enabled if you set the property using <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">property</span> /&gt;</span></code> on <code class="inline-code">velocity.x</code> and <code class="inline-code">velocity.y</code> or <code class="inline-code">acceleration.x</code> and <code class="inline-code">acceleration.y</code> in the stage xml.</p>
 <p>We made it turned off automatically to optimize the game since it's useless to have it running for sprites that don't use it.</p>
 
 
