@@ -31,7 +31,7 @@
 	<link rel="manifest" href="/wiki/site.webmanifest">
 </head>
 <body>
-	<div class="header">
+	<div class="header" id="main">
 		<header>
     <a href="/">
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
@@ -70,7 +70,7 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating Stages</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions.html" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
@@ -78,7 +78,11 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/note-splashes.html" class="odd">Note Splashes</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/" class="even">Scripting</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/" class="odd">PlayState Scripts</a><ul class="sidebar-unordered-list odd">
-<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/gameplay-scripts.html" class="even selected">Gameplay Scripts</a></li>
+<li class="sidebar-list-item even selected"><a href="#main" class="even selected">Gameplay Scripts</a><ul class="sidebar-unordered-list even pagination">
+<li><a href="#gameplay-scripts">Gameplay Scripts</a></li>
+<li><a href="#particularities">Particularities</a></li>
+</ul>
+</li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/events-notetypes-scripts.html" class="odd">Events/Notetype Scripts</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts.html" class="even">Cutscenes/Dialogue Scripts</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/character-stage-scripts.html" class="odd">Character/Stage Scripts</a></li>
@@ -109,7 +113,7 @@
 
 		<div class="content">
 			<h1>Gameplay Scripts</h1>
-<h2>Gameplay scripts run during gameplay <em>(yep)</em></h2>
+<h2 id="gameplay-scripts" sidebar="Gameplay Scripts">Gameplay scripts run during gameplay <em>(yep)</em></h2>
 <p>You can run Gameplay Scripts in <strong>a song</strong>, by putting the scripts in <code class="inline-code">./song/YOUR SONG/scripts</code>, or run them in <strong>every song</strong>, by putting them in the <code class="inline-code">./songs</code> folder itself.</p>
 <p>Gameplay Scripts can change the gameplay in various ways, for example, this is how you can hide the player character:</p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params"></span>) {
@@ -123,7 +127,7 @@
 </code></pre>
 <p>If you notice, this looks slightly like source code, aside from the usual <code class="inline-syntax inline-code"><span class="hljs-keyword">override</span> <span class="hljs-keyword">function</span></code> or <code class="inline-syntax inline-code"><span class="hljs-variable language_">super</span>.<span class="hljs-title function_">create</span>()</code>, which does not exist in our scripting language.<br>
 If you already got the hang of source coding, then scripting will feel like a breeze. If not.. well.. prepare to learn!</p>
-<h2>Particularities</h2>
+<h2 id="particularities">Particularities</h2>
 <h3>Accessing characters.</h3>
 <p>Characters are actually accessed differently. Due to the modularity of having more than one Strumline, and having more than one character in a Strumline, characters are accessible like this:</p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-title function_">trace</span>(strumLines.<span class="hljs-property">members</span>[<span class="hljs-number">0</span>].<span class="hljs-property">characters</span>[<span class="hljs-number">0</span>]); <span class="hljs-comment">// opponent character</span>

@@ -31,7 +31,7 @@
 	<link rel="manifest" href="/wiki/site.webmanifest">
 </head>
 <body>
-	<div class="header">
+	<div class="header" id="main">
 		<header>
     <a href="/">
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
@@ -70,7 +70,7 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating Stages</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions.html" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
@@ -82,7 +82,11 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/events-notetypes-scripts.html" class="odd">Events/Notetype Scripts</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts.html" class="even">Cutscenes/Dialogue Scripts</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/character-stage-scripts.html" class="odd">Character/Stage Scripts</a></li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/pause-gamover-scripts.html" class="even selected">Pause/Game Over Scripts</a></li>
+<li class="sidebar-list-item even selected"><a href="#main" class="even selected">Pause/Game Over Scripts</a><ul class="sidebar-unordered-list even pagination">
+<li><a href="#pause">Pause Scripts</a></li>
+<li><a href="#gameover">Game Over Scripts</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/state-substate-scripts.html" class="odd">State/Substate Scripts</a></li>
@@ -109,7 +113,7 @@
 
 		<div class="content">
 			<h1>Pause and Game Over Scripts</h1>
-<h2>Pause Scripts</h2>
+<h2 id="pause">Pause Scripts</h2>
 <p>Pause Scripts can change the pause menu, either entirely or tiny bits of it.<br>
 To use one, you have to load it from a Script <em>(any script can do, even Song Scripts)</em>.</p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-title class_">PauseSubState</span>.<span class="hljs-property">script</span> = <span class="hljs-string">'data/scripts/pause'</span>;
@@ -133,7 +137,7 @@ This script will prevent the base pause menu from loading and allows you to add 
 <li><code class="inline-syntax inline-code"><span class="hljs-title function_">close</span>();</code> - Closes the pause menu, resumes gameplay.</li>
 <li><code class="inline-syntax inline-code"><span class="hljs-title class_">FlxG</span>.<span class="hljs-title function_">switchState</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">PlayState</span>());</code> - Reloads the state, restarts the song.</li>
 </ul>
-<h2>Game Over Scripts</h2>
+<h2 id="gameover">Game Over Scripts</h2>
 <p>Game over scripts work the same as Pause Scripts, though presents some differences.
 This is how you load one:</p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-title class_">GameOverSubstate</span>.<span class="hljs-property">script</span> = <span class="hljs-string">"data/scripts/gameover"</span>

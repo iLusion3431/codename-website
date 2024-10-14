@@ -31,7 +31,7 @@
 	<link rel="manifest" href="/wiki/site.webmanifest">
 </head>
 <body>
-	<div class="header">
+	<div class="header" id="main">
 		<header>
     <a href="/">
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
@@ -62,7 +62,13 @@
 <li class="sidebar-list-item odd"><a href="/wiki/faq.html" class="odd">FAQ</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/troubleshooting.html" class="even">Troubleshooting</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/" class="odd">Modding The Engine</a><ul class="sidebar-unordered-list odd">
-<li class="sidebar-list-item even"><a href="/wiki/modding/songs/" class="even selected">Creating songs</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item even selected"><a href="#main" class="even selected">Creating songs</a><ul class="sidebar-unordered-list even pagination">
+<li><a href="#creating-the-song-itself">Creating the song itself.</a></li>
+<li><a href="#creating-difficulties-for-the-song">Creating difficulties for the song.</a></li>
+<li><a href="#opening-the-chart-editor">Opening the chart editor.</a></li>
+<li><a href="#additional-different-audio-per-difficulty">Difficulty Specific Vocals</a></li>
+</ul>
+<ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/songs/editor-features.html" class="odd">Chart Editor Features</a></li>
 </ul>
 </li>
@@ -70,7 +76,7 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating Stages</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions.html" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
@@ -110,24 +116,24 @@
 		<div class="content">
 			<h1>Creating Songs.</h1>
 <p>Creating songs is very simple, there's currently 2 ways of making them, and we will be focusing on the in-engine way for now.</p>
-<h2>Creating the song itself.</h2>
+<h2 id="creating-the-song-itself">Creating the song itself.</h2>
 <p><img src="./index.png"></p>
 <p>Creating a song using the New Song option when entering Chart Editor selection will bring up this menu. This is self-explanatory, just put the song name there, the bpm, time signature, the audio files and you're done here.
 (Vocals are optional here but we forgot to fix a bug haha)</p>
 <p><img src="./index-1.png"></p>
 <p>Proceeding to the next page after inputting our audio files, we arrive at this. This is where we input our meta data, though also self-explanatory and not much to explain. <br>
 Pressing Save &amp; Close and Congratulations your song has been made!</p>
-<h2>Creating difficulties for the song.</h2>
+<h2 id="creating-difficulties-for-the-song">Creating difficulties for the song.</h2>
 <p>Although we have made our song, it's still missing the charts. This is where creating difficulties take place.</p>
 <p><img src="./index-2.png"></p>
 <p>Upon selecting New Difficulty, after selecting on our newly created song, brings us to this window. Now this looks overwhelming at first, but keep in mind you only have to focus on the top part the most. <br> Looking at the top part we can change the difficulty name, the stage and the scroll speed. Once you're done filling those you can proceed with pressing Save &amp; Close, and your difficulty will be created. <br> <em>(If you're curious about the bottom part, see <a href="./editor-features.html">Chart Editor Features</a>)</em></p>
-<h2>Opening the chart editor.</h2>
+<h2 id="opening-the-chart-editor">Opening the chart editor.</h2>
 <p><img src="./index-3.png"></p>
 <p>Opening the chart editor is done by selecting one of the song's difficulties displayed. After that, you'll be presented with the Chart Editor. After doing the charting work, you can proceed to saving the chart.</p>
 <p><img src="./index-4.png"></p>
 <p>As you can see, there's a lot of options on how to save the chart, but for now only focus on the first 2 save options. Of course, you get to save without having to deal with a file dialogue, as the engine will automatically save the chart on the correct charts folder. <br> While saving normally is highly recommended, we also offer the option to save separately.</p>
 <p>Now that you've learned to make and chart a song, you can proceed to <a href="./editor-features.html">Chart Editor Features</a>, to learn about advanced features.</p>
-<h2>ADDITIONAL. Different audio per difficulty.</h2>
+<h2 id="additional-different-audio-per-difficulty" sidebar="Difficulty Specific Vocals">ADDITIONAL. Different audio per difficulty.</h2>
 <p>If you ever wanted to make an erect-esque difficulty, the engine allows for that without scripting it in. <br> Simply add the alternative audio files and rename it to have a <code class="inline-code">-difficulty</code> at the end. (<code class="inline-code">Voices-difficulty.ogg</code> and <code class="inline-code">Inst-difficulty.ogg</code>).</p>
 <p><img src="./index-5.png"></p>
 

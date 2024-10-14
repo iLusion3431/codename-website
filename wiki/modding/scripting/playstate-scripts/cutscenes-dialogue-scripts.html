@@ -31,7 +31,7 @@
 	<link rel="manifest" href="/wiki/site.webmanifest">
 </head>
 <body>
-	<div class="header">
+	<div class="header" id="main">
 		<header>
     <a href="/">
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
@@ -70,7 +70,7 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating Stages</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions.html" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
@@ -80,7 +80,11 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/" class="odd">PlayState Scripts</a><ul class="sidebar-unordered-list odd">
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/gameplay-scripts.html" class="even">Gameplay Scripts</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/events-notetypes-scripts.html" class="odd">Events/Notetype Scripts</a></li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts.html" class="even selected">Cutscenes/Dialogue Scripts</a></li>
+<li class="sidebar-list-item even selected"><a href="#main" class="even selected">Cutscenes/Dialogue Scripts</a><ul class="sidebar-unordered-list even pagination">
+<li><a href="#cutscenes">Cutscenes</a></li>
+<li><a href="#dialogues">Dialogues</a></li>
+</ul>
+</li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/character-stage-scripts.html" class="odd">Character/Stage Scripts</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/pause-gamover-scripts.html" class="even">Pause/Game Over Scripts</a></li>
 </ul>
@@ -113,7 +117,7 @@
 It is highly suggested to take a look at the <a href="../../cutscenes-dialogues.html">Cutscenes and Dialogues</a> page before starting here!</p>
 <p>For the both of them: you can start them manually with also with custom prefix through other scripts using the <code class="inline-code">startCutscene</code> PlayState function or other ways that will be said down below.<br>
 For more advanced users: if you even want to avoid using the <code class="inline-code">startCutscene</code> function you can play with classes like <code class="inline-syntax inline-code"><span class="hljs-title class_">VideoCutscene</span></code>, <code class="inline-syntax inline-code"><span class="hljs-title class_">ScriptedCutscene</span></code> and etc; check the source code!<br></p>
-<h2>Cutscenes</h2>
+<h2 id="cutscenes">Cutscenes</h2>
 <p>You can automatically start a scripted cutscene by placing the script in <code class="inline-code">./song/YOUR SONG/cutscene.hx</code>.</p>
 <p>The cutscenes code is rather simple to recreate, you can find the most simple examples in Tankman's songs and a bit of advanced ones inside Roses and Thorns: if you checked Roses you can also understand that the game automatically detects for scripts that are named as <code class="inline-code">end-cutscene.hx</code> like with any other cutscenes as it was already said in <a href="../../cutscenes-dialogues.html">Cutscenes and Dialogues</a>.</p>
 <p>The parent of the script is the Scripted Cutscene's instance itself (the class is named <code class="inline-syntax inline-code"><span class="hljs-title class_">ScriptedCutscene</span></code>) which is a substate.<br>
@@ -125,7 +129,7 @@ The code has SOME functions that can be found in the substates behaviour referen
 <li><code class="inline-syntax inline-code"><span class="hljs-title function_">startVideo</span>(<span class="hljs-attr">path</span>:<span class="hljs-title class_">String</span>, ?<span class="hljs-attr">callback</span>:<span class="hljs-title class_">Void</span>-&gt;<span class="hljs-title class_">Void</span>);</code> - Starts a Video Cutscene and uses an optional <code class="inline-code">callback</code> whenever it ended. You can check if it's done through the boolean variable <code class="inline-code">isVideoPlaying</code>.</li>
 <li><code class="inline-syntax inline-code"><span class="hljs-title function_">startDialogue</span>(<span class="hljs-attr">path</span>:<span class="hljs-title class_">String</span>, ?<span class="hljs-attr">callback</span>:<span class="hljs-title class_">Void</span>-&gt;<span class="hljs-title class_">Void</span>);</code> - Starts a Dialogue Cutscene and uses an optional <code class="inline-code">callback</code> whenever it ended. You can check if it's done through the boolean variable <code class="inline-code">isDialoguePlaying</code>.</li>
 </ul>
-<h2>Dialogues</h2>
+<h2 id="dialogues">Dialogues</h2>
 <p><em>Before starting: you can check every calls (for characters and boxes aswell) in the <a href="../script-calls.html">All of the script calls</a> page!</em></p>
 <p>Dialogue Scripts behave differently than Scripted Cutscenes: the main difference is that they get initialized when a dialogue cutscene also gets started.<br>
 To start one you must place a script with the same name of the dialogue's xml file (just with different extensions obliviously).</p>

@@ -31,7 +31,7 @@
 	<link rel="manifest" href="/wiki/site.webmanifest">
 </head>
 <body>
-	<div class="header">
+	<div class="header" id="main">
 		<header>
     <a href="/">
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
@@ -70,7 +70,7 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating Stages</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions.html" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
@@ -92,7 +92,15 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/custom-options.html" class="odd">Custom Options</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/custom-classes.html" class="even">Custom Classes</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/3d-rendering.html" class="odd">3D rendering - <span style="color: #FF0000;">UNFINISHED</span></a></li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/script-calls.html" class="even selected">All of the script calls - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even selected"><a href="#main" class="even selected">All of the script calls - <span style="color: #FF0000;">UNFINISHED</span></a><ul class="sidebar-unordered-list even pagination">
+<li><a href="#all-states-substates">All states/substates</a></li>
+<li><a href="#playstate-hx">PlayState.hx</a></li>
+<li><a href="#dialogue-scripts">Dialogue Scripts</a></li>
+<li><a href="#dialogue-character-scripts">Dialogue Character Scripts</a></li>
+<li><a href="#dialogue-box-scripts">Dialogue Box Scripts</a></li>
+<li><a href="#global-scripts">Global Scripts</a></li>
+</ul>
+</li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/script-snippets.html" class="odd">Useful script snippets for modders - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/scripted-assets-libraries.html" class="even">Scripted Assets Libraries - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/ndll-scripting.html" class="odd">NDLL Scripting - <span style="color: #FF0000;">UNFINISHED</span></a></li>
@@ -109,7 +117,7 @@
 
 		<div class="content">
 			<h1>List of all script calls</h1>
-<h2>All states/substates</h2>
+<h2 id="all-states-substates">All states/substates</h2>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">preCreate</span>()</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">create</span>()</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">postCreate</span>()</code></h3>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">preUpdate</span>(<span class="hljs-attr">elapsed</span>:<span class="hljs-title class_">Float</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">update</span>(<span class="hljs-attr">elapsed</span>:<span class="hljs-title class_">Float</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">postUpdate</span>(<span class="hljs-attr">elapsed</span>:<span class="hljs-title class_">Float</span>)</code></h3>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">stepHit</span>(<span class="hljs-attr">curStep</span>:<span class="hljs-title class_">Int</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">beatHit</span>(<span class="hljs-attr">curBeat</span>:<span class="hljs-title class_">Int</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">measureHit</span>(<span class="hljs-attr">curMeasure</span>:<span class="hljs-title class_">Int</span>)</code></h3>
@@ -128,7 +136,7 @@
 <li><code class="inline-code">oldWidth</code> and <code class="inline-code">oldHeight</code> which represents the old width and height of the game.</li>
 </ul>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">destroy</span>()</code></h3>
-<h2>PlayState.hx</h2>
+<h2 id="playstate-hx">PlayState.hx</h2>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onStageXMLParsed</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StageXMLEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onStageNodeParsed</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StageNodeEvent</span>)</code></h3>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onPreGenerateStrums</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">AmountEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostGenerateStrums</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">AmountEvent</span>)</code></h3>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onStrumCreation</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StrumCreationEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostStrumCreation</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">StrumCreationEvent</span>)</code></h3>
@@ -146,14 +154,14 @@
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onGamePause</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">CancellableEvent</span>)</code></h3>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onGameOver</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">GameOverEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostGameOver</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">GameOverEvent</span>)</code></h3>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onVocalsResync</span>()</code></h3>
-<h2>Dialogue Scripts <small>(mostly substate like behaviour)</small></h2>
+<h2 id="dialogue-scripts" sidebar="Dialogue Scripts">Dialogue Scripts <small>(mostly substate like behaviour)</small></h2>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">structureLoaded</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">DialogueStructureEvent</span>)</code></h3>
 <p>The <code class="inline-code">event</code> replaces the <code class="inline-syntax inline-code"><span class="hljs-title function_">create</span>()</code> call on normal dialogues scripts.</p>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">next</span>(<span class="hljs-attr">playFirst</span>:<span class="hljs-title class_">Bool</span> = <span class="hljs-literal">false</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">postNext</span>(<span class="hljs-attr">playFirst</span>:<span class="hljs-title class_">Bool</span>)</code></h3>
 <p>The <code class="inline-code">next</code> call also calls custom callbacks based on the dialogue xml's line using the same argument.</p>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">close</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">CancellableEvent</span>)</code></h3>
 <p>The <code class="inline-code">event</code> also gets shared between dialogue's box and characters.</p>
-<h2>Dialogue Character Scripts</h2>
+<h2 id="dialogue-character-scripts">Dialogue Character Scripts</h2>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">create</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">DialogueBoxStructureEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">structureLoaded</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">DialogueBoxStructureEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">loadingError</span>(<span class="hljs-attr">message</span>:<span class="hljs-title class_">String</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">postCreate</span>()</code></h3>
 <p>The <code class="inline-code">event</code> is shared between the first two calls but cancelling the <code class="inline-code">create</code> one won't even make the xml load and so <code class="inline-code">structureLoaded</code> not being called, saving some time.</p>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">beatHit</span>(<span class="hljs-attr">curBeat</span>:<span class="hljs-title class_">Int</span>)</code></h3>
@@ -164,7 +172,7 @@
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">hide</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">DialogueCharHideEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">postHide</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">DialogueCharHideEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">hideTweenCompleted</span>(<span class="hljs-attr">twn</span>:<span class="hljs-title class_">FlxTween</span>)</code></h3>
 <p>The <code class="inline-code">event</code> is shared between the first two (but makes no sense in cancelling it on the <code class="inline-code">post</code> part).</p>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">destroy</span>()</code></h3>
-<h2>Dialogue Box Scripts</h2>
+<h2 id="dialogue-box-scripts">Dialogue Box Scripts</h2>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">create</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">DialogueBoxStructureEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">structureLoaded</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">DialogueBoxStructureEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">postCreate</span>()</code></h3>
 <p>The <code class="inline-code">event</code> is shared between the first two calls but cancelling the <code class="inline-code">create</code> one won't even make the xml load and so <code class="inline-code">structureLoaded</code> not being called, saving some time.</p>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">beatHit</span>(<span class="hljs-attr">curBeat</span>:<span class="hljs-title class_">Int</span>)</code></h3>
@@ -177,7 +185,7 @@
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">resetText</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">DialogueBoxSetTextEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">postResetText</span>()</code></h3>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">startText</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">DialogueBoxSetTextEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">postStartText</span>()</code></h3>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">destroy</span>()</code></h3>
-<h2>Global Scripts</h2>
+<h2 id="global-scripts">Global Scripts</h2>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">focusLost</span>()</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">focusGained</span>()</code></h3>
 <p>more to be documented soon</p>
 

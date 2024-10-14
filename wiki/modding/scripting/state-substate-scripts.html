@@ -31,7 +31,7 @@
 	<link rel="manifest" href="/wiki/site.webmanifest">
 </head>
 <body>
-	<div class="header">
+	<div class="header" id="main">
 		<header>
     <a href="/">
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
@@ -70,7 +70,7 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating Stages</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions.html" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
@@ -85,7 +85,11 @@
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/pause-gamover-scripts.html" class="even">Pause/Game Over Scripts</a></li>
 </ul>
 </li>
-<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/state-substate-scripts.html" class="odd selected">State/Substate Scripts</a></li>
+<li class="sidebar-list-item odd selected"><a href="#main" class="odd selected">State/Substate Scripts</a><ul class="sidebar-unordered-list odd pagination">
+<li><a href="#modify-existing-states">Modifying Existing States</a></li>
+<li><a href="#create-custom-states">Creating Custom States</a></li>
+</ul>
+</li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/global-scripts.html" class="even">Global Scripts</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/shaders.html" class="odd">Shaders</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/hxvlc.html" class="even">Using hxvlc for videos</a></li>
@@ -111,7 +115,7 @@
 			<h1>State/Substate Scripts</h1>
 <p>State/Substate Scripts are scripts that can change any state or substate of the game.<br>
 You can change the Main Menu, the Freeplay Menu and even the Chart Editor.</p>
-<h2>Modifying a pre-existing State/Substate</h2>
+<h2 id="modify-existing-states" sidebar="Modifying Existing States">Modifying a pre-existing State/Substate</h2>
 <p>To get started, make a Script in <code class="inline-code">./data/states</code> and name it corresponding to the state/substate you want to change.</p>
 <p>For example, if you decide to change the Main Menu, make a Script like this <code class="inline-code">./data/states/MainMenuState.hx</code><br>
 A basic Main Menu modification looks like this:</p>
@@ -126,7 +130,7 @@ A basic Main Menu modification looks like this:</p>
 <p><img src="./State or Substate Scripts.png"></p>
 <p>You can do this with every State/Substate of course, but keep in mind you have to study the state's code first before modifying it. <em>(you can find the code in <a href="https://github.com/FNF-CNE-Devs/CodenameEngine">Codename Engine's Repository</a>)</em><br>
 <em>Also look for <a href="./script-calls.html">All of the script calls</a> for menu script calls</em></p>
-<h2>Creating custom States/Substates</h2>
+<h2 id="create-custom-states" sidebar="Creating Custom States">Creating custom States/Substates</h2>
 <p>You can also create entirely custom ones too! By putting them in the same <code class="inline-code">./data/states/</code> folder, you create new ModStates/ModSubstates.</p>
 <p>Accessing them is done via this piece of code:</p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-title class_">FlxG</span>.<span class="hljs-title function_">switchState</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ModState</span>(<span class="hljs-string">"MyCustomState"</span>)); <span class="hljs-comment">// assuming we have made a new Script ./data/states/MyCustomState.hx</span>

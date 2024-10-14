@@ -31,7 +31,7 @@
 	<link rel="manifest" href="/wiki/site.webmanifest">
 </head>
 <body>
-	<div class="header">
+	<div class="header" id="main">
 		<header>
     <a href="/">
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
@@ -70,7 +70,7 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating Stages</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions.html" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
@@ -81,7 +81,11 @@
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/gameplay-scripts.html" class="even">Gameplay Scripts</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/events-notetypes-scripts.html" class="odd">Events/Notetype Scripts</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts.html" class="even">Cutscenes/Dialogue Scripts</a></li>
-<li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/character-stage-scripts.html" class="odd selected">Character/Stage Scripts</a></li>
+<li class="sidebar-list-item odd selected"><a href="#main" class="odd selected">Character/Stage Scripts</a><ul class="sidebar-unordered-list odd pagination">
+<li><a href="#character-scripts">Character Scripts</a></li>
+<li><a href="#stage-scripts">Stage Scripts</a></li>
+</ul>
+</li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/pause-gamover-scripts.html" class="even">Pause/Game Over Scripts</a></li>
 </ul>
 </li>
@@ -110,7 +114,7 @@
 		<div class="content">
 			<h1>Character/Stage Scripts</h1>
 <p>Character/Stage Scripts run alongside them, or something like that.</p>
-<h2>Character Script.</h2>
+<h2 id="character-scripts">Character Scripts</h2>
 <p>You can create one of those by making a Script file alongside your character's XML data file <em>(<code class="inline-code">./data/characters/</code>)</em><br>
 In these scripts you don't need to specify the character, since the character becomes the Script's parent.</p>
 <p>Here's an example of a Character Script that makes the character spin..:</p>
@@ -118,7 +122,7 @@ In these scripts you don't need to specify the character, since the character be
     angle += elapsed * <span class="hljs-number">10</span>;
 }
 </code></pre>
-<h2>Stage Scripts.</h2>
+<h2 id="stage-scripts">Stage Scripts</h2>
 <p>Creating one of those also goes next to the Stage XML data file <em>(<code class="inline-code">./data/stages/</code>)</em>.<br>
 This script also takes the Stage as it's parent, thus not needing to use <code class="inline-syntax inline-code">stage.<span class="hljs-title function_">getSprite</span>()</code>, instead, sprites becomes the variables</p>
 <p>Here's an example:</p>

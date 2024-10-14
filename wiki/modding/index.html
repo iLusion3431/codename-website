@@ -31,7 +31,7 @@
 	<link rel="manifest" href="/wiki/site.webmanifest">
 </head>
 <body>
-	<div class="header">
+	<div class="header" id="main">
 		<header>
     <a href="/">
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
@@ -61,7 +61,10 @@
 <li class="sidebar-list-item even"><a href="/wiki/differences.html" class="even">Differences between other FNF engines</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/faq.html" class="odd">FAQ</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/troubleshooting.html" class="even">Troubleshooting</a></li>
-<li class="sidebar-list-item odd"><a href="/wiki/modding/" class="odd selected">Modding The Engine</a><ul class="sidebar-unordered-list odd">
+<li class="sidebar-list-item odd selected"><a href="#main" class="odd selected">Modding The Engine</a><ul class="sidebar-unordered-list odd pagination">
+<li><a href="#config">Config</a></li>
+</ul>
+<ul class="sidebar-unordered-list odd">
 <li class="sidebar-list-item even"><a href="/wiki/modding/songs/" class="even">Creating songs</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/songs/editor-features.html" class="odd">Chart Editor Features</a></li>
 </ul>
@@ -70,7 +73,7 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating Stages</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions.html" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
@@ -230,7 +233,7 @@ videos
 <li><a href="./scripting/scripted-assets-libraries.html">Scripted Assets Libraries</a></li>
 <li><a href="./scripting/ndll-scripting.html">NDLL Scripting</a></li>
 </ul>
-<h2>Config</h2>
+<h2 id="config" sidebar="Config">Config</h2>
 <p>Some config is still required for things like Discord RPC. so we're gonna get over them here.<br>
 All of these configs can be found in <code class="inline-code">./data/config/</code></p>
 <h3>discord.json</h3>

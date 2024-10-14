@@ -31,7 +31,7 @@
 	<link rel="manifest" href="/wiki/site.webmanifest">
 </head>
 <body>
-	<div class="header">
+	<div class="header" id="main">
 		<header>
     <a href="/">
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
@@ -63,14 +63,20 @@
 <li class="sidebar-list-item even"><a href="/wiki/troubleshooting.html" class="even">Troubleshooting</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/" class="odd">Modding The Engine</a><ul class="sidebar-unordered-list odd">
 <li class="sidebar-list-item even"><a href="/wiki/modding/songs/" class="even">Creating songs</a><ul class="sidebar-unordered-list even">
-<li class="sidebar-list-item odd"><a href="/wiki/modding/songs/editor-features.html" class="odd selected">Chart Editor Features</a></li>
+<li class="sidebar-list-item odd selected"><a href="#main" class="odd selected">Chart Editor Features</a><ul class="sidebar-unordered-list odd pagination">
+<li><a href="#strumlines">Strumlines</a></li>
+<li><a href="#events-notetypes">Events &amp; Notetypes</a></li>
+<li><a href="#meta-data">Changing Metadata</a></li>
+<li><a href="#saving">Saving your chart</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/characters/" class="even">Creating characters</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating Stages</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions.html" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
@@ -110,7 +116,7 @@
 		<div class="content">
 			<h1>Additional Chart Editor Features</h1>
 <p>while we have only covered the basic of charting in <a href="../songs/">Creating songs</a>, we will cover the additional chart editor features here, in no particular order.</p>
-<h2>Strumlines.</h2>
+<h2 id="strumlines">Strumlines</h2>
 <h3>More than 2.</h3>
 <p>Songs in Codename Engine are more modular, in the sense that you're no longer restricted to just 2 strumlines. This means that, you can have as many strumlines and characters in the song as you like. Moreover, Girlfriend also gets her own strumline.</p>
 <p><img src="./Chart Editor Features.png"></p>
@@ -118,7 +124,8 @@
 <p>This is only an in-editor thing, but if you don't like how the Strumlines are ordered, and prefer a different order, you can reposition them easily with just this lock button.<br>
 (insert a gif here)</p>
 <h3>Hitsounds</h3>
-<p>Pretty self explanatory, but you get to choose which Strumline should play a Hitsound when you get past a Note.</p>
+<p>Pretty self explanatory, but you get to choose which Strumline should play a Hitsound when you get past a Note.
+(This only applies in the chart editor, not during gameplay)</p>
 <p><img src="./Chart Editor Features-1.png"></p>
 <h3>Waveforms.</h3>
 <p>Waveforms allows for visualizing songs, and we have that too. You get 2 or more options depending on how many audio files you have in the songs.</p>
@@ -141,7 +148,7 @@
 <p>For this, you have to obviously have different vocal audio files ready, with a suffix at the end <em>(for example <code class="inline-code">Voices-bf.ogg</code> has a <code class="inline-code">-bf</code> suffix at the end)</em></p>
 <p><img src="./Chart Editor Features-16.png">
 <img src="./Chart Editor Features-15.png"></p>
-<h2>Events &amp; Notetypes.</h2>
+<h2 id="events-notetypes">Events &amp; Notetypes</h2>
 <h3>Events</h3>
 <p>Events exist in the Chart Editor to avoid coding a lot of code for just a few events. Some of them are already built-in but you can also code your own <em>(see <a href="../scripting/playstate-scripts/events-notetypes-scripts.html">Events/Notetype Scripts</a>)</em>.</p>
 <p><img src="./Chart Editor Features-5.png">
@@ -156,7 +163,7 @@
 <p>You can code your own note types, or use the pre-existing one <em>(though only 2 exists currently)</em>. They need to first be added to the note types list before being able to use them. Afterwards you can simply select them from the dropdown here.</p>
 <p><img src="./Chart Editor Features-10.png"></p>
 <p>You can also change the graphic of a Note type without programming, by putting the Note type's spritesheet in <code class="inline-code">images/game/notes</code>.</p>
-<h2>Changing additional chart/meta data.</h2>
+<h2 id="meta-data" sidebar="Changing Metadata">Changing additional chart/meta data</h2>
 <p><img src="./Chart Editor Features-12.png"></p>
 <p>If you wish to change some data regarding the chart <em>(scroll speed, bpm, stage etc.)</em>, you can do so here.</p>
 <h3>Editing chart data.</h3>
@@ -165,7 +172,7 @@
 <h3>Editing metadata information.</h3>
 <p><img src="./Chart Editor Features-14.png"></p>
 <p>Editing metadata information, is also self-explanatory, though you can notice this menu is similar to what you've seen in <a href="../songs/">Creating songs</a>, so this should be easy to figure out. Though you might also notice there's a new option, <strong>Custom Values</strong>. These are extra values that let's you set certain values specifically for the song <em>(for example, crediting someone for a song)</em>. This will be covered in <a href="../scripting/playstate-scripts/gameplay-scripts.html">Gameplay Scripts</a>.</p>
-<h2>Saving.</h2>
+<h2 id="saving">Saving your chart</h2>
 <p>The chart editor allows for multiple ways to save a chart. Currently, there's about 10 ways to save the information of a chart.</p>
 <p><img src="./Chart Editor Features-11.png"></p>
 <p>We know what the first option does, but what about those other ones? Well, here's what they do:</p>

@@ -31,7 +31,7 @@
 	<link rel="manifest" href="/wiki/site.webmanifest">
 </head>
 <body>
-	<div class="header">
+	<div class="header" id="main">
 		<header>
     <a href="/">
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
@@ -70,13 +70,19 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating Stages</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions.html" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/cutscenes-dialogues.html" class="even">Cutscenes/Dialogues</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/note-splashes.html" class="odd">Note Splashes</a></li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/" class="even selected">Scripting</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item even selected"><a href="#main" class="even selected">Scripting</a><ul class="sidebar-unordered-list even pagination">
+<li><a href="#console">Using console for debug</a></li>
+<li><a href="#special-syntax">Special Syntax</a></li>
+<li><a href="#events">Script Events</a></li>
+<li><a href="#class-importing">Importing Classes</a></li>
+</ul>
+<ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/" class="odd">PlayState Scripts</a><ul class="sidebar-unordered-list odd">
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/gameplay-scripts.html" class="even">Gameplay Scripts</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/events-notetypes-scripts.html" class="odd">Events/Notetype Scripts</a></li>
@@ -114,13 +120,13 @@ Currently, you can script in HScript <em>(haxe scripting language)</em>, or in N
 Scripting can change not only gameplay, but also menus and other engine functions.<br></p>
 <p>We will focus on writing in HScript, so whenever you have to create a script, the filename has to end with an <code class="inline-code">.hx</code>.<br>
 <em>(you can also use <code class="inline-code">.hscript</code>, <code class="inline-code">.hxc</code> and <code class="inline-code">.hxs</code>)</em></p>
-<h3>Scripting relies heavily on having a console opened at all times.</h3>
+<h2 id="console" sidebar="Using console for debug">Scripting relies heavily on having a console opened at all times.</h2>
 <p>The console helps you track down errors and bugs with your script. To access it, you can either:</p>
 <ul>
 <li>Press F2 to open a window, or</li>
 <li>Start the game in a cmd or powershell window (or in terminal for linux/mac users)</li>
 </ul>
-<h3>Our HScript accepts special syntax from Haxe 4.3.x</h3>
+<h2 id="special-syntax" sidebar="Special Syntax">Our HScript accepts special syntax from Haxe 4.3.x</h2>
 <p>Things like <code class="inline-code">?.</code>, <code class="inline-code">??</code> and <code class="inline-code">??=</code> are accepted in our HScript language.<br>
 Using those is beneficial as they prove to be very useful to keeping your code clean.<br>
 Example usage:</p>
@@ -138,7 +144,7 @@ time = <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">s
 
 <span class="hljs-title class_">FlxG</span>.<span class="hljs-property">save</span>.<span class="hljs-property">data</span>.<span class="hljs-property">isOpen</span> ??= <span class="hljs-literal">true</span>;
 </code></pre>
-<h3>Script events.</h3>
+<h2 id="events">Script Events</h2>
 <p>Scripting relies heavily on <strong>Events</strong>, which triggers callbacks and returns a struct of parameters, basically unclogging the parameter list of functions.<br>
 Which means, handling a note hit looks something like this:</p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">onNoteHit</span>(<span class="hljs-params">event</span>) {
@@ -150,7 +156,7 @@ Which means, handling a note hit looks something like this:</p>
 <p>There's a lot of other events, such as <code class="hljs-title inline-code">onStartCountdown</code>, <code class="hljs-title inline-code">onGamePause</code>, <code class="hljs-title inline-code">onCameraMove</code> and more.<br>
 You can find them all in <a href="./script-calls.html">All of the script calls</a>.</p>
 <p>Despite all of that, functions like <code class="hljs-title inline-code">update</code>, <code class="hljs-title inline-code">beatHit</code>, <code class="hljs-title inline-code">stepHit</code> still receive one parameter <em>(<code class="inline-syntax inline-code"><span class="hljs-attr">elapsed</span>:<span class="hljs-title class_">Float</span></code>, <code class="inline-syntax inline-code"><span class="hljs-attr">curBeat</span>:<span class="hljs-title class_">Int</span></code>, <code class="inline-syntax inline-code"><span class="hljs-attr">curStep</span>:<span class="hljs-title class_">Int</span></code>)</em></p>
-<h3>Class importing.</h3>
+<h2 id="class-importing">Importing Classes</h2>
 <p>Some classes are pre-imported (<code class="inline-syntax inline-code"><span class="hljs-title class_">FlxSprite</span></code>, <code class="inline-syntax inline-code"><span class="hljs-title class_">FlxMath</span></code>, <code class="inline-syntax inline-code"><span class="hljs-title class_">FlxAxis</span></code> etc.), but for classes that aren't pre-imported, it's still possible to import like this:</p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">import</span> flixel.<span class="hljs-property">addons</span>.<span class="hljs-property">display</span>.<span class="hljs-property">FlxBackdrop</span>;
 </code></pre>

@@ -31,7 +31,7 @@
 	<link rel="manifest" href="/wiki/site.webmanifest">
 </head>
 <body>
-	<div class="header">
+	<div class="header" id="main">
 		<header>
     <a href="/">
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
@@ -70,11 +70,15 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating Stages</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions.html" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/cutscenes-dialogues.html" class="even selected">Cutscenes/Dialogues</a></li>
+<li class="sidebar-list-item even selected"><a href="#main" class="even selected">Cutscenes/Dialogues</a><ul class="sidebar-unordered-list even pagination">
+<li><a href="#cutscenes">Cutscenes</a></li>
+<li><a href="#dialogues">Dialogues</a></li>
+</ul>
+</li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/note-splashes.html" class="odd">Note Splashes</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/" class="even">Scripting</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/" class="odd">PlayState Scripts</a><ul class="sidebar-unordered-list odd">
@@ -109,12 +113,12 @@
 
 		<div class="content">
 			<h1>Cutscenes and dialogues.</h1>
-<h2>Cutscenes</h2>
+<h2 id="cutscenes">Cutscenes</h2>
 <p>Making Cutscenes is easy, either drop an .mp4 file in <code class="inline-code">./videos</code> with the name of the song followed by <code class="inline-code">-cutscene</code> at the end, or drop it in the corresponding song folder and simply name it <code class="inline-code">cutscene.mp4</code></p>
 <p><img src="./Cutscenes or Dialogues.png"></p>
 <p>You can also put an <code class="inline-code">-end</code> before <code class="inline-code">-cutscene</code> to make that cutscene appear at the end of the song.<br>
 Starting them manually with also a custom prefix is also possible, check the <a href="./scripting/playstate-scripts/cutscenes-dialogue-scripts.html">Cutscenes/Dialogue Scripts</a> page.</p>
-<h2>Dialogues</h2>
+<h2 id="dialogues">Dialogues</h2>
 <p>Codename Engine also supports Dialogues, though there's a lot to unwrap here, so please read with patience.</p>
 <p>Making a basic dialogue is done by making a file called <code class="inline-code">dialogue.xml</code> in the corresponding song folder, and the content should look something like this:</p>
 <pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">dialogue</span> <span class="hljs-attr">box</span>=<span class="hljs-string">"default"</span>&gt;</span>

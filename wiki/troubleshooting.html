@@ -31,7 +31,7 @@
 	<link rel="manifest" href="/wiki/site.webmanifest">
 </head>
 <body>
-	<div class="header">
+	<div class="header" id="main">
 		<header>
     <a href="/">
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
@@ -60,7 +60,12 @@
 <li class="sidebar-list-item odd"><a href="/wiki/navigation.html" class="odd">How to navigate the engine</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/differences.html" class="even">Differences between other FNF engines</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/faq.html" class="odd">FAQ</a></li>
-<li class="sidebar-list-item even"><a href="/wiki/troubleshooting.html" class="even selected">Troubleshooting</a></li>
+<li class="sidebar-list-item even selected"><a href="#main" class="even selected">Troubleshooting</a><ul class="sidebar-unordered-list even pagination">
+<li><a href="#notes-only-on-left-side">Notes only on left side of the screen.</a></li>
+<li><a href="#character-editor-buggy">The character editor is buggy.</a></li>
+<li><a href="#rotating-strum-moves-notes">Rotating a strum moves the notes.</a></li>
+</ul>
+</li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/" class="odd">Modding The Engine</a><ul class="sidebar-unordered-list odd">
 <li class="sidebar-list-item even"><a href="/wiki/modding/songs/" class="even">Creating songs</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/songs/editor-features.html" class="odd">Chart Editor Features</a></li>
@@ -70,7 +75,7 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating Stages</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions.html" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
@@ -109,11 +114,11 @@
 
 		<div class="content">
 			<h1>Troubleshooting</h1>
-<h2>My notes are only appearing on the left side of the screen.</h2>
+<h2 id="notes-only-on-left-side" sidebar="Notes only on left side of the screen.">My notes are only appearing on the left side of the screen.</h2>
 <p>Open the strumline options and for the bf strumline set the X ratio to 0.75, and for the dad strumline set the X ratio to 0.25.</p>
-<h2>The character editor is buggy.</h2>
+<h2 id="character-editor-buggy">The character editor is buggy.</h2>
 <p>Please have some patience as we are working on fixing the issues that are causing this.</p>
-<h2>Rotating a strum moves the notes.</h2>
+<h2 id="rotating-strum-moves-notes">Rotating a strum moves the notes.</h2>
 <p>To prevent this behavior, you can do <code class="inline-syntax inline-code">strum.<span class="hljs-property">noteAngle</span> = <span class="hljs-number">0</span>;</code></p>
 
 

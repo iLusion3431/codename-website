@@ -1,11 +1,11 @@
 <!DOCTYPE html><html lang="en"><head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Creating stages - Codename Engine Wiki</title>
+	<title>Creating Stages - Codename Engine Wiki</title>
 	<link rel="stylesheet" href="/style.css">
 	<link rel="stylesheet" href="/wiki.css">
 
-	<meta name="title" content="Creating stages - Codename Engine Wiki">
+	<meta name="title" content="Creating Stages - Codename Engine Wiki">
 	<meta name="description" content="How to make custom stages.">
 	<meta property="og:description" content="How to make custom stages.">
 	<meta property="twitter:description" content="How to make custom stages.">
@@ -13,13 +13,13 @@
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://codename-engine.com/">
-	<meta property="og:title" content="Creating stages - Codename Engine Wiki">
+	<meta property="og:title" content="Creating Stages - Codename Engine Wiki">
 	<meta property="og:image" content="https://codename-engine.com/img/banner.png">
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="https://codename-engine.com/">
-	<meta property="twitter:title" content="Creating stages - Codename Engine Wiki">
+	<meta property="twitter:title" content="Creating Stages - Codename Engine Wiki">
 	<meta property="twitter:image" content="https://codename-engine.com/img/banner.png">
 
 	<meta name="theme-color" content="#7f33b8">
@@ -31,13 +31,13 @@
 	<link rel="manifest" href="/wiki/site.webmanifest">
 </head>
 <body>
-	<div class="header">
+	<div class="header" id="main">
 		<header>
     <a href="/">
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
         <img src="/img/logo-banner-mini.png" alt="Codename Logo" class="mobile">
     </a>
-    <h2 class="header-title">Creating stages</h2>
+    <h2 class="header-title">Creating Stages</h2>
     <div>
         <a href="/api-docs/">API</a><a href="/wiki/">Wiki</a>
     </div>
@@ -70,7 +70,14 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even selected">Creating stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item even selected"><a href="#main" class="even selected">Creating Stages</a><ul class="sidebar-unordered-list even pagination">
+<li><a href="#sprite-node">Sprite node</a></li>
+<li><a href="#solid-node">Solid node</a></li>
+<li><a href="#character-node">Character nodes</a></li>
+<li><a href="#ratings-node">Rating sprites node</a></li>
+<li><a href="#stage-extensions">Stage Extensions</a></li>
+</ul>
+<ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions.html" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
@@ -108,7 +115,7 @@
 		</div>
 
 		<div class="content">
-			<h1>Creating stages</h1>
+			<h1>Creating Stages</h1>
 <p>Stages are defined via XML files, similar to <a href="../characters/">Creating characters</a>. By creating an XML file in <code class="inline-code">./data/stages</code>, you officially created a stage.</p>
 <p>The default stage XML looks something like this:</p>
 <pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">stage</span> <span class="hljs-attr">zoom</span>=<span class="hljs-string">"0.9"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"stage"</span> <span class="hljs-attr">folder</span>=<span class="hljs-string">"stages/default/"</span> <span class="hljs-attr">startCamPosY</span>=<span class="hljs-string">"600"</span> <span class="hljs-attr">startCamPosX</span>=<span class="hljs-string">"1000"</span>&gt;</span>
@@ -133,7 +140,7 @@
 </ul>
 <p>As for the other nodes, there's about <em>7 types</em> of them <em>(and more if you script them in, see <a href="../scripting/playstate-scripts/character-stage-scripts.html">Character/Stage Scripts</a>)</em>, we'll go through each of them.</p>
 <p><em>(note that it's important which order you put them in because they will take the same order in-game too)</em></p>
-<h2>Sprite node (<code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">sprite</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">spr</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">sparrow</span>&gt;</span></code>)</h2>
+<h2 id="sprite-node" sidebar="Sprite node">Sprite node (<code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">sprite</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">spr</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">sparrow</span>&gt;</span></code>)</h2>
 <p>The sprite node defines the basic sprites in a stage.</p>
 <pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">sprite</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"bg"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"-600"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"-200"</span> <span class="hljs-attr">sprite</span>=<span class="hljs-string">"stageback"</span> <span class="hljs-attr">scroll</span>=<span class="hljs-string">"0.9"</span>/&gt;</span>
 </code></pre>
@@ -181,7 +188,7 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"velocity.x"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"float"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"40.0"</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">sprite</span>&gt;</span>
 </code></pre>
-<h2>Solid node (<code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">solid</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">box</span>&gt;</span></code>)</h2>
+<h2 id="solid-node" sidebar="Solid node">Solid node (<code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">solid</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">box</span>&gt;</span></code>)</h2>
 <p>Solid nodes are sprites that is, unlike a Sprite Node, composed of only one select color. This node has less parameters since it doesn't use images. <br>
 Creating one of these looks something like this:</p>
 <pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">solid</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"void"</span> <span class="hljs-attr">color</span>=<span class="hljs-string">"#FFFFFF"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"1280"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"720"</span>&gt;</span>
@@ -194,7 +201,7 @@ Creating one of these looks something like this:</p>
 <li><code class="inline-code">x</code> and <code class="inline-code">y</code> determine the position in the stage.</li>
 <li><code class="inline-code">width</code> and <code class="inline-code">height</code> defines the size of the solid/box.</li>
 </ul>
-<h2>Character nodes (<code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">boyfriend</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">bf</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">player</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">girlfriend</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">gf</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">dad</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">opponent</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">character</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">char</span>&gt;</span></code>)</h2>
+<h2 id="character-node" sidebar="Character nodes">Character nodes (<code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">boyfriend</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">bf</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">player</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">girlfriend</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">gf</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">dad</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">opponent</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">character</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">char</span>&gt;</span></code>)</h2>
 <p>Character nodes are used to position characters in the stage. A Character node looks something like this:</p>
 <pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">boyfriend</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"400"</span>/&gt;</span>
 </code></pre>
@@ -215,12 +222,12 @@ Creating one of these looks something like this:</p>
 <span class="hljs-tag">&lt;<span class="hljs-name">sprite</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"stageCurtains"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"-500"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"-300"</span> <span class="hljs-attr">sprite</span>=<span class="hljs-string">"stagecurtains"</span> <span class="hljs-attr">scroll</span>=<span class="hljs-string">"1.3"</span>/&gt;</span>
 </code></pre>
 <p><em>(this will put boyfriend behind the <code class="hljs-string inline-code">stageCurtains</code> sprite)</em></p>
-<h2>Ratings sprites node (<code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">ratings</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">combo</span>&gt;</span></code>)</h2>
+<h2 id="ratings-node" sidebar="Rating sprites node">Ratings sprites node (<code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">ratings</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">combo</span>&gt;</span></code>)</h2>
 <p>This node is only used to position the rating sprites and does nothing else <em>(atm)</em>. Positioning in nodes doesn't matter here.</p>
 <pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">ratings</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"400"</span>&gt;</span>
 </code></pre>
 <p>The only parameters are <code class="inline-code">x</code> and <code class="inline-code">y</code>.</p>
-<h2>Stage Extensions (<code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">use-extension</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">extension</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">ext</span>&gt;</span></code>)</h2>
+<h2 id="stage-extensions" sidebar="Stage Extensions">Stage Extensions (<code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">use-extension</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">extension</span>&gt;</span></code>, <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">ext</span>&gt;</span></code>)</h2>
 <pre class="hljs"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">use-extension</span> <span class="hljs-attr">script</span>=<span class="hljs-string">"example"</span> /&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">extension</span> <span class="hljs-attr">script</span>=<span class="hljs-string">"example"</span> /&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">ext</span> <span class="hljs-attr">script</span>=<span class="hljs-string">"example"</span> /&gt;</span>

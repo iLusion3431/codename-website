@@ -31,7 +31,7 @@
 	<link rel="manifest" href="/wiki/site.webmanifest">
 </head>
 <body>
-	<div class="header">
+	<div class="header" id="main">
 		<header>
     <a href="/">
         <img src="/img/logo-banner.png" alt="Codename Logo" class="desktop">
@@ -70,12 +70,16 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/characters/editor-features.html" class="odd">Character Editor Features - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating stages</a><ul class="sidebar-unordered-list even">
+<li class="sidebar-list-item even"><a href="/wiki/modding/stages/" class="even">Creating Stages</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/stages/stage-extensions.html" class="odd">Stage Extensions - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 </ul>
 </li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/cutscenes-dialogues.html" class="even">Cutscenes/Dialogues</a></li>
-<li class="sidebar-list-item odd"><a href="/wiki/modding/note-splashes.html" class="odd selected">Note Splashes</a></li>
+<li class="sidebar-list-item odd selected"><a href="#main" class="odd selected">Note Splashes</a><ul class="sidebar-unordered-list odd pagination">
+<li><a href="#making-the-splash-xml">Making the splash xml</a></li>
+<li><a href="#making-the-splash-show-up">Making the splash show up</a></li>
+</ul>
+</li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/" class="even">Scripting</a><ul class="sidebar-unordered-list even">
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/" class="odd">PlayState Scripts</a><ul class="sidebar-unordered-list odd">
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/gameplay-scripts.html" class="even">Gameplay Scripts</a></li>
@@ -116,7 +120,7 @@ Here is how the spritesheet should look like:</p>
 <img src="./note-splashes-1.png">
 <img src="./note-splashes-2.png">
 <p>Keep in mind the names of the animations in the .xml because you will need them to form the splashes data.</p>
-<h3>Making the splash xml</h3>
+<h2 id="making-the-splash-xml">Making the splash xml</h2>
 <p>Next, you need to make a .xml file for the data of the splashes, you can do this by placing the xml file in <code class="inline-code">data/splashes/sploosh.xml</code></p>
 <pre class="hljs"><code class="language-xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">codename-engine-splashes</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">splashes</span> <span class="hljs-attr">sprite</span>=<span class="hljs-string">"game/splashes/sploosh"</span> <span class="hljs-attr">alpha</span>=<span class="hljs-string">"0.6"</span>&gt;</span>
@@ -154,7 +158,7 @@ Here is how the spritesheet should look like:</p>
 <li><code class="inline-code">x</code>: This is the X offset (use this if the splash is not centered on the arrow).</li>
 <li><code class="inline-code">y</code>: This is the Y offset (use this if the splash is not centered on the arrow).</li>
 </ul>
-<h2>Making the splash show up</h2>
+<h2 id="making-the-splash-show-up">Making the splash show up</h2>
 <p>Now that you setup the note splashes, you have to code them in. <br>
 All you have to do is add this one piece of code in a Gameplay Script: <em>(change <code class="hljs-string inline-code">"sploosh"</code> to the name of the splashes you just made)</em></p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">onPlayerHit</span>(<span class="hljs-params">e</span>)
