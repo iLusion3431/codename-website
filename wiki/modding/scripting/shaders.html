@@ -161,7 +161,7 @@ camGame.<span class="hljs-title function_">addShader</span>(shader);
 <li>finally, replace <code class="inline-code">fragColor = col;</code> with <code class="inline-code">gl_FragColor = col;</code></li>
 </ol>
 <h3>Keep in mind that this covers the most basic on how to convert a shader from shadertoy.com, complex shaders will need more expertise with handling shaders before converting those.</h3>
-<h2 id="shader-compatability" sidebar="Shader Compatability">Important things to note if your shader doesn't work for certain people.</h2>
+<h2 id="shader-compatability">Important things to note if your shader doesn't work for certain people.</h2>
 <p>Avoid using <code class="inline-code">0.</code> or <code class="inline-code">.0</code> for floats, instead, use <code class="inline-code">0.0</code> (ending the float number with an <code class="inline-code">.0</code>)
 <em>(despite half floats working on nVidia gpus, other gpus like AMD gpus don't support this feature)</em></p>
 <p>Avoid using switch cases, and use if statements where possible.
