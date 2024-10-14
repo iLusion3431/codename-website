@@ -80,7 +80,7 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/" class="odd">PlayState Scripts</a><ul class="sidebar-unordered-list odd">
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/gameplay-scripts.html" class="even">Gameplay Scripts</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/events-notetypes-scripts.html" class="odd">Events/Notetype Scripts</a></li>
-<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts.html" class="even">Cutscenes/Dialogue Scripts - <span style="color: #FF0000;">UNFINISHED</span></a></li>
+<li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts.html" class="even">Cutscenes/Dialogue Scripts</a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/playstate-scripts/character-stage-scripts.html" class="odd">Character/Stage Scripts</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/playstate-scripts/pause-gamover-scripts.html" class="even">Pause/Game Over Scripts</a></li>
 </ul>
@@ -155,10 +155,10 @@ Starting them manually with also a custom prefix is also possible, check the <a 
 <li><code class="inline-code">callback</code> determines what function to call in a Dialogue Script <em>(see <a href="./scripting/playstate-scripts/cutscenes-dialogue-scripts.html">Cutscenes/Dialogue Scripts</a>)</em></li>
 <li><code class="inline-code">changeDefAnim</code> to play a different animation for the character <em>(<code class="inline-syntax inline-code"><span class="hljs-attr">changeDefAnim</span>=<span class="hljs-string">"scared"</span></code>)</em>.</li>
 <li><code class="inline-code">speed</code> is the typing speed <em>(default is <code class="hljs-string inline-code">0.05</code>)</em>.</li>
-<li><code class="inline-code">musicVolume</code> changes the music volume <em>(default is <code class="hljs-string inline-code">0.8</code>)</em></li>
+<li><code class="inline-code">musicVolume</code> changes the music volume <em>(default is <code class="hljs-string inline-code">0.8</code>)</em>.</li>
 <li><code class="inline-code">changeMusic</code> determines what song to change to.</li>
-<li><code class="inline-code">playSound</code> is the sound that plays once you proceed to the next line.</li>
-<li><code class="inline-code">nextSound</code> also plays a sound once you proceed to the next line. <em>(I really can't figure out why this exists)</em></li>
+<li><code class="inline-code">playSound</code> plays a sound on the same line <em>(so yes, you can also play a sound at the same time the dialogue starts)</em>.</li>
+<li><code class="inline-code">nextSound</code> changes the sound of whenever you proceed to the next line.</li>
 </ul>
 <p>The <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">line</span>&gt;</span></code> node also accepts <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">format</span>&gt;</span></code> children, to format different parts of the text. The parameters are:</p>
 <ul>
@@ -260,8 +260,8 @@ Starting them manually with also a custom prefix is also possible, check the <a 
 
 
 			<div class="info">
-				<div class="written">Written by: Frakits</div>
-				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-10-13T22:48:19.093Z">2024-10-13</span></div>
+				<div class="written">Written by: Frakits &amp; Nex_isDumb</div>
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-10-14T13:24:55.501Z">2024-10-14</span></div>
 
 				<div class="github-edit-button">
 					<a href="https://github.com/FNF-CNE-Devs/FNF-CNE-Devs.github.io/tree/main/src/pages/wiki/modding/cutscenes-dialogues.md">Edit this page on GitHub</a>
