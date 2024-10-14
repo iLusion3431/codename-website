@@ -24,11 +24,11 @@
 
 	<meta name="theme-color" content="#7f33b8">
 
-	<link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" sizes="180x180" href="/wiki/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/wiki/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/wiki/favicon-16x16.png">
-	<link rel="manifest" href="/wiki/site.webmanifest">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
 	<div class="header" id="main">
@@ -64,6 +64,7 @@
 <li><a href="#notes-only-on-left-side">Notes only on left side of the screen.</a></li>
 <li><a href="#character-editor-buggy">The character editor is buggy.</a></li>
 <li><a href="#rotating-strum-moves-notes">Rotating a strum moves the notes.</a></li>
+<li><a href="#velocity-not-working">Velocity not working</a></li>
 </ul>
 </li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/" class="odd">Modding The Engine</a><ul class="sidebar-unordered-list odd">
@@ -120,6 +121,9 @@
 <p>Please have some patience as we are working on fixing the issues that are causing this.</p>
 <h2 id="rotating-strum-moves-notes">Rotating a strum moves the notes.</h2>
 <p>To prevent this behavior, you can do <code class="inline-syntax inline-code">strum.<span class="hljs-property">noteAngle</span> = <span class="hljs-number">0</span>;</code></p>
+<h2 id="velocity-not-working">Velocity/Acceleration doesn't move my sprite</h2>
+<p>You need to set <code class="inline-code">sprite.moves = true;</code> to make it move, its automatically enabled if you set the property using <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">property</span> /&gt;</span></code> in the stage xml.</p>
+<p>We made it turned off automatically to optimize the game since it's useless to have it running for sprites that don't use it.</p>
 
 
 			<div class="info">
