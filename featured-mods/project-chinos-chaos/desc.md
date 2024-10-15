@@ -24,5 +24,5 @@ The mod when fully finished will include all of Chino's FNF animations in a play
 ### Some Gameplay:
 > v1.0:
 > <iframe width="426" height="240" src="https://www.youtube.com/embed/SdZrcfsunWs" title="Project: Chino&#39;s Chaos | v1.0 FULL MOD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
-> v1.1:
-> <iframe width="426" height="240" src="https://www.youtube.com/embed/vN27OmcpHN8" title="Project: Chino&#39;s Chaos | v1.1 FULL UPDATE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+> v1.1:<br>
+> <iframe width="426" height="240" src="https://www.youtube.com/embed/vN27OmcpHN8" title="Project: Chino&#39;s Chaos | v1.1 FULL UPDATE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
