@@ -1,12 +1,12 @@
 ---
-author: Ne_Eo & Frakits & lunarcleint
+author: Ne_Eo & Frakits & Nex_isDumb & lunarcleint
 desc: This page explains the most commonly asked questions about the engine.
 lastUpdated: 2024-10-12T17:38:10.934Z
 title: FAQ
 ---
 # Frequently Asked Questions
 
-## Why should I use the engine?
+## <h2 id="why-should-i-use-the-engine">Why should I use the engine?</h2>
 
 Here are some of the best reasons you should use Codename Engine:
 - **Softcoding:** this makes development of mods extremely fast and alot less annoying as there is no time inbetween trying revisions of code.
@@ -14,7 +14,7 @@ Here are some of the best reasons you should use Codename Engine:
 - **Modern:** get all the latest features and capabilites like multiple strumlines, multiple vocals, ndlls, and a extremely capable scripting language.
 - **Fast:** this engine is very optimized and is takes very little ram compared to other engines, higher fps!!!
 
-## I'm unsure whether to use this engine or Psych Engine
+## <h2 id="this-vs-psych" sidebar="Should i use Psych Engine">I'm unsure whether to use this engine or Psych Engine</h2>
 
 This heavily depends on your preference, but Psych Engine focuses primarily on scripting songs and has some limitations, and offers a few features which some people might not need, meanwhile it has a strong community full of guides and scripts ready to load which makes modding easier.
 
@@ -22,16 +22,16 @@ In comparison, this engine offers more flexibility and features, such as Custom 
 
 Theres no need to hardcode in this engine, meanwhile in Psych Engine, to add custom states and other features outside of gameplay you have to edit the source code.
 
-## I'm unsure whether to use this engine or Forever Engine, FPS Plus or Kade Engine
-
-To understand, Forever Engine, FPS Plus and Kade Engine are engines that rely purely on source code, while Codename relies heavily on soft coding. So if you prefer to keep using source code use one of those 3 engines. Forever Engine has a cleaner base and doesn't add too much onto the gameplay, FPS Plus also offers clean source code but also includes fun new additions to the base, and Kade Engine is a more hardcore-rhythm focused engine with a lot of features to enhance gameplay and stuff, also includes a basic LUA system(pretty unoptimized tho)
-
-## I'm unsure whether to use this engine or Yoshi Engine
+## <h2 id="this-vs-yoshi" sidebar="Should i use Yoshi Engine">I'm unsure whether to use this engine or Yoshi Engine</h2>
 
 This engine is the predecessor of Yoshi Engine, which was created by the same person as this engine.
 Yoshi Engine is no longer maintained, and has been deprecated, and has been replaced by Codename Engine.
 
-## Where did Yoshman29 go?
+## <h2 id="this-vs-forever-engine-fps-plus-kade" sidebar="Should i use Other Engines">I'm unsure whether to use this engine or Forever Engine, FPS Plus or Kade Engine</h2>
+
+To understand, Forever Engine, FPS Plus and Kade Engine are engines that rely purely on source code, while Codename relies heavily on soft coding. So if you prefer to keep using source code use one of those 3 engines. Forever Engine has a cleaner base and doesn't add too much onto the gameplay, FPS Plus also offers clean source code but also includes fun new additions to the base, and Kade Engine is a more hardcore-rhythm focused engine with a lot of features to enhance gameplay and stuff, also includes a basic LUA system(pretty unoptimized tho)
+
+## <h2 id="yoshman29-left">Where did Yoshman29 go?</h2>
 
 > I left cause i was quickly losing interest in FNF and tbh the expectations were getting high and it was weighting on me
 >
@@ -41,7 +41,7 @@ Yoshi Engine is no longer maintained, and has been deprecated, and has been repl
 
 Above is a direct quoted response from Yoshman29.
 
-## Who are the main owners of the engine?
+## <h2 id="main-owners" sidebar="Main Owners">Who are the main owners of the engine?</h2>
 
 The main owners consists of:
 - [Ne_Eo](https://github.com/NeeEoo)
@@ -54,15 +54,15 @@ The main owners consists of:
 
 Our organization consists of having multiple owners cuz why separate people into categories.
 
-## Something is not working or I found a bug!
+## <h2 id="something-not-working-bug" sidebar="I found a bug">Something is not working or I found a bug!</h2>
 
 If you found a bug, please report it on the [GitHub repository](https://github.com/FNF-CNE-Devs/CodenameEngine/issues) or on [Discord](https://discord.gg/WTzm35kekB).
 
-## I want to suggest a feature or change something!
+## <h2 id="suggest-feature-change" sidebar="Feature Suggestion">I want to suggest a feature or change something!</h2>
 
 Please suggest it on [Discord](https://discord.gg/WTzm35kekB).
 
-## I have a question that isn't answered here!
+## <h2 id="unanswered-question" sidebar="Unanswered Question">I have a question that isn't answered here!</h2>
 
 Please ask the question on [Discord](https://discord.gg/WTzm35kekB).
 Or leave it in the discussions below.

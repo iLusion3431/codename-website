@@ -37,6 +37,8 @@
 
   > {
     .selected {
+      font-weight: 500;
+
       &:hover:before {
         background: var(--primary-color);
         filter: brightness(140%);
@@ -49,6 +51,46 @@
 
     a {
       background: transparent;
+    }
+  }
+}
+
+//ul.pagination {
+//  padding-bottom: 1em;
+//}
+
+ul.pagination li {
+  padding: 0 0.3em;
+
+  > a {
+    line-height: 180%;
+    //font-style: italic;
+    font-weight: 200;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+  }
+
+  > a:before {
+    z-index: -1;
+      position: absolute;
+      left: 0;
+      display: inline-block;
+      content: "ff";
+      color: transparent;
+      width: calc(100% - 4px);
+      border: unset;
+      border-left: solid rgba(0, 0, 0, 0.2) 2px;
+      border-right: solid rgba(0, 0, 0, 0.2) 2px;
+      background: var(--primary-color);
+  }
+
+  >a:hover:before {
+    filter: brightness(140%);
+  }
+
+  &:last-child {
+    > a:before {
+      border-bottom: solid rgba(0, 0, 0, 0.2) 2px;
     }
   }
 }

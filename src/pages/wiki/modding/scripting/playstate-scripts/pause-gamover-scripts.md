@@ -6,7 +6,7 @@ title: Pause and Game Over Scripts
 ---
 # Pause and Game Over Scripts
 
-## Pause Scripts
+## <h2 id="pause">Pause Scripts</h2>
 Pause Scripts can change the pause menu, either entirely or tiny bits of it.<br>
 To use one, you have to load it from a Script *(any script can do, even Song Scripts)*.
 ```haxe
@@ -16,7 +16,7 @@ This code points to the script that can be found in ``./data/scripts/`` and is c
 
 You can do many things in this script. For example, this is how you can override it and have your own entirely custom pause menu here:
 ```haxe
-function create(event){
+function create(event) {
     event.cancel();
 
     camera = pauseCam = new FlxCamera();
@@ -33,7 +33,7 @@ Important functions to use when coding the pause menu:
 - <syntax lang="haxe">close();</syntax> - Closes the pause menu, resumes gameplay.
 - <syntax lang="haxe">FlxG.switchState(new PlayState());</syntax> - Reloads the state, restarts the song.
 
-## Game Over Scripts
+## <h2 id="gameover">Game Over Scripts</h2>
 Game over scripts work the same as Pause Scripts, though presents some differences.
 This is how you load one:
 ```haxe

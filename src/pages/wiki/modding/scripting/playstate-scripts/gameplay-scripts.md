@@ -6,7 +6,7 @@ title: Gameplay Scripts
 ---
 # Gameplay Scripts
 
-## Gameplay scripts run during gameplay *(yep)*
+## <h2 id="gameplay-scripts" sidebar="Gameplay Scripts">Gameplay scripts run during gameplay *(yep)*</h2>
 
 You can run Gameplay Scripts in **a song**, by putting the scripts in ``./song/YOUR SONG/scripts``, or run them in **every song**, by putting them in the ``./songs`` folder itself.
 
@@ -25,7 +25,7 @@ function create() {
 If you notice, this looks slightly like source code, aside from the usual <syntax lang="haxe">override function</syntax> or <syntax lang="haxe">super.create()</syntax>, which does not exist in our scripting language.<br>
 If you already got the hang of source coding, then scripting will feel like a breeze. If not.. well.. prepare to learn!
 
-## Particularities
+## <h2 id="particularities">Particularities</h2>
 
 ### Accessing characters.
 

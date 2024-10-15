@@ -29,6 +29,17 @@ function fixPath(url) {
 	return url.replaceAll(path.sep, path.posix.sep);
 }
 
+function parseHtml(html) {
+	return new jsdom.JSDOM(html);
+}
+
+function htmlToString(html) {
+	var str = html.serialize();
+	str = str.replace(/href="about:blank#/g, "href=\"#");
+	str = str.replace(/\<h2\>\<\/h2>/g, "");
+	return str;
+}
+
 function fixHtmlRefs(html, pageDir, _pageDir) {
 	var dom = new jsdom.JSDOM(html);
 	var links = dom.window.document.querySelectorAll("[href]");
@@ -275,4 +286,6 @@ module.exports = {
 	parseTemplate: parseTemplate,
 	compileSass: compileSass,
 	compileJs: compileJs,
+	parseHtml: parseHtml,
+	htmlToString: htmlToString,
 }

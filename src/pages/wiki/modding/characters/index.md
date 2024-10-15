@@ -46,7 +46,7 @@ As for the <syntax lang="xml">&lt;anim&gt;</syntax> nodes, they're pretty self-e
 - ``forced`` whether or not to force animation playback while a different one is already playing.
 - ``loop`` to make your animation loop.
 
-## Health Icons
+## <h2 id="health-icons">Health Icons</h2>
 
 In this engine, health icons have a bit more functionality than the ordinary engine. Such as:
 

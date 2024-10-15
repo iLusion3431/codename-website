@@ -4,7 +4,7 @@ var Mustache = require('mustache');
 var jsdom = require("jsdom");
 var fs = require('fs');
 var hljs = require('highlight.js');
-var { fixHtmlRefs } = require("../../utils.js");
+var { fixHtmlRefs, htmlToString } = require("../../utils.js");
 
 var header = fs.readFileSync("./src/pages/templates/header.html", 'utf8')
 
@@ -59,7 +59,7 @@ function buildHtml(_pageDir, _exportPath) {
 		//console.log(data);
 		fs.writeFileSync(
 			outpath,
-			dom.serialize(),
+			htmlToString(dom),
 			'utf8'
 		);
 	}

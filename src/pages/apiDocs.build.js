@@ -7,7 +7,7 @@ var header = fs.readFileSync("./src/pages/templates/header.html", 'utf8')
 
 const apiGenerator = path.join(__dirname, "..", "..", 'api-generator');
 
-function buildHtml(_pageDir, _exportPath, isWatch) {
+function buildHtml(_pageDir, _exportPath) {
 	var pageDir = _pageDir + "api-docs/";
 	var exportPath = _exportPath + "api-docs/";
 	if (!fs.existsSync(exportPath)) {

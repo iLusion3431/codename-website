@@ -1,7 +1,7 @@
 var fs = require('fs');
 var { buildMods } = require("./mods.build.js");
 
-var { fixHtmlRefs, copyDir, parseTemplate } = require("../utils.js");
+var { fixHtmlRefs, copyDir, parseTemplate, htmlToString } = require("../utils.js");
 
 var header = fs.readFileSync("./src/pages/templates/header.html", 'utf8');
 var donatorsData = JSON.parse(fs.readFileSync("./donators.json", 'utf8'));
@@ -55,7 +55,7 @@ function buildHtml(_pageDir, _exportPath) {
     //console.log(data);
     fs.writeFileSync(
         outpath,
-        dom.serialize(),
+        htmlToString(dom),
         'utf8'
     );
 }

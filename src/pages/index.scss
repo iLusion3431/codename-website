@@ -78,6 +78,10 @@ div.compact {
         width: 100%;
     }
 
+    .featured-mods {
+        overscroll-behavior: unset!important;
+    }
+
     div.content {
         &.main-content {
             width: 100%;

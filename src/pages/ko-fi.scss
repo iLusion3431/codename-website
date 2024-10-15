@@ -12,4 +12,13 @@
     span {
         display: none;
     }
+
+    &:hover {
+        filter: brightness(140%);
+        backdrop-filter: brightness(140%);
+
+        img {
+            filter: brightness(71.4285714286%); // to counteract the filter above (1/1.40)
+        }
+    }
 }
