@@ -6,2117 +6,1694 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
   <loc>https:/codename-engine.com/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>1</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/faq.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/troubleshooting.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/differences.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/navigation.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/cutscenes-dialogues.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/note-splashes.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/characters/editor-features.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/characters/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/hardcoding/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/3d-rendering.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/custom-classes.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/custom-options.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/custom-transitions.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/global-scripts.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/hxvlc.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/ndll-scripting.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/script-calls.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/script-snippets.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/scripted-assets-libraries.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/shaders.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/state-substate-scripts.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/songs/editor-features.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/songs/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/stages/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/stages/stage-extensions.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/playstate-scripts/character-stage-scripts.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/playstate-scripts/events-notetypes-scripts.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/playstate-scripts/gameplay-scripts.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/playstate-scripts/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/wiki/modding/scripting/playstate-scripts/pause-gamover-scripts.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.65</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/savedata/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/assets/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/chart/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/shaders/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/character/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/extra/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/cutscenes/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/credits/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/ui/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/categories/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/keybinds/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/type/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/framerate/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/github/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/interfaces/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/macros/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/modules/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/net/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/native/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/cutscenes/dialogue/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/dialogue/</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/FlxAnimate.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/FunkinSprite.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/FunkinText.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/MusicBeatGroup.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/MusicBeatState.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/MusicBeatSubstate.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/MusicBeatTransition.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/XMLAnimType.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/DebugOptions.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/DebugOptionsScreen.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/Editor.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/EditorPicker.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/EditorPickerOption.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/EditorTreeMenu.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/SaveSubstate.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/SaveSubstateData.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/SaveWarning.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/UIDebugState.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/UndoList.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/Character.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/ComboRating.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/GameOverSubstate.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/HealthIcon.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/HudCamera.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/Note.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/NoteGroup.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/PlayState.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/PlayStateTransitionData.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/SplashGroup.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/SplashHandler.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/Stage.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/StageCharPos.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/StageCharPosInfo.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/Strum.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/StrumLine.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/BetaWarningState.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/FreeplaySonglist.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/FreeplayState.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/GitarooPause.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/IntroText.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/MainMenuState.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/MenuCharacter.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/MenuCharacterSprite.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/MenuItem.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/ModSwitchMenu.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/PauseSubState.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/PlaytestingWarningSubstate.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/StoryMenuState.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/TitleState.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/TitleStateImage.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/WeekData.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/WeekSong.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/OptionCategory.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/OptionTypeDef.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/Options.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/OptionsMenu.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/OptionsScreen.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/OptionsTree.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/PlayerSettings.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/TreeMenu.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/savedata/FunkinSave.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/savedata/HighscoreChange.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/savedata/HighscoreEntry.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/savedata/SongScore.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/assets/AssetSource.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/assets/AssetsLibraryList.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/assets/IModsAssetLibrary.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/assets/LimeLibrarySymbol.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/assets/ModdableAssetsFolder.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/assets/ModsFolder.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/assets/ModsFolderLibrary.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/assets/MultiFramesCollection.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/assets/Paths.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/assets/ScriptPathInfo.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/assets/ScriptedAssetLibrary.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/assets/ZipFolderLibrary.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/chart/Chart.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/chart/ChartData.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/chart/ChartEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/chart/ChartMetaData.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/chart/ChartNote.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/chart/ChartSaveSettings.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/chart/ChartStrumLine.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/chart/ChartStrumLineType.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/chart/EventInfo.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/chart/EventParamInfo.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/chart/EventParamType.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/chart/EventsData.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/chart/FNFLegacyParser.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/chart/PsychParser.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/chart/SwagSection.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/chart/SwagSong.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/DummyScript.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/EventManager.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/GlobalScript.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/HScript.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/ModState.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/ModSubState.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/MultiThreadedScript.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/Script.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/ScriptPack.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/shaders/BlendModeEffect.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/shaders/BlendModeShader.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/shaders/CustomShader.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/shaders/FunkinShader.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/shaders/OverlayShader.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/shaders/ShaderTemplates.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/shaders/ShaderTypeException.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/shaders/WiggleEffect.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/shaders/WiggleEffectType.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/shaders/WiggleShader.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/Action.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/BPMChangeEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/CommandLineHandler.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/Conductor.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/Control.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/Controls.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/Device.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/ErrorCode.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/FunkinGame.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/FunkinRatioScaleMode.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/GraphicCacheSprite.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/KeyboardScheme.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/Level.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/LogText.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/Logs.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/Main.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/MainState.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/OptimizedBitmapData.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/RotatingSpriteGroup.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/AnimData.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/AudioAnalyzer.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/BeatAnim.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/BitmapUtil.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/ConsoleColor.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/CoolSfx.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/CoolUtil.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/DEvents.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/DPresence.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/DUser.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/DiscordJson.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/DiscordUtil.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/EngineUtil.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/FileAttribute.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/FileAttributeWrapper.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/FlxInterpolateColor.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/FunkinParentDisabler.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/HttpUtil.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/IXMLEvents.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/IniUtil.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/MarkdownUtil.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/MemoryUtil.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/MessageBoxIcon.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/NativeAPI.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/NdllUtil.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/NitroType.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/ShaderResizeFix.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/SortedArrayUtil.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/StrNameLabel.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/SysZip.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/SysZipEntry.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/TextFormat.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/ThreadUtil.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/WindowUtils.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/XMLUtil.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/ZipProgress.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/ZipReader.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/ZipUtil.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/ZipWriter.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/character/CharacterAnimButtons.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/character/CharacterAnimScreen.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/character/CharacterChange.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/character/CharacterEditor.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/character/CharacterGhostsHandler.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/character/CharacterInfoScreen.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/character/CharacterPropertiesWindow.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/character/CharacterSelection.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharacterButton.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/ChartCreationScreen.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/ChartDataScreen.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/Charter.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterAutoSaveUI.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterBackdrop.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterBackdropDummy.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterBackdropGroup.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterChange.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterCopyboardObject.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterDeleteAnim.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterEventAdd.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterEventGroup.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterEventScreen.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterEventTypeSelection.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterGridActionType.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterMetaDataScreen.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterNote.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterNoteGroup.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterNoteHoverer.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterNoteTypesList.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterQuantButton.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterSelection.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterStrumLineGroup.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterStrumline.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterStrumlineButton.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterStrumlineOptions.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterStrumlineScreen.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CharterWaveformHandler.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/CompactCharacterButton.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/EventBackdrop.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/EventButton.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/ICharterSelectable.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/NoteSustainChange.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/NoteTypeButton.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/PlaytestInfo.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/Selection.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/SelectionDragChange.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/SongCreationData.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/SongCreationScreen.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/charter/StrumLineButton.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/extra/PropertyButton.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/IUIFocusable.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/SliderSegement.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIAudioPlayer.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIAutoCompleteTextBox.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIBackdrop.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIButton.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIButtonList.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UICheckbox.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIColorWheelSelector.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIColorwheel.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIContextMenu.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIContextMenuCallback.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIContextMenuOption.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIContextMenuOptionSpr.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIDropDown.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIFileExplorer.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UINumericStepper.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIScrollBar.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UISliceSprite.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UISlider.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UISprite.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIState.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UISubstateWindow.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIText.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UITextBox.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UITopButton.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UITopMenu.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UITopMenuButton.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIUtil.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIWarningSubstate.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/UIWindow.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/editors/ui/WarningButton.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/cutscenes/Cutscene.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/cutscenes/CutsceneSubtitle.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/cutscenes/DialogueCutscene.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/cutscenes/DialogueLine.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/cutscenes/ScriptedCutscene.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/cutscenes/VideoCutscene.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/credits/CreditsCodename.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/credits/CreditsMain.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/ui/AlphaCharacter.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/menus/ui/Alphabet.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/categories/AppearanceOptions.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/categories/GameplayOptions.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/categories/MiscOptions.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/keybinds/ChangeKeybindSubState.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/keybinds/KeybindSetting.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/keybinds/KeybindsOptions.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/type/ArrayOption.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/type/Checkbox.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/type/EditorIconOption.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/type/GithubIconOption.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/type/GithubUserIcon.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/type/IconOption.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/type/NewOption.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/type/NumOption.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/type/OptionType.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/type/PortraitOption.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/options/type/TextOption.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/AmountEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/CamMoveEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/CancellableEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/CountdownEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/DanceEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/DirectionAnimEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/DiscordPresenceUpdateEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/DrawEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/DynamicEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/EventGameEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/FreeplayAlphaUpdateEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/FreeplaySongSelectEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/GameOverCreationEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/GameOverEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/InputSystemEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/MenuChangeEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/NameEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/NoteCreationEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/NoteHitEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/NoteMissEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/NoteUpdateEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/PauseCreationEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/PlayAnimContext.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/PlayAnimEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/PointEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/RatingUpdateEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/ResizeEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/SimpleNoteEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/StageNodeEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/StageXMLEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/StateEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/StrumCreationEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/WeekSelectEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/framerate/AssetTreeInfo.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/framerate/CodenameBuildField.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/framerate/ConductorInfo.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/framerate/FlixelInfo.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/framerate/Framerate.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/framerate/FramerateCategory.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/framerate/FramerateCounter.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/framerate/MemoryCounter.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/framerate/SystemInfo.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/github/GitHub.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/github/GitHubAsset.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/github/GitHubContributor.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/github/GitHubException.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/github/GitHubOrganization.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/github/GitHubReactions.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/github/GitHubRelease.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/github/GitHubUser.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/github/GitHubUserType.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/interfaces/IBeatReceiver.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/interfaces/IOffsetCompatible.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/macros/DefinesMacro.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/macros/GitCommitMacro.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/macros/HashLinkFixer.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/macros/Utils.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/modules/CrashHandler.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/modules/FunkinCache.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/modules/PlayingSound.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/system/net/Socket.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/native/HiddenProcess.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/native/Stdin.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/utils/native/Stdout.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/cutscenes/dialogue/CharPosDef.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/cutscenes/dialogue/DialogueBox.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/cutscenes/dialogue/DialogueCharAnimContext.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/game/cutscenes/dialogue/DialogueCharacter.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/dialogue/DialogueBoxCharPopupEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/dialogue/DialogueBoxPlayBubbleEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/dialogue/DialogueBoxSetTextEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/dialogue/DialogueBoxStructureEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/dialogue/DialogueCharHideEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/dialogue/DialogueCharShowEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/dialogue/DialogueCharStructureEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https:/codename-engine.com/api-docs/funkin/backend/scripting/events/dialogue/DialogueStructureEvent.html</loc>
-  <lastmod>2024-10-16T12:11:12.711Z</lastmod>
   <priority>0.5</priority>
 </url>
 </urlset>
