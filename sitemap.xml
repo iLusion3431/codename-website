@@ -1629,10 +1629,6 @@
   <priority>0.5</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/api-docs/funkin/backend/system/modules/PlayingSound.html</loc>
-  <priority>0.5</priority>
-</url>
-<url>
   <loc>https://codename-engine.com/api-docs/funkin/backend/system/net/Socket.html</loc>
   <priority>0.5</priority>
 </url>
