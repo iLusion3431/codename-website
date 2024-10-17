@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 	});
 
 	document.querySelectorAll("a.expand-button").forEach(function (el) {
-		var inheritedBlock = el.parentElement.parentElement.querySelector(".inherited");
+		var inheritedBlock = el.parentElement.nextElementSibling;
 		var icon = el.querySelector("i");
 		el.addEventListener("click", function (e) {
 			inheritedBlock.classList.toggle("expanded");
