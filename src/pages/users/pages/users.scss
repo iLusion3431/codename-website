@@ -1,3 +1,4 @@
+@use "root/_style-vars.scss";
 $discord-color-blurple: #5865F2;
 $discord-color-green: #57F287;
 $discord-color-yellow: #FEE75C;
@@ -7,15 +8,30 @@ $discord-color-white: #FFFFFF;
 $discord-color-black: #000000;
 
 .discord-button {
-    color: $discord-color-white;
-    text-decoration: none;
-    display: inline-block;
-    padding: 0.7em;
-    background: $discord-color-blurple;
-    border: solid rgba(0, 0, 0, 0.2) 2px;
+  margin-top: 1em;
+  color: $discord-color-white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.7em;
+  background: $discord-color-blurple;
+  border: solid rgba(0, 0, 0, 0.2) 2px;
 
-    &:hover {
-      filter: brightness(140%);
-      backdrop-filter: brightness(140%);
-    }
+  &:hover {
+    filter: brightness(140%);
+    backdrop-filter: brightness(140%);
+  }
+}
+
+.login-modal-thing {
+  text-align: center;
+  background-color: var(--list-background-color);
+  padding: 1em;
+  margin: 3em;
+  border: solid rgba(0, 0, 0, 0.1) 2px;
+}
+
+@media screen and (min-width: 700px) {
+  .container {
+    margin: 2em 5em;
+  }  
 }

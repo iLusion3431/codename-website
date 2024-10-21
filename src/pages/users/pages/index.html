@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +27,7 @@
 
 	<meta name="theme-color" content="#7f33b8">
 
-	<link rel="icon" href="root/favicon.ico" type="image/x-icon"/>
+	<link rel="icon" href="root/favicon.ico" type="image/x-icon" />
 	<link rel="apple-touch-icon" sizes="180x180" href="root/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="root/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="root/favicon-16x16.png">
@@ -34,6 +35,7 @@
 
 	<!-- <link href='https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css' rel='stylesheet' type='text/css' /> -->
 </head>
+
 <body class="nojs">
 	<script>document.body.classList.remove("nojs");</script>
 	<div class="header">
@@ -41,17 +43,24 @@
 	</div>
 	<div class="container">
 		<div class="content">
-			<div class="has-no-js">
-				You need to enable JavaScript to use this website.
-			</div>
-			<div class="only-js">
-				<a href="https://discord.com/oauth2/authorize?client_id=1027994136193810442&response_type=code&redirect_uri=https%3A%2F%2Fcodename-engine.com%2Fuser%2Fsigned-up&scope=identify" class="default-button discord-button">
-					<span>
-						<img class="icon" src="root/img/icons/discord.svg"> Authenticate with Discord
-					</span>
-				</a>
+			<h2>Login/Register to our website here:</h2>
+			<div class="login-modal-thing">
+				You can only login with Discord. <br>
+				<div class="has-no-js">
+					You need to enable JavaScript to use this website.
+				</div>
+				<div class="only-js">
+					<a href="https://discord.com/oauth2/authorize?client_id=1027994136193810442&response_type=code&redirect_uri=https%3A%2F%2Fcodename-engine.com%2Fuser%2Fsigned-up&scope=identify"
+						class="default-button discord-button">
+						<span>
+							<img class="icon" src="root/img/icons/discord.svg"> Authenticate with Discord
+						</span>
+					</a><br>
+					<sub><i>(we will only access your username, nickname, discord id and the avatar to identify you into the website)</i></sub>
+				</div>
 			</div>
 		</div>
 	</div>
 </body>
+
 </html>
