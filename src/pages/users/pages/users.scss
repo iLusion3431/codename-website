@@ -1,0 +1,21 @@
+$discord-color-blurple: #5865F2;
+$discord-color-green: #57F287;
+$discord-color-yellow: #FEE75C;
+$discord-color-fuschia: #EB459E;
+$discord-color-red: #ED4245;
+$discord-color-white: #FFFFFF;
+$discord-color-black: #000000;
+
+.discord-button {
+    color: $discord-color-white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.7em;
+    background: $discord-color-blurple;
+    border: solid rgba(0, 0, 0, 0.2) 2px;
+
+    &:hover {
+      filter: brightness(140%);
+      backdrop-filter: brightness(140%);
+    }
+}

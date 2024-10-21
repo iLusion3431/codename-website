@@ -15,10 +15,18 @@
   scrollbar-color: var(--scrollbar-color) var(--background-secondary-color);
 }
 
-.hide-nojs {
+.nojs .only-js {
+  display: none;
+}
+
+.only-js {
   display: initial;
 }
 
-.nojs .hide-nojs {
+.has-no-js {
   display: none;
+}
+
+.nojs .has-no-js {
+  display: initial;
 }

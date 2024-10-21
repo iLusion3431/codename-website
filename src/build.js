@@ -6,6 +6,7 @@ var tools = require('./pages/tools/tools.build.js');
 var apiDocs = require('./pages/apiDocs.build.js');
 var indexPage = require('./pages/index.build.js');
 var sitemap = require("./sitemap.build.js");
+var users = require('./pages/users/users.build.js');
 
 var { copyDir, compileSass, compileJs, setGlobals } = require('./utils.js');
 
@@ -52,6 +53,7 @@ compileJs("./src/pages/wiki.js", exportPath + "/wiki.js");
 
 copyDir("./src/toplevel/", exportPath + "/");
 
+users.buildHtml(pageDir, exportPath); // builds into /user
 indexPage.buildHtml(pageDir, exportPath); // builds into /
 tools.buildHtml(pageDir, exportPath); // builds into /tools
 wiki.buildHtml(pageDir, exportPath); // builds into /wiki
