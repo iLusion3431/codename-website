@@ -933,6 +933,10 @@
   <priority>0.5</priority>
 </url>
 <url>
+  <loc>https://codename-engine.com/api-docs/funkin/backend/utils/XMLImportedScriptInfo.html</loc>
+  <priority>0.5</priority>
+</url>
+<url>
   <loc>https://codename-engine.com/api-docs/funkin/backend/utils/XMLUtil.html</loc>
   <priority>0.5</priority>
 </url>
@@ -1402,6 +1406,14 @@
 </url>
 <url>
   <loc>https://codename-engine.com/api-docs/funkin/backend/scripting/events/CancellableEvent.html</loc>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>https://codename-engine.com/api-docs/funkin/backend/scripting/events/CharacterNodeEvent.html</loc>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>https://codename-engine.com/api-docs/funkin/backend/scripting/events/CharacterXMLEvent.html</loc>
   <priority>0.5</priority>
 </url>
 <url>
