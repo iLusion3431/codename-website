@@ -178,9 +178,8 @@ async function compileJs(file, dest) {
 			compress: {
 				ecma: 2015,
 				keep_fargs: false,
-				passes: 2,
-				unsafe_arrows: true,
-				unsafe_comps: true,
+				passes: 10,
+				unsafe_arrows: true
 			}
 		});
 		if(result.error) {
