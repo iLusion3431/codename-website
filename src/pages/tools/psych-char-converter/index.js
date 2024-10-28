@@ -11,15 +11,13 @@ var fileNameDisplay = document.getElementById('file-name');
 
 saveButton.addEventListener("click", function (e) {
 	e.preventDefault();
-	if(input.value.trim() == "") {
+	var outputValue = output.value.trim();
+	if(outputValue == "") {
 		alert("Please paste your character data first!");
 		return;
 	}
-	var fileName = "character.xml";
-	if(lastFile != null) {
-		fileName = lastFile.name.replace(/\.json$/, ".xml");
-	}
-	saveFile(output.value, fileName);
+	var fileName = !lastFile ? "character.xml" : lastFile.name.replace(/\.json$/, ".xml");
+	saveFile(outputValue, fileName);
 });
 
 function saveFile(content, filename) {
@@ -83,22 +81,18 @@ function handleDrop(e) {
 
 var lastFile = null;
 
-//fileInput.addEventListener('change', function() {
-//	var fileName = fileInput.files.length > 0 ? fileInput.files[0].name : 'No file chosen';
-//	fileNameDisplay.textContent = fileName;
-//});
-
 fileInput.addEventListener('change', () => {
 	handleFiles(fileInput.files);
 }, false);
 
 function handleFiles(files) {
+	var filename = "No file chosen";
 	var fileArray = Array.from(files);
 	if(fileArray.length > 0) {
 		var files = fileArray.filter(file => file.type.startsWith("application/json"));
 		if(files.length > 0) {
 			var file = files[0];
-			fileNameDisplay.textContent = file.name;
+			filename = file.name;
 			lastFile = file;
 			var reader = new FileReader();
 			reader.onload = function(e) {
@@ -108,12 +102,9 @@ function handleFiles(files) {
 				output.value = xml;
 			};
 			reader.readAsText(file);
-		} else {
-			fileNameDisplay.textContent = "No file chosen";
 		}
-	} else {
-		fileNameDisplay.textContent = "No file chosen";
 	}
+	fileNameDisplay.textContent = filename;
 }
 
 /*@__PURE__*/
@@ -144,11 +135,11 @@ function formatNumberRange(numbers, separator = ",") {
 		}
 
 		if (start === end) { // no direction
-			result.push(`${start}`);
+			result.push(start);
 		} else if (start + direction === end) { // 1 step increment
-			result.push(`${start},${end}`);
+			result.push(start + "," + end);
 		} else { // store as range
-			result.push(`${start}..${end}`);
+			result.push(start + ".." + end);
 		}
 
 		i++;
@@ -160,10 +151,14 @@ function formatNumberRange(numbers, separator = ",") {
 var convertFolderButton = document.getElementById("convert-folder");
 convertFolderButton.addEventListener("change", () => {
 	var files = convertFolderButton.files;
-
 	var promises = [];
+	var zip = new JSZip();
 
-	function conve(file) {
+	var currDate = new Date();
+	// sets the date to be fixed
+	JSZip.defaults.date = new Date(currDate.getTime() - currDate.getTimezoneOffset() * 60000);
+
+	var convert = file => {
 		return new Promise((resolve, reject) => {
 			var reader = new FileReader();
 			reader.onload = function(event) {
@@ -175,17 +170,9 @@ convertFolderButton.addEventListener("change", () => {
 		});
 	}
 
-	var zip = new JSZip();
-
-	var currDate = new Date();
-	var dateWithOffset = new Date(currDate.getTime() - currDate.getTimezoneOffset() * 60000);
-	JSZip.defaults.date = dateWithOffset;
-
-	for (var i = 0; i < files.length; i++) {
-		var file = files[i];
-
+	for(var file of files) {
 		if (file.name.includes('.json')) {
-			promises.push(conve(file));
+			promises.push(convert(file));
 		}
 	}
 
@@ -237,8 +224,6 @@ function colorFromString(str) {
 	} else {
 		if (colorMapping.hasOwnProperty(str.toUpperCase())) {
 			result = colorMapping[str.toUpperCase()];
-		} else {
-			result = null;
 		}
 	}
 
@@ -271,10 +256,6 @@ function toWebColor(color, Alpha=true, Prefix=true) {
 	var blue = color & 0xFF;
 	var prefix = Prefix ? "#" : "";
 	return prefix + (Alpha ? hex(alpha, 2) : "") + hex(red, 2) + hex(green, 2) + hex(blue, 2);
-	//if (Alpha) {
-	//	return prefix + hex(alpha, 2) + hex(red, 2) + hex(green, 2) + hex(blue, 2);
-	//}
-	//return prefix + hex(red, 2) + hex(green, 2) + hex(blue, 2);
 }
 
 /*@__PURE__*/
@@ -294,31 +275,34 @@ function convert(jsonInput) {
 
 	var xmlOutput = "<!DOCTYPE codename-engine-character>\n<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->\n<character";
 
-	if (json.no_antialiasing) xmlOutput += " antialiasing=\"false\"";
-	if (json.image != null) {
-		if(json.image.startsWith("characters/")) {
-			json.image = json.image.replace("characters/", "");
-		}
-		xmlOutput += ` sprite="${json.image}"`;
-	}
-	if (json.position[0] !== 0)			xmlOutput += ` x="${json.position[0]}"`;
-	if (json.position[1] !== 0)			xmlOutput += ` y="${json.position[1]}"`;
-	if (json.healthicon != null)		xmlOutput += ` icon="${json.healthicon}"`;
-	if (json.flip_x)					xmlOutput += ` flipX="true"`;
-	if (json.healthbar_colors != null)	xmlOutput += ` color="${convertRGBArrayToHex(json.healthbar_colors)}"`;
-	if (json.camera_position[0] !== 0)	xmlOutput += ` camx="${json.camera_position[0]}"`;
-	if (json.camera_position[1] !== 0)	xmlOutput += ` camy="${json.camera_position[1]}"`;
-	if (json.sing_duration !== 4)		xmlOutput += ` holdTime="${json.sing_duration}"`;
-	if (json.scale !== 1)				xmlOutput += ` scale="${json.scale}"`;
+	var jsonPosition = json.position;
+	var jsonCameraPos = json.camera_position;
+	var jsonSingDuration = json.sing_duration;
+	var jsonScale = json.scale;
+	var jsonImage = json.image;
 
-	var scale = json.scale;
+	if(jsonImage.startsWith("characters/")) {
+		jsonImage = jsonImage.slice(11);
+	}
+	xmlOutput += ` sprite="${jsonImage}"`;
+	xmlOutput += ` icon="${json.healthicon}"`;
+	xmlOutput += ` color="${convertRGBArrayToHex(json.healthbar_colors)}"`;
+
+	if (jsonPosition[0] !== 0)	xmlOutput += ` x="${jsonPosition[0]}"`;
+	if (jsonPosition[1] !== 0)	xmlOutput += ` y="${jsonPosition[1]}"`;
+	if (json.flip_x)			xmlOutput += ` flipX="true"`;
+	if (json.no_antialiasing)	xmlOutput += ` antialiasing="false"`;
+	if (jsonCameraPos[0] !== 0)	xmlOutput += ` camx="${jsonCameraPos[0]}"`;
+	if (jsonCameraPos[1] !== 0)	xmlOutput += ` camy="${jsonCameraPos[1]}"`;
+	if (jsonSingDuration !== 4)	xmlOutput += ` holdTime="${jsonSingDuration}"`;
+	if (jsonScale !== 1)		xmlOutput += ` scale="${jsonScale}"`;
 
 	xmlOutput += ">\n"
 
 	json.animations.forEach(function (a) {
 		xmlOutput += `\t<anim name="${a.anim}" anim="${a.name}"`;
-		var xOffset = a.offsets[0] / scale;//roundDecimal(a.offsets[0] / scale, 5);
-		var yOffset = a.offsets[1] / scale;//roundDecimal(a.offsets[1] / scale, 5);
+		var xOffset = a.offsets[0] / jsonScale;//roundDecimal(a.offsets[0] / scale, 5);
+		var yOffset = a.offsets[1] / jsonScale;//roundDecimal(a.offsets[1] / scale, 5);
 		var needsOffset = xOffset !== 0 || yOffset !== 0;
 		if (needsOffset)			xmlOutput += ` x="${xOffset}" y="${yOffset}"`;
 		if (a.fps !== 24)			xmlOutput += ` fps="${a.fps}"`;
