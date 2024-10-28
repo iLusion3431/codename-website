@@ -5,7 +5,7 @@ var hljs = require('highlight.js');
 var fs = require('fs');
 var sass = require('sass');
 var CleanCSS = require('clean-css');
-var UglifyJS = require("uglify-js");
+var Terser = require('terser');
 
 var wax = require('@jvitela/mustache-wax');
 
@@ -171,10 +171,18 @@ function copyDir(src, dest) {
 	}
 }
 
-function compileJs(file, dest) {
+async function compileJs(file, dest) {
 	if(isRelease) {
 		var content = fs.readFileSync(file, 'utf8');
-		var result = UglifyJS.minify(content);
+		var result = await Terser.minify(content, {
+			compress: {
+				ecma: 2015,
+				keep_fargs: false,
+				passes: 2,
+				unsafe_arrows: true,
+				unsafe_comps: true,
+			}
+		});
 		if(result.error) {
 			console.error(result.error);
 			console.error("Error minifying file: " + file);

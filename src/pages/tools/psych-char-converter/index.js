@@ -116,6 +116,7 @@ function handleFiles(files) {
 	}
 }
 
+/*@__PURE__*/
 function formatNumberRange(numbers, separator = ",") {
 	if (numbers.length === 0) return "";
 
@@ -195,6 +196,7 @@ convertFolderButton.addEventListener("change", () => {
 	});
 });
 
+/*@__PURE__*/
 function std_parseInt() {
 	var v = parseInt(x);
 	if(isNaN(v)) {
@@ -222,6 +224,7 @@ var colorMapping = {
 }
 
 var COLOR_REGEX = /^(0x|#)(([A-F0-9]{2}){3,4})$/i;
+/*@__PURE__*/
 function colorFromString(str) {
 	var result = null;
 	if (COLOR_REGEX.test(str)) {
@@ -242,6 +245,7 @@ function colorFromString(str) {
 	return result;
 }
 
+/*@__PURE__*/
 function hex(num, size) {
 	var s = num.toString(16);
 	while (s.length < size) {
@@ -250,6 +254,7 @@ function hex(num, size) {
 	return s;
 }
 
+/*@__PURE__*/
 function fromRGBArray(arr) {
 	var r = arr[0];
 	var g = arr[1];
@@ -257,6 +262,7 @@ function fromRGBArray(arr) {
 	return 0xFF000000 | (r << 16) | (g << 8) | b;
 }
 
+/*@__PURE__*/
 function toWebColor(color, Alpha=true, Prefix=true) {
 	var color = color | 0;
 	var alpha = (color >> 24) & 0xFF;
@@ -271,10 +277,12 @@ function toWebColor(color, Alpha=true, Prefix=true) {
 	//return prefix + hex(red, 2) + hex(green, 2) + hex(blue, 2);
 }
 
+/*@__PURE__*/
 function convertRGBArrayToHex(color) {
 	return "#" + hex(color[0] & 0xFF, 2) + hex(color[1] & 0xFF, 2) + hex(color[2] & 0xFF, 2);
 }
 
+/*@__PURE__*/
 function roundDecimal(number, decimals) {
 	var pow = Math.pow(10, decimals);
 	return Math.round(number * pow) / pow;
