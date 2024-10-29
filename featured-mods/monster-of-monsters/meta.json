@@ -2,11 +2,12 @@
     "name": "Godzilla: MONSTER of MONSTERS",
     "description": "Mod based on Nes Godzilla Creepypasta",
     "author": "Fanclub Team",
-    "version": "unreleased",
-    "link": "https://x.com/MadnessCombat14",
+    "version": "1.0",
+    "link": "https://gamebanana.com/mods/410249",
+    "updatesLink": "https://x.com/MadnessCombat14",
     "source": "",
 
-    "lastUpdated": "unreleased",
+    "lastUpdated": "2024-10-29T01:13:02.000Z",
 
-    "tags": ["upcoming", "hardcoded", "longer-title", "long-desc"]
+    "tags": ["hardcoded", "longer-title", "long-desc"]
 }
