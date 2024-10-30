@@ -64,7 +64,7 @@ We'll show each step to converting this shader into an usable openfl/flixel shad
 
 ### Keep in mind that this covers the most basic on how to convert a shader from shadertoy.com, complex shaders will need more expertise with handling shaders before converting those.
 
-## <h2 id="shader-compatability" sidebar="Shader Compatability">Important things to note if your shader doesn't work for certain people.</h2>
+## <h2 id="shader-compatibility" sidebar="Shader Compatibility">Important things to note if your shader doesn't work for certain people.</h2>
 Avoid using `0.` or `.0` for floats, instead, use `0.0` (ending the float number with an `.0`)
 *(despite half floats working on nVidia gpus, other gpus like AMD gpus don't support this feature)*
 
