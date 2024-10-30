@@ -88,7 +88,7 @@
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/state-substate-scripts.html" class="odd">State/Substate Scripts</a></li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/global-scripts.html" class="even">Global Scripts</a></li>
 <li class="sidebar-list-item odd selected"><a href="#main" class="odd selected">Shaders</a><ul class="sidebar-unordered-list odd pagination">
-<li><a href="#shader-compatability">Shader Compatability</a></li>
+<li><a href="#shader-compatibility">Shader Compatibility</a></li>
 </ul>
 </li>
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/hxvlc.html" class="even">Using hxvlc for videos</a></li>
@@ -161,7 +161,7 @@ camGame.<span class="hljs-title function_">addShader</span>(shader);
 <li>finally, replace <code class="inline-code">fragColor = col;</code> with <code class="inline-code">gl_FragColor = col;</code></li>
 </ol>
 <h3>Keep in mind that this covers the most basic on how to convert a shader from shadertoy.com, complex shaders will need more expertise with handling shaders before converting those.</h3>
-<h2 id="shader-compatability">Important things to note if your shader doesn't work for certain people.</h2>
+<h2 id="shader-compatibility">Important things to note if your shader doesn't work for certain people.</h2>
 <p>Avoid using <code class="inline-code">0.</code> or <code class="inline-code">.0</code> for floats, instead, use <code class="inline-code">0.0</code> (ending the float number with an <code class="inline-code">.0</code>)
 <em>(despite half floats working on nVidia gpus, other gpus like AMD gpus don't support this feature)</em></p>
 <p>Avoid using switch cases, and use if statements where possible.
