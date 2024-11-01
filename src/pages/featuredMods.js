@@ -108,7 +108,7 @@ sortButtons.forEach(button => {
 	});
 });
 
-randomizeOrder();
+recentOrder();
 
 function getRelativeTimeString(
 	date, // Date | number
