@@ -34,8 +34,8 @@ function sortByTime(a, b) {
 	var aTime = a.getAttribute("data-time");
 	var bTime = b.getAttribute("data-time");
 
-	if (aTime == null) return 1;           // Push null to the bottom
-	if (bTime == null) return -1;
+	if (!aTime) return 1;           // Push null to the bottom
+	if (!bTime) return -1;
 	if (aTime === "unreleased") return 1;  // Push "unreleased" to the bottom
 	if (bTime === "unreleased") return -1;
 	if (aTime === "unknown") return 1;     // Push "unknown" to the bottom
@@ -79,22 +79,26 @@ sortButtons.forEach(button => {
 			var mods = document.querySelectorAll(".featured-mod");
 			if(sort == "all") {
 				mods.forEach(mod => {
+					var display;
 					if(mod.classList.contains("upcoming")) {
-						mod.style.display = "none";
+						display = "none";
 					} else {
-						mod.style.display = "block";
+						display = "block";
 					}
+					mod.style.display = display;
 				});
 			} else {
 				mods.forEach(mod => {
 					mod.style.display = "none";
 				});
 				document.querySelectorAll(".featured-mod." + sort).forEach(mod => {
+					var display;
 					if(sort != "upcoming" && mod.classList.contains("upcoming")) {
-						mod.style.display = "none";
+						display = "none";
 					} else {
-						mod.style.display = "block";
+						display = "block";
 					}
+					mod.style.display = display;
 				});
 			}
 
@@ -112,13 +116,13 @@ function getRelativeTimeString(
 	date, // Date | number
 	lang = "en" // navigator.language
 ) {
-	const timeMs = typeof date === "number" ? date : date.getTime();
-	const deltaSeconds = Math.round((timeMs - Date.now()) / 1000);
-	const cutoffs = [60, 3600, 86400, 86400 * 7, 86400 * 30, 86400 * 365, Infinity];
-	const units = ["second", "minute", "hour", "day", "week", "month", "year"];
-	const unitIndex = cutoffs.findIndex(cutoff => cutoff > Math.abs(deltaSeconds));
-	const divisor = unitIndex ? cutoffs[unitIndex - 1] : 1;
-	const rtf = new Intl.RelativeTimeFormat(lang, { numeric: "auto" });
+	var timeMs = typeof date === "number" ? date : date.getTime();
+	var deltaSeconds = Math.round((timeMs - Date.now()) / 1000);
+	var cutoffs = [60, 3600, 86400, 86400 * 7, 86400 * 30, 86400 * 365, Infinity];
+	var units = ["second", "minute", "hour", "day", "week", "month", "year"];
+	var unitIndex = cutoffs.findIndex(cutoff => cutoff > Math.abs(deltaSeconds));
+	var divisor = unitIndex ? cutoffs[unitIndex - 1] : 1;
+	var rtf = new Intl.RelativeTimeFormat(lang, { numeric: "auto" });
 	return rtf.format(Math.floor(deltaSeconds / divisor), units[unitIndex]);
 }
 
@@ -128,7 +132,7 @@ if(lastUpdated.length > 0 && window.Intl) {
 		var time = lastUpdated.getAttribute("data-time");
 		if(time == "unreleased") {
 			lastUpdated.style.display = "inline";
-		} else if(time != "unknown" && time != null) {
+		} else if(time != "unknown" && time) {
 			lastUpdated.textContent = getRelativeTimeString(new Date(time));
 			lastUpdated.style.display = "inline";
 		}
