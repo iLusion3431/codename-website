@@ -314,6 +314,10 @@ div.compact {
     display: none;
 }
 
+.nojs .featured-mod.upcoming {
+    display: unset;
+}
+
 // .sort-button:not(.selected) {
 //     filter: brightness(70%);
 // }

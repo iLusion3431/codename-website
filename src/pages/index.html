@@ -176,8 +176,12 @@
 							<h3>{{name}}</h3>
 							<p>{{description}}</p>
 						</div>
-						<span class="placement hide-nojs">cne</span>
-						<span class="last-updated hide-nojs" data-time="{{lastUpdated}}" style="display:none;">{{lastUpdated}}</span>
+						<span class="placement">cne</span>
+						{{^unreleased}}
+						<span class="last-updated" data-time="{{lastUpdated}}">{{lastUpdated | shortDate}}</span>
+						{{/unreleased}}{{#unreleased}}
+						<span class="last-updated" data-time="{{lastUpdated}}">unreleased</span>
+						{{/unreleased}}
 						{{#premium}}
 						<img src="img/sparkle-top.gif" class="sparkle top">
 						<img src="img/sparkle-bottom.gif" class="sparkle bottom">

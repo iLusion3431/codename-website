@@ -2,7 +2,6 @@
 "use strict";
 function randomizeOrder() {
 	var mods = document.querySelectorAll(".featured-mod");
-	var parent = mods[0].parentNode;
 	var modsArray = Array.from(mods);
 
 	for (var i = modsArray.length - 1; i > 0; i--) {
@@ -12,6 +11,11 @@ function randomizeOrder() {
 		modsArray[j] = temp;
 	}
 
+	setModsArray(modsArray, mods);
+}
+
+function setModsArray(modsArray, nodes) {
+	var parent = nodes[0].parentNode;
 	var fragment = document.createDocumentFragment();
 	for (var i = 0; i < modsArray.length; i++) {
 		fragment.appendChild(modsArray[i].cloneNode(true));
@@ -46,18 +50,11 @@ function sortByTime(a, b) {
 
 function recentOrder() {
 	var mods = document.querySelectorAll(".featured-mod");
-	var parent = mods[0].parentNode;
 	var modsArray = Array.from(mods);
 
 	modsArray.sort(sortByTime);
 
-	var fragment = document.createDocumentFragment();
-	for (var i = 0; i < modsArray.length; i++) {
-		fragment.appendChild(modsArray[i].cloneNode(true));
-	}
-
-	clearElement(parent);
-	parent.appendChild(fragment);
+	setModsArray(modsArray, mods);
 }
 
 var sortButtons = document.querySelectorAll(".sort-button");
@@ -79,8 +76,9 @@ sortButtons.forEach(button => {
 			});
 			button.classList.add("selected");
 		} else {
+			var mods = document.querySelectorAll(".featured-mod");
 			if(sort == "all") {
-				document.querySelectorAll(".featured-mod").forEach(mod => {
+				mods.forEach(mod => {
 					if(mod.classList.contains("upcoming")) {
 						mod.style.display = "none";
 					} else {
@@ -88,7 +86,7 @@ sortButtons.forEach(button => {
 					}
 				});
 			} else {
-				document.querySelectorAll(".featured-mod").forEach(mod => {
+				mods.forEach(mod => {
 					mod.style.display = "none";
 				});
 				document.querySelectorAll(".featured-mod." + sort).forEach(mod => {
@@ -128,11 +126,10 @@ var lastUpdated = document.querySelectorAll(".last-updated");
 if(lastUpdated.length > 0 && window.Intl) {
 	lastUpdated.forEach(lastUpdated => {
 		var time = lastUpdated.getAttribute("data-time");
-		if(time != "unknown" && time != null && time != "unreleased") {
-			lastUpdated.innerText = getRelativeTimeString(new Date(time));
-			lastUpdated.style.display = "inline";
-		}
 		if(time == "unreleased") {
+			lastUpdated.style.display = "inline";
+		} else if(time != "unknown" && time != null) {
+			lastUpdated.textContent = getRelativeTimeString(new Date(time));
 			lastUpdated.style.display = "inline";
 		}
 	});
