@@ -48,6 +48,13 @@
             "amount": 3,
             "currency": "$",
             "hasMembership": 0
+        },
+        {
+            "name": "CrimsonIsStupid",
+            "profilePicture": "https://ko-fi.com/img/anon7.png?v=10",
+            "amount": 5,
+            "currency": "$",
+            "hasMembership": 0
         }
     ]
 }
