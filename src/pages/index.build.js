@@ -104,25 +104,42 @@ function buildHtml(_pageDir, _exportPath) {
         var obj = {
             name: donator.name,
             profilePicture: donator.profilePicture,
-            amount: donator.amount,
-            currency: donator.currency,
-            hasMembership: donator.hasMembership != 0
+            hasMembership: donator.hasMembership,
+            donations: []
         };
-        var existingDonators = donators.filter(d => d.name == obj.name);
-        if(existingDonators.length > 0) {
-            for(const donator of existingDonators) {
-                obj.amount += donator.amount;
-                obj.hasMembership = obj.hasMembership || donator.hasMembership;
-                donators.splice(donators.indexOf(donator), 1);
-            }
+        var amounts = {};
+        var usd = 0.0;
+        for(const donation of donator.donations) {
+            obj.donations.push({
+                amount: donation.amount,
+                currency: donation.currency,
+                type: donation.type
+            });
+            amounts[donation.currency] = (amounts[donation.currency] ?? 0) + donation.amount;
+
+            usd += donation.usdAmount ?? donation.amount;
         }
-        donators.push(obj);
+
+        var amountString = [];
+        for(const currency in amounts) {
+            amountString.push(amounts[currency] + " " + currency);
+        }
+        amountString = amountString.join(", ");
+
+        var siteObj = {
+            name: donator.name,
+            profilePicture: donator.profilePicture,
+            amount: usd + " $",//amountString,
+            totalAmount: usd,
+            hasMembership: obj.hasMembership
+        };
+        donators.push(siteObj);
         if(donator.hasMembership) {
-            members.push(obj);
+            members.push(siteObj);
         }
     }
 
-    donators.sort((a, b) => b.amount - a.amount);
+    donators.sort((a, b) => b.totalAmount - a.totalAmount);
 
     var path = "./src/pages/index.html";
     var outpath = exportPath + "index.html";
