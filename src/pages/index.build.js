@@ -108,6 +108,14 @@ function buildHtml(_pageDir, _exportPath) {
             currency: donator.currency,
             hasMembership: donator.hasMembership != 0
         };
+        var existingDonators = donators.filter(d => d.name == obj.name);
+        if(existingDonators.length > 0) {
+            for(const donator of existingDonators) {
+                obj.amount += donator.amount;
+                obj.hasMembership = obj.hasMembership || donator.hasMembership;
+                donators.splice(donators.indexOf(donator), 1);
+            }
+        }
         donators.push(obj);
         if(donator.hasMembership) {
             members.push(obj);
