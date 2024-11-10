@@ -8,8 +8,7 @@
                 {
                     "amount": 50,
                     "currency": "$",
-                    "type": "donation",
-                    "hasMembership": false
+                    "type": "donation"
                 }
             ]
         },
@@ -21,8 +20,7 @@
                 {
                     "amount": 4,
                     "currency": "$",
-                    "type": "donation",
-                    "hasMembership": false
+                    "type": "donation"
                 }
             ]
         },
@@ -34,8 +32,7 @@
                 {
                     "amount": 3,
                     "currency": "$",
-                    "type": "donation",
-                    "hasMembership": false
+                    "type": "donation"
                 }
             ]
         },
@@ -47,21 +44,29 @@
                 {
                     "amount": 3,
                     "currency": "$",
-                    "type": "donation",
-                    "hasMembership": false
+                    "type": "donation"
                 }
             ]
         },
         {
             "name": "~ Care",
             "profilePicture": "https://storage.ko-fi.com/cdn/useruploads/post/1f73237b-a38f-499c-8c49-9b97f3ed1ec3_c8fd4a56-829d-48cd-849c-e1e84abe18e9.jpg",
-            "hasMembership": false,
+            "hasMembership": true,
             "donations": [
                 {
                     "amount": 3,
                     "currency": "$",
-                    "type": "donation",
-                    "hasMembership": false
+                    "type": "donation"
+                },
+                {
+                    "amount": 5,
+                    "currency": "$",
+                    "type": "donation"
+                },
+                {
+                    "amount": 5,
+                    "currency": "$",
+                    "type": "membership"
                 }
             ]
         },
@@ -73,8 +78,7 @@
                 {
                     "amount": 100,
                     "currency": "$",
-                    "type": "donation",
-                    "hasMembership": false
+                    "type": "donation"
                 }
             ]
         },
