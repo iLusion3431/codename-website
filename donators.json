@@ -115,6 +115,18 @@
                     "type": "donation"
                 }
             ]
+        },
+        {
+            "name": "Rivulet Nil",
+            "profilePicture": "https://ko-fi.com/img/anon9.png?v=10",
+            "hasMembership": false,
+            "donations": [
+                {
+                    "amount": 5,
+                    "currency": "$",
+                    "type": "donation"
+                }
+            ]
         }
     ]
 }
