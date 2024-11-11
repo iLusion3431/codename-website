@@ -132,6 +132,18 @@
                     "type": "donation"
                 }
             ]
+        },
+        {
+            "name": "HarbingerBeats",
+            "profilePicture": "https://storage.ko-fi.com/cdn/useruploads/post/ec224628-6ce9-4797-b391-84617a92161e_08d8b183-b349-4d5f-a69a-52acc3aa8b9b.png",
+            "hasMembership": false,
+            "donations": [
+                {
+                    "amount": 30,
+                    "currency": "$",
+                    "type": "donation"
+                }
+            ]
         }
     ]
 }
