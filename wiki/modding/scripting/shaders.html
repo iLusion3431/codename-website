@@ -184,11 +184,33 @@ Instead, use floats where it's expected. Like mod(1.0, 2.0) instead of mod(1, 2)
 <p>Avoid initializing variables with the name <code class="inline-code">input</code> or <code class="inline-code">sample</code>, as those cause the shader to stop working on AMD gpus or other platforms.</p>
 <p>Avoid using the % (modulo) operator and instead use the mod function.</p>
 <p>Avoid using arrays. Since some platforms don't support them.</p>
+<h2>Important: Runtime Initialization of Globals</h2>
+<p>In OpenGL ES (such as on mobile and web), global variables declared without a storage qualifier (const, uniform, or varying) must be initialized with constant expressions at compile time. This means you cannot assign runtime-dependent values like openfl_TextureCoordv.xy or openfl_TextureSize directly to global variables outside a function.</p>
+<p>For example:</p>
+<pre class="hljs"><code class="language-glsl"><span class="hljs-comment">// INVALID: Global initialization with runtime values</span>
+<span class="hljs-type">vec2</span> uv = openfl_TextureCoordv.xy;  <span class="hljs-comment">// ERROR: Non-constant initialization</span>
+<span class="hljs-type">vec2</span> fragCoord = openfl_TextureCoordv * openfl_TextureSize;  <span class="hljs-comment">// ERROR: Non-constant initialization</span>
+<span class="hljs-type">vec2</span> iResolution = openfl_TextureSize;  <span class="hljs-comment">// ERROR: Non-constant initialization</span>
+</code></pre>
+<p>This happens because variables like openfl_TextureCoordv and openfl_TextureSize are populated dynamically by the GPU during the shader's execution and are not available at compile time.</p>
+<p>To fix this, move such assignments into the main() function or any local scope where runtime data is valid:</p>
+<pre class="hljs"><code class="language-glsl"><span class="hljs-comment">// VALID: Runtime initialization inside a function</span>
+<span class="hljs-type">void</span> main() {
+    <span class="hljs-type">vec2</span> uv = openfl_TextureCoordv.xy;
+    <span class="hljs-type">vec2</span> iResolution = openfl_TextureSize; 
+    <span class="hljs-type">vec2</span> fragCoord = uv * iResolution;
+
+    <span class="hljs-type">vec4</span> col = flixel_texture2D(bitmap, uv);
+
+    <span class="hljs-built_in">gl_FragColor</span> = col;
+}
+</code></pre>
+<p>This adjustment ensures the shader complies with GLSL rules and works correctly across all platforms.</p>
 
 
 			<div class="info">
-				<div class="written">Written by: Ne_Eo &amp; Frakits</div>
-				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-09-05T11:31:01.000Z">2024-09-05</span></div>
+				<div class="written">Written by: Ne_Eo &amp; Frakits &amp; Lily Ross (mcagabe19)</div>
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-11-21T21:28:09.603Z">2024-11-21</span></div>
 
 				<div class="github-edit-button">
 					<a href="https://github.com/FNF-CNE-Devs/FNF-CNE-Devs.github.io/tree/main/src/pages/wiki/modding/scripting/shaders.md">Edit this page on GitHub</a>
