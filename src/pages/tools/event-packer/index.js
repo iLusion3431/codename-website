@@ -1,11 +1,11 @@
 (function () {
-var form = document.querySelector("form");
+var form = document.getElementById("event-packer-form");
 form.addEventListener("submit", function (e) {
 	e.preventDefault();
 
-	var eventFile = document.querySelector("#event-file").files[0];
-	var eventParams = document.querySelector("#event-params").files[0];
-	var eventImage = document.querySelector("#event-image").files[0];
+	var eventFile = document.getElementById("event-file").files[0];
+	var eventParams = document.getElementById("event-params").files[0];
+	var eventImage = document.getElementById("event-image").files[0];
 	var separator = '________PACKSEP________';
 
 	var promises = [readFile(eventFile), readFile(eventParams)];
