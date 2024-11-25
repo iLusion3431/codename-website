@@ -15,11 +15,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@jvitela/mustache-wax": "^1.0.4",
+    "dompurify": "^3.2.1",
     "gray-matter": "^4.0.3",
+    "handlebars": "^4.7.8",
     "highlight.js": "^11.10.0",
     "jsdom": "^25.0.1",
-    "mustache": "^4.2.0",
     "remarkable": "^2.0.1",
     "terser": "^5.36.0"
   },

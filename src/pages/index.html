@@ -38,7 +38,7 @@
 <body class="nojs">
 	<script>document.body.classList.remove("nojs");</script>
 	<div class="header">
-		{{ header }}
+		{{{ parse header }}}
 	</div>
 	<div class="container">
 		<div class="vertical-stack">
@@ -116,15 +116,15 @@
 				{{/hasMembers-disable}} -->
 				<h2>Donators</h2>
 				<span class="donators-list">
-					{{#donators}}
-					<div class="donator{{#hasMembership}} membership{{/hasMembership}}">
+					{{#each donators}}
+					<div class="donator{{#if hasMembership}} membership{{/if}}">
 						<img src="{{profilePicture}}" alt="{{name}}" width="32" height="32">
 						<div class="donator-info">
 							<span>{{name}}</span>
 							<span>{{amount}}</span>
 						</div>
 					</div>
-					{{/donators}}
+					{{/each}}
 				</span>
 			</div>
 		</div>
@@ -161,34 +161,34 @@
 					</a>
 				</div>
 			</div>
-			{{#warnings}}
+			{{#if warnings}}
 			<div class="warning">
 				<h3>Warning</h3>
-				<p>{{.}}</p>
+				<p>{{this}}</p>
 			</div>
-			{{/warnings}}
+			{{/if}}
 			<div class="featured-mods">
-				{{#mods}}
-				<div class="featured-mod{{#tags}} {{.}}{{/tags}}" data-time="{{lastUpdated}}" data-author="{{author}}" data-source="{{source}}" data-version="{{version}}" data-tags="{{tagsRaw}}">
+				{{#each mods}}
+				<div class="featured-mod{{#each tags}} {{this}}{{/each}}" data-time="{{lastUpdated}}" data-author="{{author}}" {{#if source}}data-source="{{source}}"{{/if}} data-version="{{version}}" data-tags="{{tagsRaw}}" {{#if userTags}}data-userTags="{{userTags}}"{{/if}}>
 					<a href="{{link}}">
 						<img src="{{image}}" loading="lazy" alt="{{name}}"/>
 						<div class="card-content">
-							<h3>{{name}}</h3>
-							<p>{{description}}</p>
+							<h3>{{ safeish name }}</h3>
+							<p>{{ safeish description }}</p>
 						</div>
 						<span class="placement">cne</span>
-						{{^unreleased}}
-						<span class="last-updated" data-time="{{lastUpdated}}">{{lastUpdated | shortDate}}</span>
-						{{/unreleased}}{{#unreleased}}
+						{{#if unreleased}}
 						<span class="last-updated" data-time="{{lastUpdated}}">unreleased</span>
-						{{/unreleased}}
-						{{#premium}}
+						{{else}}
+						<span class="last-updated" data-time="{{lastUpdated}}">{{shortDate lastUpdated}}</span>
+						{{/if}}
+						{{#if premium}}
 						<img src="img/sparkle-top.gif" class="sparkle top">
 						<img src="img/sparkle-bottom.gif" class="sparkle bottom">
-						{{/premium}}
+						{{/if}}
 					</a>
 				</div>
-				{{/mods}}
+				{{/each}}
 			</div>
 
 			<script src="root/featuredMods.js"></script>
@@ -202,7 +202,7 @@
 		'floating-chat.donateButton.text': '',
 		'floating-chat.donateButton.background-color': '#b265bd',
 		'floating-chat.donateButton.text-color': '#fff',
-		'floating-chat.stylesheets': '["https://fonts.googleapis.com/css?family=Nunito:400,700,800&display=swap", "https://codename-engine.com/ko-fi.css"]',
+		'floating-chat.stylesheets': '["https://codename-engine.com/ko-fi.css"]',
 	});
 	</script>
 </body>

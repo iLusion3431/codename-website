@@ -1,13 +1,12 @@
 var jsdom = require("jsdom");
-var Mustache = require('mustache');
+var Handlebars = require('handlebars');
+const createDOMPurify = require('dompurify');
 var path = require("path");
 var hljs = require('highlight.js');
 var fs = require('fs');
 var sass = require('sass');
 var CleanCSS = require('clean-css');
 var Terser = require('terser');
-
-var wax = require('@jvitela/mustache-wax');
 
 var isFullBuild = false;
 var isWatch = false;
@@ -195,47 +194,57 @@ async function compileJs(file, dest) {
 	fs.copyFileSync(file, dest);
 }
 
-wax(Mustache);
+Handlebars.registerHelper('formatDate', function(rdate) {
+	var date = new Date(rdate);
 
-Mustache.Formatters = {
-	formatDate: function(rdate) {
-		var date = new Date(rdate);
+	var year = date.getUTCFullYear();
+	var month = ('0' + (date.getUTCMonth() + 1)).slice(-2);
+	var day = ('0' + date.getUTCDate()).slice(-2);
+	var hours = ('0' + date.getUTCHours()).slice(-2);
+	var minutes = ('0' + date.getUTCMinutes()).slice(-2);
+	var seconds = ('0' + date.getUTCSeconds()).slice(-2);
 
-		var year = date.getUTCFullYear();
-		var month = ('0' + (date.getUTCMonth() + 1)).slice(-2);
-		var day = ('0' + date.getUTCDate()).slice(-2);
-		var hours = ('0' + date.getUTCHours()).slice(-2);
-		var minutes = ('0' + date.getUTCMinutes()).slice(-2);
-		var seconds = ('0' + date.getUTCSeconds()).slice(-2);
+	return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+});
 
-		return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-	},
-	shortDate: function(rdate) {
-		var date = new Date(rdate);
+Handlebars.registerHelper('shortDate', function(rdate) {
+	var date = new Date(rdate);
 
-		var year = date.getUTCFullYear();
-		var month = ('0' + (date.getUTCMonth() + 1)).slice(-2);
-		var day = ('0' + date.getUTCDate()).slice(-2);
+	var year = date.getUTCFullYear();
+	var month = ('0' + (date.getUTCMonth() + 1)).slice(-2);
+	var day = ('0' + date.getUTCDate()).slice(-2);
 
-		return `${year}-${month}-${day}`;
-	},
-	isoDate: function(rdate) {
-		var date = new Date(rdate);
-		return date.toISOString();
-	}
-};
+	return `${year}-${month}-${day}`;
+});
+
+Handlebars.registerHelper('isoDate', function(rdate) {
+	if(!rdate) return rdate;
+	var date = new Date(rdate);
+	return date.toISOString();
+});
+
+Handlebars.registerHelper('safe', function(str) {
+	return new Handlebars.SafeString(str);
+});
+Handlebars.registerHelper('safeish', function(str) {
+	const window = new jsdom.JSDOM('').window;
+	const DOMPurify = createDOMPurify(window);
+	return new Handlebars.SafeString(DOMPurify.sanitize(str));
+});
+
+Handlebars.registerHelper('parse', function(html) {
+	return parseTemplate(html, this);
+});
 
 
 function parseTemplate(html, vars) {
 	let old;
-	do {
-		old = html;
-		html = Mustache.render(html, vars, null, {
-			escape: function(text) {
-				return text;
-			}
-		});
-	} while(html != old);
+	// Parse nested templates
+	//do {
+	//	old = html;
+	//	html = Handlebars.compile(html)(vars);
+	//} while(html != old);
+	html = Handlebars.compile(html)(vars);
 
 	return html;
 }

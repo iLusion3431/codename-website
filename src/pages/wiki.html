@@ -8,16 +8,15 @@
 	<link rel="stylesheet" href="root/wiki.css">
 
 	<meta name="title" content="{{ pageTitle }} - Codename Engine Wiki" />
-	{{#shortDesc}}
+	{{#if shortDesc}}
 	<meta name="description" content="{{ shortDesc }}" />
 	<meta property="og:description" content="{{ shortDesc }}" />
 	<meta property="twitter:description" content="{{ shortDesc }}" />
-	{{/shortDesc}}
-	{{^shortDesc}}
+	{{else}}
 	<meta name="description" content="Website dedicated to things for Codename Engine!" />
 	<meta property="og:description" content="Website dedicated to things for Codename Engine!" />
 	<meta property="twitter:description" content="Website dedicated to things for Codename Engine!" />
-	{{/shortDesc}}
+	{{/if}}
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
@@ -41,7 +40,7 @@
 </head>
 <body>
 	<div class="header" id="main">
-		{{ header }}
+		{{{ parse header }}}
 	</div>
 	<div class="container">
 		<div class="sidebar-wrapper">
@@ -56,17 +55,21 @@
 			</span>
 			<div class="sidebar">
 				<ul class="sidebar-unordered-list">
-					{{ sidebar }}
+					{{ safeish sidebar }}
 				</ul>
 			</div>
 		</div>
 
 		<div class="content">
-			{{ content }}
+			{{ safeish content }}
 
 			<div class="info">
-				{{#author}}<div class="written">Written by: {{ author }}</div>{{/author}}
-				{{#lastUpdated}}<div class="last-updated">Last updated: <span id="last-updated" data-time="{{lastUpdated | isoDate}}">{{ lastUpdated | shortDate }}</span></div>{{/lastUpdated}}
+				{{#if author}}
+				<div class="written">Written by: {{ author }}</div>
+				{{/if}}
+				{{#if lastUpdated}}
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="{{isoDate lastUpdated}}">{{ shortDate lastUpdated }}</span></div>
+				{{/if}}
 
 				<div class="github-edit-button">
 					<a href="https://github.com/FNF-CNE-Devs/FNF-CNE-Devs.github.io/tree/main/src/pages/wiki/{{url}}.force-md">Edit this page on GitHub</a>

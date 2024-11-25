@@ -1,6 +1,6 @@
 var fs = require("fs");
 var path = require("path");
-var mustache = require('mustache');
+var Handlebars = require("handlebars");
 
 var { fixHtmlRefs, parseHtml, htmlToString } = require("./utils.js");
 
@@ -141,13 +141,9 @@ function buildFile(pageDir, exportPath) {
     prioList.sort((a, b) => b.prio - a.prio);
 
     var template = fs.readFileSync("./src/sitemap.template.xml", 'utf8');
-    var sitemap = mustache.render(template, {
+    var sitemap = Handlebars.compile(template)({
         links: prioList,
         root: root
-    }, null, {
-        escape: function(text) {
-            return text;
-        }
     });
 
     fs.writeFileSync("./export/sitemap.xml", sitemap);

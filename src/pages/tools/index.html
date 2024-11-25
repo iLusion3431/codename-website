@@ -34,25 +34,24 @@
 </head>
 <body>
 	<div class="header">
-		{{ header }}
+		{{{ parse header }}}
 	</div>
 	<div class="container">
 		<div class="content">
 			<h1 style="text-align: center;">Tools</h1>
 			<div class="card-container">
-				{{#tools}}
-				<div class="card{{#external}} external{{/external}}">
-					{{^external}}
-					<a href="./{{link}}/">
-					{{/external}}
-					{{#external}}
+				{{#each tools}}
+				<div class="card{{#if external}} external{{/if}}">
+					{{#if external}}
 					<a href="{{link}}" target="_blank">
-					{{/external}}
+					{{else}}
+					<a href="./{{link}}/">
+					{{/if}}
 						<h2>{{title}}</h2>
 						<p>{{desc}}</p>
 					</a>
 				</div>
-				{{/tools}}
+				{{/each}}
 			</div>
 		</div>
 	</div>
