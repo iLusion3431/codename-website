@@ -229,6 +229,10 @@ Handlebars.registerHelper('safe', function(str) {
 Handlebars.registerHelper('safeish', function(str) {
 	const window = new jsdom.JSDOM('').window;
 	const DOMPurify = createDOMPurify(window);
+	DOMPurify.setConfig({
+		ADD_TAGS: ['code', 'pre', 'syntax']
+	});
+
 	return new Handlebars.SafeString(DOMPurify.sanitize(str));
 });
 
