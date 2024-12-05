@@ -5,10 +5,10 @@
 
 	<link href="/style.css" rel="stylesheet" />
 	<link href="/api-docs.css" rel="stylesheet" />
-	<script>var dox = {
-		rootPath: "::api.config.rootPath::",
-		currentPackage: "::api.currentPageName::",
-		platforms: [
+	<script>var dox={
+		rootPath:"::api.config.rootPath::",
+		currentPackage:"::api.currentPageName::",
+		platforms:[
 			::foreach pf api.config.platforms::
 				"::pf::"
 				::if !repeat.pf.last::,::end::
