@@ -15,6 +15,7 @@ function buildFile(pageDir, exportPath) {
         "tools/", // hiding it until its done
         "mods/",
         "featured-mods/",
+        "api-docs/",
         "api-docs/404.html"
     ]
 
