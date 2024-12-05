@@ -66,7 +66,7 @@ if(isFirstRun) {
 }
 
 if(isFirstRun && isFullBuild) {
-	sitemap.buildFile(pageDir, exportPath); // builds into /sitemap.xml
 }
+sitemap.buildFile(pageDir, exportPath); // builds into /sitemap.xml
 
 console.log("Build completed.");

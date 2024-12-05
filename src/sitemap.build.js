@@ -149,6 +149,15 @@ function buildFile(pageDir, exportPath) {
 
     fs.writeFileSync("./export/sitemap.xml", sitemap);
 
+    var indexNow = {
+        "host": "codename-engine.com",
+        "key": "6662987d066b4c09b12a50964d0f47bf",
+        "keyLocation": "https://codename-engine.com/6662987d066b4c09b12a50964d0f47bf.txt",
+        "urlList": prioList.map(link => link.link)
+    }
+
+    fs.writeFileSync("./IndexNow.json", JSON.stringify(indexNow, null, "\t"));
+
     console.log("Made sitemap.xml");
 }
 
