@@ -56,7 +56,7 @@ Our organization consists of having multiple owners cuz why separate people into
 
 ## <h2 id="something-not-working-bug" sidebar="I found a bug">Something is not working or I found a bug!</h2>
 
-If you found a bug, please report it on the [GitHub repository](https://github.com/FNF-CNE-Devs/CodenameEngine/issues) or on [Discord](https://discord.gg/WTzm35kekB).
+If you found a bug, please report it on the [GitHub repository](https://github.com/CodenameCrew/CodenameEngine/issues) or on [Discord](https://discord.gg/WTzm35kekB).
 
 ## <h2 id="suggest-feature-change" sidebar="Feature Suggestion">I want to suggest a feature or change something!</h2>
 

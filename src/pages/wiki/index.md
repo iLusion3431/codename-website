@@ -52,5 +52,5 @@ Credits:
 
 If you wanna see who made a specific page check below at the bottom of the page above the comments.
 
-**PSA**. if you wish to contribute to this website, whether it be a page modification or adding a brand new page, visit the <a href="https://github.com/FNF-CNE-Devs/codename-website">GitHub Repository</a> and contribute via pull requests. (contributions are heavily encouraged, as we're not able to cover all possible cases.) You can also click the button below to edit the page on GitHub.
+**PSA**. if you wish to contribute to this website, whether it be a page modification or adding a brand new page, visit the <a href="https://github.com/CodenameCrew/codename-website">GitHub Repository</a> and contribute via pull requests. (contributions are heavily encouraged, as we're not able to cover all possible cases.) You can also click the button below to edit the page on GitHub.
 

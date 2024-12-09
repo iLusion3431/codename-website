@@ -86,7 +86,7 @@ class CodenameApi extends Api {
 	override function getSourceLink(type:TypeInfos):Null<String> {
 		var module = type.module != null ? type.module : type.path;
 		var ending = ".hx";
-		var url = "https://github.com/FNF-CNE-Devs/CodenameEngine/blob/main/source/";
+		var url = "https://github.com/CodenameCrew/CodenameEngine/blob/main/source/";
 
 		return haxe.io.Path.join([url, module.replace(".", "/") + ending]);
 	}
@@ -94,7 +94,7 @@ class CodenameApi extends Api {
 	public function getSourceLinkWithLine(type:TypeInfos, line:Int):Null<String> {
 		var module = type.module != null ? type.module : type.path;
 		var ending = ".hx";
-		var url = "https://github.com/FNF-CNE-Devs/CodenameEngine/blob/main/source/";
+		var url = "https://github.com/CodenameCrew/CodenameEngine/blob/main/source/";
 
 		return haxe.io.Path.join([url, module.replace(".", "/") + ending + "#L" + line]);
 	}
