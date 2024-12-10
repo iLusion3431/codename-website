@@ -87,7 +87,7 @@ We'll quickly go through the parameters here, for <syntax lang="xml">&lt;charact
 - ``textSound`` determines what sound the character should play when it speaks. *(takes from the ``./sounds`` folder)*
 
 Other options include:
-- ``skewx`` and ``skewy`` skewes the sprite.
+- ``skewx`` and ``skewy`` skews the sprite.
 - ``antialiasing`` determines whether or not the sprite has antialiasing. *(true by default)*
 - ``width`` and ``height`` determine the width and height of the sprite's hitbox. *(does not affect the sprite itself)*
 - ``scale``, ``scalex`` and ``scaley`` are size multipliers for the sprite's width and height. *(setting it to 2 means double the size)*

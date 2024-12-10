@@ -49,13 +49,13 @@ function buildHtml(_pageDir, _exportPath) {
 			continue;
 		}
 		var path = "./src/pages/tools/" + tool.link + "/index.html";
-		var outpath = exportPath + tool.link + "/index.html";
+		var outPath = exportPath + tool.link + "/index.html";
 		if(tool.link == "index") {
 			path = "./src/pages/tools/index.html";
-			outpath = exportPath + "index.html";
+			outPath = exportPath + "index.html";
 		}
 
-		var filePath = outpath.split("/");
+		var filePath = outPath.split("/");
 		filePath.pop();
 		filePath = filePath.join("/");
 
@@ -66,7 +66,7 @@ function buildHtml(_pageDir, _exportPath) {
 		if(fs.existsSync(path.replace(/\.html$/, ".js"))) {
 			var scriptPath = path.replace(/\.html$/, ".js");
 
-			compileJs(scriptPath, outpath.replace(/\.html$/, ".js"));
+			compileJs(scriptPath, outPath.replace(/\.html$/, ".js"));
 		}
 
 		var templatePage = fs.readFileSync(path, 'utf8');
@@ -83,7 +83,7 @@ function buildHtml(_pageDir, _exportPath) {
 
 		//console.log(data);
 		fs.writeFileSync(
-			outpath,
+			outPath,
 			htmlToString(dom),
 			'utf8'
 		);

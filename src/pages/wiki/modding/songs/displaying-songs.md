@@ -1,5 +1,5 @@
 ---
-desc: How to get songs showing ingame
+desc: How to get songs showing in game
 title: Displaying Songs
 ---
 # Displaying Songs

@@ -26,7 +26,7 @@ Here is documentation on functions of the engine (gameplay and modding), and how
             - <a href="./modding/scripting/playstate-scripts/gameplay-scripts.md">Gameplay Scripts</a>
             - <a href="./modding/scripting/playstate-scripts/character-stage-scripts.md">Character/Stage Scripts</a>
             - <a href="./modding/scripting/playstate-scripts/cutscenes-dialogue-scripts.md">Cutscenes/Dialogue Scripts</a>
-            - <a href="./modding/scripting/playstate-scripts/pause-gamover-scripts.md">Pause/Game Over Scripts</a>
+            - <a href="./modding/scripting/playstate-scripts/pause-gameover-scripts.md">Pause/Game Over Scripts</a>
             - <a href="./modding/scripting/playstate-scripts/events-notetypes-scripts.md">Events/Notetype Scripts</a>
         - <a href="./modding/scripting/state-substate-scripts.md">State/Substate Scripts</a>
         - <a href="./modding/scripting/global-scripts.md">Global Scripts</a>

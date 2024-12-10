@@ -70,7 +70,7 @@ function generateSidebar(list, basePath = '', selected = null, idx = null, nameM
 }
 
 function getGiscusID(pageDir) {
-	// dont do index.html to /, causes issues
+	// don't do index.html to /, causes issues
 	//if(pageDir.endsWith("index.html")) {
 	//	return pageDir.replace("index.html", "");
 	//}

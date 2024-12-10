@@ -201,13 +201,13 @@ The types that you can use are:
 
 - `Bool`: A checkmark that can be toggled on and off.
 - `Int(min, max, step)`: A box that can only contain whole numbers.
-- `Float(min, max, step, precision)`: A box that can contain decimal numbers with a desired presicion.
+- `Float(min, max, step, precision)`: A box that can contain decimal numbers with a desired precision.
 - `String`: A textbox the user can type anything into.
 - `Strumline`: Let's the user pick a strumline that is passed into the script.
 - `ColorWheel`: Create's a color wheel that will return a color into the script.
 - `DropDown([choices ...])`: Creates a dropdown with the values defined in the array.
 
-And the `defaultValue` is self explainitory, but it's what is automatically set for the value of the parameter.
+And the `defaultValue` is self explanatory, but it's what is automatically set for the value of the parameter.
 
 Next let's move onto the script itself in `.data/events/Play Sound.hx`.
 

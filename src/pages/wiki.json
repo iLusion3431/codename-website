@@ -24,7 +24,7 @@
                 ["events-notetypes-scripts", "Events/Notetype Scripts"],
                 ["cutscenes-dialogue-scripts", "Cutscenes/Dialogue Scripts"],
                 ["character-stage-scripts", "Character/Stage Scripts"],
-                ["pause-gamover-scripts", "Pause/Game Over Scripts"]
+                ["pause-gameover-scripts", "Pause/Game Over Scripts"]
             ]],
             ["state-substate-scripts", "State/Substate Scripts"],
             ["global-scripts", "Global Scripts"],

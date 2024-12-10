@@ -24,7 +24,7 @@ function toggleInherited(el) {
 }
 
 function toggleCollapsed(el) {
-    var toggle = el.closest(".expando");
+    var toggle = el.closest(".expandable");
     toggleCollapsedElement(toggle);
 
     //updateTreeState();
@@ -48,7 +48,7 @@ function toggleCollapsedElement(toggle) {
 
 /*function updateTreeState() {
 	var states = [];
-	document.querySelectorAll("#nav .expando").forEach(function (el) {
+	document.querySelectorAll("#nav .expandable").forEach(function (el) {
 		states.push(el.classList.contains("expanded") ? 1 : 0);
 	});
 	var treeState = JSON.stringify(states);
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 	//var treeState = readCookie("treeState");
 
-	document.querySelectorAll("#nav .expando").forEach(function (el) {
+	document.querySelectorAll("#nav .expandable").forEach(function (el) {
 		var i = el.querySelector("i");
 		i.classList.add("fa-folder");
 		i.classList.remove("fa-folder-open");
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 			var ee = el.parentElement;
 			while (ee != null) {
-				if(ee.classList.contains("expando")) {
+				if(ee.classList.contains("expandable")) {
 					toggleCollapsedElement(ee);
 				}
 				ee = ee.parentElement;
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 	/*if (treeState != null) {
 		var states = JSON.parse(treeState);
-		document.querySelectorAll("#nav .expando").forEach(function (el) {
+		document.querySelectorAll("#nav .expandable").forEach(function (el) {
 			if (states[i]) {
 				el.classList.add("expanded");
 				var i = el.querySelector("i");
@@ -236,7 +236,7 @@ function searchQuery(query) {
 	document.querySelector("#nav ul:first-child").style.display = "none";
 	document.querySelectorAll("#nav li").forEach(function (el) {
 		var element = el;
-		if (!element.classList.contains("expando")) {
+		if (!element.classList.contains("expandable")) {
 			var content = element.getAttribute("data-pack");
 			var score = searchMatch(content, queryParts);
 			if (score >= 0) {

@@ -142,7 +142,7 @@ function buildHtml(_pageDir, _exportPath) {
     donators.sort((a, b) => b.totalAmount - a.totalAmount);
 
     var path = "./src/pages/index.html";
-    var outpath = exportPath + "index.html";
+    var outPath = exportPath + "index.html";
     var templatePage = fs.readFileSync(path, 'utf8');
     var vars = {
         pageTitle: "Home",
@@ -161,7 +161,7 @@ function buildHtml(_pageDir, _exportPath) {
 
     //console.log(data);
     fs.writeFileSync(
-        outpath,
+        outPath,
         htmlToString(dom),
         'utf8'
     );

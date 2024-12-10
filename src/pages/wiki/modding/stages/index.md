@@ -47,7 +47,7 @@ The options are:
 - ``scroll``, ``scrollx`` and ``scrolly`` determine the scrollFactor of the sprite *(how much it moves with the camera)*
 
 Other options include:
-- ``skewx`` and ``skewy`` skewes the sprite.
+- ``skewx`` and ``skewy`` skews the sprite.
 - ``antialiasing`` determines whether or not the sprite has antialiasing. *(true by default)*
 - ``width`` and ``height`` determine the width and height of the sprite's hitbox. *(does not affect the sprite itself)*
 - ``scale``, ``scalex`` and ``scaley`` are size multipliers for the sprite's width and height. *(setting it to 2 means double the size)*
@@ -61,7 +61,7 @@ Other options include:
 
 You can also define animations by giving it a child node called <syntax lang="xml">&lt;anim&gt;</syntax>. A sprite node with an animation node looks something like this:
 ```xml
-<sprite name="dancer1" sprite="limoDancer" type="onbeat">
+<sprite name="dancer1" sprite="limoDancer" type="beat">
     <anim name="danceLeft" anim="bg dancer sketch PINK" loop="false"/>
     <anim name="danceRight" anim="bg dancer sketch PINK" loop="false"/>
 </sprite>

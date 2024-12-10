@@ -9,7 +9,7 @@ title: FAQ
 ## <h2 id="why-should-i-use-the-engine">Why should I use the engine?</h2>
 
 Here are some of the best reasons you should use Codename Engine:
-- **Softcoding:** this makes development of mods extremely fast and alot less annoying as there is no time inbetween trying revisions of code.
+- **Softcoding:** this makes development of mods extremely fast and a lot less annoying as there is no time between trying revisions of code.
 - **Editors:** powerful editors that make creating charts and characters easier, controls and keybindings are intuitive and allow you to undo your mistakes!
 - **Modern:** get all the latest features and capabilities like multiple strumlines, multiple vocals, ndlls, and a extremely capable scripting language.
 - **Fast:** this engine is very optimized and is takes very little ram compared to other engines, higher fps!!!

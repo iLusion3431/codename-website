@@ -1,6 +1,6 @@
 var fs = require('fs');
 var hljs = require('highlight.js');
-var haxeformat = require('./haxeformat.js');
+var haxeFormat = require('./syntax/haxeFormat.js');
 var wiki = require('./pages/wiki.build.js');
 var tools = require('./pages/tools/tools.build.js');
 var apiDocs = require('./pages/api-docs/apiDocs.build.js');
@@ -23,7 +23,7 @@ process.argv = process.argv.filter(arg => arg != '--release');
 
 setGlobals({isFullBuild, isWatch, isFirstRun, isRelease});
 
-hljs.registerLanguage('haxe', haxeformat);
+hljs.registerLanguage('haxe', haxeFormat);
 
 var pageDir = process.argv[2] || "./";
 var exportPath = "./export/" + (process.argv[3] || '');

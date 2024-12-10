@@ -194,8 +194,8 @@ async function compileJs(file, dest) {
 	fs.copyFileSync(file, dest);
 }
 
-Handlebars.registerHelper('formatDate', function(rdate) {
-	var date = new Date(rdate);
+Handlebars.registerHelper('formatDate', function(date) {
+	var date = new Date(date);
 
 	var year = date.getUTCFullYear();
 	var month = ('0' + (date.getUTCMonth() + 1)).slice(-2);
@@ -207,8 +207,8 @@ Handlebars.registerHelper('formatDate', function(rdate) {
 	return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 });
 
-Handlebars.registerHelper('shortDate', function(rdate) {
-	var date = new Date(rdate);
+Handlebars.registerHelper('shortDate', function(date) {
+	var date = new Date(date);
 
 	var year = date.getUTCFullYear();
 	var month = ('0' + (date.getUTCMonth() + 1)).slice(-2);
@@ -217,9 +217,9 @@ Handlebars.registerHelper('shortDate', function(rdate) {
 	return `${year}-${month}-${day}`;
 });
 
-Handlebars.registerHelper('isoDate', function(rdate) {
-	if(!rdate) return rdate;
-	var date = new Date(rdate);
+Handlebars.registerHelper('isoDate', function(date) {
+	if(!date) return date;
+	var date = new Date(date);
 	return date.toISOString();
 });
 

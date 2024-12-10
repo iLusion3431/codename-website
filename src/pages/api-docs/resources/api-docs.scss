@@ -14,11 +14,11 @@
   padding: 0.2em 0.4em;
 }
 
-li.expando>ul {
+li.expandable>ul {
   display: none;
 }
 
-li.expando.expanded>ul {
+li.expandable.expanded>ul {
   display: block;
 }
 

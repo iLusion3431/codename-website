@@ -28,7 +28,7 @@ class Main {
 			Sys.setCwd(cwd + "/api");
 			Sys.command("python3 filter.py");
 			Sys.setCwd(cwd);
-			sys.FileSystem.rename("api/doc.xml", "api/doc-old.xml"); // so it doesnt convert it again
+			sys.FileSystem.rename("api/doc.xml", "api/doc-old.xml"); // so it doesn't convert it again
 		}
 
 		// otherwise, check if cached doc-filter.xml exists
