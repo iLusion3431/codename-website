@@ -1,133 +1,149 @@
 ::set __comment__ = "TODO: replace this with a automated system that reads from the source code directly"::
 
+::set __comment__ = "This is added to the embeds, that show up in discord and other stuff"::
 ::set package_description = ""::
-::if api.currentPageName == "funkin"::::set package_description = "This is the api documentation for the Codename Engine"::
-::elseif api.currentPageName == "funkin.backend"::::set package_description = "The backend of Codename Engine"::
-::elseif api.currentPageName == "funkin.backend.assets"::::set package_description = "The code of Codename Engine that handles assets"::
-::elseif api.currentPageName == "funkin.backend.chart"::::set package_description = "The code of Codename Engine that handles chart parsing and more"::
-::elseif api.currentPageName == "funkin.backend.scripting"::::set package_description = "The entire code of the scripting system"::
-::elseif api.currentPageName == "funkin.backend.scripting.events"::::set package_description = "All of the events that are used in the scripting system"::
-::elseif api.currentPageName == "funkin.backend.scripting.events.dialogue"::::set package_description = "All of the dialogue events that are used in the scripting system"::
-::elseif api.currentPageName == "funkin.backend.shaders"::::set package_description = "The code of Codename Engine that handles shaders"::
-::elseif api.currentPageName == "funkin.backend.system"::::set package_description = "The part that interfaces with the system, such as the window and input"::
-::elseif api.currentPageName == "funkin.backend.system.framerate"::::set package_description = "The code that contains the code for the framerate counter"::
-::elseif api.currentPageName == "funkin.backend.system.github"::::set package_description = "The code that contains the code for the github api"::
-::elseif api.currentPageName == "funkin.backend.system.interfaces"::::set package_description = "The various interfaces that Codename uses"::
-::elseif api.currentPageName == "funkin.backend.system.macros"::::set package_description = "The macros that are used in the code"::
-::elseif api.currentPageName == "funkin.backend.system.modules"::::set package_description = "The modules that are used in the code"::
-::elseif api.currentPageName == "funkin.backend.system.net"::::set package_description = "The code that contains the code for the networking"::
-::elseif api.currentPageName == "funkin.backend.utils"::::set package_description = "The utils of Codename Engine"::
+::set pageName = api.currentPageName::
+::if pageName == "funkin"::::set package_description = "These pages contains the entire documentation for the Codename Engine."::
+::elseif pageName == "funkin.backend"::::set package_description = "The backend of Codename Engine"::
+::elseif pageName == "funkin.backend.assets"::::set package_description = "The code of Codename Engine that handles assets from \"assets/\" and \"mods/[modName]\" (folder or zip)"::
+::elseif pageName == "funkin.backend.chart"::::set package_description = "The code of Codename Engine that handles chart parsing and more"::
+::elseif pageName == "funkin.backend.scripting"::::set package_description = "Handles song scripts, custom states and substates"::
+::elseif pageName == "funkin.backend.scripting.events"::::set package_description = "Here's a list of all of the events that Codename Engine uses, and shows the fields that exists on them"::
+::elseif pageName == "funkin.backend.scripting.events.dialogue"::::set package_description = "All of the dialogue events that are used in the scripting system"::
+::elseif pageName == "funkin.backend.shaders"::::set package_description = "The part that handles the CustomShader class along side a few built in ones"::
+::elseif pageName == "funkin.backend.system"::::set package_description = "The part that interfaces with the system, such as the window and input"::
+::elseif pageName == "funkin.backend.system.framerate"::::set package_description = "The code that contains the code for the framerate and memory counter"::
+::elseif pageName == "funkin.backend.system.github"::::set package_description = "Github api used for contributors icons and Codename credits"::
+::elseif pageName == "funkin.backend.system.interfaces"::::set package_description = "The various interfaces that Codename uses"::
+::elseif pageName == "funkin.backend.system.macros"::::set package_description = "Provides functionality such as showing the current commit and commit number and more"::
+::elseif pageName == "funkin.backend.system.modules"::::set package_description = "Modules such as the Crash Handler and Cache System"::
+::elseif pageName == "funkin.backend.system.net"::::set package_description = "The code that contains the code for the networking"::
+::elseif pageName == "funkin.backend.utils"::::set package_description = "Utils for various things such as processing xml, discord rpc, zips and more"::
+::elseif pageName == "funkin.backend.utils.native"::::set package_description = "Contains operating system specific functions"::
 
-::elseif api.currentPageName == "funkin.editors"::::set package_description = "The editors of Codename Engine"::
-::elseif api.currentPageName == "funkin.editors.charter"::::set package_description = "The api docs for the editor for Charts"::
-::elseif api.currentPageName == "funkin.editors.character"::::set package_description = "The api docs for the editor for Characters"::
-::elseif api.currentPageName == "funkin.editors.stage"::::set package_description = "The api docs for the editor for Stages"::
-::elseif api.currentPageName == "funkin.editors.extra"::::set package_description = "Extra ui elements"::
-::elseif api.currentPageName == "funkin.editors.ui"::::set package_description = "All of the ui elements"::
+::elseif pageName == "funkin.editors"::::set package_description = "The editors of Codename Engine"::
+::elseif pageName == "funkin.editors.charter"::::set package_description = "The api docs for the editor for Charts"::
+::elseif pageName == "funkin.editors.character"::::set package_description = "The api docs for the editor for Characters"::
+::elseif pageName == "funkin.editors.stage"::::set package_description = "The api docs for the editor for Stages"::
+::elseif pageName == "funkin.editors.extra"::::set package_description = "Extra ui elements"::
+::elseif pageName == "funkin.editors.ui"::::set package_description = "The ui elements that are used all around the editors"::
 
-::elseif api.currentPageName == "funkin.game"::::set package_description = "The game module"::
-::elseif api.currentPageName == "funkin.game.cutscenes"::::set package_description = "The cutscenes module"::
-::elseif api.currentPageName == "funkin.game.cutscenes.dialogue"::::set package_description = "The dialogue module"::
+::elseif pageName == "funkin.game"::::set package_description = "Includes gameplay aspects like PlayState, Character, Stage and more"::
+::elseif pageName == "funkin.game.cutscenes"::::set package_description = "Handles the cutscenes for when the song starts or ends and allows for videos, dialogues, and scripted cutscenes"::
+::elseif pageName == "funkin.game.cutscenes.dialogue"::::set package_description = "This deals with the dialogue cutscenes; the box, and character sprites"::
 
-::elseif api.currentPageName == "funkin.menus"::::set package_description = "The menus of Codename Engine"::
-::elseif api.currentPageName == "funkin.menus.credits"::::set package_description = "The menus for credits"::
-::elseif api.currentPageName == "funkin.menus.ui"::::set package_description = "The ui elements for menus"::
+::elseif pageName == "funkin.menus"::::set package_description = "The code for all of the engines' states and substates"::
+::elseif pageName == "funkin.menus.credits"::::set package_description = "Credits state showing all relevant parties fnf dev, and cne devs showing contributions"::
+::elseif pageName == "funkin.menus.ui"::::set package_description = "Contains the code for the alphabet used in most menus"::
 
-::elseif api.currentPageName == "funkin.options"::::set package_description = "The options of Codename Engine"::
-::elseif api.currentPageName == "funkin.options.categories"::::set package_description = "The categories of options"::
-::elseif api.currentPageName == "funkin.options.keybinds"::::set package_description = "The code for the keybinds screen"::
-::elseif api.currentPageName == "funkin.options.type"::::set package_description = "The different option types"::
+::elseif pageName == "funkin.options"::::set package_description = "The tools to create options categories/separate options"::
+::elseif pageName == "funkin.options.categories"::::set package_description = "Contains the already existing options categories, keybinds appearance etc"::
+::elseif pageName == "funkin.options.keybinds"::::set package_description = "The code that lets you change keybinds in-game and in-menus"::
+::elseif pageName == "funkin.options.type"::::set package_description = "Code to determine the options type (Number, Checkbox, Array)"::
 
-::elseif api.currentPageName == "funkin.savedata"::::set package_description = "The save data of Codename Engine"::
+::elseif pageName == "funkin.savedata"::::set package_description = "This code handles all of the Highscore stuff for the engine"::
 ::end::
 
+::set __comment__ = "This shows up in the actual page and can contain links and images"::
 <macro name="getPackageDescription()">
-    ::if api.currentPageName == "funkin"::
+    ::set pageName = api.currentPageName::
+
+    ::if pageName == "funkin"::
         <h2>Welcome to the Codename Engine API documentation!</h2>
         <p>These pages contains the entire documentation for the Codename Engine.</p>
-        <p>You can find the wiki for the engine itself <a href="/wiki/">here</a>.</p>
+        <p>You can find the Wiki for the engine itself <a href="/wiki/">here</a>.</p>
+        <p>You can find the Discord server for the engine <a href="https://discord.gg/WTzm35kekB">here</a>.</p>
+        <p>You can instantly go to a github page for the api by clicking the button on the top right that says <code>View source</code>.</p>
 
 
-    ::elseif api.currentPageName == "funkin.backend"::
+    ::elseif pageName == "funkin.backend"::
         <p>This is the backend of Codename Engine</p>
-        <p>It contains the code that runs on the backend</p>
-    ::elseif api.currentPageName == "funkin.backend.assets"::
-        <p>The code of Codename Engine that handles assets</p>
-    ::elseif api.currentPageName == "funkin.backend.chart"::
+        <p>It contains all the backend systems from assets to scripting</p>
+    ::elseif pageName == "funkin.backend.assets"::
+        <p>The code of Codename Engine that handles assets from <code>assets/</code> and <code>mods/[modName]</code> (folder or zip)</p>
+    ::elseif pageName == "funkin.backend.chart"::
         <p>The code of Codename Engine that handles chart parsing and more</p>
-    ::elseif api.currentPageName == "funkin.backend.scripting"::
+    ::elseif pageName == "funkin.backend.scripting"::
         <p>The entire code of the scripting system</p>
-    ::elseif api.currentPageName == "funkin.backend.scripting.events"::
-        <p>All of the events that are used in the scripting system</p>
-    ::elseif api.currentPageName == "funkin.backend.scripting.events.dialogue"::
+        <p>Handles song scripts, custom states and substates</p>
+    ::elseif pageName == "funkin.backend.scripting.events"::
+        <p>Here's a list of all of the events that Codename Engine uses, and shows the fields that exists on them.</p>
+    ::elseif pageName == "funkin.backend.scripting.events.dialogue"::
         <p>All of the dialogue events that are used in the scripting system</p>
-    ::elseif api.currentPageName == "funkin.backend.shaders"::
-        <p>The code of Codename Engine that handles shaders</p>
-    ::elseif api.currentPageName == "funkin.backend.system"::
+    ::elseif pageName == "funkin.backend.shaders"::
+        <p>The part that handles the CustomShader class along side a few built in ones</p>
+    ::elseif pageName == "funkin.backend.system"::
         <p>The part that interfaces with the system, such as the window and input</p>
-    ::elseif api.currentPageName == "funkin.backend.system.framerate"::
-        <p>The code that contains the code for the framerate counter</p>
-    ::elseif api.currentPageName == "funkin.backend.system.github"::
-        <p>The code that contains the code for the github api</p>
-    ::elseif api.currentPageName == "funkin.backend.system.interfaces"::
-        <p>The various interfaces that Codename uses</p>
-    ::elseif api.currentPageName == "funkin.backend.system.macros"::
-        <p>The macros that are used in the code</p>
-    ::elseif api.currentPageName == "funkin.backend.system.modules"::
+    ::elseif pageName == "funkin.backend.system.framerate"::
+        <p>The code that contains the code for the framerate and memory counter</p>
+    ::elseif pageName == "funkin.backend.system.github"::
+        <p>The code that contains the code for the github api used for contributors icons and Codename credits</p>
+    ::elseif pageName == "funkin.backend.system.interfaces"::
+        <p>The various interfaces that Codename Engine uses</p>
+    ::elseif pageName == "funkin.backend.system.macros"::
+        <p>The macros that are used to enhance the code and provide easier functionality such as showing the current commit and commit number and more</p>
+    ::elseif pageName == "funkin.backend.system.modules"::
         <p>The modules that are used in the code</p>
         <p>Such as the Crash Handler and Cache System</p>
-    ::elseif api.currentPageName == "funkin.backend.system.net"::
+    ::elseif pageName == "funkin.backend.system.net"::
         <p>The code that contains the code for the networking</p>
-    ::elseif api.currentPageName == "funkin.backend.utils"::
+        <p>Remind us some day to add more to this, such as easier systems to allow for multiplayer</p>
+    ::elseif pageName == "funkin.backend.utils"::
         <p>The utils of Codename Engine</p>
-    ::elseif api.currentPageName == "funkin.backend.utils.native"::
+        <p>These utils do various things such as processing xml, discord rpc, zip reading and more...</p>
+    ::elseif pageName == "funkin.backend.utils.native"::
         <p>The native utils of Codename Engine</p>
-        <p>This part contains operating system specific code</p>
+        <p>This part contains operating system specific code for uses such as closing the engine, read or write bytes process ID and more</p>
 
 
-    ::elseif api.currentPageName == "funkin.editors"::
+    ::elseif pageName == "funkin.editors"::
         <p>The editors of Codename Engine</p>
         <p>The current editors we have are Charter and Character</p>
-    ::elseif api.currentPageName == "funkin.editors.charter"::
+    ::elseif pageName == "funkin.editors.charter"::
         <p>The api docs for the editor for Charts</p>
-    ::elseif api.currentPageName == "funkin.editors.character"::
+    ::elseif pageName == "funkin.editors.character"::
         <p>The api docs for the editor for Characters</p>
-    ::elseif api.currentPageName == "funkin.editors.stage"::
+    ::elseif pageName == "funkin.editors.stage"::
         <p>The api docs for the editor for Stages</p>
-    ::elseif api.currentPageName == "funkin.editors.extra"::
-        <p>Extra ui elements</p>
-    ::elseif api.currentPageName == "funkin.editors.ui"::
-        <p>All of the ui elements</p>
+    ::elseif pageName == "funkin.editors.extra"::
+        <p>Extra ui elements for use in the editors</p>
+    ::elseif pageName == "funkin.editors.ui"::
+        <p>All of the ui elements that are used in the editors</p>
 
 
-    ::elseif api.currentPageName == "funkin.game"::
+    ::elseif pageName == "funkin.game"::
         <p>The gameplay part of Codename Engine</p>
-        <p>This is the part that makes you be able to play charts!</p>
-    ::elseif api.currentPageName == "funkin.game.cutscenes"::
-        <p>The cutscenes module</p>
-    ::elseif api.currentPageName == "funkin.game.cutscenes.dialogue"::
-        <p>The dialogue module</p>
+        <p>This includes PlayState, Character, Stage and more</p>
+    ::elseif pageName == "funkin.game.cutscenes"::
+        <p>Handles the cutscenes before the song starts/or when the song ends such as, videos, dialogues, and scripted cutscenes</p>
+        <p>Read more at <a href="/wiki/modding/cutscenes-dialogues.html">Cutscenes/Dialogues</a></p>
+    ::elseif pageName == "funkin.game.cutscenes.dialogue"::
+        <p>This part deals with the dialogue cutscenes both the box and character sprites, and contains code to make it work</p>
 
 
-    ::elseif api.currentPageName == "funkin.menus"::
-        <p>The menus of Codename Engine</p>
-    ::elseif api.currentPageName == "funkin.menus.credits"::
-        <p>The menus for credits</p>
-    ::elseif api.currentPageName == "funkin.menus.ui"::
-        <p>The ui elements for menus</p>
+    ::elseif pageName == "funkin.menus"::
+        <p>This has the code for all of the engines' states and substates</p>
+        <small>(Excluding some small ones such as <a href="/api-docs/funkin/options/keybinds/KeybindsOptions.html">KeybindsOptions</a>, <a href="/api-docs/funkin/options/OptionsMenu.html">OptionsMenu</a> and <a href="/api-docs/funkin/game/PlayState.html">PlayState</a>)</small>
+    ::elseif pageName == "funkin.menus.credits"::
+        <p>Credits state showing all relevant parties fnf dev, and cne devs showing contributions</p>
+    ::elseif pageName == "funkin.menus.ui"::
+        <p>Contains the code for the alphabet used in most menus</p>
 
 
-    ::elseif api.currentPageName == "funkin.options"::
-        <p>The options of Codename Engine</p>
-    ::elseif api.currentPageName == "funkin.options.categories"::
-        <p>The categories of options</p>
-    ::elseif api.currentPageName == "funkin.options.keybinds"::
-        <p>The code for the keybinds screen</p>
-    ::elseif api.currentPageName == "funkin.options.type"::
-        <p>The different option types</p>
+    ::elseif pageName == "funkin.options"::
+        <p>Contains the tools to create options categories/separate options</p>
+        <p>Using the options.xml file, read more on <a href="/wiki/modding/scripting/custom-options.html">Custom Options</a></p>
+    ::elseif pageName == "funkin.options.categories"::
+        <p>Contains the already existing options categories, keybinds appearance etc</p>
+    ::elseif pageName == "funkin.options.keybinds"::
+        <p>The code that lets you change keybinds in-game and in-menus</p>
+    ::elseif pageName == "funkin.options.type"::
+        <p>Code to determine the options type (Number, Checkbox, Array)</p>
 
-    ::elseif api.currentPageName == "funkin.savedata"::
-        <p>The save data of Codename Engine</p>
+    ::elseif pageName == "funkin.savedata"::
+        <p>This code handles all of the Highscore stuff for the engine</p>
+        <p>The actual save data fields are in <a href="/api-docs/funkin/options/Options.html">Options</a></p>
+        <p>For custom save data use <code class="inline-syntax inline-code"><span class="hljs-title class_">FlxG</span>.<span class="hljs-property">save</span>.<span class="hljs-property">data</span></code></p>
     ::end::
 </macro>
 
