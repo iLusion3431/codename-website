@@ -36,6 +36,7 @@ if (!fs.existsSync(exportPath)) {
 }
 
 console.log("Building pages...");
+apiDocs.buildHtml(pageDir, exportPath); // builds into /api-docs
 
 copyDir("./src/img/", exportPath + "/img/");
 
@@ -54,7 +55,7 @@ copyDir("./src/toplevel/", exportPath + "/");
 indexPage.buildHtml(pageDir, exportPath); // builds into /
 tools.buildHtml(pageDir, exportPath); // builds into /tools
 wiki.buildHtml(pageDir, exportPath); // builds into /wiki
-if(isFirstRun) {
+/*if(isFirstRun) {
 	if(isFullBuild) {
 		apiDocs.buildHtml(pageDir, exportPath); // builds into /api-docs
 	} else {
@@ -63,7 +64,7 @@ if(isFirstRun) {
 	}
 } else {
 	apiDocs.alwaysRun(exportPath + "/api-docs/");
-}
+}*/
 
 if(isFirstRun && isFullBuild) {
 }
