@@ -156,6 +156,18 @@
                     "type": "donation"
                 }
             ]
+        },
+        {
+            "name": "Fiffi",
+            "profilePicture": "https://ko-fi.com/img/anon7.png?v=1",
+            "hasMembership": false,
+            "donations": [
+                {
+                    "amount": 10,
+                    "currency": "$",
+                    "type": "donation"
+                }
+            ]
         }
     ]
 }
