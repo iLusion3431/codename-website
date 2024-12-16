@@ -20,18 +20,15 @@
 	<title>::api.currentPageName::::if api.config.pageTitle !=null:: - ::api.config.pageTitle::::end::</title>
 
 	<meta name="title" content="::api.currentPageName::::if api.config.pageTitle !=null:: - ::api.config.pageTitle::::end::" />
-	<meta name="description" content="Website dedicated to things for Codename Engine!" />
 
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://codename-engine.com/" />
 	<meta property="og:title" content="::api.currentPageName::::if api.config.pageTitle !=null:: - ::api.config.pageTitle::::end::" />
-	<meta property="og:description" content="Website dedicated to things for Codename Engine!" />
 	<meta property="og:image" content="https://codename-engine.com/img/banner.png" />
 
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content="https://codename-engine.com/" />
 	<meta property="twitter:title" content="::api.currentPageName::::if api.config.pageTitle !=null:: - ::api.config.pageTitle::::end::" />
-	<meta property="twitter:description" content="Website dedicated to things for Codename Engine!" />
 	<meta property="twitter:image" content="https://codename-engine.com/img/banner.png" />
 
 	<meta name="theme-color" content="#7f33b8" />
@@ -42,8 +39,7 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 	<link rel="manifest" href="/site.webmanifest" />
 
-	::set description = api.getShortDesc(type)::
-	::set description = description.substr(3, description.length-7)::
-	<meta name="description" ::cond type.doc!=null && description.length>0:: content="::description::"/>
+	::use "meta_description.mtt"::::end::
+
 	::use "extra-headers.mtt"::::end::
 </head>

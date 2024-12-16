@@ -65,6 +65,12 @@ if (isWatch) {
 			restartChild();
 		}
 	});
+	fs.watch('./api-generator/theme/', { recursive: true }, (eventType, filename) => {
+		if (filename) {
+			console.log(`${filename} changed. Rebuilding...`);
+			restartChild();
+		}
+	});
 
 	fs.watch('./donators.json', { recursive: true }, (eventType, filename) => {
 		if (filename) {
