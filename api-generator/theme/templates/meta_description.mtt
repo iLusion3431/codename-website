@@ -158,5 +158,9 @@
 		<meta name="description" content="::description::" />
 		<meta property="og:description" content="::description::" />
 		<meta property="twitter:description" content="::description::" />
+	::else::
+		<meta name="description" content="The api docs for ::api.currentPageName::" />
+		<meta property="og:description" content="The api docs for ::api.currentPageName::" />
+		<meta property="twitter:description" content="The api docs for ::api.currentPageName::" />
 	::end::
 ::end::
