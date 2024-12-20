@@ -31,6 +31,11 @@ const tools = [
 		title: "Video Compressor",
 		desc: "Compress videos to reduce their size<br>(Warning: this is not a lossless compression)",
 		external: true,
+	},
+	{
+		link: "save-editor",
+		title: "Save Data Editor",
+		desc: "Edit flixel .sol save files",
 	}
 ];
 
@@ -67,6 +72,13 @@ function buildHtml(_pageDir, _exportPath) {
 			var scriptPath = path.replace(/\.html$/, ".js");
 
 			compileJs(scriptPath, outPath.replace(/\.html$/, ".js"));
+		}
+
+		var hasBuildScript = fs.existsSync(path.replace(/\.html$/, ".build.js"));
+		if(hasBuildScript) {
+			var scriptPath = path.replace(/\.html$/, ".build.js");
+			var script = require(scriptPath);
+			script.build(pageDir, exportPath);
 		}
 
 		var templatePage = fs.readFileSync(path, 'utf8');

@@ -182,11 +182,23 @@ textarea {
   }
 }
 
+.psych-char-converter #dropzone {
+  &.highlight::after {
+    content: "Drop your character here";
+  }
+}
+
+.save-editor #dropzone {
+  &.highlight::after {
+    content: "Drop your save file here";
+  }
+}
+
 #dropzone {
   position: relative;
 
   &.highlight::after {
-    content: "Drop your character here";
+    content: "Default TEXT";
     font-size: 1.5em;
     color: var(--text-color);
     display: flex;
@@ -203,5 +215,12 @@ textarea {
     background-color: #ffffff2e;
     transform: scale(1.05);
     border: dashed 4px white;
+  }
+}
+
+.save-editor {
+  ul {
+    list-style-type: none!important;
+    padding: 0;
   }
 }

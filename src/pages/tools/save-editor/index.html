@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="root/style.css">
+	<link rel="stylesheet" href="root/tools.css">
+	<title>Save Data Editor - Codename Engine Tools</title>
+
+	<meta name="title" content="Save Data Editor - Codename Engine Tools" />
+	<meta name="keywords" content="codename engine, codename, engine, game, modding, mods, website, documentation, wiki, tools, tool, codenameengine, cne, funkin, fnf, fnf engine, fnf engines, friday night funkin, gamebanana fnf, save data, save editor, sol" />
+
+	<meta name="description" content="Edit flixel .sol save files" />
+	<meta property="og:description" content="Edit flixel .sol save files" />
+	<meta property="twitter:description" content="Edit flixel .sol save files" />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://codename-engine.com/" />
+	<meta property="og:title" content="Save Data Editor - Codename Engine Tools" />
+	<meta property="og:image" content="https://codename-engine.com/img/banner.png" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://codename-engine.com/" />
+	<meta property="twitter:title" content="Save Data Editor - Codename Engine Tools" />
+	<meta property="twitter:image" content="https://codename-engine.com/img/banner.png" />
+
+	<meta name="theme-color" content="#7f33b8">
+
+	<link rel="icon" href="root/favicon.ico" type="image/x-icon"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="root/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="root/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="root/favicon-16x16.png">
+	<link rel="manifest" href="root/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.17/jstree.min.js"></script>
+    <style>
+        .jstree-default .jstree-leaf>.jstree-ocl {
+            filter: invert(1);
+        }
+        .jstree-default .jstree-clicked {
+            background: #00000045;
+            border-radius: 2px;
+            box-shadow: inset 0 0 1px #999;
+        }
+        .jstree-default .jstree-hovered {
+            background: #2c2c2c56;
+            border-radius: 2px;
+            box-shadow: inset 0 0 1px #ccc
+        }
+        .jstree-default .jstree-node {
+            background-position: -292px -4px;
+            background-repeat: repeat-y;
+            /* filter: invert(1); */
+        }
+        .jstree-default .jstree-closed>.jstree-ocl, .jstree-default .jstree-open>.jstree-ocl {
+            filter: invert(1);
+        }
+        li > a {
+            width: unset!important;
+        }
+    </style>
+</head>
+<body class="save-editor">
+	<div class="header">
+		{{{ parse header }}}
+	</div>
+    <!-- Inspired by https://nbt.mcph.to/ -->
+	<div class="container">
+		<div class="content" id="dropzone">
+			<h1 style="text-align: center;">Save Data Editor</h1>
+			<div id="tree">
+            </div>
+
+            <div>
+                <div class="windows">
+                    You can find your savedata in <code>C:\Users\USERNAME\AppData\Roaming\Yoshman29\CodenameEngine.sol</code>
+                </div>
+                <div class="macos">
+                    You can find your savedata in <code>~/Library/Application Support/Yoshman29/CodenameEngine.sol</code>
+                </div>
+                <div class="linux">
+                    You can find your savedata in <code>????</code>
+                </div>
+            </div>
+		</div>
+	</div>
+
+	<script src="root/tools/save-editor/index.js"></script>
+</body>
+</html>
