@@ -627,10 +627,24 @@ function generateTree(data) {
 			li.appendChild(generateTree(value.map));
 		} else if (value instanceof List) {
 			li.appendChild(generateTree(value.list));
-		} else if (value instanceof Object || value instanceof Array) {
+		} else if (value instanceof Array) {
+			li.appendChild(document.createTextNode(": "));
+			li.appendChild(document.createTextNode(value.length + " items"));
+			li.appendChild(generateTree(value));
+		} else if (value instanceof Object) {
             li.appendChild(generateTree(value));
         } else {
 			li.appendChild(document.createTextNode(": "));
+			if(typeof value == "string") {
+				value = value.replaceAll("\n", "\\n");
+				value = value.replaceAll("\r", "\\r");
+				value = value.replaceAll("\t", "\\t");
+				value = "\"" + value + "\"";
+			} else if(typeof value == "number") {
+				value = value.toString();
+			} else if(typeof value == "boolean") {
+				value = value.toString();
+			}
 			li.appendChild(document.createTextNode(value));
 		}
 
