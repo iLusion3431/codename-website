@@ -109,10 +109,10 @@ function handleFiles(files) {
 ]));*/
 
 function substr(s,pos,len) {
-	if(len == null) {
+	if(len === null) {
 		len = s.length;
 	} else if(len < 0) {
-		if(pos == 0) {
+		if(pos === 0) {
 			len = s.length + len;
 		} else {
 			return "";
@@ -123,6 +123,14 @@ function substr(s,pos,len) {
 
 function fastCharCodeAt(s, pos) {
 	return s.charCodeAt(pos);
+}
+
+function nullizeArray(array) {
+	for (let i = 0; i < array.length; i++) {
+		if (array[i] === undefined) {
+			array[i] = null;
+		}
+	}
 }
 
 class EnumInfo {
@@ -224,7 +232,7 @@ class Unserializer {
 		if (this.getC(this.pos++) !== ":")
 			throw "Invalid enum format";
 		var nargs = this.readDigits();
-		if (nargs == 0)
+		if (nargs === 0)
 			return new EnumInfo(edecl, tag);
 		var args = new Array();
 		while (nargs-- > 0)
@@ -279,6 +287,7 @@ class Unserializer {
 					} else
 						a.push(this.unserialize());
 				}
+				nullizeArray(a);
 				return a;
 			case "o":
 				var o = {};
@@ -382,7 +391,7 @@ class Unserializer {
 			case "v":
 				var d;
 				if (this.getC(this.pos) >= '0' && this.getC(this.pos) <= '9' && this.getC(this.pos + 1) >= '0' && this.getC(this.pos + 1) <= '9' && this.getC(this.pos + 2) >= '0'
-					&& this.getC(this.pos + 2) <= '9' && this.getC(this.pos + 3) >= '0' && this.getC(this.pos + 3) <= '9' && this.getC(this.pos + 4) == '-') {
+					&& this.getC(this.pos + 2) <= '9' && this.getC(this.pos + 3) >= '0' && this.getC(this.pos + 3) <= '9' && this.getC(this.pos + 4) === '-') {
 					// Included for backwards compatibility
 					d = Date.fromString(buf.fastSubstr(this.pos, 19));
 					this.pos += 19;
@@ -397,7 +406,7 @@ class Unserializer {
 					throw "Invalid bytes length";
 
 				var codes = Unserializer.CODES;
-				if (codes == null) {
+				if (!codes) {
 					codes = initCodes();
 					Unserializer.CODES = codes;
 				}
@@ -420,7 +429,7 @@ class Unserializer {
 					var c1 = codes[fastCharCodeAt(buf, i++)];
 					var c2 = codes[fastCharCodeAt(buf, i++)];
 					bytes.set(bpos++, (c1 << 2) | (c2 >> 4));
-					if (rest == 3) {
+					if (rest === 3) {
 						var c3 = codes[fastCharCodeAt(buf, i++)];
 						bytes.set(bpos++, (c2 << 4) | (c3 >> 2));
 					}
@@ -608,18 +617,43 @@ function generateTreeDom(data) {
 }
 
 function generateTree(data) {
-    var ul = document.createElement("ul");
+	var ul = document.createElement("ul");
 
-    for (const key in data) {
-        var li = document.createElement("li");
+	var isStringMap = false;
+	var isIntMap = false;
+	var isObjectMap = false;
+	var isList = false;
+	var isArray = false;
+	var isObject = false;
+
+	if(data instanceof StringMap) {
+		isStringMap = true;
+	} else if(data instanceof IntMap) {
+		isIntMap = true;
+	} else if(data instanceof ObjectMap) {
+		isObjectMap = true;
+	} else if(data instanceof List) {
+		isList = true;
+	} else if(data instanceof Array) {
+		isArray = true;
+	} else if(data instanceof Object) {
+		isObject = true;
+	}
+
+	for (const key in data) {
+		var li = document.createElement("li");
 
 		var value = data[key];
 
 		var bold = document.createElement("b");
-		bold.appendChild(document.createTextNode(key));
+		if(isStringMap) {
+			bold.appendChild(document.createTextNode("\"" + key + "\""));
+		} else {
+			bold.appendChild(document.createTextNode(key));
+		}
 		li.appendChild(bold);
 
-        if (value instanceof StringMap) {
+		if (value instanceof StringMap) {
 			li.appendChild(generateTree(value.map));
 		} else if (value instanceof IntMap) {
 			li.appendChild(generateTree(value.map));
@@ -629,29 +663,36 @@ function generateTree(data) {
 			li.appendChild(generateTree(value.list));
 		} else if (value instanceof Array) {
 			li.appendChild(document.createTextNode(": "));
-			li.appendChild(document.createTextNode(value.length + " items"));
+			var italic = document.createElement("span");
+			italic.style.fontStyle = "italic";
+			if(value.length === 1) {
+				italic.appendChild(document.createTextNode("1 item"));
+			} else {
+				italic.appendChild(document.createTextNode(value.length + " items"));
+			}
+			li.appendChild(italic);
 			li.appendChild(generateTree(value));
 		} else if (value instanceof Object) {
-            li.appendChild(generateTree(value));
-        } else {
+			li.appendChild(generateTree(value));
+		} else {
 			li.appendChild(document.createTextNode(": "));
-			if(typeof value == "string") {
+			if(typeof value === "string") {
 				value = value.replaceAll("\n", "\\n");
 				value = value.replaceAll("\r", "\\r");
 				value = value.replaceAll("\t", "\\t");
 				value = "\"" + value + "\"";
-			} else if(typeof value == "number") {
+			} else if(typeof value === "number") {
 				value = value.toString();
-			} else if(typeof value == "boolean") {
+			} else if(typeof value === "boolean") {
 				value = value.toString();
 			}
 			li.appendChild(document.createTextNode(value));
 		}
 
-        ul.appendChild(li);
-    }
+		ul.appendChild(li);
+	}
 
-    return ul;
+	return ul;
 }
 
 })();
