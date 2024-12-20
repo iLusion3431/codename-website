@@ -600,6 +600,7 @@ function generateTreeDom(data) {
 	btree.jstree({
 		"core": {
 			"themes": {
+				"name": "default-dark",
 				//"dots": false,
 				//"stripes": false
 			}
@@ -640,6 +641,9 @@ function generateTree(data) {
 		isObject = true;
 	}
 
+	var length = isArray ? data.length : Object.keys(data).length;
+	var lengthLen = length.toString(10).length;
+
 	for (const key in data) {
 		var li = document.createElement("li");
 
@@ -649,7 +653,17 @@ function generateTree(data) {
 		if(isStringMap) {
 			bold.appendChild(document.createTextNode("\"" + key + "\""));
 		} else {
-			bold.appendChild(document.createTextNode(key));
+			if(isArray && +key >= 0) {
+				var zeros = "0".repeat(lengthLen - key.length);
+				var invisible = document.createElement("span");
+				invisible.style.display = "none";
+				invisible.appendChild(document.createTextNode(zeros));
+				bold.appendChild(invisible);
+				var index = key;
+				bold.appendChild(document.createTextNode(index));
+			} else {
+				bold.appendChild(document.createTextNode(key));
+			}
 		}
 		li.appendChild(bold);
 
