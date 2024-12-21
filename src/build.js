@@ -45,6 +45,7 @@ compileSass("./src/pages/index.scss", exportPath + "/index.css");
 compileSass("./src/giscus-theme.scss", exportPath + "/giscus-theme.css");
 compileSass("./src/pages/ko-fi.scss", exportPath + "/ko-fi.css");
 compileSass("./src/pages/tools/tools.scss", exportPath + "/tools.css");
+compileSass("./src/pages/tools/save-editor/tree.scss", exportPath + "/tools/save-editor/tree.css");
 
 compileJs("./src/pages/featuredMods.js", exportPath + "/featuredMods.js");
 compileJs("./src/pages/wiki.js", exportPath + "/wiki.js");

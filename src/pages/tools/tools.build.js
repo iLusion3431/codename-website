@@ -1,5 +1,5 @@
 var fs = require('fs');
-var { fixHtmlRefs, htmlToString, parseTemplate, compileJs } = require("../../utils.js");
+var { fixHtmlRefs, htmlToString, parseTemplate, compileJs, copyDir } = require("../../utils.js");
 
 var header = fs.readFileSync("./src/pages/templates/header.html", 'utf8')
 
@@ -53,12 +53,14 @@ function buildHtml(_pageDir, _exportPath) {
 		if(tool.external) {
 			continue;
 		}
-		var path = "./src/pages/tools/" + tool.link + "/index.html";
-		var outPath = exportPath + tool.link + "/index.html";
+		var basePath = "./src/pages/tools/" + tool.link + "/";
+		var outputPath = exportPath + tool.link + "/";
 		if(tool.link == "index") {
-			path = "./src/pages/tools/index.html";
-			outPath = exportPath + "index.html";
+			basePath = "./src/pages/tools/";
+			outputPath = exportPath;
 		}
+		var path = basePath + "index.html";
+		var outPath = outputPath + "index.html";
 
 		var filePath = outPath.split("/");
 		filePath.pop();
@@ -72,6 +74,10 @@ function buildHtml(_pageDir, _exportPath) {
 			var scriptPath = path.replace(/\.html$/, ".js");
 
 			compileJs(scriptPath, outPath.replace(/\.html$/, ".js"));
+		}
+
+		if(fs.existsSync(basePath + "res/")) {
+			copyDir(basePath + "res/", outputPath + "res/");
 		}
 
 		var hasBuildScript = fs.existsSync(path.replace(/\.html$/, ".build.js"));

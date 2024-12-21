@@ -296,6 +296,7 @@ function compileSass(file, dest) {
 			level: 2
 		}).minify(result.css).styles;
 	}
+	makeDir(dest.substring(0, dest.lastIndexOf("/")));
 	fs.writeFileSync(dest, result.css);
 }
 
@@ -306,7 +307,14 @@ function compileCss(file, dest) {
 			level: 2
 		}).minify(content).styles;
 	}
+	makeDir(dest.substring(0, dest.lastIndexOf("/")));
 	fs.writeFileSync(dest, content);
+}
+
+function makeDir(path) {
+	if (!fs.existsSync(path)) {
+		fs.mkdirSync(path, {recursive: true});
+	}
 }
 
 module.exports = {

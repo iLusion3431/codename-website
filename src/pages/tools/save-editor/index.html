@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="root/style.css">
 	<link rel="stylesheet" href="root/tools.css">
+	<link rel="stylesheet" href="./tree.css">
 	<title>Save Data Editor - Codename Engine Tools</title>
 
 	<meta name="title" content="Save Data Editor - Codename Engine Tools" />
@@ -33,40 +34,39 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="root/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="root/favicon-16x16.png">
 	<link rel="manifest" href="root/site.webmanifest">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default-dark/style.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.17/jstree.min.js"></script>
-    <style>
-        .jstree-default-dark {
-            background: unset!important;
-        }
-        li > a {
-            width: unset!important;
-        }
-    </style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.17/jstree.min.js"></script>
+	<style>
+		li > a {
+			width: unset!important;
+		}
+		#tree, #tree * {
+			font-family: monospace;
+		}
+	</style>
 </head>
 <body class="save-editor">
 	<div class="header">
 		{{{ parse header }}}
 	</div>
-    <!-- Inspired by https://nbt.mcph.to/ -->
+	<!-- Inspired by https://nbt.mcph.to/ -->
 	<div class="container">
 		<div class="content" id="dropzone">
 			<h1 style="text-align: center;">Save Data Editor</h1>
 			<div id="tree">
-            </div>
+			</div>
 
-            <div>
-                <div class="windows">
-                    You can find your savedata in <code>C:\Users\USERNAME\AppData\Roaming\Yoshman29\CodenameEngine.sol</code>
-                </div>
-                <div class="macos">
-                    You can find your savedata in <code>~/Library/Application Support/Yoshman29/CodenameEngine.sol</code>
-                </div>
-                <div class="linux">
-                    You can find your savedata in <code>????</code>
-                </div>
-            </div>
+			<div>
+				<div class="windows">
+					You can find your savedata in <code>C:\Users\USERNAME\AppData\Roaming\Yoshman29\CodenameEngine.sol</code>
+				</div>
+				<div class="macos">
+					You can find your savedata in <code>~/Library/Application Support/Yoshman29/CodenameEngine.sol</code>
+				</div>
+				<div class="linux">
+					You can find your savedata in <code>????</code>
+				</div>
+			</div>
 		</div>
 	</div>
 

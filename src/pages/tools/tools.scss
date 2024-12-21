@@ -6,6 +6,9 @@
   padding: 1em;
   position: relative;
 
+  display: flex;
+  align-items: center;
+
   a {
     text-decoration: none;
     color: var(--text-color);

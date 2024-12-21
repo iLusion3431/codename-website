@@ -108,6 +108,14 @@ function handleFiles(files) {
 	])
 ]));*/
 
+function plural(num, str) {
+	return num + " " + str + (num === 1 ? "" : "s");
+}
+
+function singular(num, str) {
+	return num === 1 ? "" : "s";
+}
+
 function substr(s,pos,len) {
 	if(len === null) {
 		len = s.length;
@@ -130,14 +138,6 @@ function nullizeArray(array) {
 		if (array[i] === undefined) {
 			array[i] = null;
 		}
-	}
-}
-
-class EnumInfo {
-	constructor(edecl, tag, args=null) {
-		this.args = args;
-		this.edecl = edecl;
-		this.tag = tag;
 	}
 }
 
@@ -393,7 +393,7 @@ class Unserializer {
 				if (this.getC(this.pos) >= '0' && this.getC(this.pos) <= '9' && this.getC(this.pos + 1) >= '0' && this.getC(this.pos + 1) <= '9' && this.getC(this.pos + 2) >= '0'
 					&& this.getC(this.pos + 2) <= '9' && this.getC(this.pos + 3) >= '0' && this.getC(this.pos + 3) <= '9' && this.getC(this.pos + 4) === '-') {
 					// Included for backwards compatibility
-					d = Date.fromString(buf.fastSubstr(this.pos, 19));
+					d = Date.fromString(substr(this.buf, this.pos, 19));
 					this.pos += 19;
 				} else
 					d = Date.fromTime(this.readFloat());
@@ -404,6 +404,8 @@ class Unserializer {
 				var buf = this.buf;
 				if (this.getC(this.pos++) != ":" || this.length - this.pos < len)
 					throw "Invalid bytes length";
+
+				// TODO: add support for bytes
 
 				var codes = Unserializer.CODES;
 				if (!codes) {
@@ -439,6 +441,7 @@ class Unserializer {
 				this.cache.push(ret);
 				return ret;
 			case "C":
+				// Not possible to implement this sadly, since we don't know how the hxUnserialize will parse the data
 				throw "Not implemented yet";
 				//var name = unserialize();
 				//var cl = resolver.resolveClass(name);
@@ -496,6 +499,13 @@ class ObjectMap {
 		this.map = Object.create(null);
 	}
 
+	preview() {
+		var addon = fancyObject(this.map);
+		if(addon.length > 30)
+			addon = addon.substring(0, 30) + "...";
+		return addon;
+	}
+
 	get(key) {
 		if(this.map.has(key)) {
 			return this.map.get(key);
@@ -515,6 +525,13 @@ class ObjectMap {
 class IntMap {
 	constructor() {
 		this.map = Object.create(null);
+	}
+
+	preview() {
+		var addon = fancyObject(this.map);
+		if(addon.length > 30)
+			addon = addon.substring(0, 30) + "...";
+		return addon;
 	}
 
 	get(key) {
@@ -538,6 +555,13 @@ class StringMap {
 		this.map = Object.create(null);
 	}
 
+	preview() {
+		var addon = fancyObject(this.map);
+		if(addon.length > 30)
+			addon = addon.substring(0, 30) + "...";
+		return addon;
+	}
+
 	set(key, value) {
 		this.map[key] = value;
 	}
@@ -556,6 +580,13 @@ class List {
 		this.list = [];
 	}
 
+	preview() {
+		var addon = fancyObject(this.list);
+		if(addon.length > 30)
+			addon = addon.substring(0, 30) + "...";
+		return addon;
+	}
+
 	add(value) {
 		this.list.push(value);
 	}
@@ -570,13 +601,171 @@ class ExceptionData {
 	constructor(data) {
 		this.data = data;
 	}
+
+	preview() {
+		var addon = fancyObject(this.map);
+		if(addon.length > 30)
+			addon = addon.substring(0, 30) + "...";
+		return addon;
+	}
 }
 
 class ClassData {
 	constructor(name, data) {
-		this.name = name;
+		this.className = name;
 		this.data = data;
 	}
+
+	preview() {
+		if(Object.keys(this.data).length == 0) {
+			return "new " + this.className + "()";
+		} else {
+			return "new " + this.className + "() (+data)";
+		}
+		//return "new " + this.name + "() { " + preview(this.data) + " }";
+	}
+}
+
+const VALID_KEY_REGEX = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/;
+
+function needsQuotes(key) {
+	if(key.length == 0) return true;
+
+	return !VALID_KEY_REGEX.test(key);
+}
+
+function fancyObject(data, includeSurrounding=true) {
+	var arr = [];
+	for(let key in data) {
+		var value = data[key];
+		key = needsQuotes(key) ? "\"" + key + "\"" : key;
+		if(value == null) {
+			arr.push(key + ": null");
+			continue;
+		}
+		if(typeof value == "string") {
+			arr.push(key + ": \"" + value + "\"");
+			continue;
+		}
+		if(typeof value == "number") {
+			arr.push(key + ": " + value);
+			continue;
+		}
+		if(typeof value == "boolean") {
+			arr.push(key + ": " + value);
+			continue;
+		}
+		// TODO: add support for bytes
+		if(value instanceof Array) {
+			arr.push(key + ": [" + fancyArray(value) + "]");
+			continue;
+		}
+		if(value instanceof Object) {
+			arr.push(key + ": {" + fancyObject(value) + "}");
+			continue;
+		}
+		if(value instanceof Date) {
+			arr.push(key + ": " + value.toString());
+			continue;
+		}
+		if(value instanceof BytesData) {
+			arr.push(key + ": " + value.data);
+			continue;
+		}
+		if(value instanceof ClassData) {
+			arr.push(key + ": " + value.className);
+			continue;
+		}
+		if(value instanceof EnumInfo) {
+			arr.push(key + ": " + value.preview());
+			continue;
+		}
+		if(typeof obj == "object") {
+			arr.push(key + ": " + fancyObject(value));
+			continue;
+		}
+		arr.push(key + ": " + value);
+	}
+	if(includeSurrounding)
+		return "{" + arr.join(", ") + "}";
+	return arr.join(", ");
+}
+
+function fancyArray(data, includeSurrounding=true) {
+	var arr = [];
+	for(const item of data) {
+		if(item == null) {
+			arr.push("null");
+			continue;
+		}
+		if(typeof item == "string") {
+			arr.push("\"" + item + "\"");
+			continue;
+		}
+		if(typeof item == "number") {
+			arr.push(item);
+			continue;
+		}
+		if(typeof item == "boolean") {
+			arr.push(item ? "true" : "false");
+			continue;
+		}
+		if(item instanceof Array) {
+			arr.push(fancyArray(item));
+			continue;
+		}
+		if(item instanceof Object) {
+			arr.push(fancyObject(item));
+			continue;
+		}
+		if(item instanceof Date) {
+			arr.push(item.toString());
+			continue;
+		}
+		if(item instanceof BytesData) {
+			arr.push(item.data);
+			continue;
+		}
+		if(item instanceof ClassData) {
+			arr.push(item.className);
+			continue;
+		}
+		if(item instanceof EnumInfo) {
+			arr.push(item.preview());
+			continue;
+		}
+		if(typeof item == "object") {
+			arr.push(fancyObject(item));
+			continue;
+		}
+		arr.push(item);
+	}
+	if(includeSurrounding)
+		return "[" + arr.join(", ") + "]";
+	return arr.join(", ");
+}
+
+class EnumInfo {
+	constructor(edecl, tag, args=null) {
+		this.args = args;
+		this.path = edecl;
+		this.tag = tag;
+	}
+
+	preview() {
+		if(this.args) {
+			return this.path + "." + this.tag + "(" + fancyArray(this.args, false) + ")";
+		}
+		return this.path + "." + this.tag;
+	}
+}
+
+
+function preview(data) {
+	if(data && typeof data.preview == "function") {
+		return data.preview();
+	}
+	return data;
 }
 
 var $ = window.$; // JQuery
@@ -644,12 +833,26 @@ function generateTree(data) {
 	var length = isArray ? data.length : Object.keys(data).length;
 	var lengthLen = length.toString(10).length;
 
+	function generateTotalText(data, afterPart, allowPreview=false) {
+		var totalKeys = Object.keys(data).length;
+		var totalItems = plural(totalKeys, afterPart);
+		var italic = document.createElement("span");
+		italic.style.fontStyle = "italic";
+		if(allowPreview && data && typeof data.preview == "function") {
+			italic.appendChild(document.createTextNode(data.preview()));
+		} else {
+			italic.appendChild(document.createTextNode(totalItems));
+		}
+		return italic;
+	}
+
 	for (const key in data) {
 		var li = document.createElement("li");
 
 		var value = data[key];
 
 		var bold = document.createElement("b");
+		bold.className = "key";
 		if(isStringMap) {
 			bold.appendChild(document.createTextNode("\"" + key + "\""));
 		} else {
@@ -662,31 +865,52 @@ function generateTree(data) {
 				var index = key;
 				bold.appendChild(document.createTextNode(index));
 			} else {
-				bold.appendChild(document.createTextNode(key));
+				if(needsQuotes(key)) {
+					bold.appendChild(document.createTextNode("\"" + key + "\""));
+				} else {
+					bold.appendChild(document.createTextNode(key));
+				}
 			}
 		}
 		li.appendChild(bold);
 
 		if (value instanceof StringMap) {
+			li.appendChild(document.createTextNode(": "));
+			li.appendChild(generateTotalText(value.map, "string mapping"));
+			var ending = value.preview();
+			if(ending.length > 0) li.appendChild(document.createTextNode(" - " + ending));
 			li.appendChild(generateTree(value.map));
 		} else if (value instanceof IntMap) {
+			li.appendChild(document.createTextNode(": "));
+			li.appendChild(generateTotalText(value.map, "int mapping"));
+			var ending = value.preview();
+			if(ending.length > 0) li.appendChild(document.createTextNode(" - " + ending));
 			li.appendChild(generateTree(value.map));
 		} else if (value instanceof ObjectMap) {
+			li.appendChild(document.createTextNode(": "));
+			li.appendChild(generateTotalText(value.map, "object mapping"));
+			var ending = value.preview();
+			if(ending.length > 0) li.appendChild(document.createTextNode(" - " + ending));
 			li.appendChild(generateTree(value.map));
 		} else if (value instanceof List) {
+			li.appendChild(document.createTextNode(": "));
+			li.appendChild(generateTotalText(value.list, "list item"));
+			var ending = value.preview();
+			if(ending.length > 0) li.appendChild(document.createTextNode(" - " + ending));
 			li.appendChild(generateTree(value.list));
 		} else if (value instanceof Array) {
 			li.appendChild(document.createTextNode(": "));
-			var italic = document.createElement("span");
-			italic.style.fontStyle = "italic";
-			if(value.length === 1) {
-				italic.appendChild(document.createTextNode("1 item"));
-			} else {
-				italic.appendChild(document.createTextNode(value.length + " items"));
-			}
-			li.appendChild(italic);
+			li.appendChild(generateTotalText(value, "item"));
+			var ending = fancyArray(value, false);
+			if(ending.length > 30) ending = ending.substring(0, 30) + "...";
+			if(ending.length > 0) li.appendChild(document.createTextNode(" - [" + ending + "]"));
 			li.appendChild(generateTree(value));
 		} else if (value instanceof Object) {
+			li.appendChild(document.createTextNode(": "));
+			li.appendChild(generateTotalText(value, "field", true));
+			var ending = fancyObject(value, false);
+			if(ending.length > 30) ending = ending.substring(0, 30) + "...";
+			if(ending.length > 0) li.appendChild(document.createTextNode(" - {" + ending + "}"));
 			li.appendChild(generateTree(value));
 		} else {
 			li.appendChild(document.createTextNode(": "));
@@ -699,6 +923,10 @@ function generateTree(data) {
 				value = value.toString();
 			} else if(typeof value === "boolean") {
 				value = value.toString();
+			} else {
+				if(value && typeof value.preview == "function") {
+					value = value.preview();
+				}
 			}
 			li.appendChild(document.createTextNode(value));
 		}
