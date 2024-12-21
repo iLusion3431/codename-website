@@ -643,6 +643,11 @@ function fancyObject(data, includeSurrounding=true) {
 			arr.push(key + ": null");
 			continue;
 		}
+		if(value == undefined) {
+			arr.push(key + ": null"); // haxe doesn't have null, idk what happened
+			console.warn("undefined in object");
+			continue;
+		}
 		if(typeof value == "string") {
 			arr.push(key + ": \"" + value + "\"");
 			continue;
@@ -653,6 +658,22 @@ function fancyObject(data, includeSurrounding=true) {
 		}
 		if(typeof value == "boolean") {
 			arr.push(key + ": " + value);
+			continue;
+		}
+		if(value instanceof List) {
+			arr.push(key + ": " + fancyArray(value.list));
+			continue;
+		}
+		if(value instanceof StringMap) {
+			arr.push(key + ": " + fancyObject(value.map));
+			continue;
+		}
+		if(value instanceof IntMap) {
+			arr.push(key + ": " + fancyObject(value.map));
+			continue;
+		}
+		if(value instanceof ObjectMap) {
+			arr.push(key + ": " + fancyObject(value.map));
 			continue;
 		}
 		// TODO: add support for bytes
@@ -698,6 +719,11 @@ function fancyArray(data, includeSurrounding=true) {
 			arr.push("null");
 			continue;
 		}
+		if(item == undefined) {
+			arr.push("null"); // haxe doesn't have null, idk what happened
+			console.warn("undefined in array");
+			continue;
+		}
 		if(typeof item == "string") {
 			arr.push("\"" + item + "\"");
 			continue;
@@ -708,6 +734,22 @@ function fancyArray(data, includeSurrounding=true) {
 		}
 		if(typeof item == "boolean") {
 			arr.push(item ? "true" : "false");
+			continue;
+		}
+		if(item instanceof List) {
+			arr.push(fancyArray(item.list));
+			continue;
+		}
+		if(item instanceof StringMap) {
+			arr.push(fancyObject(item.map));
+			continue;
+		}
+		if(item instanceof IntMap) {
+			arr.push(fancyObject(item.map));
+			continue;
+		}
+		if(item instanceof ObjectMap) {
+			arr.push(fancyObject(item.map));
 			continue;
 		}
 		if(item instanceof Array) {
@@ -833,6 +875,7 @@ function generateTree(data) {
 	var length = isArray ? data.length : Object.keys(data).length;
 	var lengthLen = length.toString(10).length;
 
+	var lastWasPreview = false;
 	function generateTotalText(data, afterPart, allowPreview=false) {
 		var totalKeys = Object.keys(data).length;
 		var totalItems = plural(totalKeys, afterPart);
@@ -840,8 +883,10 @@ function generateTree(data) {
 		italic.style.fontStyle = "italic";
 		if(allowPreview && data && typeof data.preview == "function") {
 			italic.appendChild(document.createTextNode(data.preview()));
+			lastWasPreview = true;
 		} else {
 			italic.appendChild(document.createTextNode(totalItems));
+			lastWasPreview = false;
 		}
 		return italic;
 	}
@@ -908,9 +953,11 @@ function generateTree(data) {
 		} else if (value instanceof Object) {
 			li.appendChild(document.createTextNode(": "));
 			li.appendChild(generateTotalText(value, "field", true));
-			var ending = fancyObject(value, false);
-			if(ending.length > 30) ending = ending.substring(0, 30) + "...";
-			if(ending.length > 0) li.appendChild(document.createTextNode(" - {" + ending + "}"));
+			if(!lastWasPreview) {
+				var ending = fancyObject(value, false);
+				if(ending.length > 30) ending = ending.substring(0, 30) + "...";
+				if(ending.length > 0) li.appendChild(document.createTextNode(" - {" + ending + "}"));
+			}
 			li.appendChild(generateTree(value));
 		} else {
 			li.appendChild(document.createTextNode(": "));
