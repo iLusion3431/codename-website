@@ -171,14 +171,29 @@ function copyDir(src, dest) {
 }
 
 async function compileJs(file, dest) {
+	try {
+		fs.unlinkSync(dest + ".map");
+	} catch (e) {}
 	if(isRelease) {
 		var content = fs.readFileSync(file, 'utf8');
-		var result = await Terser.minify(content, {
+
+		var cleanFile = file.replace(/\.js$/, ".uncompressed.js");
+		var filename = path.basename(file);
+		var cleanFilename = path.basename(cleanFile);
+		var result = await Terser.minify({
+			[cleanFilename]: content
+		}, {
 			compress: {
 				ecma: 2015,
 				keep_fargs: false,
 				passes: 10,
 				unsafe_arrows: true
+			},
+			sourceMap: {
+				includeSources: true,
+				//root: path.dirname(file),
+				filename: cleanFilename,
+				url: filename + ".map"
 			}
 		});
 		if(result.error) {
@@ -189,6 +204,7 @@ async function compileJs(file, dest) {
 			return;
 		}
 		fs.writeFileSync(dest, result.code);
+		fs.writeFileSync(dest + ".map", result.map);
 		return;
 	}
 	fs.copyFileSync(file, dest);
