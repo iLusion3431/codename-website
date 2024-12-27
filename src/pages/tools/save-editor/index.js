@@ -822,6 +822,8 @@ function loadSaveFile(data) {
 	generateTreeDom(data);
 }
 
+window.loadSaveFile = loadSaveFile;
+
 function generateTreeDom(data) {
 	tree.innerHTML = "";
 	var builtTree = generateTree(data);
