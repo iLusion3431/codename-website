@@ -77,7 +77,7 @@ if (isWatch) {
 			console.log(`${filename} changed. Rebuilding...`);
 			restartChild();
 		}
-    });
+	});
 
 	setInterval(() => {}, 1000);
 }

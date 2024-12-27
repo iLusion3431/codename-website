@@ -34,11 +34,11 @@ function sortByTime(a, b) {
 	var aTime = a.getAttribute("data-time");
 	var bTime = b.getAttribute("data-time");
 
-	if (!aTime) return 1;           // Push null to the bottom
+	if (!aTime) return 1;					// Push null to the bottom
 	if (!bTime) return -1;
-	if (aTime === "unreleased") return 1;  // Push "unreleased" to the bottom
+	if (aTime === "unreleased") return 1;	// Push "unreleased" to the bottom
 	if (bTime === "unreleased") return -1;
-	if (aTime === "unknown") return 1;     // Push "unknown" to the bottom
+	if (aTime === "unknown") return 1;		// Push "unknown" to the bottom
 	if (bTime === "unknown") return -1;
 
 	var aDate = new Date(aTime).getTime();
