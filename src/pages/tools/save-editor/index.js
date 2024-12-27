@@ -581,7 +581,7 @@ class List {
 	}
 
 	preview() {
-		var addon = fancyObject(this.list);
+		var addon = fancyArray(this.list);
 		if(addon.length > 30)
 			addon = addon.substring(0, 30) + "...";
 		return addon;
