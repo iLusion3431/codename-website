@@ -158,7 +158,7 @@ convertFolderButton.addEventListener("change", () => {
 	// sets the date to be fixed
 	JSZip.defaults.date = new Date(currDate.getTime() - currDate.getTimezoneOffset() * 60000);
 
-	var convert = file => {
+	var convertFile = file => {
 		return new Promise((resolve, reject) => {
 			var reader = new FileReader();
 			reader.onload = function(event) {
@@ -172,7 +172,7 @@ convertFolderButton.addEventListener("change", () => {
 
 	for(var file of files) {
 		if (file.name.includes('.json')) {
-			promises.push(convert(file));
+			promises.push(convertFile(file));
 		}
 	}
 

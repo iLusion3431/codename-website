@@ -168,6 +168,18 @@
                     "type": "donation"
                 }
             ]
+        },
+        {
+            "name": "Deadlyne",
+            "profilePicture": "https://ko-fi.com/img/anon6.png?v=1",
+            "hasMembership": false,
+            "donations": [
+                {
+                    "amount": 21,
+                    "currency": "$",
+                    "type": "donation"
+                }
+            ]
         }
     ]
 }

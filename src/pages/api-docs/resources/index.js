@@ -24,11 +24,11 @@ function toggleInherited(el) {
 }
 
 function toggleCollapsed(el) {
-    var toggle = el.closest(".expandable");
-    toggleCollapsedElement(toggle);
+	var toggle = el.closest(".expandable");
+	toggleCollapsedElement(toggle);
 
-    //updateTreeState();
-    return false;
+	//updateTreeState();
+	return false;
 }
 
 window.toggleCollapsed = toggleCollapsed;
@@ -36,14 +36,14 @@ window.toggleCollapsed = toggleCollapsed;
 function toggleCollapsedElement(toggle) {
 	toggle.classList.toggle("expanded");
 
-    var icon = toggle.querySelector("i");
-    if (toggle.classList.contains("expanded")) {
-        icon.classList.remove("fa-folder");
-        icon.classList.add("fa-folder-open");
-    } else {
-        icon.classList.add("fa-folder");
-        icon.classList.remove("fa-folder-open");
-    }
+	var icon = toggle.querySelector("i");
+	if (toggle.classList.contains("expanded")) {
+		icon.classList.remove("fa-folder");
+		icon.classList.add("fa-folder-open");
+	} else {
+		icon.classList.add("fa-folder");
+		icon.classList.remove("fa-folder-open");
+	}
 }
 
 /*function updateTreeState() {
