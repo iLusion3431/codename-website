@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="root/style.css">
+	<link rel="stylesheet" href="root/tools.css">
 	<title>Home - Codename Engine Tools</title>
 
 	<meta name="title" content="Home" />
@@ -33,10 +34,26 @@
 </head>
 <body>
 	<div class="header">
-		{{ header }}
+		{{{ parse header }}}
 	</div>
 	<div class="container">
-		<a href="./event-packer/">Event Packer</a>
+		<div class="content">
+			<h1 style="text-align: center;">Tools</h1>
+			<div class="card-container">
+				{{#each tools}}
+				<div class="card{{#if external}} external{{/if}}">
+					{{#if external}}
+					<a href="{{link}}" target="_blank">
+					{{else}}
+					<a href="./{{link}}/">
+					{{/if}}
+						<h2>{{safeish title}}</h2>
+						<p>{{safeish desc}}</p>
+					</a>
+				</div>
+				{{/each}}
+			</div>
+		</div>
 	</div>
 </body>
 </html>

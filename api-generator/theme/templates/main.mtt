@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- use theme color or fallback -->
+$$comment(::" use theme color or fallback "::)
 ::set themeColor="0xFAFAFA"::
 ::if (api.isDefined("themeColor"))::::set themeColor=api.getValue("themeColor")::::end::
 
-<!--use textcolor from settings, otherwise create a contrasting color to theme color-->
+$$comment(::" use textcolor from settings, otherwise create a contrasting color to theme color "::)
 ::set textColor="0xFFFFFF"::
 ::if (api.isDefined("textColor"))::::set textColor=api.getValue("textColor")::
 ::elseif (api.std.parseInt(themeColor) > 7829367)::::set textColor="0x000000"::::end::
@@ -34,10 +34,12 @@
 						<input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/>
 					</div>
 					</form></li>
-				<li><a href="::api.config.rootPath::">
-					<i class="fa fa-home"></i>
-					Top-level
-				</a></li>
+				<li data-pack="::api.config.toplevelPackage::">
+					<a class="treeLink" href="::api.config.rootPath::">
+						<i class="fa fa-home"></i>
+						Top-level
+					</a>
+				</li>
 			</ul>
 			<span id="nav">
 				$$comment(::" Automatically populated by index.js "::)
@@ -51,7 +53,6 @@
 
 
 <script src="::api.config.rootPath::highlighter.js"></script>
-<link href="::api.config.rootPath::highlighter.css" rel="stylesheet" />
 
 </body>
 </html>

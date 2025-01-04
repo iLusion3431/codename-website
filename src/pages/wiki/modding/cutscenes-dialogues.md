@@ -87,7 +87,7 @@ We'll quickly go through the parameters here, for <syntax lang="xml">&lt;charact
 - ``textSound`` determines what sound the character should play when it speaks. *(takes from the ``./sounds`` folder)*
 
 Other options include:
-- ``skewx`` and ``skewy`` skewes the sprite.
+- ``skewx`` and ``skewy`` skews the sprite.
 - ``antialiasing`` determines whether or not the sprite has antialiasing. *(true by default)*
 - ``width`` and ``height`` determine the width and height of the sprite's hitbox. *(does not affect the sprite itself)*
 - ``scale``, ``scalex`` and ``scaley`` are size multipliers for the sprite's width and height. *(setting it to 2 means double the size)*
@@ -101,7 +101,7 @@ Other options include:
 As for the <syntax lang="xml">&lt;anim&gt;</syntax> nodes, these are the parameters:
 - ``name`` defines the internal name of the animation *(used for scripting)*
 - ``anim`` is the prefix for finding the animation in the spritesheet.
-- ``indices`` indicates which frames to play from the previously found frames.
+- ``indices`` indicates which frames to play from the previously found frames. (For a range you can type <code class="hljs-string">1..5</code> to generate <code class="hljs-string">1,2,3,4,5</code>)
 - ``type`` determines the type of the animation. either <code class="hljs-string">beat</code> or <code class="hljs-string">loop</code>.
 - ``fps`` is the framerate of your animation.
 - ``x`` and ``y`` are the animation offset. *(offset is only applied when the animation is played)*

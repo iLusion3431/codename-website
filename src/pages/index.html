@@ -9,6 +9,7 @@
 
 	<meta name="title" content="{{ pageTitle }} - Codename Engine Docs" />
 	<meta name="description" content="Website dedicated to things for Codename Engine!" />
+	<meta name="keywords" content="codename engine, codename, engine, game, modding, mods, website, documentation, wiki, tools, tool, codenameengine, cne, funkin, fnf, fnf engine, fnf engines, friday night funkin, gamebanana fnf" />
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
@@ -37,7 +38,7 @@
 <body class="nojs">
 	<script>document.body.classList.remove("nojs");</script>
 	<div class="header">
-		{{ header }}
+		{{{ parse header }}}
 	</div>
 	<div class="container">
 		<div class="vertical-stack">
@@ -48,32 +49,35 @@
 				<a href="/wiki/" class="default-button">Wiki</a>
 				<!-- <a href="./tools/">Tools</a> -->
 				<div>
+					<p>Codename Engine is a fork of Friday Night Funkin'<br>with a focus on softcoding and modding.</p>
+				</div>
+				<div>
 					<h2>Downloads</h2>
 				</div>
 				<div class="downloads">
 					<div class="os-button">
-						<a href="https://nightly.link/FNF-CNE-Devs/CodenameEngine/workflows/windows/main/Codename%20Engine.zip" class="default-button">
+						<a href="https://nightly.link/CodenameCrew/CodenameEngine/workflows/windows/main/Codename%20Engine.zip" class="default-button">
 							<span>
 								<img class="os-logo" src="img/os/windows.svg"> Windows
 							</span>
 						</a>
 					</div>
 					<div class="os-button">
-						<a href="https://nightly.link/FNF-CNE-Devs/CodenameEngine/workflows/macos/main/Codename%20Engine.zip" class="default-button">
+						<a href="https://nightly.link/CodenameCrew/CodenameEngine/workflows/macos/main/Codename%20Engine.zip" class="default-button">
 							<span>
 								<img class="os-logo" src="img/os/apple.svg"> MacOS
 							</span>
 						</a>
 					</div>
 					<div class="os-button">
-						<a href="https://nightly.link/FNF-CNE-Devs/CodenameEngine/workflows/linux/main/Codename%20Engine.zip" class="default-button">
+						<a href="https://nightly.link/CodenameCrew/CodenameEngine/workflows/linux/main/Codename%20Engine.zip" class="default-button">
 							<span>
 								<img class="os-logo" src="img/os/linux.svg"> Linux
 							</span>
 						</a>
 					</div>
 				</div>
-				<h4>Unofficial port for mobile phones:</h4>
+				<h4><i class="fa fa-github"></i> <a href="https://github.com/MobilePorting/CodenameEngine-Mobile/"> Unofficial port</a> for mobile phones:</h4>
 				<div class="downloads">
 					<div class="os-button">
 						<a href="https://nightly.link/MobilePorting/CodenameEngine-Mobile/workflows/android/cne-pr/Codename%20Engine.zip" class="default-button">
@@ -93,7 +97,9 @@
 				<div>
 					<i>Make sure to join our official <img class="icon" src="img/icons/discord.svg"> <a href="https://discord.gg/WTzm35kekB">Discord&nbsp;Server</a>!</i>
 					<br>
-					<i>You can contribute to this website by going to the <i class="fa fa-github"></i> <a href="https://github.com/FNF-CNE-Devs/FNF-CNE-Devs.github.io">GitHub&nbsp;repository</a></i>
+					<i>You can contribute to this website by going to the <i class="fa fa-github"></i> <a href="https://github.com/CodenameCrew/codename-website">Website&nbsp;repository</a></i>
+					<br>
+					<i>You can find the engine source by going to the <i class="fa fa-github"></i> <a href="https://github.com/CodenameCrew/CodenameEngine">Engine&nbsp;repository</a></i>
 				</div>
 			</div>
 
@@ -112,15 +118,15 @@
 				{{/hasMembers-disable}} -->
 				<h2>Donators</h2>
 				<span class="donators-list">
-					{{#donators}}
-					<div class="donator{{#hasMembership}} membership{{/hasMembership}}">
+					{{#each donators}}
+					<div class="donator{{#if hasMembership}} membership{{/if}}">
 						<img src="{{profilePicture}}" alt="{{name}}" width="32" height="32">
 						<div class="donator-info">
 							<span>{{name}}</span>
-							<span>{{amount}} {{currency}}</span>
+							<span>{{amount}}</span>
 						</div>
 					</div>
-					{{/donators}}
+					{{/each}}
 				</span>
 			</div>
 		</div>
@@ -147,40 +153,44 @@
 					</a>
 				</div>
 				<div>
-					<a href="./#" class="sort-button order-button default-button" data-sort="recent">
+					<a href="./#" class="sort-button order-button default-button selected" data-sort="recent">
 						<i class="fa fa-clock-o"></i>
 						Recent
 					</a>
-					<a href="./#" class="sort-button order-button default-button selected" data-sort="random">
+					<a href="./#" class="sort-button order-button default-button" data-sort="random">
 						<i class="fa fa-random"></i>
 						Random
 					</a>
 				</div>
 			</div>
-			{{#warnings}}
+			{{#if warnings}}
 			<div class="warning">
 				<h3>Warning</h3>
-				<p>{{.}}</p>
+				<p>{{this}}</p>
 			</div>
-			{{/warnings}}
+			{{/if}}
 			<div class="featured-mods">
-				{{#mods}}
-				<div class="featured-mod{{#tags}} {{.}}{{/tags}}" data-time="{{lastUpdated}}" data-author="{{author}}" data-source="{{source}}" data-version="{{version}}" data-tags="{{tagsRaw}}">
+				{{#each mods}}
+				<div class="featured-mod{{#each tags}} {{this}}{{/each}}" data-time="{{lastUpdated}}" data-author="{{author}}" {{#if source}}data-source="{{source}}"{{/if}} data-version="{{version}}" data-tags="{{tagsRaw}}" {{#if userTags}}data-userTags="{{userTags}}"{{/if}}>
 					<a href="{{link}}">
 						<img src="{{image}}" loading="lazy" alt="{{name}}"/>
 						<div class="card-content">
-							<h3>{{name}}</h3>
-							<p>{{description}}</p>
+							<h3>{{ safeish name }}</h3>
+							<p>{{ safeish description }}</p>
 						</div>
-						<span class="placement hide-nojs">cne</span>
-						<span class="last-updated hide-nojs" data-time="{{lastUpdated}}" style="display:none;">{{lastUpdated}}</span>
-						{{#premium}}
+						<span class="placement">cne</span>
+						{{#if unreleased}}
+						<span class="last-updated" data-time="{{lastUpdated}}">unreleased</span>
+						{{else}}
+						<span class="last-updated" data-time="{{lastUpdated}}">{{shortDate lastUpdated}}</span>
+						{{/if}}
+						{{#if premium}}
 						<img src="img/sparkle-top.gif" class="sparkle top">
 						<img src="img/sparkle-bottom.gif" class="sparkle bottom">
-						{{/premium}}
+						{{/if}}
 					</a>
 				</div>
-				{{/mods}}
+				{{/each}}
 			</div>
 
 			<script src="root/featuredMods.js"></script>
@@ -194,7 +204,7 @@
 		'floating-chat.donateButton.text': '',
 		'floating-chat.donateButton.background-color': '#b265bd',
 		'floating-chat.donateButton.text-color': '#fff',
-		'floating-chat.stylesheets': '["https://fonts.googleapis.com/css?family=Nunito:400,700,800&display=swap", "https://codename-engine.com/ko-fi.css"]',
+		'floating-chat.stylesheets': '["https://codename-engine.com/ko-fi.css"]',
 	});
 	</script>
 </body>

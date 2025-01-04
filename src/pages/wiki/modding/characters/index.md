@@ -39,7 +39,7 @@ You can obviously apply more properties and access them in Scripts, see <a href=
 As for the <syntax lang="xml">&lt;anim&gt;</syntax> nodes, they're pretty self-explanatory but here's a list of properties of them too:
 - ``name`` defines the internal name of the animation *(used for scripting)*
 - ``anim`` is the prefix for finding the animation in the spritesheet.
-- ``indices`` indicates which frames to play from the previously found frames.
+- ``indices`` indicates which frames to play from the previously found frames. (For a range you can type <code class="hljs-string">1..5</code> to generate <code class="hljs-string">1,2,3,4,5</code>)
 - ``type`` determines the type of the animation. either <code class="hljs-string">beat</code> or <code class="hljs-string">loop</code>.
 - ``fps`` is the framerate of your animation.
 - ``x`` and ``y`` are the animation offset. *(offset is only applied when the animation is played)*

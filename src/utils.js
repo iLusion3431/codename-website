@@ -1,13 +1,12 @@
 var jsdom = require("jsdom");
-var Mustache = require('mustache');
+var Handlebars = require('handlebars');
+const createDOMPurify = require('dompurify');
 var path = require("path");
 var hljs = require('highlight.js');
 var fs = require('fs');
 var sass = require('sass');
 var CleanCSS = require('clean-css');
-var UglifyJS = require("uglify-js");
-
-var wax = require('@jvitela/mustache-wax');
+var Terser = require('terser');
 
 var isFullBuild = false;
 var isWatch = false;
@@ -171,10 +170,32 @@ function copyDir(src, dest) {
 	}
 }
 
-function compileJs(file, dest) {
+async function compileJs(file, dest) {
+	try {
+		fs.unlinkSync(dest + ".map");
+	} catch (e) {}
 	if(isRelease) {
 		var content = fs.readFileSync(file, 'utf8');
-		var result = UglifyJS.minify(content);
+
+		var cleanFile = file.replace(/\.js$/, ".uncompressed.js");
+		var filename = path.basename(file);
+		var cleanFilename = path.basename(cleanFile);
+		var result = await Terser.minify({
+			[cleanFilename]: content
+		}, {
+			compress: {
+				ecma: 2015,
+				keep_fargs: false,
+				passes: 10,
+				unsafe_arrows: true
+			},
+			sourceMap: {
+				includeSources: true,
+				//root: path.dirname(file),
+				filename: cleanFilename,
+				url: filename + ".map"
+			}
+		});
 		if(result.error) {
 			console.error(result.error);
 			console.error("Error minifying file: " + file);
@@ -183,52 +204,79 @@ function compileJs(file, dest) {
 			return;
 		}
 		fs.writeFileSync(dest, result.code);
+		fs.writeFileSync(dest + ".map", result.map);
 		return;
 	}
 	fs.copyFileSync(file, dest);
 }
 
-wax(Mustache);
+Handlebars.registerHelper('formatDate', function(date) {
+	var date = new Date(date);
 
-Mustache.Formatters = {
-	formatDate: function(rdate) {
-		var date = new Date(rdate);
+	var year = date.getUTCFullYear();
+	var month = ('0' + (date.getUTCMonth() + 1)).slice(-2);
+	var day = ('0' + date.getUTCDate()).slice(-2);
+	var hours = ('0' + date.getUTCHours()).slice(-2);
+	var minutes = ('0' + date.getUTCMinutes()).slice(-2);
+	var seconds = ('0' + date.getUTCSeconds()).slice(-2);
 
-		var year = date.getUTCFullYear();
-		var month = ('0' + (date.getUTCMonth() + 1)).slice(-2);
-		var day = ('0' + date.getUTCDate()).slice(-2);
-		var hours = ('0' + date.getUTCHours()).slice(-2);
-		var minutes = ('0' + date.getUTCMinutes()).slice(-2);
-		var seconds = ('0' + date.getUTCSeconds()).slice(-2);
+	return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+});
 
-		return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-	},
-	shortDate: function(rdate) {
-		var date = new Date(rdate);
+Handlebars.registerHelper('shortDate', function(date) {
+	var date = new Date(date);
 
-		var year = date.getUTCFullYear();
-		var month = ('0' + (date.getUTCMonth() + 1)).slice(-2);
-		var day = ('0' + date.getUTCDate()).slice(-2);
+	var year = date.getUTCFullYear();
+	var month = ('0' + (date.getUTCMonth() + 1)).slice(-2);
+	var day = ('0' + date.getUTCDate()).slice(-2);
 
-		return `${year}-${month}-${day}`;
-	},
-	isoDate: function(rdate) {
-		var date = new Date(rdate);
-		return date.toISOString();
-	}
-};
+	return `${year}-${month}-${day}`;
+});
+
+Handlebars.registerHelper('isoDate', function(date) {
+	if(!date) return date;
+	var date = new Date(date);
+	return date.toISOString();
+});
+
+Handlebars.registerHelper('safe', function(str) {
+	return new Handlebars.SafeString(str);
+});
+Handlebars.registerHelper('safeish', function(str) {
+	const window = new jsdom.JSDOM('').window;
+	const DOMPurify = createDOMPurify(window);
+	DOMPurify.setConfig({
+		ADD_TAGS: ['code', 'pre', 'syntax']
+	});
+	DOMPurify.addHook("afterSanitizeAttributes", (node) => {
+		const { attributes } = node;
+		if (!attributes  || attributes.length < 2)
+		  return;
+		// No need to switch the last one.
+		for (let l = attributes.length - 2; l >= 0; l--) {
+		  const attr = attributes[l];
+		  const { name, value } = attr;
+		  node.removeAttribute(name);
+		  node.setAttribute(name, value);
+		}
+	});
+
+	return new Handlebars.SafeString(DOMPurify.sanitize(str));
+});
+
+Handlebars.registerHelper('parse', function(html) {
+	return parseTemplate(html, this);
+});
 
 
 function parseTemplate(html, vars) {
 	let old;
-	do {
-		old = html;
-		html = Mustache.render(html, vars, null, {
-			escape: function(text) {
-				return text;
-			}
-		});
-	} while(html != old);
+	// Parse nested templates
+	//do {
+	//	old = html;
+	//	html = Handlebars.compile(html)(vars);
+	//} while(html != old);
+	html = Handlebars.compile(html)(vars);
 
 	return html;
 }

@@ -1,7 +1,7 @@
 ---
-author: Ne_Eo & Frakits
+author: Ne_Eo & Frakits & Lily Ross (mcagabe19)
 desc: This page explains how to add custom shaders
-lastUpdated: 2024-09-05T11:31:01.000Z
+lastUpdated: 2024-11-21T21:28:09.603Z
 title: Shaders
 ---
 # Shaders
@@ -64,14 +64,14 @@ We'll show each step to converting this shader into an usable openfl/flixel shad
 
 ### Keep in mind that this covers the most basic on how to convert a shader from shadertoy.com, complex shaders will need more expertise with handling shaders before converting those.
 
-## <h2 id="shader-compatability" sidebar="Shader Compatability">Important things to note if your shader doesn't work for certain people.</h2>
+## <h2 id="shader-compatibility" sidebar="Shader Compatibility">Important things to note if your shader doesn't work for certain people.</h2>
 Avoid using `0.` or `.0` for floats, instead, use `0.0` (ending the float number with an `.0`)
 *(despite half floats working on nVidia gpus, other gpus like AMD gpus don't support this feature)*
 
 Avoid using switch cases, and use if statements where possible.
 *(switch cases are not supported on macOS or miscellaneous platforms)*
 
-Ints are not recommended when initiating vectors. *(ex, vec2(1, 1) is not supported on certain platforms, use vec2(1.0, 1.0) instead)*.
+Integers are not recommended when initiating vectors. *(ex, vec2(1, 1) is not supported on certain platforms, use vec2(1.0, 1.0) instead)*.
 Instead, use floats where it's expected. Like mod(1.0, 2.0) instead of mod(1, 2)
 
 Avoid using the following types:
@@ -93,3 +93,36 @@ Avoid initializing variables with the name `input` or `sample`, as those cause t
 Avoid using the % (modulo) operator and instead use the mod function.
 
 Avoid using arrays. Since some platforms don't support them.
+
+## Important: Runtime Initialization of Globals
+
+In OpenGL ES (such as on mobile and web), global variables declared without a storage qualifier (const, uniform, or varying) must be initialized with constant expressions at compile time. This means you cannot assign runtime-dependent values like openfl_TextureCoordv.xy or openfl_TextureSize directly to global variables outside a function.
+
+For example:
+
+```glsl
+// INVALID: Global initialization with runtime values
+vec2 uv = openfl_TextureCoordv.xy;  // ERROR: Non-constant initialization
+vec2 fragCoord = openfl_TextureCoordv * openfl_TextureSize;  // ERROR: Non-constant initialization
+vec2 iResolution = openfl_TextureSize;  // ERROR: Non-constant initialization
+```
+
+This happens because variables like openfl_TextureCoordv and openfl_TextureSize are populated dynamically by the GPU during the shader's execution and are not available at compile time.
+
+To fix this, move such assignments into the main() function or any local scope where runtime data is valid:
+
+```glsl
+// VALID: Runtime initialization inside a function
+void main() {
+    vec2 uv = openfl_TextureCoordv.xy;
+    vec2 iResolution = openfl_TextureSize; 
+    vec2 fragCoord = uv * iResolution;
+
+    vec4 col = flixel_texture2D(bitmap, uv);
+
+    gl_FragColor = col;
+}
+```
+
+This adjustment ensures the shader complies with GLSL rules and works correctly across all platforms.
+

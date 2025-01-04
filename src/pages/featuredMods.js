@@ -1,7 +1,7 @@
 (function () {
+"use strict";
 function randomizeOrder() {
 	var mods = document.querySelectorAll(".featured-mod");
-	var parent = mods[0].parentNode;
 	var modsArray = Array.from(mods);
 
 	for (var i = modsArray.length - 1; i > 0; i--) {
@@ -11,6 +11,11 @@ function randomizeOrder() {
 		modsArray[j] = temp;
 	}
 
+	setModsArray(modsArray, mods);
+}
+
+function setModsArray(modsArray, nodes) {
+	var parent = nodes[0].parentNode;
 	var fragment = document.createDocumentFragment();
 	for (var i = 0; i < modsArray.length; i++) {
 		fragment.appendChild(modsArray[i].cloneNode(true));
@@ -29,11 +34,11 @@ function sortByTime(a, b) {
 	var aTime = a.getAttribute("data-time");
 	var bTime = b.getAttribute("data-time");
 
-	if (aTime == null) return 1;           // Push null to the bottom
-	if (bTime == null) return -1;
-	if (aTime === "unreleased") return 1;  // Push "unreleased" to the bottom
+	if (!aTime) return 1;					// Push null to the bottom
+	if (!bTime) return -1;
+	if (aTime === "unreleased") return 1;	// Push "unreleased" to the bottom
 	if (bTime === "unreleased") return -1;
-	if (aTime === "unknown") return 1;     // Push "unknown" to the bottom
+	if (aTime === "unknown") return 1;		// Push "unknown" to the bottom
 	if (bTime === "unknown") return -1;
 
 	var aDate = new Date(aTime).getTime();
@@ -45,18 +50,11 @@ function sortByTime(a, b) {
 
 function recentOrder() {
 	var mods = document.querySelectorAll(".featured-mod");
-	var parent = mods[0].parentNode;
 	var modsArray = Array.from(mods);
 
 	modsArray.sort(sortByTime);
 
-	var fragment = document.createDocumentFragment();
-	for (var i = 0; i < modsArray.length; i++) {
-		fragment.appendChild(modsArray[i].cloneNode(true));
-	}
-
-	clearElement(parent);
-	parent.appendChild(fragment);
+	setModsArray(modsArray, mods);
 }
 
 var sortButtons = document.querySelectorAll(".sort-button");
@@ -78,24 +76,29 @@ sortButtons.forEach(button => {
 			});
 			button.classList.add("selected");
 		} else {
+			var mods = document.querySelectorAll(".featured-mod");
 			if(sort == "all") {
-				document.querySelectorAll(".featured-mod").forEach(mod => {
+				mods.forEach(mod => {
+					var display;
 					if(mod.classList.contains("upcoming")) {
-						mod.style.display = "none";
+						display = "none";
 					} else {
-						mod.style.display = "block";
+						display = "block";
 					}
+					mod.style.display = display;
 				});
 			} else {
-				document.querySelectorAll(".featured-mod").forEach(mod => {
+				mods.forEach(mod => {
 					mod.style.display = "none";
 				});
 				document.querySelectorAll(".featured-mod." + sort).forEach(mod => {
+					var display;
 					if(sort != "upcoming" && mod.classList.contains("upcoming")) {
-						mod.style.display = "none";
+						display = "none";
 					} else {
-						mod.style.display = "block";
+						display = "block";
 					}
+					mod.style.display = display;
 				});
 			}
 
@@ -107,19 +110,19 @@ sortButtons.forEach(button => {
 	});
 });
 
-randomizeOrder();
+recentOrder();
 
 function getRelativeTimeString(
 	date, // Date | number
 	lang = "en" // navigator.language
 ) {
-	const timeMs = typeof date === "number" ? date : date.getTime();
-	const deltaSeconds = Math.round((timeMs - Date.now()) / 1000);
-	const cutoffs = [60, 3600, 86400, 86400 * 7, 86400 * 30, 86400 * 365, Infinity];
-	const units = ["second", "minute", "hour", "day", "week", "month", "year"];
-	const unitIndex = cutoffs.findIndex(cutoff => cutoff > Math.abs(deltaSeconds));
-	const divisor = unitIndex ? cutoffs[unitIndex - 1] : 1;
-	const rtf = new Intl.RelativeTimeFormat(lang, { numeric: "auto" });
+	var timeMs = typeof date === "number" ? date : date.getTime();
+	var deltaSeconds = Math.round((timeMs - Date.now()) / 1000);
+	var cutoffs = [60, 3600, 86400, 86400 * 7, 86400 * 30, 86400 * 365, Infinity];
+	var units = ["second", "minute", "hour", "day", "week", "month", "year"];
+	var unitIndex = cutoffs.findIndex(cutoff => cutoff > Math.abs(deltaSeconds));
+	var divisor = unitIndex ? cutoffs[unitIndex - 1] : 1;
+	var rtf = new Intl.RelativeTimeFormat(lang, { numeric: "auto" });
 	return rtf.format(Math.floor(deltaSeconds / divisor), units[unitIndex]);
 }
 
@@ -127,11 +130,10 @@ var lastUpdated = document.querySelectorAll(".last-updated");
 if(lastUpdated.length > 0 && window.Intl) {
 	lastUpdated.forEach(lastUpdated => {
 		var time = lastUpdated.getAttribute("data-time");
-		if(time != "unknown" && time != null && time != "unreleased") {
-			lastUpdated.innerText = getRelativeTimeString(new Date(time));
-			lastUpdated.style.display = "inline";
-		}
 		if(time == "unreleased") {
+			lastUpdated.style.display = "inline";
+		} else if(time != "unknown" && time) {
+			lastUpdated.textContent = getRelativeTimeString(new Date(time));
 			lastUpdated.style.display = "inline";
 		}
 	});

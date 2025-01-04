@@ -6,6 +6,7 @@
 -lib markdown
 
 -dce no
+-cp src
 -main Main
 
 --define analyzer-optimize

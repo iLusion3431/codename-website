@@ -11,7 +11,7 @@ First, you need to put the .png and .xml of the note splashes into ``images/game
 The filename should be the name you want to reference the splashes in the data, in this case we'll use ``sploosh``.
 Here is how the spritesheet should look like:
 
-<!-- TODO: get custom ones so we dont have to worry about copyrights -->
+<!-- TODO: get custom ones so we don't have to worry about copyrights -->
 <img src="./note-splashes-1.png">
 <img src="./note-splashes-2.png">
 

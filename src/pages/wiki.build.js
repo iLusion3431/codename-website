@@ -69,6 +69,14 @@ function generateSidebar(list, basePath = '', selected = null, idx = null, nameM
 	return {html, nameMap};
 }
 
+function getGiscusID(pageDir) {
+	// don't do index.html to /, causes issues
+	//if(pageDir.endsWith("index.html")) {
+	//	return pageDir.replace("index.html", "");
+	//}
+	return pageDir.replace(".html", "");
+}
+
 var wikiDir = "pages/wiki/";
 
 var sidebarRaw = fs.readFileSync("./src/pages/wiki.json", "utf8");
@@ -152,6 +160,7 @@ function buildHtml(_pageDir, _exportPath) {
 				author: markdown.data.author ?? null,
 
 				url: i,
+				giscusID: getGiscusID("wiki/" + i.replace(/\.md$/, ".html")),
 			};
 			console.log(i);
 

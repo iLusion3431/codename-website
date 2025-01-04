@@ -72,7 +72,7 @@ import flixel.addons.display.FlxBackdrop;
 - <a href="./script-calls.md">All of the script calls</a>
 
 And if you wanna go advanced, follow the rest of the articles here:
-- <a href="./playstate-scripts/pause-gamover-scripts.md">Pause/Game Over Scripts</a>
+- <a href="./playstate-scripts/pause-gameover-scripts.md">Pause/Game Over Scripts</a>
 - <a href="./playstate-scripts/cutscenes-dialogue-scripts.md">Cutscenes/Dialogue Scripts</a>
 - <a href="./playstate-scripts/character-stage-scripts.md">Character/Stage Scripts</a><br><br>
 - <a href="./global-scripts.md">Global Scripts</a>

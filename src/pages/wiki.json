@@ -6,7 +6,9 @@
     ["troubleshooting", "Troubleshooting"],
     ["modding/index", "Modding The Engine", [
         ["songs/index", "Creating songs", [
-            ["editor-features", "Chart Editor Features"]
+            ["editor-features", "Chart Editor Features"],
+            ["events", "Chart Events"],
+            ["displaying-songs", "Displaying Songs - UNFINISHED"]
         ]],
         ["characters/index", "Creating characters", [
             ["editor-features", "Character Editor Features - UNFINISHED"]
@@ -22,7 +24,7 @@
                 ["events-notetypes-scripts", "Events/Notetype Scripts"],
                 ["cutscenes-dialogue-scripts", "Cutscenes/Dialogue Scripts"],
                 ["character-stage-scripts", "Character/Stage Scripts"],
-                ["pause-gamover-scripts", "Pause/Game Over Scripts"]
+                ["pause-gameover-scripts", "Pause/Game Over Scripts"]
             ]],
             ["state-substate-scripts", "State/Substate Scripts"],
             ["global-scripts", "Global Scripts"],

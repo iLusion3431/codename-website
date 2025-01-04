@@ -4,23 +4,26 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="root/style.css">
+	<link rel="stylesheet" href="root/tools.css">
 	<title>Event Packer - Codename Engine Tools</title>
 
 	<meta name="title" content="Event Packer - Codename Engine Tools" />
-	<meta name="description" content="Website dedicated to things for Codename Engine!" />
+	<meta name="keywords" content="codename engine, codename, engine, game, modding, mods, website, documentation, wiki, tools, tool, codenameengine, cne, funkin, fnf, fnf engine, fnf engines, friday night funkin, gamebanana fnf, event packer, event converter, event generator, event generator" />
+
+	<meta name="description" content="Pack the files for a event into a small file" />
+	<meta property="og:description" content="Pack the files for a event into a small file" />
+	<meta property="twitter:description" content="Pack the files for a event into a small file" />
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://codename-engine.com/" />
 	<meta property="og:title" content="Event Packer - Codename Engine Tools" />
-	<meta property="og:description" content="Website dedicated to things for Codename Engine!" />
 	<meta property="og:image" content="https://codename-engine.com/img/banner.png" />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content="https://codename-engine.com/" />
 	<meta property="twitter:title" content="Event Packer - Codename Engine Tools" />
-	<meta property="twitter:description" content="Website dedicated to things for Codename Engine!" />
 	<meta property="twitter:image" content="https://codename-engine.com/img/banner.png" />
 
 	<meta name="theme-color" content="#7f33b8">
@@ -31,111 +34,41 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="root/favicon-16x16.png">
 	<link rel="manifest" href="root/site.webmanifest">
 </head>
-<body>
+<body class="event-packer">
 	<div class="header">
-		{{ header }}
+		{{{ parse header }}}
 	</div>
 	<div class="container">
-		<form>
-			<div>
-				<label for="event-file">Event File (.hx/.hscript/.hxs/.hsc)</label>
-				<input type="file" id="event-file" file="event-file" placeholder="Event File">
-			</div>
+		<div class="content">
+			<h1 style="text-align: center;">Event Packer</h1>
+			<form id="event-packer-form">
+				<div class="inputs">
+					<div class="file-input">
+						<label for="event-file">Event File (.hx/.hscript/.hxs/.hsc)<span class="required">*</span>
+							<input type="file" id="event-file" file="event-file" placeholder="Event File" required accept=".hx,.hscript,.hxs,.hsc">
+						</label>
+					</div>
 
-			<div>
-				<label for="event-params">Event Params (.json)</label>
-				<input type="file" id="event-params" file="event-params" placeholder="Event Params">
-			</div>
+					<div class="file-input">
+						<label for="event-params">Event Params (.json)<span class="required">*</span>
+							<input type="file" id="event-params" file="event-params" placeholder="Event Params" required accept=".json">
+						</label>
+					</div>
 
-			<div>
-				<label for="event-image">Event Icon (.png)</label>
-				<input type="file" id="event-image" file="event-image" placeholder="Event Icon">
-			</div>
+					<div class="file-input">
+						<label for="event-image">Event Icon (.png)
+							<input type="file" id="event-image" file="event-image" placeholder="Event Icon" accept=".png">
+						</label>
+					</div>
+				</div>
 
-			<div>
-				<button type="submit">Pack</button>
-			</div>
-		</form>
+				<div class="submit-button">
+					<button type="submit">Pack</button>
+				</div>
+			</form>
+		</div>
 	</div>
 
-	<script>
-var form = document.querySelector("form");
-form.addEventListener("submit", function (e) {
-	e.preventDefault();
-
-	var eventFile = document.querySelector("#event-file").files[0];
-	var eventParams = document.querySelector("#event-params").files[0];
-	var eventImage = document.querySelector("#event-image").files[0];
-	var separator = '________PACKSEP________';
-
-	var promises = [readFile(eventFile), readFile(eventParams)];
-	if(eventImage) {
-		promises.push(getImageBase64(eventImage));
-	}
-
-	Promise.all(promises)
-		.then(([hscriptText, jsonFileText, imageDataURL]) => {
-			if(!imageDataURL) {
-				imageDataURL = "assets/editors/charter/event-icons/Unknown";
-			}
-			var packText = [
-				eventFile.name,
-				hscriptText,
-				jsonFileText,
-				imageDataURL
-			].join(separator);
-
-			saveFile(packText, eventFile.name.replace(/.(hx|hscript|hxs|hsc)$/, ".pack"));
-		})
-		.catch(error => console.error("Error processing files:", error));
-});
-
-function readFile(file) {
-	return new Promise((resolve, reject) => {
-		var reader = new FileReader();
-		reader.onload = () => resolve(reader.result);
-		reader.onerror = reject;
-		reader.readAsText(file);
-	});
-}
-
-function getImageBase64(file) {
-	return new Promise((resolve, reject) => {
-		var reader = new FileReader();
-		reader.onload = function () {
-			if(!file.name.endsWith(".png")) {
-				var img = new Image();
-				img.onload = function () {
-					var canvas = document.createElement("canvas");
-					canvas.width = img.width;
-					canvas.height = img.height;
-					var ctx = canvas.getContext("2d");
-					ctx.drawImage(img, 0, 0);
-
-					var pngDataUrl = canvas.toDataURL("image/png");
-					resolve(pngDataUrl.split(',')[1]);
-				};
-				img.onerror = reject;
-				img.src = reader.result;
-			}
-			else {
-				resolve(reader.result.split(',')[1]);
-			}
-		};
-		reader.onerror = reject;
-		reader.readAsDataURL(file); // Read the image as a Data URL
-	});
-}
-
-function saveFile(content, filename) {
-	var blob = new Blob([content], { type: "text/plain;charset=utf-8" });
-	var link = document.createElement("a");
-	link.href = URL.createObjectURL(blob);
-	link.download = filename;
-	document.body.appendChild(link);
-	link.click();
-	document.body.removeChild(link);
-}
-	</script>
+	<script src="root/tools/event-packer/index.js"></script>
 </body>
 </html>

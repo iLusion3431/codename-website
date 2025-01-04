@@ -57,7 +57,7 @@ There's a lot of them but we'll go over each one.
 - **Int()** returns an int. This one has parameters for minimum value, maximum value, and stepper *(non-functional)*
 - **Float()** is the same as int, but has an extra parameter for precision.
 - **String** returns a string.
-- **StrumLine** creates a dropdown menu that contains the current StrumLine in the chart. Returns Ints corresponding the StrumLine index in the group ``strumLines``.
+- **StrumLine** creates a dropdown menu that contains the current StrumLine in the chart. Returns an Integer corresponding to the StrumLine index in the group ``strumLines``.
 - **ColorWheel** creates a color wheel that returns the color in Int hex format.
 - **DropDown()** generates a dropdown menu that contains the entries inside the parentheses.
 

@@ -184,9 +184,10 @@ div.compact {
     flex-wrap: wrap;
     justify-content: space-evenly;
 
-    height: 530px;
+    height: 635px;
     overflow-y: scroll;
     overscroll-behavior: contain;
+    align-content: flex-start;
 }
 
 .featured-mod {
@@ -311,6 +312,10 @@ div.compact {
 
 .featured-mod.upcoming {
     display: none;
+}
+
+.nojs .featured-mod.upcoming {
+    display: unset;
 }
 
 // .sort-button:not(.selected) {

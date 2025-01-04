@@ -14,11 +14,11 @@
   padding: 0.2em 0.4em;
 }
 
-li.expando>ul {
+li.expandable>ul {
   display: none;
 }
 
-li.expando.expanded>ul {
+li.expandable.expanded>ul {
   display: block;
 }
 
@@ -75,14 +75,16 @@ a.treeLink {
   border-bottom: none;
 }
 
-code {
+code, code a {
   font-family: monospace;
+  //padding: 0.3em;
+}
+code {
   color: white !important;
-  padding: 0.3em;
 }
 
 .anchor > code {
-  padding: 0.4em;
+  padding: 0.4em 0.6em;
   font-size: 13px;
   font-family: monospace;
 }
@@ -357,4 +359,82 @@ small, small > .muted, small > span {
 i.fa {
   position: relative;
   margin-right: 0.5em;
+}
+
+
+// highlighter.css
+
+/**
+  Code Highlighting
+**/
+html pre,
+html pre code {
+  font-family: consolas, monospace;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+code {
+  color: #333;
+}
+
+pre {
+  color: #333;
+  margin: 15px 0;
+  padding: 0.5em;
+}
+
+pre .type {
+  color: #0086b3;
+}
+
+pre .kwd {
+  color: #00a;
+}
+
+pre .val {
+  color: #44a;
+}
+
+pre .str,
+div.pre .str,
+pre .str .kwd,
+pre .str .val,
+pre .str .type {
+  color: #a00;
+}
+
+pre .cmt {
+  color: #008800;
+  color: #998;
+  font-style: italic;
+}
+
+/* Make sure keywords inside comments are not highlighted*/
+pre .cmt .kwd,
+pre .cmt .str,
+pre .cmt .val,
+pre .cmt .type {
+  color: #998;
+}
+
+.last-modified {
+  color: #999;
+}
+
+.semantic {
+  display: none;
+}
+
+p code, th code {
+  padding: 0.3em;
+}
+
+
+li > a {
+  padding: 0;
+
+  &.selected:before {
+    background: var(--primary-color);
+  }
 }

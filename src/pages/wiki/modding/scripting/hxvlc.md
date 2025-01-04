@@ -10,10 +10,11 @@ Using hxvlc, you can display videos anywhere, and can be used as a sprite as wel
 
 To get started, you get 2 choices:
 - <syntax lang="haxe">FlxVideo</syntax> which runs based on flash bitmap, and
-- <syntax lang="haxe">FlxSpriteVideo</syntax> which runs based on an FlxSprite.
+- <syntax lang="haxe">FlxVideoSprite</syntax> which runs based on an FlxSprite.
 
 Using an FlxVideo looks something like this:
 ```haxe
+import hxvlc.flixel.FlxVideo;
 var video:FlxVideo = new FlxVideo();
 video.onEndReached.add(function():Void
 {
@@ -28,6 +29,7 @@ if (video.load(Paths.video("video")))
 ```
 And using an FlxVideoSprite looks like this:
 ```haxe
+import hxvlc.flixel.FlxVideoSprite;
 var video:FlxVideoSprite = new FlxVideoSprite(0, 0);
 video.antialiasing = true;
 video.bitmap.onFormatSetup.add(function():Void

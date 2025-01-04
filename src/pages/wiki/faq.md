@@ -9,9 +9,9 @@ title: FAQ
 ## <h2 id="why-should-i-use-the-engine">Why should I use the engine?</h2>
 
 Here are some of the best reasons you should use Codename Engine:
-- **Softcoding:** this makes development of mods extremely fast and alot less annoying as there is no time inbetween trying revisions of code.
+- **Softcoding:** this makes development of mods extremely fast and a lot less annoying as there is no time between trying revisions of code.
 - **Editors:** powerful editors that make creating charts and characters easier, controls and keybindings are intuitive and allow you to undo your mistakes!
-- **Modern:** get all the latest features and capabilites like multiple strumlines, multiple vocals, ndlls, and a extremely capable scripting language.
+- **Modern:** get all the latest features and capabilities like multiple strumlines, multiple vocals, ndlls, and a extremely capable scripting language.
 - **Fast:** this engine is very optimized and is takes very little ram compared to other engines, higher fps!!!
 
 ## <h2 id="this-vs-psych" sidebar="Should i use Psych Engine">I'm unsure whether to use this engine or Psych Engine</h2>
@@ -56,7 +56,7 @@ Our organization consists of having multiple owners cuz why separate people into
 
 ## <h2 id="something-not-working-bug" sidebar="I found a bug">Something is not working or I found a bug!</h2>
 
-If you found a bug, please report it on the [GitHub repository](https://github.com/FNF-CNE-Devs/CodenameEngine/issues) or on [Discord](https://discord.gg/WTzm35kekB).
+If you found a bug, please report it on the [GitHub repository](https://github.com/CodenameCrew/CodenameEngine/issues) or on [Discord](https://discord.gg/WTzm35kekB).
 
 ## <h2 id="suggest-feature-change" sidebar="Feature Suggestion">I want to suggest a feature or change something!</h2>
 

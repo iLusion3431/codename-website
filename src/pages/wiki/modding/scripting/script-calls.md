@@ -69,7 +69,7 @@ The ``event`` in question has the following parameters:
 
 ### <syntax lang="haxe">onVocalsResync()</syntax>
 
-## <h2 id="dialogue-scripts" sidebar="Dialogue Scripts">Dialogue Scripts <small>(mostly substate like behaviour)</small></h2>
+## <h2 id="dialogue-scripts" sidebar="Dialogue Scripts">Dialogue Scripts <small>(mostly substate like behavior)</small></h2>
 
 ### <syntax lang="haxe">structureLoaded(event:DialogueStructureEvent)</syntax>
 
@@ -134,5 +134,17 @@ The ``event`` is shared between the two (but makes no sense in cancelling it on 
 ## <h2 id="global-scripts">Global Scripts</h2>
 
 ### <syntax lang="haxe">focusLost()</syntax>, <syntax lang="haxe">focusGained()</syntax>
+
+### <syntax lang="haxe">preDraw()</syntax>, <syntax lang="haxe">postDraw()</syntax>
+
+### <syntax lang="haxe">preGameStart()</syntax>, <syntax lang="haxe">postGameStart()</syntax>, <syntax lang="haxe">preGameReset()</syntax>, <syntax lang="haxe">postGameReset()</syntax>
+
+### <syntax lang="haxe">preStateSwitch()</syntax>, <syntax lang="haxe">postStateSwitch()</syntax>
+
+### <syntax lang="haxe">preStateCreate()</syntax>
+
+Before `FlxG.game` calls `_state.create()`
+
+### <syntax lang="haxe">preUpdate()</syntax>, <syntax lang="haxe">update()</syntax>, <syntax lang="haxe">postUpdate()</syntax>
 
 more to be documented soon

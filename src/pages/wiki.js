@@ -1,4 +1,5 @@
 (function () {
+"use strict";
 function getRelativeTimeString(
 	date, // Date | number
 	lang = "en" // navigator.language
@@ -17,7 +18,7 @@ var lastUpdated = [document.getElementById("last-updated")];
 if(lastUpdated.length > 0 && window.Intl) {
 	lastUpdated.forEach(lastUpdated => {
 		var time = lastUpdated.getAttribute("data-time");
-        lastUpdated.innerText = getRelativeTimeString(new Date(time));
+		lastUpdated.textContent = getRelativeTimeString(new Date(time));
 	});
 }
 })();

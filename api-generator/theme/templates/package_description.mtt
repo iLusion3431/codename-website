@@ -1,2 +1,7 @@
-<h1>::api.currentPageName:: <small ::cond api.isDefined("version") && full == ""::>version ::api.getValue('version')::</small></h1>
+::if api.isDefined("version") && full == ""::
+	<h1>::api.currentPageName:: <small>version ::api.getValue('version')::</small></h1>
+::else::
+	<h1>::api.currentPageName::</h1>
+::end::
 <p ::cond api.isDefined("description")::>::api.getValue("description")::</p>
+$$getPackageDescription()
