@@ -19,6 +19,24 @@ function getValidMods() {
 	return mods;
 }
 
+function sortByTime(a, b) {
+	var aTime = a.lastUpdated;
+	var bTime = b.lastUpdated;
+
+	if (aTime == null) return 1;           // Push null to the bottom
+	if (bTime == null) return -1;
+	if (aTime === "unreleased") return 1;  // Push "unreleased" to the bottom
+	if (bTime === "unreleased") return -1;
+	if (aTime === "unknown") return 1;     // Push "unknown" to the bottom
+	if (bTime === "unknown") return -1;
+
+	var aDate = new Date(aTime).getTime();
+	var bDate = new Date(bTime).getTime();
+
+	if (aDate === bDate) return 0;
+	return bDate > aDate ? 1 : -1;
+}
+
 function buildMods(pageDir, exportPath) {
 	var warnings = [];
 
@@ -40,6 +58,9 @@ function buildMods(pageDir, exportPath) {
 		}
 		else if(fs.existsSync(modsDir + mod + "/cover.png")) {
 			imageExt = "png";
+		}
+		else if(fs.existsSync(modsDir + file + "/cover.webp")) {
+			imageExt = "webp";
 		}
 
 		var imgLink;
@@ -72,11 +93,13 @@ function buildMods(pageDir, exportPath) {
 			source: meta.source,
 			version: meta.version,
 			lastUpdated: meta.lastUpdated ?? "unknown",
+			unreleased: tags.includes("upcoming"),
 			premium: tags.includes("premium")
 		});
 	}
 
-	mods.sort((a, b) => a.name.localeCompare(b.name));
+	mods.sort(sortByTime);
+	//mods.sort((a, b) => a.name.localeCompare(b.name));
 	return {mods, warnings};
 }
 
@@ -102,6 +125,8 @@ function buildHtml(_pageDir, _exportPath) {
 
 		let modExport = exportPath + mod;
 
+		if(!fs.existsSync(modExport)) fs.mkdirSync(modExport, { recursive: true });
+
 		var imageExt = null;
 		if(fs.existsSync(modsDir + mod + "/cover.jpg")) {
 			imageExt = "jpg";
@@ -111,6 +136,9 @@ function buildHtml(_pageDir, _exportPath) {
 		}
 		else if(fs.existsSync(modsDir + mod + "/cover.png")) {
 			imageExt = "png";
+		}
+		else if(fs.existsSync(modsDir + file + "/cover.webp")) {
+			imageExt = "webp";
 		}
 
 		var imgLink;
