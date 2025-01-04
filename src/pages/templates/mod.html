@@ -52,11 +52,16 @@
 			<div class="content">
 				<div>
 					<h2>{{ safeish modName }} <small style="font-weight: 200;"> by {{ safeish author }}</small></h2>
+
 					{{#each tags}}
 					{{#if (shouldShowTag this)}}
 					<span class="tag" title="{{this}}">{{ readableTag this }}</span>
 					{{/if}}
 					{{/each}}
+					{{#each userTags}}
+					<span class="tag" title="{{this}}">{{ this }}</span>
+					{{/each}}
+
 					<p>Version: {{ version }}</p>
 					{{#if unreleased}}
 					<p class="last-updated" data-time="{{lastUpdated}}" data-prefix="Last updated: " data-display="block">unreleased</p>

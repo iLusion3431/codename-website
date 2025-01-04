@@ -155,6 +155,8 @@ function buildHtml(_pageDir, _exportPath) {
 			link: meta.link,
 			tags: tags,
 			tagsRaw: (tags).join(","),
+			userTags: meta.userTags ?? [],
+			userTagsRaw: (meta.userTags ?? []).join(","),
 			author: meta.author,
 			source: meta.source,
 			version: meta.version,
