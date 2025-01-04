@@ -13,11 +13,11 @@ function toggleInherited(el) {
 
 	var icon = toggle.querySelector("i");
 	if (toggle.classList.contains("toggle-on")) {
-	  icon.classList.remove("fa-folder");
-	  icon.classList.add("fa-folder-open");
+		icon.classList.remove("fa-folder");
+		icon.classList.add("fa-folder-open");
 	} else {
-	  icon.classList.add("fa-folder");
-	  icon.classList.remove("fa-folder-open");
+		icon.classList.add("fa-folder");
+		icon.classList.remove("fa-folder-open");
 	}
 
 	return false;

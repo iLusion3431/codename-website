@@ -1,18 +1,24 @@
 (function () {
+/** @type {HTMLTextAreaElement} */
 var input = document.getElementById("input");
+/** @type {HTMLTextAreaElement} */
 var output = document.getElementById("output");
 
+/** @type {HTMLDivElement} */
 var dropzone = document.getElementById("dropzone");
+/** @type {HTMLInputElement} */
 var fileInput = document.getElementById("file");
 
+/** @type {HTMLDivElement} */
 var saveButton = document.getElementById("save");
 
+/** @type {HTMLSpanElement} */
 var fileNameDisplay = document.getElementById('file-name');
 
 saveButton.addEventListener("click", function (e) {
 	e.preventDefault();
 	var outputValue = output.value.trim();
-	if(outputValue == "") {
+	if(outputValue === "") {
 		alert("Please paste your character data first!");
 		return;
 	}
@@ -150,6 +156,7 @@ function formatNumberRange(numbers, separator = ",") {
 
 var convertFolderButton = document.getElementById("convert-folder");
 convertFolderButton.addEventListener("change", () => {
+	/** @type {FileList} */
 	var files = convertFolderButton.files;
 	var promises = [];
 	var zip = new JSZip();
@@ -158,11 +165,12 @@ convertFolderButton.addEventListener("change", () => {
 	// sets the date to be fixed
 	JSZip.defaults.date = new Date(currDate.getTime() - currDate.getTimezoneOffset() * 60000);
 
+	/** @param {File} file */
 	var convertFile = file => {
 		return new Promise((resolve, reject) => {
 			var reader = new FileReader();
 			reader.onload = function(event) {
-				zip.file(file.name.replace('.json', '.xml'), convert(event.target.result));
+				zip.file(file.name.replace(/\.json$/, ".xml"), convert(event.target.result));
 				//console.log('converted ' + file.name);
 				resolve("wiz really likes furries");
 			};
@@ -171,7 +179,7 @@ convertFolderButton.addEventListener("change", () => {
 	}
 
 	for(var file of files) {
-		if (file.name.includes('.json')) {
+		if (file.name.endsWith('.json')) {
 			promises.push(convertFile(file));
 		}
 	}
@@ -218,7 +226,7 @@ function colorFromString(str) {
 		var match = COLOR_REGEX.exec(str);
 		var hexColor = "0x" + match[2];
 		result = std_parseInt(hexColor);
-		if (hexColor.length == 8) {
+		if (hexColor.length === 8) {
 			result = result | 0xFF000000;
 		}
 	} else {
