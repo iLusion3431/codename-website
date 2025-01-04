@@ -85,6 +85,7 @@ function buildMods(pageDir, exportPath) {
 		mods.push({
 			name: meta.name,
 			description: meta.description,
+			emptyDescription: meta.description == null || meta.description.trim() == "",
 			image: imgLink,
 			link: meta.link,
 			tags: tags,

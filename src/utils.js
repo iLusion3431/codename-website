@@ -7,6 +7,7 @@ var fs = require('fs');
 var sass = require('sass');
 var CleanCSS = require('clean-css');
 var Terser = require('terser');
+var stripHtml = require("string-strip-html");
 
 var isFullBuild = false;
 var isWatch = false;
@@ -279,6 +280,10 @@ Handlebars.registerHelper('readableTag', function(tag) {
 		return tagsData[tag];
 	}
 	return tag;
+});
+
+Handlebars.registerHelper('stripHtml', function(html) {
+	return stripHtml.stripHtml(html).result;
 });
 
 

@@ -21,6 +21,7 @@
     "highlight.js": "^11.10.0",
     "jsdom": "^25.0.1",
     "remarkable": "^2.0.1",
+    "string-strip-html": "^8.5.0",
     "terser": "^5.36.0"
   },
   "devDependencies": {

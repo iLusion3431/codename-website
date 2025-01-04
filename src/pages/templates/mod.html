@@ -9,14 +9,14 @@
 
 	<meta name="title" content="{{ pageTitle }} - Codename Engine Mods" />
 
-	{{#if shortDesc}}
-	<meta name="description" content="{{ shortDesc }}" />
-	<meta property="og:description" content="{{ shortDesc }}" />
-	<meta property="twitter:description" content="{{ shortDesc }}" />
+	{{#if emptyDescription}}
+	<meta name="description" content="{{ modName }} by {{ author }}" />
+	<meta property="og:description" content="{{ modName }} by {{ author }}" />
+	<meta property="twitter:description" content="{{ modName }} by {{ author }}" />
 	{{else}}
-	<meta name="description" content="Page for the mod {{ modName }} by {{ author }}" />
-	<meta property="og:description" content="Page for the mod {{ modName }} by {{ author }}" />
-	<meta property="twitter:description" content="Page for the mod {{ modName }} by {{ author }}" />
+	<meta name="description" content="{{ stripHtml description }}&#10;{{ modName }} by {{ author }}" />
+	<meta property="og:description" content="{{ stripHtml description }}&#10;{{ modName }} by {{ author }}" />
+	<meta property="twitter:description" content="{{ stripHtml description }}&#10;{{ modName }} by {{ author }}" />
 	{{/if}}
 
 	<!-- Open Graph / Facebook -->
