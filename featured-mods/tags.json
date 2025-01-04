@@ -1,0 +1,28 @@
+{
+    "long-desc": null,
+    "longer-desc": null,
+    "longerer-desc": null,
+    "long-title": null,
+    "longer-title": null,
+    "longerer-title": null,
+
+    "premium": "Boosted",
+    "featured": "Featured",
+    "upcoming": "Upcoming",
+    "admin-pick": "Admin pick",
+    "loved": "Loved",
+
+    "softcoded": "Softcoded",
+    "hardcoded": "Hardcoded",
+    "softcoded-no-modpack-download": "Softcoded (no modpack download)",
+
+    "length-short": "Short length",
+    "length-medium": "Medium length",
+    "length-long": "Long length",
+    "length-very-long": "Very long length",
+
+    "difficulty-easy": "Easy difficulty",
+    "difficulty-normal": "Normal difficulty",
+    "difficulty-hard": "Hard difficulty",
+    "difficulty-expert": "Expert difficulty"
+}

@@ -3,57 +3,79 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{{ pageTitle }} - Codename Engine Docs</title>
+	<title>{{ pageTitle }} - Codename Engine Mods</title>
 	<link rel="stylesheet" href="root/style.css">
+	<link rel="stylesheet" href="root/mods.css">
 
-	<meta name="title" content="{{ pageTitle }} - Codename Engine Docs" />
+	<meta name="title" content="{{ pageTitle }} - Codename Engine Mods" />
 
-	<meta name="description" content="Website dedicated to things for Codename Engine!" />
-	<meta property="og:description" content="Website dedicated to things for Codename Engine!" />
-	<meta property="twitter:description" content="Website dedicated to things for Codename Engine!" />
+	{{#if shortDesc}}
+	<meta name="description" content="{{ shortDesc }}" />
+	<meta property="og:description" content="{{ shortDesc }}" />
+	<meta property="twitter:description" content="{{ shortDesc }}" />
+	{{else}}
+	<meta name="description" content="Page for the mod {{ modName }} by {{ author }}" />
+	<meta property="og:description" content="Page for the mod {{ modName }} by {{ author }}" />
+	<meta property="twitter:description" content="Page for the mod {{ modName }} by {{ author }}" />
+	{{/if}}
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://codename-engine.com/" />
-	<meta property="og:title" content="{{ pageTitle }} - Codename Engine Docs" />
+	<meta property="og:title" content="{{ pageTitle }} - Codename Engine Mods" />
 	<meta property="og:image" content="https://codename-engine.com/img/banner.png" />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content="https://codename-engine.com/" />
-	<meta property="twitter:title" content="{{ pageTitle }} - Codename Engine Docs" />
+	<meta property="twitter:title" content="{{ pageTitle }} - Codename Engine Mods" />
 	<meta property="twitter:image" content="https://codename-engine.com/img/banner.png" />
 
 	<meta name="theme-color" content="#7f33b8">
 
-	<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
+	<link rel="icon" href="root/favicon.ico" type="image/x-icon"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="root/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="root/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="root/favicon-16x16.png">
+	<link rel="manifest" href="root/site.webmanifest">
 
 	<link href='https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css' rel='stylesheet' type='text/css' />
 </head>
 <body class="nojs">
 	<script>document.body.classList.remove("nojs");</script>
 	<div class="header">
-		{{ header }}
+		{{{ parse header }}}
 	</div>
 	<div class="container">
-		<div class="content">
+		<div>
 			<img class="cover-image" src="{{ cover }}" alt="{{ modName }}">
-			<div>
-				<h2>{{ modName }} <small> by {{ author }}</small></h2>
-				<p>Version: {{ version }}</p>
-				<p>Last Updated: {{ lastUpdated }}</p>
-				<p>Source: {{ source }}</p>
-				<p>Tags: {{ tags }}</p>
-				<p>Description: {{ description }}</p>
-				<p>Link: {{ link }}</p>
+			<div class="content">
+				<div>
+					<h2>{{ safeish modName }} <small style="font-weight: 200;"> by {{ safeish author }}</small></h2>
+					{{#each tags}}
+					{{#if (shouldShowTag this)}}
+					<span class="tag" title="{{this}}">{{ readableTag this }}</span>
+					{{/if}}
+					{{/each}}
+					<p>Version: {{ version }}</p>
+					{{#if unreleased}}
+					<p class="last-updated" data-time="{{lastUpdated}}" data-prefix="Last updated: " data-display="block">unreleased</p>
+					{{else}}
+					<p class="last-updated" data-time="{{lastUpdated}}" data-prefix="Last updated: " data-display="block">{{shortDate lastUpdated}}</p>
+					{{/if}}
 
-				{{ content }}
+					<p>Source: {{ source }}</p>
+					<p>Link: <a href="{{ link }}">{{ link }}</a></p>
+
+					{{#if hasDesc}}
+					{{ safeish content }}
+					{{else}}
+					<p>No description provided.</p>
+					{{/if}}
+				</div>
 			</div>
 		</div>
 	</div>
+	<script src="root/relativeTime.js"></script>
 </body>
 </html>

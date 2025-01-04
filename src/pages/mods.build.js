@@ -37,6 +37,18 @@ function sortByTime(a, b) {
 	return bDate > aDate ? 1 : -1;
 }
 
+function getImageExt(file) {
+	if(fs.existsSync(modsDir + file + "/cover.jpg"))
+		return "jpg";
+	if(fs.existsSync(modsDir + file + "/cover.jpeg"))
+		return "jpeg";
+	if(fs.existsSync(modsDir + file + "/cover.png"))
+		return "png";
+	if(fs.existsSync(modsDir + file + "/cover.webp"))
+		return "webp";
+	return null;
+}
+
 function buildMods(pageDir, exportPath) {
 	var warnings = [];
 
@@ -49,19 +61,7 @@ function buildMods(pageDir, exportPath) {
 
 		if(!fs.existsSync(modExport)) fs.mkdirSync(modExport, { recursive: true });
 
-		var imageExt = null;
-		if(fs.existsSync(modsDir + mod + "/cover.jpg")) {
-			imageExt = "jpg";
-		}
-		else if(fs.existsSync(modsDir + mod + "/cover.jpeg")) {
-			imageExt = "jpeg";
-		}
-		else if(fs.existsSync(modsDir + mod + "/cover.png")) {
-			imageExt = "png";
-		}
-		else if(fs.existsSync(modsDir + file + "/cover.webp")) {
-			imageExt = "webp";
-		}
+		var imageExt = getImageExt(mod);
 
 		var imgLink;
 
@@ -127,19 +127,7 @@ function buildHtml(_pageDir, _exportPath) {
 
 		if(!fs.existsSync(modExport)) fs.mkdirSync(modExport, { recursive: true });
 
-		var imageExt = null;
-		if(fs.existsSync(modsDir + mod + "/cover.jpg")) {
-			imageExt = "jpg";
-		}
-		else if(fs.existsSync(modsDir + mod + "/cover.jpeg")) {
-			imageExt = "jpeg";
-		}
-		else if(fs.existsSync(modsDir + mod + "/cover.png")) {
-			imageExt = "png";
-		}
-		else if(fs.existsSync(modsDir + file + "/cover.webp")) {
-			imageExt = "webp";
-		}
+		var imageExt = getImageExt(mod);
 
 		var imgLink;
 
@@ -170,6 +158,7 @@ function buildHtml(_pageDir, _exportPath) {
 			source: meta.source,
 			version: meta.version,
 			lastUpdated: meta.lastUpdated ?? "unknown",
+			unreleased: meta.tags.includes("upcoming"),
 
 			header: header,
 			content: renderer.render(content),

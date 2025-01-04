@@ -268,6 +268,19 @@ Handlebars.registerHelper('parse', function(html) {
 	return parseTemplate(html, this);
 });
 
+var tagsData = JSON.parse(fs.readFileSync("./featured-mods/tags.json", 'utf8'));
+
+Handlebars.registerHelper('shouldShowTag', function(tag) {
+	return !Object.hasOwn(tagsData, tag) || tagsData[tag] != null;
+});
+
+Handlebars.registerHelper('readableTag', function(tag) {
+	if(tagsData[tag]) {
+		return tagsData[tag];
+	}
+	return tag;
+});
+
 
 function parseTemplate(html, vars) {
 	let old;

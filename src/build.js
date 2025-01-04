@@ -48,8 +48,10 @@ compileSass("./src/pages/index.scss", exportPath + "/index.css");
 compileSass("./src/giscus-theme.scss", exportPath + "/giscus-theme.css");
 compileSass("./src/pages/ko-fi.scss", exportPath + "/ko-fi.css");
 compileSass("./src/pages/tools/tools.scss", exportPath + "/tools.css");
+compileSass("./src/pages/mods.scss", exportPath + "/mods.css");
 
 compileJs("./src/pages/featuredMods.js", exportPath + "/featuredMods.js");
+compileJs("./src/pages/relativeTime.js", exportPath + "/relativeTime.js");
 compileJs("./src/pages/wiki.js", exportPath + "/wiki.js");
 
 copyDir("./src/toplevel/", exportPath + "/");
