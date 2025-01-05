@@ -1,5 +1,9 @@
 @use "root/_style-vars.scss";
 
+html, body {
+  background: var(--background-primary-color);
+}
+
 a {
   color: deepskyblue;
 }
