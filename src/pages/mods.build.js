@@ -163,6 +163,8 @@ function buildHtml(_pageDir, _exportPath) {
 			lastUpdated: meta.lastUpdated ?? "unknown",
 			unreleased: meta.tags.includes("upcoming"),
 
+			hasDesc: content.trim() != "",
+
 			header: header,
 			content: renderer.render(content),
 		};
