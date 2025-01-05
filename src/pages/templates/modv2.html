@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ pageTitle }} - Codename Engine Mods</title>
+	<link rel="stylesheet" href="root/style.css">
+	<link rel="stylesheet" href="root/modsv2.css">
+
+	<meta name="title" content="{{ pageTitle }} - Codename Engine Mods" />
+
+	{{#if emptyDescription}}
+	<meta name="description" content="{{ modName }} by {{ author }}" />
+	<meta property="og:description" content="{{ modName }} by {{ author }}" />
+	<meta property="twitter:description" content="{{ modName }} by {{ author }}" />
+	{{else}}
+	<meta name="description" content="{{ stripHtml description }}&#10;{{ modName }} by {{ author }}" />
+	<meta property="og:description" content="{{ stripHtml description }}&#10;{{ modName }} by {{ author }}" />
+	<meta property="twitter:description" content="{{ stripHtml description }}&#10;{{ modName }} by {{ author }}" />
+	{{/if}}
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://codename-engine.com/" />
+	<meta property="og:title" content="{{ pageTitle }} - Codename Engine Mods" />
+	<meta property="og:image" content="https://codename-engine.com/img/banner.png" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://codename-engine.com/" />
+	<meta property="twitter:title" content="{{ pageTitle }} - Codename Engine Mods" />
+	<meta property="twitter:image" content="https://codename-engine.com/img/banner.png" />
+
+	<meta name="theme-color" content="#7f33b8">
+
+	<link rel="icon" href="root/favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" sizes="180x180" href="root/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="root/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="root/favicon-16x16.png">
+	<link rel="manifest" href="root/site.webmanifest">
+
+	<link href='https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css' rel='stylesheet'
+		type='text/css' />
+</head>
+
+<body class="nojs">
+	<script>document.body.classList.remove("nojs");</script>
+	<div class="header">
+		{{{ parse header }}}
+	</div>
+	<div class="container">
+		<div class="content main-content">
+			<h2>{{ safeish modName }}</h2>
+
+			<br>
+
+			<small style="font-weight: 200;"> by {{ safeish author }}</small>
+
+			<br>
+
+			{{#each tags}}
+			{{#if (shouldShowTag this)}}
+			<span class="tag" title="{{this}}">{{ readableTag this }}</span>
+			{{/if}}
+			{{/each}}
+			{{#each userTags}}
+			<span class="tag" title="{{this}}">{{ this }}</span>
+			{{/each}}
+
+			<div class="cover-gradient">
+				<img class="cover-image" src="{{ cover }}" alt="{{ modName }}">
+			</div>
+
+			<p>Version: {{ version }}</p>
+			{{#if unreleased}}
+			<p class="last-updated" data-time="{{lastUpdated}}" data-prefix="Last updated: " data-display="block">
+				unreleased</p>
+			{{else}}
+			<p class="last-updated" data-time="{{lastUpdated}}" data-prefix="Last updated: " data-display="block">
+				{{shortDate lastUpdated}}</p>
+			{{/if}}
+
+			{{#if hasDesc}}
+			{{ safeish content }}
+			{{else}}
+			<p>No description provided.</p>
+			{{/if}}
+		</div>
+		<div class="content side-content">
+			<p>Credits:</p>
+
+			<ul>
+				<li>wip</li>
+				<li>wip</li>
+				<li>wip</li>
+				<li>wip</li>
+				<li>wip</li>
+				<li>wip</li>
+			</ul>
+			<p>Source: {{ source }}</p>
+			<p>Link: <a href="{{ link }}">{{ link }}</a></p>
+		</div>
+	</div>
+	<script src="root/relativeTime.js"></script>
+</body>
+
+</html>

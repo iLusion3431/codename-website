@@ -115,7 +115,7 @@ function buildHtml(_pageDir, _exportPath) {
 
 	var mods = getValidMods();
 
-	var templatePage = fs.readFileSync("./src/pages/templates/mod.html", 'utf8');
+	var templatePage = fs.readFileSync("./src/pages/templates/modv2.html", 'utf8');
 
 	var renderer = new Remarkable({
 		html: true,
