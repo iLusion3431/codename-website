@@ -48,6 +48,7 @@ compileSass("./src/pages/index.scss", exportPath + "/index.css");
 compileSass("./src/giscus-theme.scss", exportPath + "/giscus-theme.css");
 compileSass("./src/pages/ko-fi.scss", exportPath + "/ko-fi.css");
 compileSass("./src/pages/tools/tools.scss", exportPath + "/tools.css");
+compileSass("./src/pages/modsv2.scss", exportPath + "/modsv2.css");
 compileSass("./src/pages/mods.scss", exportPath + "/mods.css");
 
 compileJs("./src/pages/featuredMods.js", exportPath + "/featuredMods.js");

@@ -51,35 +51,24 @@
 	</div>
 	<div class="container">
 		<div class="content main-content">
-			<h2>{{ safeish modName }}</h2>
+			<h2 class="mod-name">
+				{{ safeish modName }}
+
+				{{#each tags}}
+				{{#if (shouldShowTag this)}}
+				<span class="mod-tag default-button" title="{{this}}">{{ readableTag this }}</span>
+				{{/if}}
+				{{/each}}
+				{{#each userTags}}
+				<span class="mod-tag default-button" title="{{this}}">{{ this }}</span>
+				{{/each}}
+			</h2>
 
 			<br>
 
-			<small style="font-weight: 200;"> by {{ safeish author }}</small>
+			<small class="mod-author"> by {{ safeish author }}</small>
 
-			<br>
-
-			{{#each tags}}
-			{{#if (shouldShowTag this)}}
-			<span class="tag" title="{{this}}">{{ readableTag this }}</span>
-			{{/if}}
-			{{/each}}
-			{{#each userTags}}
-			<span class="tag" title="{{this}}">{{ this }}</span>
-			{{/each}}
-
-			<div class="cover-gradient">
-				<img class="cover-image" src="{{ cover }}" alt="{{ modName }}">
-			</div>
-
-			<p>Version: {{ version }}</p>
-			{{#if unreleased}}
-			<p class="last-updated" data-time="{{lastUpdated}}" data-prefix="Last updated: " data-display="block">
-				unreleased</p>
-			{{else}}
-			<p class="last-updated" data-time="{{lastUpdated}}" data-prefix="Last updated: " data-display="block">
-				{{shortDate lastUpdated}}</p>
-			{{/if}}
+			<img class="mod-image" src="{{ cover }}" alt="{{ modName }}">
 
 			{{#if hasDesc}}
 			{{ safeish content }}
@@ -100,6 +89,15 @@
 			</ul>
 			<p>Source: {{ source }}</p>
 			<p>Link: <a href="{{ link }}">{{ link }}</a></p>
+
+			<p>Version: {{ version }}</p>
+			{{#if unreleased}}
+			<p class="last-updated" data-time="{{lastUpdated}}" data-prefix="Last updated: " data-display="block">
+				unreleased</p>
+			{{else}}
+			<p class="last-updated" data-time="{{lastUpdated}}" data-prefix="Last updated: " data-display="block">
+				{{shortDate lastUpdated}}</p>
+			{{/if}}
 		</div>
 	</div>
 	<script src="root/relativeTime.js"></script>

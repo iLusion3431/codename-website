@@ -12,6 +12,8 @@ a {
   background: var(--primary-color);
   border: solid rgba(0, 0, 0, 0.2) 2px;
 
+  cursor: pointer;
+
   &:hover {
     filter: brightness(140%);
     backdrop-filter: brightness(140%);

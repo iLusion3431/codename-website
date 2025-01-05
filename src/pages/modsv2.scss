@@ -1,3 +1,25 @@
 .container {
-    
+    margin: 0 15%;
+}
+
+.mod-image {
+    display: block;
+    margin: 15px auto;
+}
+
+.mod-tag {
+    font-size: 14px;
+    padding: 4px;
+    vertical-align: 0.25em
+}
+
+.mod-name {
+    margin-bottom: -6px;
+}
+
+.mod-name:first-child {
+    margin-right: 24px;
+}
+.mod-author {
+    margin-left: 12px;
 }
