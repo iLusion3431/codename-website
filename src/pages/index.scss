@@ -212,6 +212,38 @@ div.compact {
         max-width: 100%;
     }
 
+
+    // i hate this centering code
+    .card-content {
+        text-align: left;
+        padding: 10px;
+    }
+
+    .card-content * {
+        text-align: left;
+    }
+
+    &.centered-title.centered-desc .card-content {
+        text-align: center;
+    }
+
+    .card-content h3, .card-content p {
+        text-align: left;
+    }
+
+    &.centered-title .card-content {
+        text-align: center;
+
+        p {
+            text-align: left;
+        }
+    }
+
+    &.centered-title .card-content h3, &.centered-desc .card-content p {
+        text-align: center;
+    }
+    // end centering code
+
     .sparkle {
         display: none;
     }
@@ -259,11 +291,6 @@ div.compact {
     //    top: 0;
     //    left: -5;
     //}
-
-    .card-content {
-        text-align: left;
-        padding: 10px;
-    }
 
     .last-updated {
         position: absolute;
