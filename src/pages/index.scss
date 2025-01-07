@@ -266,6 +266,8 @@ div.compact {
             max-width: 110%;
             position: absolute;
 
+            image-rendering: pixelated;
+
             &.top {
                 top: -5%;
             }
