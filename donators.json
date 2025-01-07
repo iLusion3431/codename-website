@@ -159,6 +159,11 @@
                     "amount": 10,
                     "currency": "$",
                     "type": "donation"
+                },
+                {
+                    "amount": 10,
+                    "currency": "$",
+                    "type": "donation"
                 }
             ]
         },
