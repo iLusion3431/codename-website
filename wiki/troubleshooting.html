@@ -65,6 +65,10 @@
 <li><a href="#character-editor-buggy">The character editor is buggy.</a></li>
 <li><a href="#rotating-strum-moves-notes">Rotating a strum moves the notes.</a></li>
 <li><a href="#velocity-not-working">Velocity not working</a></li>
+<li><a href="#flxbar-not-working">FlxBar not working</a></li>
+<li><a href="#atlas-anim-not-working">Atlas animation not working</a></li>
+<li><a href="#stage-var-not-working">"stage" variable not working</a></li>
+<li><a href="#git-clone-error">Git clone error</a></li>
 </ul>
 </li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/" class="odd">Modding The Engine</a><ul class="sidebar-unordered-list odd">
@@ -126,11 +130,43 @@
 <h2 id="velocity-not-working">Velocity/Acceleration doesn't move my sprite</h2>
 <p>You need to set <code class="inline-code">sprite.moves = true;</code> to make it move, its automatically enabled if you set the property using <code class="inline-syntax inline-code"><span class="hljs-tag">&lt;<span class="hljs-name">property</span> /&gt;</span></code> on <code class="inline-code">velocity.x</code> and <code class="inline-code">velocity.y</code> or <code class="inline-code">acceleration.x</code> and <code class="inline-code">acceleration.y</code> in the stage xml.</p>
 <p>We made it turned off automatically to optimize the game since it's useless to have it running for sprites that don't use it.</p>
+<h2 id="flxbar-not-working">FlxBar doesn't work</h2>
+<p>This is likely due to you are doing</p>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">var</span> <span class="hljs-attr">variable</span>:<span class="hljs-title class_">Float</span> = <span class="hljs-number">0</span>;
+
+bar = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxBar</span>(x, y, <span class="hljs-title class_">FlxBarFillDirection</span>.<span class="hljs-property">LEFT_TO_RIGHT</span>, <span class="hljs-number">400</span>, <span class="hljs-number">20</span>, <span class="hljs-variable language_">this</span>, <span class="hljs-string">"variable"</span>);
+
+variable = <span class="hljs-number">50</span>;
+</code></pre>
+<p>When you should be doing</p>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">var</span> barData = {
+    <span class="hljs-attr">variable</span>: <span class="hljs-number">0</span>,
+}
+
+bar = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlxBar</span>(x, y, <span class="hljs-title class_">FlxBarFillDirection</span>.<span class="hljs-property">LEFT_TO_RIGHT</span>, <span class="hljs-number">400</span>, <span class="hljs-number">20</span>, barData, <span class="hljs-string">"variable"</span>); <span class="hljs-comment">// The change was changing `this` to `barData`</span>
+
+o.<span class="hljs-property">variable</span> = <span class="hljs-number">50</span>;
+</code></pre>
+<p>The reason this happens is because the <code class="inline-code">this</code> variable points to PlayState.instance, instead of what you expect to be the script, and even if you do <code class="inline-code">__script__</code> it still sadly won't work since FlxBar doesn't check variables in the script.</p>
+<p>Small tip: if you want the bar to be smooth you should do <code class="inline-code">bar.unbounded = true;</code></p>
+<h2 id="atlas-anim-not-working">Atlas animations don't work</h2>
+<p>This could be due to multiple reasons, but one of the most common ones are that you are using <code class="inline-code">sprite.animation.play("animation")</code> instead of <code class="inline-code">sprite.playAnim("animation")</code>.
+If you are using the raw FlxAnimate class then you need to use <code class="inline-code">sprite.anim.play("animation")</code> instead.</p>
+<h2 id="stage-var-not-working">The "stage" variable doesn't work</h2>
+<p>This could be because you are using a stage xml with a sprite with the name "stage", this issue only happens in the stage script.</p>
+<p>To fix this, rename the sprite to something else.</p>
+<h2 id="git-clone-error">I get a git clone error</h2>
+<p>This is a known issue with the repository, and is being worked on.</p>
+<p>For now you can use the following command to fix it:</p>
+<pre class="hljs"><code class="language-txt">git config --global http.postBuffer 524288000
+git clone --depth=1 https://github.com/CodenameCrew/CodenameEngine.git
+git fetch --unshallow
+</code></pre>
 
 
 			<div class="info">
 				<div class="written">Written by: Ne_Eo</div>
-				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-10-10T18:24:22.949Z">2024-10-10</span></div>
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2025-01-08T23:43:42.123Z">2025-01-08</span></div>
 
 				<div class="github-edit-button">
 					<a href="https://github.com/CodenameCrew/codename-website/tree/main/src/pages/wiki/troubleshooting.md">Edit this page on GitHub</a>
