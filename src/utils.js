@@ -104,8 +104,6 @@ function fixHtmlRefs(html, pageDir, _pageDir) {
 
 		var src = image.srcset;
 
-		console.log(src, image.outerHTML);
-
 		src = fixPath(src);
 		src = src.replace(/\.md$/, ".html").replace("./" + pageDir, "./");
 		if(src.startsWith("/")) {
