@@ -153,7 +153,7 @@ This event is used in Stress when Tankman says "Heh. Pretty good!".
 - **Animation**: The name of the animation to play.
 - **Is Forced?**: If checked, the animation will play even if there is another animation happening.
 
-# <h2 id="custom-events">Custom Events</h2>
+## <h2 id="custom-events">Custom Events</h2>
 
 This tutorial assumes that you already know the basics of using haxeflixel, and scripting in codename. If not please take a look at <a href="../scripting/">Scripting</a>.
 
