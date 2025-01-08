@@ -1,7 +1,7 @@
 ---
 author: Frakits
 desc: This page explains how to script the engine
-lastUpdated: 2024-09-05T18:06:23.000Z
+lastUpdated: 2025-01-08T23:47:04.206Z
 title: Scripting
 ---
 # Scripting
@@ -63,6 +63,10 @@ Some classes are pre-imported (<syntax lang="haxe">FlxSprite</syntax>, <syntax l
 import flixel.addons.display.FlxBackdrop;
 ```
 *(<code class="hljs-keyword">using</code> does not work, yet)*
+
+## <h2 id="script-variables">Script Variables</h2>
+
+We have a special variable named `__script__` that points to the script that is currently being executed.
 
 ## To start on basic scripting, you can follow these articles here:
 - <a href="./playstate-scripts/gameplay-scripts.md">Gameplay Scripts</a>
