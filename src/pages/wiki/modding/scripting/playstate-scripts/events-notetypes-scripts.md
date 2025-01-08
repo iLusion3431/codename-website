@@ -61,7 +61,7 @@ There's a lot of them but we'll go over each one.
 - **ColorWheel** creates a color wheel that returns the color in Int hex format.
 - **DropDown()** generates a dropdown menu that contains the entries inside the parentheses.
 
-<img src="./Events or Notetype Scripts-1.png"/>
+<img src="./Events or Notetype Scripts-1.png" alt="Image showing all of the different types of parameters"/>
 
 Now that we have established the Parameters, we can go over scripting the event now. A basic flash camera event looks something like this:
 ```haxe
@@ -73,7 +73,7 @@ function onEvent(e) {
 }
 ```
 In this example, we assume that we set our parameters to be the duration of the flash *(float)*, and the color of it *(colorwheel)*. <br>
-<img src="./Events or Notetype Scripts.png"/>
+<img src="./Events or Notetype Scripts.png" alt="Image showing a 2 parameter event, float and colorwheel, for a custom event named Flash Camera"/>
 
 The order of the parameters in ``e.event.params`` corresponds to the order you've put the params in.
 

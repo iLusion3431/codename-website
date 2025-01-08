@@ -61,7 +61,7 @@ Events exist in the Chart Editor to avoid coding a lot of code for just a few ev
 
 Each event has it's own parameters, instead of a pre-established number of parameters. <br> Events are also stackable, without having to painstakingly putting them close together.
 
-<img src="./Chart Editor Features-8.png" alt="Image showing the properties screen of the Flash Camera event" />
+<img src="./Chart Editor Features-8.png" alt="Image showing the properties screen of a custom Flash Camera event" />
 <img src="./Chart Editor Features-7.png" alt="Image showing the the events in the main screen" />
 
 Events are also movable.<br>

@@ -120,7 +120,7 @@ Once you're done looking at this structure, you can begin with recreating it in 
 
 Afterwards, you have to find the devtools (or basically just the editors), by going to the game's Main Menu and pressing 7.
 
-<img src="./index.png"/>
+<img src="./index.png" alt="Image showing the Editor Picker, that appears when you press 7"/>
 
 Here you'll find the essential tools, and some options for debug *(for example, enabling the console in Debug Options)*
 
