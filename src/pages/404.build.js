@@ -16,8 +16,8 @@ function buildHtml(_pageDir, _exportPath) {
 	var outPath = exportPath + "404.html";
 	var templatePage = fs.readFileSync(path, 'utf8');
 	var vars = {
-		pageTitle: "File Not Found",
-		title: "File Not Found",
+		pageTitle: "Page Not Found",
+		title: "Page Not Found",
 		header: header,
 	};
 
