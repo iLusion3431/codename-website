@@ -36,6 +36,7 @@ function htmlToString(html) {
 	var str = html.serialize();
 	str = str.replace(/href="about:blank#/g, "href=\"#");
 	str = str.replace(/\<h2\>\<\/h2>/g, "");
+	str = str.replace(/alt=""/g, "alt");
 	return str;
 }
 
