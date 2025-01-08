@@ -14,6 +14,7 @@ function buildFile(pageDir, exportPath) {
 	const hideUrls = [
 		"tools/", // hiding it until its done
 		"mods/",
+		"404.html",
 		"featured-mods/",
 		"api-docs/",
 		"api-docs/404.html"
