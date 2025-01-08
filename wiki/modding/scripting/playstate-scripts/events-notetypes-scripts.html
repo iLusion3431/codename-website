@@ -169,7 +169,7 @@ There's a lot of them but we'll go over each one.</p>
 <li><strong>ColorWheel</strong> creates a color wheel that returns the color in Int hex format.</li>
 <li><strong>DropDown()</strong> generates a dropdown menu that contains the entries inside the parentheses.</li>
 </ul>
-<p><img src="./Events or Notetype Scripts-1.png"></p>
+<p><img src="./Events or Notetype Scripts-1.png" alt="Image showing all of the different types of parameters"></p>
 <p>Now that we have established the Parameters, we can go over scripting the event now. A basic flash camera event looks something like this:</p>
 <pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">onEvent</span>(<span class="hljs-params">e</span>) {
     <span class="hljs-keyword">if</span> (e.<span class="hljs-property">event</span>.<span class="hljs-property">name</span> == <span class="hljs-string">"Flash Camera"</span>) {
@@ -179,7 +179,7 @@ There's a lot of them but we'll go over each one.</p>
 }
 </code></pre>
 <p>In this example, we assume that we set our parameters to be the duration of the flash <em>(float)</em>, and the color of it <em>(colorwheel)</em>. <br>
-<img src="./Events or Notetype Scripts.png"></p>
+<img src="./Events or Notetype Scripts.png" alt="Image showing a 2 parameter event, float and colorwheel, for a custom event named Flash Camera"></p>
 <p>The order of the parameters in <code class="inline-code">e.event.params</code> corresponds to the order you've put the params in.</p>
 <p>For the icon, place a <em>(preferably 16x16)</em> image in the same directory as the event files.</p>
 <p><em>Write about .pack files later</em></p>
