@@ -1,5 +1,5 @@
 var fs = require('fs');
-var { fixHtmlRefs, htmlToString, parseTemplate, compileJs, copyDir } = require("../../utils.js");
+var { fixHtmlRefs, htmlToString, parseTemplate, compileJs, copyDir } = require("../src/utils.js");
 
 var header = fs.readFileSync("./src/pages/templates/header.html", 'utf8')
 
@@ -53,10 +53,10 @@ function buildHtml(_pageDir, _exportPath) {
 		if(tool.external) {
 			continue;
 		}
-		var basePath = "./src/pages/tools/" + tool.link + "/";
+		var basePath = "./tools/" + tool.link + "/";
 		var outputPath = exportPath + tool.link + "/";
 		if(tool.link == "index") {
-			basePath = "./src/pages/tools/";
+			basePath = "./tools/";
 			outputPath = exportPath;
 		}
 		var path = basePath + "index.html";

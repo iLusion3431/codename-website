@@ -212,6 +212,38 @@ div.compact {
         max-width: 100%;
     }
 
+
+    // i hate this centering code
+    .card-content {
+        text-align: left;
+        padding: 10px;
+    }
+
+    .card-content * {
+        text-align: left;
+    }
+
+    &.centered-title.centered-desc .card-content {
+        text-align: center;
+    }
+
+    .card-content h3, .card-content p {
+        text-align: left;
+    }
+
+    &.centered-title .card-content {
+        text-align: center;
+
+        p {
+            text-align: left;
+        }
+    }
+
+    &.centered-title .card-content h3, &.centered-desc .card-content p {
+        text-align: center;
+    }
+    // end centering code
+
     .sparkle {
         display: none;
     }
@@ -233,6 +265,8 @@ div.compact {
             left: -5%;
             max-width: 110%;
             position: absolute;
+
+            image-rendering: pixelated;
 
             &.top {
                 top: -5%;
@@ -259,11 +293,6 @@ div.compact {
     //    top: 0;
     //    left: -5;
     //}
-
-    .card-content {
-        text-align: left;
-        padding: 10px;
-    }
 
     .last-updated {
         position: absolute;
@@ -432,4 +461,19 @@ div.compact {
     flex-direction: column;
     align-items: flex-start;
     margin-right: 0.3em;
+}
+
+.page-logo {
+    // unset the default h1 style
+    margin: 0;
+    display: block;
+    font-size: 1em;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    border-bottom: none;
+    padding-bottom: 0.0em;
 }

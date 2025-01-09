@@ -14,6 +14,7 @@ function buildFile(pageDir, exportPath) {
 	const hideUrls = [
 		"tools/", // hiding it until its done
 		"mods/",
+		"404.html",
 		"featured-mods/",
 		"api-docs/",
 		"api-docs/404.html"
@@ -153,7 +154,7 @@ function buildFile(pageDir, exportPath) {
 		"host": "codename-engine.com",
 		"key": "6662987d066b4c09b12a50964d0f47bf",
 		"keyLocation": "https://codename-engine.com/6662987d066b4c09b12a50964d0f47bf.txt",
-		"urlList": prioList.map(link => link.link)
+		"urlList": prioList.map(link => link.link.replace(/\.html$/, ""))
 	}
 
 	fs.writeFileSync("./IndexNow.json", JSON.stringify(indexNow, null, "\t"));

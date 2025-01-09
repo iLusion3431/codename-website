@@ -36,6 +36,7 @@ function htmlToString(html) {
 	var str = html.serialize();
 	str = str.replace(/href="about:blank#/g, "href=\"#");
 	str = str.replace(/\<h2\>\<\/h2>/g, "");
+	str = str.replace(/alt=""/g, "alt");
 	return str;
 }
 
@@ -43,6 +44,7 @@ function fixHtmlRefs(html, pageDir, _pageDir) {
 	var dom = new jsdom.JSDOM(html);
 	var links = dom.window.document.querySelectorAll("[href]");
 	var imageSrcs = dom.window.document.querySelectorAll("[src]");
+	var imageSrcsets = dom.window.document.querySelectorAll("[srcset]");
 
 	function changeTagName(el, tag) {
 		const newElement = dom.window.document.createElement(tag);
@@ -62,31 +64,57 @@ function fixHtmlRefs(html, pageDir, _pageDir) {
 
 	for(const link of links) {
 		if(link.href == "#") continue;
-		link.href = fixPath(link.href);
-		link.href = link.href.replace(/\.md$/, ".html").replace("./" + pageDir, "./");
-		if(link.href.startsWith("/")) {
-			link.href = path.normalize("/" + pageDir + link.href.substring(1));
+
+		var href = link.href;
+
+		href = fixPath(href);
+		href = href.replace(/\.md$/, ".html").replace("./" + pageDir, "./");
+		if(href.startsWith("/")) {
+			href = path.normalize("/" + pageDir + href.substring(1));
 		}
-		if(link.href.startsWith("root/")) {
-			link.href = path.normalize("/" + _pageDir + link.href.substring(5));
+		if(href.startsWith("root/")) {
+			href = path.normalize("/" + _pageDir + href.substring(5));
 		}
-		link.href = link.href.replace(/\.force-md$/, "");
-		link.href = fixPath(link.href);
+		href = href.replace(/\.force-md$/, "");
+		href = fixPath(href);
+
+		link.href = href;
 	}
 
 	for(const image of imageSrcs) {
 		if(image.src == "#") continue;
 
-		image.src = fixPath(image.src);
-		image.src = image.src.replace(/\.md$/, ".html").replace("./" + pageDir, "./");
-		if(image.src.startsWith("/")) {
-			image.src = path.normalize("/" + _pageDir + image.src.substring(1));
+		var src = image.src;
+
+		src = fixPath(src);
+		src = src.replace(/\.md$/, ".html").replace("./" + pageDir, "./");
+		if(src.startsWith("/")) {
+			src = path.normalize("/" + _pageDir + src.substring(1));
 		}
-		if(image.src.startsWith("root/")) {
-			image.src = path.normalize("/" + _pageDir + image.src.substring(5));
+		if(src.startsWith("root/")) {
+			src = path.normalize("/" + _pageDir + src.substring(5));
 		}
-		image.src = image.src.replace(/\.force-md$/, "");
-		image.src = fixPath(image.src);
+		src = src.replace(/\.force-md$/, "");
+		src = fixPath(src);
+		image.src = src;
+	}
+
+	for(const image of imageSrcsets) {
+		if(image.src == "#") continue;
+
+		var src = image.srcset;
+
+		src = fixPath(src);
+		src = src.replace(/\.md$/, ".html").replace("./" + pageDir, "./");
+		if(src.startsWith("/")) {
+			src = path.normalize("/" + _pageDir + src.substring(1));
+		}
+		if(src.startsWith("root/")) {
+			src = path.normalize("/" + _pageDir + src.substring(5));
+		}
+		src = src.replace(/\.force-md$/, "");
+		src = fixPath(src);
+		image.srcset = src;
 	}
 
 	var codeblocks = dom.window.document.querySelectorAll('pre code[class^="language-"]');

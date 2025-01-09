@@ -25,7 +25,7 @@
 	<meta property="twitter:description" content="Website dedicated to things for Codename Engine!" />
 	<meta property="twitter:image" content="https://codename-engine.com/img/banner.png" />
 
-	<meta name="theme-color" content="#7f33b8">
+	<meta name="theme-color" content="#b265bd">
 
 	<link rel="icon" href="root/favicon.ico" type="image/x-icon"/>
 	<link rel="apple-touch-icon" sizes="180x180" href="root/apple-touch-icon.png">
@@ -43,7 +43,12 @@
 	<div class="container">
 		<div class="vertical-stack">
 			<div class="content main-content">
-				<img class="content-logo" src="root/img/codename-animated.gif" />
+				<h1 class="page-logo">
+					<picture>
+						<source srcset="root/img/codename-animated.webp" type="image/webp">
+						<img class="content-logo" src="root/img/codename-animated.gif" alt="Codename Engine">
+					</picture>
+				</h1>
 				<br />
 				<a href="/api-docs/" class="default-button">API</a>
 				<a href="/wiki/" class="default-button">Wiki</a>
@@ -58,21 +63,21 @@
 					<div class="os-button">
 						<a href="https://nightly.link/CodenameCrew/CodenameEngine/workflows/windows/main/Codename%20Engine.zip" class="default-button">
 							<span>
-								<img class="os-logo" src="img/os/windows.svg"> Windows
+								<img class="os-logo" src="root/img/os/windows.svg" alt> Windows
 							</span>
 						</a>
 					</div>
 					<div class="os-button">
 						<a href="https://nightly.link/CodenameCrew/CodenameEngine/workflows/macos/main/Codename%20Engine.zip" class="default-button">
 							<span>
-								<img class="os-logo" src="img/os/apple.svg"> MacOS
+								<img class="os-logo" src="root/img/os/apple.svg" alt> MacOS
 							</span>
 						</a>
 					</div>
 					<div class="os-button">
 						<a href="https://nightly.link/CodenameCrew/CodenameEngine/workflows/linux/main/Codename%20Engine.zip" class="default-button">
 							<span>
-								<img class="os-logo" src="img/os/linux.svg"> Linux
+								<img class="os-logo" src="root/img/os/linux.svg" alt> Linux
 							</span>
 						</a>
 					</div>
@@ -82,20 +87,20 @@
 					<div class="os-button">
 						<a href="https://nightly.link/MobilePorting/CodenameEngine-Mobile/workflows/android/cne-pr/Codename%20Engine.zip" class="default-button">
 							<span>
-								<img class="os-logo" src="img/os/android.svg"> Android
+								<img class="os-logo" src="root/img/os/android.svg" alt> Android
 							</span>
 						</a>
 					</div>
 					<div class="os-button">
 						<a href="https://nightly.link/MobilePorting/CodenameEngine-Mobile/workflows/ios/cne-pr/Codename%20Engine.zip" class="default-button">
 							<span>
-								<img class="os-logo" src="img/os/apple.svg"> iOS
+								<img class="os-logo" src="root/img/os/apple.svg" alt> iOS
 							</span>
 						</a>
 					</div>
 				</div>
 				<div>
-					<i>Make sure to join our official <img class="icon" src="img/icons/discord.svg"> <a href="https://discord.gg/WTzm35kekB">Discord&nbsp;Server</a>!</i>
+					<i>Make sure to join our official <img class="icon" src="root/img/icons/discord.svg" alt> <a href="https://discord.gg/WTzm35kekB">Discord&nbsp;Server</a>!</i>
 					<br>
 					<i>You can contribute to this website by going to the <i class="fa fa-github"></i> <a href="https://github.com/CodenameCrew/codename-website">Website&nbsp;repository</a></i>
 					<br>
@@ -173,7 +178,7 @@
 				{{#each mods}}
 				<div class="featured-mod{{#each tags}} {{this}}{{/each}}" data-time="{{lastUpdated}}" data-author="{{author}}" {{#if source}}data-source="{{source}}"{{/if}} data-version="{{version}}" data-tags="{{tagsRaw}}" {{#if userTags}}data-userTags="{{userTags}}"{{/if}}>
 					<a href="{{link}}">
-						<img src="{{image}}" loading="lazy" alt="{{name}}"/>
+						<img src="root/{{image}}" loading="lazy" alt="{{name}}"/>
 						<div class="card-content">
 							<h3>{{ safeish name }}</h3>
 							<p>{{ safeish description }}</p>
@@ -185,8 +190,14 @@
 						<span class="last-updated" data-time="{{lastUpdated}}">{{shortDate lastUpdated}}</span>
 						{{/if}}
 						{{#if premium}}
-						<img src="img/sparkle-top.gif" class="sparkle top">
-						<img src="img/sparkle-bottom.gif" class="sparkle bottom">
+						<picture>
+							<source srcset="root/img/sparkle-top.webp" type="image/webp">
+							<img src="root/img/sparkle-top.gif" class="sparkle top" alt>
+						</picture>
+						<picture>
+							<source srcset="root/img/sparkle-bottom.webp" type="image/webp">
+							<img src="root/img/sparkle-bottom.gif" class="sparkle bottom" alt>
+						</picture>
 						{{/if}}
 					</a>
 				</div>

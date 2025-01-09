@@ -31,7 +31,7 @@ There already exists a template for you to look on, and it looks something like 
 </menu>
 ```
 
-<img src="./Custom Options.png"/>
+<img src="./Custom Options.png" alt="Image showing the custom options based on the example above"/>
 
 You're likely wondering: "how does each type of option work?"
 That's what is about to be explained!!
@@ -76,6 +76,6 @@ function new() {
         FlxG.save.data.checkboxExample = true;
 
     // You can also do
-    // FlxG.save.data.checkboxExample ??= true;
+    FlxG.save.data.checkboxExample ??= true;
 }
 ```
