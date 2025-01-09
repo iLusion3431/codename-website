@@ -12,8 +12,8 @@ The filename should be the name you want to reference the splashes in the data, 
 Here is how the spritesheet should look like:
 
 <!-- TODO: get custom ones so we don't have to worry about copyrights -->
-<img src="./note-splashes-1.png">
-<img src="./note-splashes-2.png">
+<img src="./note-splashes-1.png" alt="Image showing a spritesheet of some note splashes">
+<img src="./note-splashes-2.png" alt="Image showing the xml of the spritesheet of the image above">
 
 Keep in mind the names of the animations in the .xml because you will need them to form the splashes data.
 

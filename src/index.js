@@ -53,31 +53,23 @@ function restartChild() {
 startChild();
 
 if (isWatch) {
-	fs.watch('./featured-mods/', { recursive: true }, (eventType, filename) => {
-		if (filename) {
-			console.log(`${filename} changed. Rebuilding...`);
-			restartChild();
-		}
-	});
-	fs.watch('./src/', { recursive: true }, (eventType, filename) => {
-		if (filename) {
-			console.log(`${filename} changed. Rebuilding...`);
-			restartChild();
-		}
-	});
-	/*fs.watch('./api-generator/theme/', { recursive: true }, (eventType, filename) => {
-		if (filename) {
-			console.log(`${filename} changed. Rebuilding...`);
-			restartChild();
-		}
-	});*/
+	var watchDirs = [
+		'./featured-mods/',
+		'./src/',
+		// './api-generator/theme/',
+		'./donators.json',
+		'./tools/',
+		'./wiki/'
+	];
 
-	fs.watch('./donators.json', { recursive: true }, (eventType, filename) => {
-		if (filename) {
-			console.log(`${filename} changed. Rebuilding...`);
-			restartChild();
-		}
-	});
+	for(const dir of watchDirs) {
+		fs.watch(dir, { recursive: true }, (eventType, filename) => {
+			if (filename) {
+				console.log(`${filename} changed. Rebuilding...`);
+				restartChild();
+			}
+		});
+	}
 
 	setInterval(() => {}, 1000);
 }

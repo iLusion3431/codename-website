@@ -24,7 +24,7 @@ function postCreate() {
 ```
 This code results in the menu looking like this.
 
-<img src="./State or Substate Scripts.png"/>
+<img src="./State or Substate Scripts.png" alt="Image showing the menu buttons being moved"/>
 
 You can do this with every State/Substate of course, but keep in mind you have to study the state's code first before modifying it. *(you can find the code in <a href="https://github.com/CodenameCrew/CodenameEngine">Codename Engine's Repository</a>)*<br>
 *Also look for <a href="./script-calls.md">All of the script calls</a> for menu script calls*
