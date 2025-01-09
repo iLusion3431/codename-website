@@ -70,6 +70,9 @@ For now you can use the following command to fix it:
 
 ```txt
 git config --global http.postBuffer 524288000
+```
+<!--
+Hidden, since it might cause issues
 git clone --depth=1 https://github.com/CodenameCrew/CodenameEngine.git
 git fetch --unshallow
-```
+-->
