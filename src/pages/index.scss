@@ -367,6 +367,10 @@ div.compact {
 .category-button, .order-button {
     margin-bottom: 0;
     background: var(--list-background-color);
+
+    &:hover {
+        backdrop-filter: unset;
+    }
 }
 
 .order-button {
