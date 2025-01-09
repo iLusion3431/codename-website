@@ -2,7 +2,7 @@ var fs = require('fs');
 var hljs = require('highlight.js');
 var haxeFormat = require('./syntax/haxeFormat.js');
 var wiki = require('./pages/wiki.build.js');
-var tools = require('./pages/tools/tools.build.js');
+var tools = require('../tools/tools.build.js');
 var apiDocs = require('./pages/api-docs/apiDocs.build.js');
 var indexPage = require('./pages/index.build.js');
 var sitemap = require("./sitemap.build.js");
@@ -45,7 +45,7 @@ compileSass("./src/pages/wiki.scss", exportPath + "/wiki.css");
 compileSass("./src/pages/index.scss", exportPath + "/index.css");
 compileSass("./src/giscus-theme.scss", exportPath + "/giscus-theme.css");
 compileSass("./src/pages/ko-fi.scss", exportPath + "/ko-fi.css");
-compileSass("./src/pages/tools/tools.scss", exportPath + "/tools.css");
+compileSass("./tools/tools.scss", exportPath + "/tools.css");
 
 compileJs("./src/pages/featuredMods.js", exportPath + "/featuredMods.js");
 compileJs("./src/pages/wiki.js", exportPath + "/wiki.js");

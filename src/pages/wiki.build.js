@@ -77,7 +77,7 @@ function getGiscusID(pageDir) {
 	return pageDir.replace(".html", "");
 }
 
-var wikiDir = "pages/wiki/";
+var wikiDir = "wiki/";
 
 var sidebarRaw = fs.readFileSync("./src/pages/wiki.json", "utf8");
 var parsedSidebar = JSON.parse(sidebarRaw);
@@ -91,7 +91,7 @@ function buildHtml(_pageDir, _exportPath) {
 	console.log("Building Wiki");
 
 	var templatePage = fs.readFileSync("./src/pages/wiki.html", 'utf8');
-	var filenames = fs.readdirSync("./src/" + wikiDir, {recursive: true});
+	var filenames = fs.readdirSync("./" + wikiDir, {recursive: true});
 	var renderer = new Remarkable({
 		html: true,
 	});
@@ -108,7 +108,7 @@ function buildHtml(_pageDir, _exportPath) {
 		if (ext == ".md") {
 			var filename = parsedName.name;
 
-			var rawData = fs.readFileSync("./src/" + wikiDir + i, 'utf8');
+			var rawData = fs.readFileSync("./" + wikiDir + i, 'utf8');
 			var markdown = matter(rawData, { excerpt: true });
 			var content = markdown.content;
 
