@@ -103,7 +103,7 @@ function buildHtml(_pageDir, _exportPath) {
 		if (ext == "" && !fs.existsSync(exportPath + i))
 			fs.mkdirSync(exportPath + i, {recursive: true});
 		if (ext == ".png" || ext == ".jpg" || ext == ".jpeg" || ext == ".gif" || ext == ".webm" || ext == ".mp4") {
-			fs.copyFile("./src/" + wikiDir + i, exportPath + i, () => {});
+			fs.copyFile("./" + wikiDir + i, exportPath + i, () => {});
 		}
 		if (ext == ".md") {
 			var filename = parsedName.name;
