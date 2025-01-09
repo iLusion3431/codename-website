@@ -79,7 +79,7 @@ function getGiscusID(pageDir) {
 
 var wikiDir = "wiki/";
 
-var sidebarRaw = fs.readFileSync("./src/pages/wiki.json", "utf8");
+var sidebarRaw = fs.readFileSync("./wiki/wiki.json", "utf8");
 var parsedSidebar = JSON.parse(sidebarRaw);
 
 function buildHtml(_pageDir, _exportPath) {

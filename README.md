@@ -1,10 +1,10 @@
 # Codename Engine Website
 
-**To contribute to this wiki's pages**, please go to ``./src/pages/wiki/``, and change the .md files (if you add a new one make sure to add it in ``./src/pages/wiki.json``.)
+**To contribute to this wiki's pages**, please go to ``wiki/``, and change the .md files (if you add a new one make sure to add it in ``wiki/wiki.json``.)
 
 **To update the API Docs**, please go to ``api-generator/api/``, and paste the results from the ``art/generateDocs.bat`` (From the main repo) script. Then you gotta run ``filter.py``, make sure you have python installed, and have run ``pip install lxml``.
 
-**To make tools work**, please go to ``./src/pages/tools/`` and make your page there, and when you're done, add it to the list in ``tools.build.js`` and ``./src/pages/tools/index.html``, then after you're done, make a PR.
+**To make tools work**, please go to ``tools/`` and make your page there, and when you're done, add it to the list in ``tools.build.js`` and ``tools/index.html``, then after you're done, make a PR.
 
 ## Compiling the website
 
