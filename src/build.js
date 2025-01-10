@@ -49,6 +49,7 @@ compileSass("./tools/tools.scss", exportPath + "/tools.css");
 
 compileJs("./src/pages/featuredMods.js", exportPath + "/featuredMods.js");
 compileJs("./src/pages/wiki.js", exportPath + "/wiki.js");
+compileJs("./src/pages/countdown.js", exportPath + "/countdown.js");
 
 copyDir("./src/toplevel/", exportPath + "/");
 

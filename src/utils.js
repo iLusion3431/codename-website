@@ -274,7 +274,8 @@ Handlebars.registerHelper('safeish', function(str) {
 	const window = new jsdom.JSDOM('').window;
 	const DOMPurify = createDOMPurify(window);
 	DOMPurify.setConfig({
-		ADD_TAGS: ['code', 'pre', 'syntax']
+		ADD_TAGS: ['code', 'pre', 'syntax', 'countdown-timer'],
+		ALLOW_DATA_ATTR: true,
 	});
 	DOMPurify.addHook("afterSanitizeAttributes", (node) => {
 		const { attributes } = node;
@@ -296,15 +297,9 @@ Handlebars.registerHelper('parse', function(html) {
 	return parseTemplate(html, this);
 });
 
-
-function parseTemplate(html, vars) {
-	let old;
-	// Parse nested templates
-	//do {
-	//	old = html;
-	//	html = Handlebars.compile(html)(vars);
-	//} while(html != old);
-	html = Handlebars.compile(html)(vars);
+function parseTemplate(html, vars, options=null) {
+	options = options ?? {};
+	html = Handlebars.compile(html, options)(vars);
 
 	return html;
 }

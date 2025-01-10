@@ -149,6 +149,16 @@ function buildHtml(_pageDir, _exportPath) {
 			}
 			// end sidebar
 
+			var validModules = markdown.data.modules ?? [];
+			if(validModules.length > 0) {
+				validModules = validModules.filter(module => {
+					if(module == "countdown") {
+						return true;
+					}
+					return false;
+				});
+			}
+
 			var vars = {
 				pageTitle: markdown.data.title ?? title,
 				title: markdown.data.title ?? title,
@@ -159,12 +169,14 @@ function buildHtml(_pageDir, _exportPath) {
 				lastUpdated: markdown.data.lastUpdated ?? null,
 				author: markdown.data.author ?? null,
 
+				modules: validModules,
+
 				url: i,
 				giscusID: getGiscusID("wiki/" + i.replace(/\.md$/, ".html")),
 			};
 			console.log(i);
 
-			let html = parseTemplate(templatePage, vars);
+			let html = parseTemplate(templatePage, vars, {});
 
 			var dom = fixHtmlRefs(html, pageDir, _pageDir);
 

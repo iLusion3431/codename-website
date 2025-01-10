@@ -2,6 +2,7 @@
     ["index", "Home"],
     ["navigation", "How to navigate the engine"],
     ["differences", "Differences between other FNF engines"],
+    ["deprecations", "Deprecations"],
     ["faq", "FAQ"],
     ["troubleshooting", "Troubleshooting"],
     ["modding/index", "Modding The Engine", [

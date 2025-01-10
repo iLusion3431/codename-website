@@ -17,6 +17,7 @@ function getRelativeTimeString(
 var lastUpdated = [document.getElementById("last-updated")];
 if(lastUpdated.length > 0 && window.Intl) {
 	lastUpdated.forEach(lastUpdated => {
+		if(lastUpdated == null) return;
 		var time = lastUpdated.getAttribute("data-time");
 		lastUpdated.textContent = getRelativeTimeString(new Date(time));
 	});
