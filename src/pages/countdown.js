@@ -61,10 +61,10 @@
 }
 
 .spacing {
-	margin-top: 1.7em;
-	font-size: 0.4em;
-	margin-left: 0.3em;
-	margin-right: 1em;
+	margin-top: 0.8em;
+	font-size: 0.6em;
+	margin-left: 0.2em;
+	margin-right: 0.6em;
 }
 
 .countdown-container.finished {
