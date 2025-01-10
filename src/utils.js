@@ -215,7 +215,16 @@ async function compileJs(file, dest) {
 				ecma: 2015,
 				keep_fargs: false,
 				passes: 10,
-				unsafe_arrows: true
+				unsafe_arrows: true,
+				unsafe_comps: false,
+				unsafe_math: false,
+				unsafe_methods: false,
+				unsafe_Function: false,
+				unsafe_proto: false,
+				unsafe_regexp: false,
+				unsafe_symbols: false,
+				unsafe_undefined: false,
+				unsafe: true,
 			},
 			sourceMap: {
 				includeSources: true,

@@ -1,11 +1,21 @@
 (function() {
+
+	/**@__PURE__*/
+	function minimizeCss( content ) {
+		content = content.trim();
+		content = content.replace( /\n/g, '' );
+		content = content.replace( /\t/g, '' );
+		// sadly i cant include more optimizations since minification wont pre run the replacements
+		return content;
+	}
+
 	/*
 
 	// Cause a whole new rendering layer
 	transform: translateZ(0px);
 	will-change: transform;
 	*/
-	var styleCss = `
+	var styleCss = minimizeCss(`
 .countdown-container {
 	display: flex;
 	flex-direction: row;
@@ -84,7 +94,7 @@
 	color: red;
 }
 
-`;
+`);
 
 function $$(tagName, attrs, children) {
 	var el = document.createElement(tagName);
@@ -116,6 +126,29 @@ function $$(tagName, attrs, children) {
 	return el;
 }
 
+var floor = Math.floor;
+
+/**@__PURE__*/
+function getTimeDiffArr(diff) {
+	if (diff <= 0) {
+		return [0, 0, 0, 0];
+	}
+
+	const days = floor(diff / (1000 * 60 * 60 * 24));
+	const hours = floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	const minutes = floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+	const seconds = floor((diff % (1000 * 60)) / 1000);
+
+	return [days, hours, minutes, seconds];
+}
+
+	const DAYS = 0;
+	const HOURS = 1;
+	const MINUTES = 2;
+	const SECONDS = 3;
+
+	const maxDigitFirst = [10, 3, 6, 6];
+
 	class CountdownTimer extends HTMLElement {
 		constructor() {
 			super();
@@ -127,10 +160,10 @@ function $$(tagName, attrs, children) {
 
 			var time = this.getTime();
 
-			this.days = this.createDigitsFor("days");
-			this.hours = this.createDigitsFor("hours");
-			this.minutes = this.createDigitsFor("minutes");
-			this.seconds = this.createDigitsFor("seconds");
+			this.days = this.createDigitsFor(DAYS, 3);
+			this.hours = this.createDigitsFor(HOURS);
+			this.minutes = this.createDigitsFor(MINUTES);
+			this.seconds = this.createDigitsFor(SECONDS);
 
 			var container = document.createElement("div");
 			container.classList.add("countdown-container");
@@ -171,28 +204,13 @@ function $$(tagName, attrs, children) {
 			//this.shadowRoot.appendChild(this.debug);
 		}
 
-		createDigitsFor(type) {
-			var max = {
-				days: 10,
-				hours: 3,
-				minutes: 6,
-				seconds: 6,
-			}
-			var totalDigitsMap = {
-				days: 3,
-				hours: 2,
-				minutes: 2,
-				seconds: 2,
-			}
-			var maxFirst = max[type];
-			var totalDigits = totalDigitsMap[type];
+		createDigitsFor(type, totalDigits=2) {
+			var maxFirst = maxDigitFirst[type];
 
 			var digits = [];
 
 			//var currentTime = time[["days", "hours", "minutes", "seconds"].indexOf(type)];
 
-			var span = document.createElement("span");
-			span.classList.add(type);
 			for(let i = 0; i < totalDigits; i++) {
 				if(this.finished) {
 					digits.push(this.createDigits(1));
@@ -214,18 +232,8 @@ function $$(tagName, attrs, children) {
 			const now = new Date();
 			const diff = date.getTime() - now.getTime();
 
-			if (diff <= 0) {
-				this.finished = true;
-				return [0, 0, 0, 0];
-			}
-			this.finished = false;
-
-			const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-			const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-			const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-			const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-			return [days, hours, minutes, seconds];
+			this.finished = diff <= 0;
+			return getTimeDiffArr(diff);
 		}
 
 		createSpacing(text) {
@@ -256,7 +264,7 @@ function $$(tagName, attrs, children) {
 			var digits = [];
 			while(num > 0) {
 				digits.push(num % 10);
-				num = Math.floor(num / 10);
+				num = floor(num / 10);
 			}
 			return digits.reverse();
 		}
@@ -268,6 +276,21 @@ function $$(tagName, attrs, children) {
 			const dateString = this.getAttribute("data-date");
 			const date = new Date(dateString);
 
+			const setDigits = (digitsElm, numberToSet, length=2) => {
+				var digits = this.getDigits(numberToSet);
+				while(digits.length < length) {
+					digits.unshift(0);
+				}
+
+				var i = 0;
+				for(const digit of digitsElm) {
+					// more optimized to use translateY, since it doesn't have to repaint the whole element
+					//digit.style.marginTop = "-" + (digits[i]*2.375/2) + "em";
+					digit.style.transform = `translateY(-${digits[i]*(2.375/2)}em)`;
+					i++;
+				}
+			}
+
 			const updateCountdown = () => {
 				const now = new Date();
 				const diff = date.getTime() - now.getTime();
@@ -275,37 +298,17 @@ function $$(tagName, attrs, children) {
 				if (diff < 0) {
 					diff = 0;
 
-					if(!this.finished) {
-						clearInterval(this.interval);
-						this.container.classList.add("finished");
-						this.finished = true;
-					}
+					clearInterval(this.interval);
+					this.container.classList.add("finished");
+					this.finished = true;
 				}
 
-				const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-				const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-				const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-				const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+				const diffs = getTimeDiffArr(diff);
 
-				const setDigits = (digitsElm, numberToSet, length=2) => {
-					var digits = this.getDigits(numberToSet);
-					while(digits.length < length) {
-						digits.unshift(0);
-					}
-
-					var i = 0;
-					for(const digit of digitsElm) {
-						// more optimized to use translateY, since it doesn't have to repaint the whole element
-						//digit.style.marginTop = "-" + (digits[i]*2.375/2) + "em";
-						digit.style.transform = `translateY(-${digits[i]*2.375/2}em)`;
-						i++;
-					}
-				}
-
-				setDigits(this.days, days, 3);
-				setDigits(this.hours, hours);
-				setDigits(this.minutes, minutes);
-				setDigits(this.seconds, seconds);
+				setDigits(this.days, diffs[DAYS], 3);
+				setDigits(this.hours, diffs[HOURS]);
+				setDigits(this.minutes, diffs[MINUTES]);
+				setDigits(this.seconds, diffs[SECONDS]);
 
 				//this.debug.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 			};
