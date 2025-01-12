@@ -13,23 +13,23 @@
   <priority>0.8</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/faq.html</loc>
+  <loc>https://codename-engine.com/wiki/faq</loc>
   <priority>0.7</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/troubleshooting.html</loc>
+  <loc>https://codename-engine.com/wiki/troubleshooting</loc>
   <priority>0.7</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/differences.html</loc>
+  <loc>https://codename-engine.com/wiki/differences</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/navigation.html</loc>
+  <loc>https://codename-engine.com/wiki/navigation</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/cutscenes-dialogues.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/cutscenes-dialogues</loc>
   <priority>0.65</priority>
 </url>
 <url>
@@ -37,11 +37,11 @@
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/note-splashes.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/note-splashes</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/characters/editor-features.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/characters/editor-features</loc>
   <priority>0.65</priority>
 </url>
 <url>
@@ -53,27 +53,27 @@
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/scripting/3d-rendering.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/scripting/3d-rendering</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/scripting/custom-classes.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/scripting/custom-classes</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/scripting/custom-options.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/scripting/custom-options</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/scripting/custom-transitions.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/scripting/custom-transitions</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/scripting/global-scripts.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/scripting/global-scripts</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/scripting/hxvlc.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/scripting/hxvlc</loc>
   <priority>0.65</priority>
 </url>
 <url>
@@ -81,39 +81,39 @@
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/scripting/ndll-scripting.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/scripting/ndll-scripting</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/scripting/script-calls.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/scripting/script-calls</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/scripting/script-snippets.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/scripting/script-snippets</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/scripting/scripted-assets-libraries.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/scripting/scripted-assets-libraries</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/scripting/shaders.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/scripting/shaders</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/scripting/state-substate-scripts.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/scripting/state-substate-scripts</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/songs/displaying-songs.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/songs/displaying-songs</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/songs/editor-features.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/songs/editor-features</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/songs/events.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/songs/events</loc>
   <priority>0.65</priority>
 </url>
 <url>
@@ -125,23 +125,23 @@
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/stages/stage-extensions.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/stages/stage-extensions</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/scripting/playstate-scripts/character-stage-scripts.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/scripting/playstate-scripts/character-stage-scripts</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/scripting/playstate-scripts/cutscenes-dialogue-scripts</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/scripting/playstate-scripts/events-notetypes-scripts.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/scripting/playstate-scripts/events-notetypes-scripts</loc>
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/scripting/playstate-scripts/gameplay-scripts.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/scripting/playstate-scripts/gameplay-scripts</loc>
   <priority>0.65</priority>
 </url>
 <url>
@@ -149,7 +149,7 @@
   <priority>0.65</priority>
 </url>
 <url>
-  <loc>https://codename-engine.com/wiki/modding/scripting/playstate-scripts/pause-gameover-scripts.html</loc>
+  <loc>https://codename-engine.com/wiki/modding/scripting/playstate-scripts/pause-gameover-scripts</loc>
   <priority>0.65</priority>
 </url>
 </urlset>
