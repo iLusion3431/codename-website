@@ -101,6 +101,7 @@
 <li><a href="#dialogue-character-scripts">Dialogue Character Scripts</a></li>
 <li><a href="#dialogue-box-scripts">Dialogue Box Scripts</a></li>
 <li><a href="#global-scripts">Global Scripts</a></li>
+<li><a href="#transition-scripts">Transition Scripts</a></li>
 </ul>
 </li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/script-snippets.html" class="odd">Useful script snippets for modders - <span style="color: #FF0000;">UNFINISHED</span></a></li>
@@ -195,6 +196,21 @@
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">preStateCreate</span>()</code></h3>
 <p>Before <code class="inline-code">FlxG.game</code> calls <code class="inline-code">_state.create()</code></p>
 <h3><code class="inline-syntax inline-code"><span class="hljs-title function_">preUpdate</span>()</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">update</span>()</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">postUpdate</span>()</code></h3>
+<h2 id="transition-scripts">Transition Scripts</h2>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">create</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">TransitionCreationEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">postCreate</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">TransitionCreationEvent</span>)</code></h3>
+<p>The <code class="inline-code">event</code> is shared between both calls, but cancelling <code class="inline-code">create</code>'s event stops <code class="inline-code">postCreate</code> from being called.</p>
+<p><code class="inline-code">event</code> in question has the following parameters:</p>
+<ul>
+<li><code class="inline-code">newState</code> which represents the next state (can be <code class="inline-code">null</code>).</li>
+<li><code class="inline-code">transOut</code> which represents whether it's doing a in or out transition.</li>
+</ul>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">update</span>(<span class="hljs-attr">elapsed</span>:<span class="hljs-title class_">Float</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">postUpdate</span>(<span class="hljs-attr">elapsed</span>:<span class="hljs-title class_">Float</span>)</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">destroy</span>()</code></h3>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onSkip</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">CancellableEvent</span>)</code></h3>
+<p>The <code class="inline-code">event</code> can be cancelled to stop the transition from being skipped by holding SHIFT.</p>
+<h3><code class="inline-syntax inline-code"><span class="hljs-title function_">onFinish</span>(<span class="hljs-attr">event</span>:<span class="hljs-title class_">CancellableEvent</span>)</code>, <code class="inline-syntax inline-code"><span class="hljs-title function_">onPostFinish</span>()</code></h3>
+<p>The <code class="inline-code">event</code> can be cancelled to stop the transition from finishing (switching to the next state).<br>
+Doing so, <code class="inline-code">onPostFinish</code> won't be called.</p>
 <p>more to be documented soon</p>
 
 

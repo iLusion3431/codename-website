@@ -99,6 +99,8 @@
 <li class="sidebar-list-item even"><a href="/wiki/modding/scripting/scripted-assets-libraries.html" class="even">Scripted Assets Libraries - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 <li class="sidebar-list-item odd"><a href="/wiki/modding/scripting/ndll-scripting.html" class="odd">NDLL Scripting - <span style="color: #FF0000;">UNFINISHED</span></a></li>
 <li class="sidebar-list-item even selected"><a href="#main" class="even selected">Custom Transitions - <span style="color: #FF0000;">UNFINISHED</span></a><ul class="sidebar-unordered-list even pagination">
+<li><a href="#transition-scripts">Transition Scripting</a></li>
+<li><a href="#skipping-transitions">Skipping Transitions, No Good</a></li>
 </ul>
 </li>
 </ul>
@@ -113,12 +115,53 @@
 
 		<div class="content">
 			<h1>Custom Transitions</h1>
-<p>todo: document this</p>
-<p>Basically override MusicBeatTransition.hx</p>
+<h2 id="transition-scripts">Custom State Transitions</h2>
+<p>Transition scripts allow for making your own transition, or modifying the existing one, all without source coding a bit.<br>
+To do so, you must load it from a Script <em>(anyone really)</em>.</p>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-title class_">MusicBeatTransition</span>.<span class="hljs-property">script</span> = <span class="hljs-string">'data/scripts/customTransition'</span>;
+</code></pre>
+<p>This snippet would load from <code class="inline-code">.data/scripts</code> looking for the <code class="inline-code">customTransition.hx</code> script.</p>
+<p>You can mod the transition in any way you'd like. For example, making the transition go left to right:</p>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">postCreate</span>(<span class="hljs-params">event</span>) {
+    transitionTween.<span class="hljs-title function_">cancel</span>(); <span class="hljs-comment">// Disabling original tween</span>
+
+    <span class="hljs-comment">// Rotating Sprites</span>
+    transitionSprite.<span class="hljs-property">angle</span> = event.<span class="hljs-property">transOut</span> ? -<span class="hljs-number">90</span> : <span class="hljs-number">90</span>;
+    transitionSprite.<span class="hljs-title function_">setGraphicSize</span>(transitionCamera.<span class="hljs-property">height</span>, transitionCamera.<span class="hljs-property">width</span>); transitionSprite.<span class="hljs-title function_">updateHitbox</span>(); <span class="hljs-comment">// Once with switched angle, proportions need to go along</span>
+    transitionSprite.<span class="hljs-title function_">screenCenter</span>();
+    blackSpr.<span class="hljs-title function_">setPosition</span>(event.<span class="hljs-property">transOut</span> ? -transitionCamera.<span class="hljs-property">width</span> : transitionCamera.<span class="hljs-property">width</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// Doing X instead of Y tween</span>
+    <span class="hljs-comment">// Updating camera direction to change X instead of Y       </span>
+    transitionCamera.<span class="hljs-property">flipY</span> = <span class="hljs-literal">false</span>;
+    transitionCamera.<span class="hljs-property">flipX</span> = !event.<span class="hljs-property">transOut</span>;
+    transitionCamera.<span class="hljs-property">scroll</span>.<span class="hljs-title function_">set</span>(transitionCamera.<span class="hljs-property">width</span>);
+
+    transitionTween = <span class="hljs-title class_">FlxTween</span>.<span class="hljs-title function_">tween</span>(transitionCamera.<span class="hljs-property">scroll</span>, {<span class="hljs-attr">x</span>: -transitionCamera.<span class="hljs-property">width</span>}, <span class="hljs-number">2</span>/<span class="hljs-number">3</span>, {<span class="hljs-attr">ease</span>: <span class="hljs-title class_">FlxEase</span>.<span class="hljs-property">sineOut</span>, <span class="hljs-attr">onComplete</span>: (_) -&gt; <span class="hljs-title function_">finish</span>()});
+}
+</code></pre>
+<p>Or even, cancelling the base one for one of your own:</p>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params">event</span>) {
+    event.<span class="hljs-title function_">cancel</span>();
+
+    <span class="hljs-comment">// your code here</span>
+}
+</code></pre>
+<p>It's all up to preference.</p>
+<p><em>(Note: <code class="inline-code">event</code> has more parameters, and there exists other calls. Check <a href="script-calls.html">All Script Calls</a>, to learn more)</em></p>
+<h2 id="skipping-transitions">Transition Skipping</h2>
+<p>In Codename Engine, you can skip transitions by holding SHIFT.<br>
+But that wouldn't be so cool with <em>your</em> hard-worked transition, would it?</p>
+<p>To prevent that from happening, disable <code class="inline-code">allowSkip</code></p>
+<pre class="hljs"><code class="language-haxe"><span class="hljs-keyword">function</span> <span class="hljs-title function_">create</span>(<span class="hljs-params">event</span>) {
+    allowSkip = <span class="hljs-literal">false</span>;
+
+    <span class="hljs-comment">// transition code below</span>
+}
+</code></pre>
 
 
 			<div class="info">
-				<div class="last-updated">Last updated: <span id="last-updated" data-time="2024-09-19T22:52:14.000Z">2024-09-19</span></div>
+				<div class="written">Written by: BerGP</div>
+				<div class="last-updated">Last updated: <span id="last-updated" data-time="2025-01-13T01:18:53.593Z">2025-01-13</span></div>
 
 				<div class="github-edit-button">
 					<a href="https://github.com/CodenameCrew/codename-website/tree/main/src/pages/wiki/modding/scripting/custom-transitions.md">Edit this page on GitHub</a>
