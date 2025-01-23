@@ -12,16 +12,18 @@ var isFullBuild = false;
 var isWatch = false;
 var isFirstRun = false;
 var isRelease = false;
+var isActions = false;
 
 function setGlobals(data) {
 	isFullBuild = data.isFullBuild;
 	isWatch = data.isWatch;
 	isFirstRun = data.isFirstRun;
 	isRelease = data.isRelease;
+	isActions = data.isActions;
 }
 
 function getGlobals() {
-	return {isFullBuild, isWatch, isFirstRun, isRelease};
+	return {isFullBuild, isWatch, isFirstRun, isRelease, isActions};
 }
 
 function fixPath(url) {
@@ -77,6 +79,9 @@ function fixHtmlRefs(html, pageDir, _pageDir) {
 		}
 		href = href.replace(/\.force-md$/, "");
 		href = fixPath(href);
+		if(isActions) {
+			href = href.replace(/\.html$/, "");
+		}
 
 		link.href = href;
 	}
@@ -96,6 +101,9 @@ function fixHtmlRefs(html, pageDir, _pageDir) {
 		}
 		src = src.replace(/\.force-md$/, "");
 		src = fixPath(src);
+		if(isActions) {
+			href = href.replace(/\.html$/, "");
+		}
 		image.src = src;
 	}
 
@@ -114,6 +122,9 @@ function fixHtmlRefs(html, pageDir, _pageDir) {
 		}
 		src = src.replace(/\.force-md$/, "");
 		src = fixPath(src);
+		if(isActions) {
+			href = href.replace(/\.html$/, "");
+		}
 		image.srcset = src;
 	}
 
