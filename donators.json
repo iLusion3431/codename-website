@@ -229,6 +229,18 @@
                     "type": "donation"
                 }
             ]
+        },
+        {
+            "name": "Circuitella",
+            "profilePicture": "https://ko-fi.com/img/anon9.png?v=1",
+            "hasMembership": false,
+            "donations": [
+                {
+                    "amount": 3,
+                    "currency": "$",
+                    "type": "donation"
+                }
+            ]
         }
     ]
 }
